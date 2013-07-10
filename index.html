@@ -1,195 +1,150 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <title>melonJS - Homepage</title>
-  <meta name="description" content="melonJS - A lightweight HTML5 game engine" />
-  <meta name="keywords" content="HTML5, javascript, lightweight, canvas, game, engine, framework, tiled, tile, map, loader, parser, TMX, XML" />
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
-  <link rel="stylesheet" href="scripts/nivo-slider.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="scripts/default.css" type="text/css" media="screen" />
-  <script type="text/javascript">
-	/* <![CDATA[ */
-		(function() {
-			var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-			s.type = 'text/javascript';
-			s.async = true;
-			s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
-			t.parentNode.insertBefore(s, t);
-		})();
-	/* ]]> */
- </script>
-</head>
+---
+layout: default
+title: Home
+---
 
-<body>
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="http://www.melonjs.org">melon<span class="logo_colour">JS</span></a></h1>
-          <h2>A lightweight HTML5 game engine</h2>
-        </div>
-      </div>
-      <div id="menubar">
-        <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="index.html">Home</a></li>
-          <li><a href="http://olivierbiot.wordpress.com/">Blog</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="download.html">Download</a></li>
-		  <li><a href="http://groups.google.com/group/melonjs">Forum</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="site_content">
-        <a href="https://github.com/melonjs/melonjs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
-		<div class="sidebar">
-		 <p>
-		   <img src="media/HTML5_Badge_128.png"/><br>
-		 </p>
-		 <h3>Useful Links</h3>
-        <ul>
-			<li><a href="http://www.mapeditor.org/">Tiled</a></li>
-			<li><a href="http://www.scoreoid.net/">scoreoid</a></li>
-			<li><a href="http://www.marketjs.com/">marketJS</a></li>
-			<li><a href="http://clay.io/">clay.io</a></li>
-        </ul>
-		<h3>Help</h3>
-        <ul>
-		  <li><a href="http://melonjs.github.io/tutorial/">Step by Step Tutorial</a></li>
-          <li><a href="http://melonjs.github.io/docs/">Online Documentation</a></li>
-		  <li><a href="http://groups.google.com/group/melonjs">Google Group</a></li>
-		</ul>
-      	<h3>Contributing</h3>
-        <ul>
-          <li><a href="http://github.com/melonjs/melonJS">Github Repository</a></li>
-		  <li><a href="https://github.com/melonjs/melonJS/issues">Issues Tracker</a></li>
-          <li><a href="mailto:contact@melonjs.org">Submit a patch</a></li>
-		  <li>
-			<center>
-			<table border="0">
-			<tr>
-			  <td style="background-color: white;">
-				<a class="FlattrButton" style="display:none;" href="http://www.melonjs.org"></a>
-				<noscript><a href="http://flattr.com/thing/824297/melonJS" target="_blank">
-				<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></noscript>
- 			  </td>
-			</tr>
-			</table>
-			</center>
-		   </li>
-		</ul>
-		<ul>
-			<center><img src="http://www.opensource.org/files/garland_logo.png"/></center>
-		</ul>
-		</div>
-      <div id="content">
-        <!-- insert the page content here -->
-		<h2>Fresh & lightweight</h2>
-        <p>melonJS is the result of our enthusiasm and past experiments with Javascript, and came from the feeling that no simple, 
-		  free and standalone library was available to develop games. And although still a work in progress, melonJS already allows to easily create some nice games (see the <a href="gallery.html">Gallery</a> page)</p>
-		  <h2>Powerful level design through Tiled</h2>
-		  <p>melonJS integrates the popular Tiled map format, allowing to easily design levels using the <a href="http://www.mapeditor.org/">Tiled map editor</a>, and to focus on the game features itself.</p>
-		  	<!--<img src="media/tiled-browser.png" alt="Tiled and Browser Integration" /> -->
-			<div class="slider-wrapper theme-default">
-				<div id="slider" class="nivoSlider">
-					<img src="media/tiled-browser.png" alt="" title="Fully integrated with the Tiled map format" />
-					<img src="media/game-type.png" alt="" title="Suitable for all kind of games" />
-					<a href="http://bitzz.pt.la/"><img src="media/games/bitzz.png" alt="" title="Bitzz by Tiago Almeida" /></a>
-					<a href="http://apps.facebook.com/fuchsiagames/"><img src="media/games/frangoi.png" alt="" title="#frangoicaption" /></a>
-					<a href="http://www.indiedb.com/games/neverwell-moor/"><img src="media/games/neverwell_moor.png" alt="" title="#neverwell_moor" /></a>
-					<a href="http://www.nurph.com/"><img src="media/games/nurph.png" alt="" title="The Nurph home page is powered by melonJS" /></a>
+<div class="hero-unit row">
+	<h1>A lightweight 2D sprite-based HTML5 game engine</h1>
+
+	<p>melonJS is the result of our enthusiasm and past experiments with Javascript, and came from the feeling that no simple, free and standalone library was available to develop games. And although still a work in progress, melonJS already allows to easily create some nice games (see the <a href="/gallery.html">Gallery</a> page)</p>
+</div>
+
+<div class="row">
+	<div class="span6">
+		<h2>Fully integrated with the Tiled map format</h2>
+		<img src="media/tiled-browser.png" alt="" />
+	</div>
+
+	<div class="span6">
+		<h2>Suitable for all kind of games</h2>
+		<img src="media/game-type.png" alt="" />
+	</div>
+</div>
+
+<hr />
+
+<div class="row">
+	<div class="span4">
+		<h2>Powerful level design through Tiled</h2>
+		<p>melonJS integrates the popular Tiled map format, allowing to easily design levels using the <a href="http://www.mapeditor.org/">Tiled map editor</a>, and to focus on the game features itself.</p>
+	</div>
+
+	<div class="span4">
+		<h2>Free and open-source</h2>
+		<p>melonJS is an open-source HTML5 based community game engine, released under the MIT license, that you can <a href="https://github.com/melonjs/melonJS">join</a>, but that you can also modify or extend in any way to fit your needs.</p>
+	</div>
+
+	<div class="span4">
+		<h2>Browser compatibility</h2>
+
+		<p>melonJS is fully compatible with <a href="http://www.google.com/chrome/">Chrome 12+</a>, <a href="http://www.apple.com/safari/">Safari 5.0+</a>, <a href="http://www.mozilla.com/">Firefox 4+</a>, <a href="http://www.opera.com/">Opera 11.00+</a> and <a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie">IE 9+</a>.</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span4">
+		<h2>Touch device support</h2>
+
+		<p>melonJS supports input through touch devices as well as keyboard and mouse.</p>
+	</div>
+
+	<div class="span4">
+		<h2>More features</h2>
+
+		<p>Take a feature from below and highlight it here</p>
+	</div>
+
+	<div class="span4">
+		<h2>More features</h2>
+
+		<p>Take a feature from below and highlight it here</p>
+	</div>
+</div>
+
+<hr />
+
+<div class="row">
+	<div class="span6">
+		<div id="myCarousel" class="carousel slide">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
+			<!-- Carousel items -->
+			<div class="carousel-inner">
+				<div class="active item">
+					<a href="http://bitzz.pt.la/"><img src="media/games/bitzz.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Bitzz</h4>
+						<p>By Tiago Almeida</p>
+					</div>
 				</div>
-			<div id="frangoicaption" class="nivo-html-caption">
-                Frangoi's Journey - <a href="http://www.ggjcwb.com/2012/02/votacao2012/">3rd place</a> at the Global Game Jam 2012 in Brazil, Curitiba
-            </div>
-			<div id="neverwell_moor" class="nivo-html-caption">
-                Neverwell Moor - a game built in 3 weeks as part of <a href="http://lpc.opengameart.org/">the Liberated Pixel Cup 2012</a> competition, using melonJS and Chipmunk-js.
-            </div>
-			
-           </div>
-		  <p>Along necessary bug fixing, some other nice features are still to come, so please come back regulary !</p>
-		  <h2>Free and open-source</h2>
-			melonJS is an open-source HTML5 based community game engine, released under the MIT license, that you can <a href="https://github.com/melonjs/melonJS">join</a>, but that you can also modify or extend in any way to fit your needs.
-		  <h2>Feature list :</h2>
-		  <ul>
-          <li>A fresh and lightweight 2D sprite-based engine</li>
-          <li>Standalone library (does not rely on anything else, except a HTML5 capable browser)</li>
-          <li>Compatible with all major browsers (Chrome, Safari, Firefox, Opera, IE)</li>
-          <li>Multiple Audio Channel support</li>
-		  <li>Basic physics and collision mechanisms (to ensure low cpu requirements)</li>
-		  <li>A basic set of Object Entities (to be extended)</li>
-		  <li>Basic Vector Math</li>
-		  <li>Tween effects</li>
-		  <li>Transition effects</li>
-		  <li>A basic set of Object Entities (to be extended)</li>
-		  <li>Object Pooling</li>
-		  <li>Basic animation management</li>
-		  <li>Standard spritesheet and Packed Textures (Texture Packer) support</li>
-		  <li>A state manager (to easily manage loading, menu, options or in-game screen state and switch)</li>
-		  <li>Tiled map format version +0.9.x integration for easy level design :
-		 	<ul>
-				<li>Uncompressed Plain, Base64, CSV and JSON encoded XML tilemap loading</li>
-				<li>Orthogonal tilemap with built-in collision management
-				<li>Isometric, Perspective tilemap support</li>
-				<li>Multiple layers (multiple background/Foreground, collision and Image layers)</li>
-				<li>Multiple Tileset support</li>
-				<li>Tileset Transparency settings</li>
-				<li>Layers Alpha settings</li>
-				<li>Tiled Object</li>
-				<li>Flipped & rotated Tiles</li>
-				<li>Dynamic Layer and Object/Group ordering</li>
-				<li>Dynamic Entity loading (melonJS will instantiate JS object matching the object property name defined in the tilemap)</li>
-				<li>Solid, Platform, Slope and Breakable Tiles</li>
+				<div class="item">
+					<a href="http://apps.facebook.com/fuchsiagames/"><img src="media/games/frangoi.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Frangoi's Journey</h4>
+						<p><a href="http://www.ggjcwb.com/2012/02/votacao2012/">3rd place</a> at the Global Game Jam 2012 in Brazil, Curitiba</p>
+					</div>
+				</div>
+				<div class="item">
+					<a href="http://www.indiedb.com/games/neverwell-moor/"><img src="media/games/neverwell_moor.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Neverwell Moor</h4>
+						<p>A game built in 3 weeks as part of <a href="http://lpc.opengameart.org/">the Liberated Pixel Cup 2012</a> competition, using melonJS and Chipmunk-js.</p>
+					</div>
+				</div>
+				<div class="item">
+					<a href="http://www.nurph.com/"><img src="media/games/nurph.png" alt="" /></a>
+					<div class="carousel-caption">
+						<p>The Nurph home page is powered by melonJS</p>
+					</div>
+				</div>
+			</div>
+			<!-- Carousel nav -->
+			<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+			<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<h2>Features</h2>
+
+		<ul>
+			<li>Standalone library (does not rely on anything else, except a HTML5 capable browser)</li>
+			<li>Multiple Audio Channel support</li>
+			<li>Basic physics and collision mechanisms (to ensure low cpu requirements)</li>
+			<li>A basic set of Object Entities (to be extended)</li>
+			<li>Basic Vector Math</li>
+			<li>Tween and transition effects</li>
+			<li>Object Pooling</li>
+			<li>Basic animation management</li>
+			<li>Standard spritesheet and Packed Textures (Texture Packer) support</li>
+			<li>A state manager (to easily manage loading, menu, options or in-game screen state and switch)</li>
+			<li>Tiled map format version +0.9.x integration for easy level design :
+				<ul>
+					<li>Uncompressed Plain, Base64, CSV and JSON encoded XML tilemap loading</li>
+					<li>Orthogonal tilemap with built-in collision management
+					<li>Isometric, Perspective tilemap support</li>
+					<li>Multiple layers (multiple background/Foreground, collision and Image layers)</li>
+					<li>Multiple Tileset support</li>
+					<li>Tileset Transparency settings</li>
+					<li>Layers Alpha settings</li>
+					<li>Tiled Object</li>
+					<li>Flipped & rotated Tiles</li>
+					<li>Dynamic Layer and Object/Group ordering</li>
+					<li>Dynamic Entity loading (melonJS will instantiate JS object matching the object property name defined in the tilemap)</li>
+					<li>Solid, Platform, Slope and Breakable Tiles</li>
 				</ul>
-			 </li>
-			 <li>System and Bitmap fonts</li>
-			 <li>Mouse and Touch device support</li>
-			 <li>Mouse emulation on touch devices</li>
-			 <li>Built-in support for CocoonJS</li>
-			 <li>Asynchronous messaging support (minPubSub)</li>
-			 <li>some basic GUI elements</li>
-			 <li>a customizable loader, etc. . .</li>
-        </ul>
-		  <span class="right"><img src="media/browser_icons.png" alt="browser icons example" /></span>
-		  </p>
-		  <h2>Browser Compatibility</h2>
-        <p>See below about melonJS and compatibility with the various existing browsers.</p>
-         <table style="width:100%; border-spacing:0;">
-          <tr><th>Browser</th><th>Version</th><th>Status</th></tr>
-          <tr><td><a href="http://www.google.com/chrome/">Chrome</a></td><td> 12+</td><td>fully working</td></tr>
-			 <tr><td><a href="http://www.apple.com/safari/">Safari</a></td><td>5.0+</td><td>fully working</td></tr>
-			 <tr><td><a href="http://www.mozilla.com/">Firefox</a></td><td>4+</td><td>fully working</td></tr>
-			 <tr><td><a href="http://www.opera.com/">Opera</a></td><td>11.00+</td><td>fully working</td></tr>
-			 <tr><td><a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie">IE</a></td><td>9+</td><td>fully working</td></tr>
-		   </table>
-      </div>
-    </div>
-    <div id="content_footer"></div>
-    <div id="footer">
-      Copyright &copy; melonJS 2011 - 2013</a>
-    </div>
-  </div>
- <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-13050059-3']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-   <script type="text/javascript" src="scripts/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="scripts/jquery.nivo.slider.js"></script>
-    <script type="text/javascript">
-    $(window).load(function() {
-        $('#slider').nivoSlider();
-    });
-	</script>
-
-</body>
-</html>
+			</li>
+			<li>System and Bitmap fonts</li>
+			<li>Built-in support for CocoonJS</li>
+			<li>Asynchronous messaging support (minPubSub)</li>
+			<li>some basic GUI elements</li>
+			<li>a customizable loader, etc. . .</li>
+		</ul>
+	</div>
+</div>
