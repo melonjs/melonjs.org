@@ -14,10 +14,10 @@ title: Download
 </div>
 
 <p>
-	<a href="/build/melonJS-{{  site.melonjs.versions[0] }}-min.js" class="btn btn-primary">Production Version</a> (101 kb, minified)
+	<a href="{{ site.baseurl }}/build/melonJS-{{  site.melonjs.versions[0] }}-min.js" class="btn btn-primary">Production Version</a> (101 kb, minified)
 </p>
 <p>
-	<a href="/build/melonJS-{{  site.melonjs.versions[0] }}.js" class="btn">Development Version</a> (375 kb, uncompressed)
+	<a href="{{ site.baseurl }}/build/melonJS-{{  site.melonjs.versions[0] }}.js" class="btn">Development Version</a> (375 kb, uncompressed)
 </p>
 <p>
 	<a href="https://github.com/melonjs/melonJS/zipball/{{  site.melonjs.versions[0] }}" class="btn">Download zip</a>
@@ -31,7 +31,7 @@ title: Download
 
 <ul class="unstyled">
 	{% for version in site.melonjs.versions offset:1 limit:10 %}
-	<li><strong>{{ version }}:</strong> <a href="/build/melonJS-{{ version }}-min.js">prod</a>, <a href="/build/melonJS-{{ version }}.js">dev</a>, <a href="https://github.com/melonjs/melonJS/zipball/{{  version }}">zip</a></li>
+	<li><strong>{{ version }}:</strong> <a href="{{ site.baseurl }}/build/melonJS-{{ version }}-min.js">prod</a>, <a href="{{ site.baseurl }}/build/melonJS-{{ version }}.js">dev</a>, <a href="https://github.com/melonjs/melonJS/zipball/{{ version }}">zip</a></li>
 	{% endfor %}
 </ul>
 
@@ -47,11 +47,11 @@ title: Download
 
 <p>Tool used to create maps in melonJS.</p>
 
-<h4><a href="/tutorial/">Step by step tutorial</a></h4>
+<h4><a href="{{ site.baseurl }}/tutorial/">Step by step tutorial</a></h4>
 
 <p>A tutorial to get you started creating games using melonJS.</p>
 
-<h4><a href="/docs">Online Documentation</a></h4>
+<h4><a href="{{ site.baseurl }}/docs/">Online Documentation</a></h4>
 
 <p>API documentation for melonJS.</p>
 

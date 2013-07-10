@@ -16,3 +16,5 @@ melonjs:
         - '0.7.4'
 
 title: melonJS
+
+baseurl: /melonjs.org
