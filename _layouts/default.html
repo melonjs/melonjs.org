@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+		{% if page.description %}
+		<meta name="description" content="{{ page.description }}" />
+		{% endif %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="{{ site.baseurl }}/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+		<link href="{{ site.baseurl }}/css/melonjs.css" rel="stylesheet" media="screen">
+	</head>
+	<body>
+
+		<a href="https://github.com/melonjs/melonjs"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 9999" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="brand" href="/">melonJS</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li{% if page.url == "/index.html" %} class="active"{% endif %}><a href="{{ site.baseurl }}/">Home</a></li>
+							<li{% if page.url == "/download.html" %} class="active"{% endif %}><a href="{{ site.baseurl }}/download.html">Download</a></li>
+							<li{% if page.url == "/documentation/index.html" %} class="active"{% endif %}><a href="{{ site.baseurl }}/documentation">Documentation</a></li>
+							<li{% if page.url == "/blog/index.html" %} class="active"{% endif %}><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+							<li{% if page.url == "/gallery.html" %} class="active"{% endif %}><a href="{{ site.baseurl }}/gallery.html">Gallery</a></li>
+							<li><a href="http://groups.google.com/group/melonjs">Forum</a></li>
+							<li{% if page.url == "/contact.html" %} class="active"{% endif %}><a href="{{ site.baseurl }}/contact.html">Contact Us</a></li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+
+			{{ content }}
+
+			<footer>
+				<p>Copyright &copy; melonJS 2011 - 2013</p>
+			</footer>
+		</div>
+
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+	</body>
+</html>
