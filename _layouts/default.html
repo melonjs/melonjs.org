@@ -26,13 +26,13 @@
 					<a class="brand" href="/">melonJS</a>
 					<div class="nav-collapse collapse">
 						<ul class="nav">
-							<li class="active"><a href="/">Home</a></li>
-							<li><a href="/download.html">Download</a></li>
-							<li><a href="/documentation">Documentation</a></li>
-							<li><a href="/blog/">Blog</a></li>
-							<li><a href="/gallery.html">Gallery</a></li>
+							<li{% if page.url == "/index.html" %} class="active"{% endif %}><a href="/">Home</a></li>
+							<li{% if page.url == "/download.html" %} class="active"{% endif %}><a href="/download.html">Download</a></li>
+							<li{% if page.url == "/documentation/index.html" %} class="active"{% endif %}><a href="/documentation">Documentation</a></li>
+							<li{% if page.url == "/blog/index.html" %} class="active"{% endif %}><a href="/blog/">Blog</a></li>
+							<li{% if page.url == "/gallery.html" %} class="active"{% endif %}><a href="/gallery.html">Gallery</a></li>
 							<li><a href="http://groups.google.com/group/melonjs">Forum</a></li>
-							<li><a href="/contact.html">Contact Us</a></li>
+							<li{% if page.url == "/contact.html" %} class="active"{% endif %}><a href="/contact.html">Contact Us</a></li>
 						</ul>
 					</div><!--/.nav-collapse -->
 				</div>
