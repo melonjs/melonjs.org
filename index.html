@@ -1,0 +1,155 @@
+---
+layout: default
+title: Home
+---
+
+<div class="hero-unit row">
+	<h1>A lightweight 2D sprite-based HTML5 game engine</h1>
+
+	<p>melonJS is the result of our enthusiasm and past experiments with Javascript, and came from the feeling that no simple, free and standalone library was available to develop games. And although still a work in progress, melonJS already allows to easily create some nice games (see the <a href="{{ site.baseurl }}/gallery.html">Gallery</a> page)</p>
+
+	<p>
+		<a href="{{ site.baseurl }}/download.html" class="btn btn-primary btn-large">Download now</a>
+		<a href="{{ site.baseurl }}/documentation/" class="btn btn-large">View documenation</a>
+	</p>
+</div>
+
+<div class="row">
+	<div class="span6">
+		<h2>Fully integrated with the Tiled map format</h2>
+		<img src="{{ site.baseurl }}/img/tiled-browser.png" alt="" />
+	</div>
+
+	<div class="span6">
+		<h2>Suitable for all kind of games</h2>
+		<img src="{{ site.baseurl }}/img/game-type.png" alt="" />
+	</div>
+</div>
+
+<hr />
+
+<div class="row">
+	<div class="span4">
+		<h2>Powerful level design through Tiled</h2>
+		<p>melonJS integrates the popular Tiled map format, allowing to easily design levels using the <a href="http://www.mapeditor.org/">Tiled map editor</a>, and to focus on the game features itself.</p>
+	</div>
+
+	<div class="span4">
+		<h2>Free and open-source</h2>
+		<p>melonJS is an open-source HTML5 based community game engine, released under the MIT license, that you can <a href="https://github.com/melonjs/melonJS">join</a>, but that you can also modify or extend in any way to fit your needs.</p>
+	</div>
+
+	<div class="span4">
+		<h2>Browser compatibility</h2>
+
+		<p>melonJS is fully compatible with <a href="http://www.google.com/chrome/">Chrome 12+</a>, <a href="http://www.apple.com/safari/">Safari 5.0+</a>, <a href="http://www.mozilla.com/">Firefox 4+</a>, <a href="http://www.opera.com/">Opera 11.00+</a> and <a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie">IE 9+</a>.</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span4">
+		<h2>Touch device support</h2>
+
+		<p>melonJS supports input through touch devices as well as keyboard and mouse.</p>
+	</div>
+
+	<div class="span4">
+		<h2>More features</h2>
+
+		<p>Take a feature from below and highlight it here</p>
+	</div>
+
+	<div class="span4">
+		<h2>More features</h2>
+
+		<p>Take a feature from below and highlight it here</p>
+	</div>
+</div>
+
+<hr />
+
+<div class="row">
+	<div class="span6">
+		<div id="myCarousel" class="carousel slide">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
+			<!-- Carousel items -->
+			<div class="carousel-inner">
+				<div class="active item">
+					<a href="http://bitzz.pt.la/"><img src="{{ site.baseurl }}/img/games/bitzz.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Bitzz</h4>
+						<p>By Tiago Almeida</p>
+					</div>
+				</div>
+				<div class="item">
+					<a href="http://apps.facebook.com/fuchsiagames/"><img src="{{ site.baseurl }}/img/games/frangoi.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Frangoi's Journey</h4>
+						<p><a href="http://www.ggjcwb.com/2012/02/votacao2012/">3rd place</a> at the Global Game Jam 2012 in Brazil, Curitiba</p>
+					</div>
+				</div>
+				<div class="item">
+					<a href="http://www.indiedb.com/games/neverwell-moor/"><img src="{{ site.baseurl }}/img/games/neverwell_moor.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Neverwell Moor</h4>
+						<p>A game built in 3 weeks as part of <a href="http://lpc.opengameart.org/">the Liberated Pixel Cup 2012</a> competition, using melonJS and Chipmunk-js.</p>
+					</div>
+				</div>
+				<div class="item">
+					<a href="http://www.nurph.com/"><img src="{{ site.baseurl }}/img/games/nurph.png" alt="" /></a>
+					<div class="carousel-caption">
+						<p>The Nurph home page is powered by melonJS</p>
+					</div>
+				</div>
+			</div>
+			<!-- Carousel nav -->
+			<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+			<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12">
+		<h2>Features</h2>
+
+		<ul>
+			<li>Standalone library (does not rely on anything else, except a HTML5 capable browser)</li>
+			<li>Multiple Audio Channel support</li>
+			<li>Basic physics and collision mechanisms (to ensure low cpu requirements)</li>
+			<li>A basic set of Object Entities (to be extended)</li>
+			<li>Basic Vector Math</li>
+			<li>Tween and transition effects</li>
+			<li>Object Pooling</li>
+			<li>Basic animation management</li>
+			<li>Standard spritesheet and Packed Textures (Texture Packer) support</li>
+			<li>A state manager (to easily manage loading, menu, options or in-game screen state and switch)</li>
+			<li>Tiled map format version +0.9.x integration for easy level design :
+				<ul>
+					<li>Uncompressed Plain, Base64, CSV and JSON encoded XML tilemap loading</li>
+					<li>Orthogonal tilemap with built-in collision management
+					<li>Isometric, Perspective tilemap support</li>
+					<li>Multiple layers (multiple background/Foreground, collision and Image layers)</li>
+					<li>Multiple Tileset support</li>
+					<li>Tileset Transparency settings</li>
+					<li>Layers Alpha settings</li>
+					<li>Tiled Object</li>
+					<li>Flipped & rotated Tiles</li>
+					<li>Dynamic Layer and Object/Group ordering</li>
+					<li>Dynamic Entity loading (melonJS will instantiate JS object matching the object property name defined in the tilemap)</li>
+					<li>Solid, Platform, Slope and Breakable Tiles</li>
+				</ul>
+			</li>
+			<li>System and Bitmap fonts</li>
+			<li>Built-in support for CocoonJS</li>
+			<li>Asynchronous messaging support (minPubSub)</li>
+			<li>some basic GUI elements</li>
+			<li>a customizable loader, etc. . .</li>
+		</ul>
+	</div>
+</div>

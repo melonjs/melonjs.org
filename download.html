@@ -1,0 +1,83 @@
+---
+layout: default
+title: Download
+---
+
+<div class="page-header">
+	<h1>Download</h1>
+</div>
+
+<h2>Current version: <a href="https://github.com/melonjs/melonJS/blob/{{ site.melonjs.versions[0] }}/CHANGELOG" title="View changelog">{{ site.melonjs.versions[0] }}</a></h2>
+
+<div class="alert">
+  <strong>Warning!</strong> melonJS is still in beta and may change drastically between versions.
+</div>
+
+<p>Right click and use "Save as".</p>
+
+<p>
+	<a href="{{ site.baseurl }}/build/melonJS-{{  site.melonjs.versions[0] }}-min.js" class="btn btn-primary">Production Version</a> (101 kb, minified)
+</p>
+<p>
+	<a href="{{ site.baseurl }}/build/melonJS-{{  site.melonjs.versions[0] }}.js" class="btn">Development Version</a> (375 kb, uncompressed)
+</p>
+<p>
+	<a href="https://github.com/melonjs/melonJS/zipball/{{  site.melonjs.versions[0] }}" class="btn">Download zip</a>
+</p>
+
+<p>
+	<a href="https://github.com/melonjs/melonJS/archive/master.zip">Download edge version</a> (Unreleased, use at your own risk)</a>
+</p>
+
+<h4>Older versions</h4>
+
+<ul class="unstyled">
+	{% for version in site.melonjs.versions offset:1 limit:10 %}
+	<li><strong>{{ version }}:</strong> <a href="{{ site.baseurl }}/build/melonJS-{{ version }}-min.js">prod</a>, <a href="{{ site.baseurl }}/build/melonJS-{{ version }}.js">dev</a>, <a href="https://github.com/melonjs/melonJS/zipball/{{ version }}">zip</a></li>
+	{% endfor %}
+</ul>
+
+<hr />
+
+<h3>Links</h3>
+
+<h4><a href="https://github.com/melonjs/melonJS/wiki/Upgrade-Guide">Upgrade Guide</a></h4>
+
+<p>View what changed between versions and how to update your game.</p>
+
+<h4><a href="http://www.mapeditor.org/">Tiled Map Editor</a></h4>
+
+<p>Tool used to create maps in melonJS.</p>
+
+<h4><a href="{{ site.baseurl }}/tutorial/">Step by step tutorial</a></h4>
+
+<p>A tutorial to get you started creating games using melonJS.</p>
+
+<h4><a href="{{ site.baseurl }}/docs/">Online Documentation</a></h4>
+
+<p>API documentation for melonJS.</p>
+
+<h4><a href="https://github.com/melonjs/melonJS">Source code</a></h4>
+
+<p>The source code is available on Github.</p>
+
+<hr />
+
+<h3>Terms of use</h3>
+
+<p>Copyright (C) 2011 - 2013, Olivier Biot, Jason Oster</p>
+
+<p><a href="http://melonjs.org">melonJS</a> is an open source HTML5 game engine released under the <a rel="license" href="https://github.com/melonjs/melonJS/blob/master/MIT-LICENSE">MIT</a> License.</p>
+
+<hr />
+
+<h3>Additional Credits</h3>
+
+<h4><a href="https://github.com/daniellmb/MinPubSub">MinPubSub</a></h4>
+<p>A micro publish/subscribe messaging framework.</p>
+
+<h4><a href="https://github.com/sole/Tween.js">Tween JS</a></h4>
+<p>Based on the original library.</p>
+
+<h4><a href="http://ejohn.org/blog/simple-javascript-inheritance/">Javascript Simple Inheritance</a></h4>
+<p>By <a href="http://ejohn.org/">John Resig</a>.</p>
