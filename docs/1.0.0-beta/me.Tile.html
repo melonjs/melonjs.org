@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>melonJS API documentation : Class: Tile</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="logo">
+    <div style="position: absolute;left:64px;top:8px">
+        <img src="images/logo.png" position="absolute">
+    </div>
+    <div id="logo_text">
+        <!-- class="logo_colour", allows you to change the colour of the text -->
+        <h1><a style="text-decoration:none" href="http://www.melonjs.org">melon<span class="logo_colour">JS</span></a></h1>
+        <h2>A lightweight HTML5 game engine</h2>
+    </div>
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Event.html">Event</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-String.html">String</a></li><li><a href="external-window.html">window</a></li></ul><h3>Classes</h3><ul><li><a href="me.AnimationSheet.html">AnimationSheet</a></li><li><a href="me.BitmapFont.html">BitmapFont</a></li><li><a href="me.CollectableEntity.html">CollectableEntity</a></li><li><a href="me.Color.html">Color</a></li><li><a href="me.ColorLayer.html">ColorLayer</a></li><li><a href="me.Ellipse.html">Ellipse</a></li><li><a href="me.Font.html">Font</a></li><li><a href="me.GUI_Object.html">GUI_Object</a></li><li><a href="me.ImageLayer.html">ImageLayer</a></li><li><a href="me.LevelEntity.html">LevelEntity</a></li><li><a href="me.Matrix2d.html">Matrix2d</a></li><li><a href="me.ObjectContainer.html">ObjectContainer</a></li><li><a href="me.ObjectEntity.html">ObjectEntity</a></li><li><a href="me.ObjectSettings.html">ObjectSettings</a></li><li><a href="me.Particle.html">Particle</a></li><li><a href="me.ParticleContainer.html">ParticleContainer</a></li><li><a href="me.ParticleEmitter.html">ParticleEmitter</a></li><li><a href="me.ParticleEmitterSettings.html">ParticleEmitterSettings</a></li><li><a href="me.plugin.Base.html">plugin.Base</a></li><li><a href="me.PolyShape.html">PolyShape</a></li><li><a href="me.Rect.html">Rect</a></li><li><a href="me.Renderable.html">Renderable</a></li><li><a href="me.ScreenObject.html">ScreenObject</a></li><li><a href="me.SpriteObject.html">SpriteObject</a></li><li><a href="me.TextureAtlas.html">TextureAtlas</a></li><li><a href="me.Tile.html">Tile</a></li><li><a href="me.TMXLayer.html">TMXLayer</a></li><li><a href="me.TMXObject.html">TMXObject</a></li><li><a href="me.TMXObjectGroup.html">TMXObjectGroup</a></li><li><a href="me.TMXTileMap.html">TMXTileMap</a></li><li><a href="me.TMXTileset.html">TMXTileset</a></li><li><a href="me.TMXTilesetGroup.html">TMXTilesetGroup</a></li><li><a href="me.Tween.html">Tween</a></li><li><a href="me.Vector2d.html">Vector2d</a></li><li><a href="me.Viewport.html">Viewport</a></li></ul><h3>Namespaces</h3><ul><li><a href="me.agent.html">agent</a></li><li><a href="me.audio.html">audio</a></li><li><a href="me.debug.html">debug</a></li><li><a href="me.device.html">device</a></li><li><a href="me.event.html">event</a></li><li><a href="me.game.html">game</a></li><li><a href="me.input.html">input</a></li><li><a href="me.levelDirector.html">levelDirector</a></li><li><a href="me.loader.html">loader</a></li><li><a href="me.plugin.html">plugin</a></li><li><a href="me.pool.html">pool</a></li><li><a href="me.save.html">save</a></li><li><a href="me.state.html">state</a></li><li><a href="me.sys.html">sys</a></li><li><a href="me.timer.html">timer</a></li><li><a href="me.utils.html">utils</a></li><li><a href="me.video.html">video</a></li><li><a href="window.me.html">me</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Howler">Howler</a></li></ul>
+</nav>
+
+<div id="main">
+    <h1 class="page-title">Class: Tile</h1>
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+    Tile
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <h4 class="name" id="Tile"><span class="type-signature"></span>new Tile<span class="signature">(x, y, w, h, tileId)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        a basic tile object
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">x index of the Tile in the map</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">y index of the Tile in the map</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>w</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Tile width</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>h</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Tile height</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>tileId</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">tileId</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        level/TMXTileset.js, line 38
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+        
+        <ul>
+            <li><a href="me.Rect.html">me.Rect</a></li>
+        </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="flipAD"><span class="type-signature"></span>flipAD<span class="type-signature"> :Boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        True if the tile is flipped anti-diagonally<br>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        level/TMXTileset.js, line 88
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="flipped"><span class="type-signature"></span>flipped<span class="type-signature"> :Boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Global flag that indicates if the tile is flipped<br>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        level/TMXTileset.js, line 96
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="flipX"><span class="type-signature"></span>flipX<span class="type-signature"> :Boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        True if the tile is flipped horizontally<br>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        level/TMXTileset.js, line 72
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="flipY"><span class="type-signature"></span>flipY<span class="type-signature"> :Boolean</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        True if the tile is flipped vertically<br>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        level/TMXTileset.js, line 80
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="tileId"><span class="type-signature"></span>tileId<span class="type-signature"> :int</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        tileId
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        level/TMXTileset.js, line 39
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="tileset"><span class="type-signature"></span>tileset<span class="type-signature"> :<a href="me.TMXTileset.html">me.TMXTileset</a></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        tileset
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        level/TMXTileset.js, line 47
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Tue Mar 11 2014 13:24:56 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+</body>
+</html>

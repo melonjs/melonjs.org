@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>melonJS API documentation : Class: SpriteObject</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="logo">
+    <div style="position: absolute;left:64px;top:8px">
+        <img src="images/logo.png" position="absolute">
+    </div>
+    <div id="logo_text">
+        <!-- class="logo_colour", allows you to change the colour of the text -->
+        <h1><a style="text-decoration:none" href="http://www.melonjs.org">melon<span class="logo_colour">JS</span></a></h1>
+        <h2>A lightweight HTML5 game engine</h2>
+    </div>
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Externals</h3><ul><li><a href="external-Array.html">Array</a></li><li><a href="external-Event.html">Event</a></li><li><a href="external-Function.html">Function</a></li><li><a href="external-Number.html">Number</a></li><li><a href="external-Object.html">Object</a></li><li><a href="external-String.html">String</a></li><li><a href="external-window.html">window</a></li></ul><h3>Classes</h3><ul><li><a href="me.AnimationSheet.html">AnimationSheet</a></li><li><a href="me.BitmapFont.html">BitmapFont</a></li><li><a href="me.CollectableEntity.html">CollectableEntity</a></li><li><a href="me.Color.html">Color</a></li><li><a href="me.ColorLayer.html">ColorLayer</a></li><li><a href="me.Ellipse.html">Ellipse</a></li><li><a href="me.Font.html">Font</a></li><li><a href="me.GUI_Object.html">GUI_Object</a></li><li><a href="me.ImageLayer.html">ImageLayer</a></li><li><a href="me.LevelEntity.html">LevelEntity</a></li><li><a href="me.Matrix2d.html">Matrix2d</a></li><li><a href="me.ObjectContainer.html">ObjectContainer</a></li><li><a href="me.ObjectEntity.html">ObjectEntity</a></li><li><a href="me.ObjectSettings.html">ObjectSettings</a></li><li><a href="me.Particle.html">Particle</a></li><li><a href="me.ParticleContainer.html">ParticleContainer</a></li><li><a href="me.ParticleEmitter.html">ParticleEmitter</a></li><li><a href="me.ParticleEmitterSettings.html">ParticleEmitterSettings</a></li><li><a href="me.plugin.Base.html">plugin.Base</a></li><li><a href="me.PolyShape.html">PolyShape</a></li><li><a href="me.Rect.html">Rect</a></li><li><a href="me.Renderable.html">Renderable</a></li><li><a href="me.ScreenObject.html">ScreenObject</a></li><li><a href="me.SpriteObject.html">SpriteObject</a></li><li><a href="me.TextureAtlas.html">TextureAtlas</a></li><li><a href="me.Tile.html">Tile</a></li><li><a href="me.TMXLayer.html">TMXLayer</a></li><li><a href="me.TMXObject.html">TMXObject</a></li><li><a href="me.TMXObjectGroup.html">TMXObjectGroup</a></li><li><a href="me.TMXTileMap.html">TMXTileMap</a></li><li><a href="me.TMXTileset.html">TMXTileset</a></li><li><a href="me.TMXTilesetGroup.html">TMXTilesetGroup</a></li><li><a href="me.Tween.html">Tween</a></li><li><a href="me.Vector2d.html">Vector2d</a></li><li><a href="me.Viewport.html">Viewport</a></li></ul><h3>Namespaces</h3><ul><li><a href="me.agent.html">agent</a></li><li><a href="me.audio.html">audio</a></li><li><a href="me.debug.html">debug</a></li><li><a href="me.device.html">device</a></li><li><a href="me.event.html">event</a></li><li><a href="me.game.html">game</a></li><li><a href="me.input.html">input</a></li><li><a href="me.levelDirector.html">levelDirector</a></li><li><a href="me.loader.html">loader</a></li><li><a href="me.plugin.html">plugin</a></li><li><a href="me.pool.html">pool</a></li><li><a href="me.save.html">save</a></li><li><a href="me.state.html">state</a></li><li><a href="me.sys.html">sys</a></li><li><a href="me.timer.html">timer</a></li><li><a href="me.utils.html">utils</a></li><li><a href="me.video.html">video</a></li><li><a href="window.me.html">me</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Howler">Howler</a></li></ul>
+</nav>
+
+<div id="main">
+    <h1 class="page-title">Class: SpriteObject</h1>
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+    SpriteObject
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <h4 class="name" id="SpriteObject"><span class="type-signature"></span>new SpriteObject<span class="signature">(x, y, image, <span class="optional">spritewidth</span>, <span class="optional">spriteheigth</span>)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        A Simple object to display a sprite on screen.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">the x coordinates of the sprite object</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">the y coordinates of the sprite object</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>image</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Image</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">reference to the Sprite Image. See me.loader#getImage</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>spritewidth</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">sprite width</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>spriteheigth</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">sprite height</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 25
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// create a static Sprite ObjectmySprite = new me.SpriteObject (100, 100, me.loader.getImage("mySpriteImage"));</code></pre>
+
+    
+</dd>
+
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+        
+        <ul>
+            <li><a href="me.Renderable.html">me.Renderable</a></li>
+        </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="alpha"><span class="type-signature"></span>alpha<span class="type-signature"> :Number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Define the renderable opacity<br>Set to zero if you do not wish an object to be drawn
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="me.Renderable.html#alpha">me.Renderable#alpha</a>
+    </li></dd>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/base.js, line 116
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li>me.Renderable#setOpacity</li>
+        
+            <li>me.Renderable#getOpacity</li>
+        </ul>
+    </dd>
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="angle"><span class="type-signature"></span>angle<span class="type-signature"> :Number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Set the angle (in Radians) of a sprite to rotate it <br>WARNING: rotating sprites decreases performances
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 45
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="draw"><span class="type-signature">&lt;protected, static> </span>draw<span class="signature">(context)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        object draw<br>not to be called by the end user<br>called by the game manager on each game loop
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>context</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Context2d</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">2d Context on which draw our object</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 253
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="flicker"><span class="type-signature">&lt;static> </span>flicker<span class="signature">(duration, callback)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        make the object flicker
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>duration</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">expressed in milliseconds</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Function to call when flickering ends</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 130
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// make the object flicker for 1 second// and then remove itthis.flicker(1000, function(){   me.game.world.removeChild(this);});</code></pre>
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="flipX"><span class="type-signature">&lt;static> </span>flipX<span class="signature">(flip)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Flip object on horizontal axis
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>flip</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">enable/disable flip</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 157
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="flipY"><span class="type-signature">&lt;static> </span>flipY<span class="signature">(flip)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Flip object on vertical axis
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>flip</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">enable/disable flip</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 176
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isFlickering"><span class="type-signature">&lt;static> </span>isFlickering<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return the flickering state of the object
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 118
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Boolean</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="onDestroyEvent"><span class="type-signature">&lt;static> </span>onDestroyEvent<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        OnDestroy Notification function<br>Called by engine before deleting the object
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 325
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="resize"><span class="type-signature">&lt;static> </span>resize<span class="signature">(ratioX, ratioY)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Resize the sprite around his center<br>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>ratioX</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">x scaling ratio</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ratioY</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">y scaling ratio</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 195
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="resizeV"><span class="type-signature">&lt;static> </span>resizeV<span class="signature">(vector)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Resize the sprite around his center<br>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>vector</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.Vector2d.html">me.Vector2d</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">ratio</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 217
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="setTransparency"><span class="type-signature">&lt;static> </span>setTransparency<span class="signature">(color)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        specify a transparent color
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>color</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">color key in "#RRGGBB" format</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+        <dt class="important tag-deprecated">Deprecated:</dt><dd><ul class="dummy"><li>Use PNG or GIF with transparency instead</li><ul></dd>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 103
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="update"><span class="type-signature">&lt;protected, static> </span>update<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        sprite update<br>not to be called by the end user<br>called by the game manager on each game loop
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        renderable/sprite.js, line 229
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    false
+</div>
+
+
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Tue Mar 11 2014 13:24:55 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+</body>
+</html>
