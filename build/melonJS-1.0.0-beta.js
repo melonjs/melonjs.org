@@ -6809,10 +6809,9 @@ window.me = window.me || {};
 		collidable : true,
 
 		/**
-		 * Entity collision shapes<br>
-		 * (RFU - Reserved for Future Usage)
-		 * @ignore
-		 * @type Object[]
+		 * The collision shapes of the entity <br>
+		 * (note: only shape at index 0 is used in melonJS 1.0.x)
+		 * @type {me.Rect[]|me.PolyShape[]|me.Ellipse[]} 
 		 * @name shapes
 		 * @memberOf me.ObjectEntity
 		 */
@@ -13318,12 +13317,16 @@ window.me = window.me || {};
             } else if (tileset[me.TMX_TAG_TILE]) {
                 // converted XML format
                 tileInfo = tileset[me.TMX_TAG_TILE];
+                if (!Array.isArray(tileInfo)) {
+                    tileInfo = [ tileInfo ];
+				}
+				// iterate it
                 for ( var j = 0; j < tileInfo.length; j++) {
                     var tileID = tileInfo[j][me.TMX_TAG_ID] + this.firstgid;
                     var prop = {};
                     me.TMXUtils.applyTMXPropertiesFromJSON(prop, tileInfo[j]);
                     //apply tiled defined properties
-                    this.setTileProperty(tileID, prop);   
+                    this.setTileProperty(tileID, prop);
                 }
             }
 			
