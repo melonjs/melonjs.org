@@ -4,9 +4,9 @@ game.resources = [
      * @example
      * { name: "example", type:"image", src: "data/img/example.png" },
      */
-    { name: "tileset",         type:"image",   src: "http://melonjs.github.io/melonJS/examples/platformer/data/img/tileset.png" },
-    { name: "background",      type:"image",   src: "http://melonjs.github.io/melonJS/examples/platformer/data/img/background.png" },
-    { name: "clouds",          type:"image",   src: "http://melonjs.github.io/melonJS/examples/platformer/data/img/clouds.png" },
+    { name: "tileset",         type:"image",   src: "data/img/tileset.png" },
+    { name: "background",      type:"image",   src: "data/img/background.png" },
+    { name: "clouds",          type:"image",   src: "data/img/clouds.png" },
 
     /* Maps.
      * @example
@@ -47,13 +47,13 @@ game.resources = [
      */
     // texturePacker
     { name: "texture",         type: "json",   src: "http://melonjs.github.io/melonJS/examples/platformer/data/img/texture.json" },
-    { name: "texture",         type: "image",  src: "http://melonjs.github.io/melonJS/examples/platformer/data/img/texture.png" },
+    { name: "texture",         type: "image",  src: "data/img/texture.png" },
 
     /* Bitmap Font
     * @example
     * { name: "example_fnt", type: "image", src: "data/img/example_fnt.png" },
     * { name: "example_fnt", type: "binary", src: "data/img/example_fnt.fnt" },
     */
-    { name: "PressStart2P", type:"image", src: "http://melonjs.github.io/melonJS/examples/platformer/data/fnt/PressStart2P.png" },
+    { name: "PressStart2P", type:"image", src: "data/fnt/PressStart2P.png" },
     { name: "PressStart2P", type:"binary", src: "http://melonjs.github.io/melonJS/examples/platformer/data/fnt/PressStart2P.fnt"}
 ];
