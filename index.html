@@ -1,193 +1,416 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>melonJS - Homepage</title>
-  <meta name="description" content="melonJS - A lightweight HTML5 game engine" />
-  <meta name="keywords" content="HTML5, javascript, lightweight, canvas, game, engine, framework, tiled, tile, map, loader, parser, TMX, XML" />
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
-  <link rel="stylesheet" href="scripts/nivo-slider.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="scripts/default.css" type="text/css" media="screen" />
-  <script type="text/javascript">
-    /* <![CDATA[ */
-    (function() {
-      var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
-      t.parentNode.insertBefore(s, t);
-    })();
-    /* ]]> */
-  </script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="icon" href="style/favicon.png">
+  <title>melonJS</title>
 </head>
 <body>
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="http://www.melonjs.org">melon<span class="logo_colour">JS</span></a></h1>
-          <h2>A lightweight HTML5 game engine</h2>
-        </div>
+
+  <a id="top"></a>
+
+  <a class="fade-slow forkme collapse" href="https://github.com/melonjs/melonjs">
+    <img
+      src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67"
+      alt="Fork me on GitHub"
+      data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_ffffff.png"
+    >
+  </a>
+
+  <nav class="fade-slow navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">melon<span class="logo">JS</a></a>
       </div>
-      <div id="menubar">
-        <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="index.html">Home</a></li>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html#top">Home</a></li>
+          <li><a href="https://github.com/melonjs/melonJS/releases">Download</a></li>
+          <li><a href="http://melonjs.github.io/docs/">API</a></li>
+          <li><a href="index.html##getting-started">Getting Started</a></li>
           <li><a href="http://blog.melonjs.org/">Blog</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="download.html">Download</a></li>
-          <li><a href="forum.html">Forum</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS">Gallery</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/melonjs">Forum</a></li>
+          <li><a href="https://github.com/melonjs/melonJS#questions-need-help-">Contact Us</a></li>
+          <li class="mobile-forkme"><a href="https://github.com/melonjs/melonjs">Github</a></li>
         </ul>
       </div>
     </div>
-    <div id="site_content">
-      <a href="https://github.com/melonjs/melonjs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
-      <div class="sidebar">
-        <p>
-          <img src="media/icons/HTML5_Badge_128.png"/><br>
-        </p>
-        <h3>Getting Started</h3>
-        <ul>
-          <li><a href="https://github.com/melonjs/boilerplate">Project Boilerplate</a></li>
-          <li><a href="http://melonjs.github.io/tutorial-platformer/">Platformer Tutorial</a></li>
-          <li><a href="http://melonjs.github.io/tutorial-space-invaders/">Space Invaders Tutorial</a></li>
-        </ul>
-        <h3>Support</h3>
-        <ul>
-          <li><a href="http://melonjs.github.io/melonJS/docs/">Online Documentation</a></li>
-          <li><a href="https://github.com/melonjs/melonJS/wiki">Wiki Page</a></li>
-          <li><a href="http://www.melonjs.org/forum">Developer Forum</a></li>
-          <li><a href="https://gitter.im/melonjs/public">Developer Chat</a></li>
-        </ul>
-        <h3>Editors &amp; Tools</h3>
-        <ul>
-          <li><a href="http://www.mapeditor.org/">Tiled</a></li>
-          <li><a href="https://www.codeandweb.com/texturepacker">TexturePacker</a></li>
-          <li><a href="http://renderhjs.net/shoebox/">ShoeBox</a></li>
-          <li><a href="https://www.codeandweb.com/physicseditor">PhysicEditor</a></li>
-          <li><a href="http://www.aurelienribon.com/blog/projects/physics-body-editor/">Physic Body Editor</a></li>
-        </ul>
-        <h3>Contributing</h3>
-        <ul>
-          <li><a href="http://github.com/melonjs/melonJS">Github Repository</a></li>
-          <li><a href="https://github.com/melonjs/melonJS/issues">Issues Tracker</a></li>
-          <li><a href="https://github.com/melonjs/melonJS/pulls">Submit a patch (Pull Request)</a></li>
-          <li><a href="http://melonjs.org/contact.html#donating">Donating</a></li>
-        </ul>
-        <h3>Useful Links</h3>
-        <ul>
-          <li><a href="http://www.marketjs.com/">marketJS</a></li>
-          <li><a href="http://clay.io/">clay.io</a></li>
-        </ul>
-        <ul>
-          <center><img src="http://www.opensource.org/files/garland_logo.png"/></center>
-        </ul>
-      </div>
-      <div id="content">
-        <!-- insert the page content here -->
-        <h2>Fresh &amp; lightweight</h2>
-        <p>
-          melonJS is a lightweight but yet powerful HTML5 framework designed from the ground up to provide a true plugin-free
-          'write-once, run-everywhere' gaming oriented library. melonJS is an open-source project and supported by a community of enthusiasts.
-          See our <a href="gallery.html">Gallery</a> for a few examples of games powered by melonJS.
-        </p>
-        <h2>Powerful level design through Tiled</h2>
-        <p>
-          melonJS integrates the popular Tiled map format, allowing to easily design levels using the <a href="http://www.mapeditor.org/">Tiled map editor</a>, and to focus on the game features itself.
-        </p>
-        <div class="slider-wrapper theme-default">
-          <div id="slider" class="nivoSlider">
-            <img src="media/carousel/alex4.png" alt="" title="Fast and Powerful level design through Tiled" />
-            <a href="http://melonjs.github.io/examples/whack-a-mole/"><img src="media/carousel/whack-a-mole.png" alt="" title="Write once, run everywhere !" /></a>
-            <a href="http://blipjoy.github.io/sprung_fever/public/index.html"><img src="media/carousel/sprungfever.png" alt="" title="Sprungfever, a One Game A Month entry !" /></a>
-            <a href="http://www.nurph.com/"><img src="media/carousel/nurph.png" alt="" title="The Nurph home page is powered by melonJS" /></a>
-            <a href="http://ellisonleao.github.io/clumsy-bird/"><img src="media/carousel/clumsy-bird.png" alt="" title="a melonJS 'Flappy Bird' clone !" /></a>
-            <a href="http://masterspygame.com/"><img src="media/carousel/master-spy.png" alt="" title="a Steam Greenlight game, by TurboGun" /></a>
-          </div>
-        </div>
-        <h2>Free and open-source</h2>
-        <p>
-          melonJS is an open-source HTML5 based community game engine, released under the MIT license. You can <a href="https://github.com/melonjs/melonJS">join</a> the project, or modify or extend the framework in any way to fit your needs.
-        </p>
-        <h2>Feature list :</h2>
-        <ul>
-          <li>A fresh and lightweight 2D sprite-based engine</li>
-          <li>Standalone library (no additional dependencies)</li>
-          <li>Modern HTML5 features; WebAudio &amp; WebGL on supported devices</li>
-          <li>High DPI &amp; auto scaling video modes</li>
-          <li>Tween &amp; Transition effects</li>
-          <li>Compatible with all major browsers &amp; mobile devices:
-            <ul>
-              <li>Chrome, Safari, Firefox, Opera, IE</li>
-              <li>Android, iOS, CocoonJS</li>
-            </ul>
-          </li>
-          <li>A lightweight physics implementation to ensure low cpu requirements:
-            <ul>
-              <li>Polygon (SAT) based collision algorithm for accurate detection and response</li>
-              <li>Fast broad-phase collision detection using spatial partitioning</li>
-              <li>Advanced math API for Vector and Matrix</li>
-              <li>3rd party tools support for physic body definition (PhysicEditor, Physic Body Editor)</li>
-            </ul>
-          </li>
-          <li>A basic set of extensible Object Entities:
-            <ul>
-              <li>Object Pooling</li>
-              <li>Basic Particle System</li>
-              <li>Basic animation management</li>
-              <li>Standard spritesheet and Packed Textures (TexturePacker, Shoebox) support</li>
-              <li>Some basic GUI elements</li>
-            </ul>
-          </li>
-          <li>Tiled map format version +0.9.x integration for easy level design:
-            <ul>
-              <li>Orthogonal, Isometric, Hexagonal, and Perspective tilemap support</li>
-              <li>Multiple layers with parallax scrolling</li>
-              <li>Shape-based collision layers (Rectangle, Ellipse, Polygon, and Polyline)</li>
-              <li>JSON and XML formats</li>
-            </ul>
-          </li>
-          <li>System and Bitmap fonts</li>
-          <li>A state manager and customizable loader</li>
-          <li>Mouse, Touch, and Pointer device support</li>
-          <li>Device motion, orientation, and accelerometer support</li>
-        </ul>
-        <span class="right"><img src="media/icons/browser_icons.png" alt="browser icons example" /></span>
-        <h2>Browser Compatibility</h2>
-        <p>See below about melonJS and compatibility with the various existing browsers.</p>
-        <table style="width:100%; border-spacing:0;">
-          <tr><th>Browser</th><th>Version</th><th>Status</th></tr>
-          <tr><td><a href="http://www.google.com/chrome/">Chrome</a></td><td> 12+</td><td>fully working</td></tr>
-          <tr><td><a href="http://www.apple.com/safari/">Safari</a></td><td>5.0+</td><td>fully working</td></tr>
-          <tr><td><a href="http://www.mozilla.com/">Firefox</a></td><td>4+</td><td>fully working</td></tr>
-          <tr><td><a href="http://www.opera.com/">Opera</a></td><td>11.00+</td><td>fully working</td></tr>
-          <tr><td><a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie">IE</a></td><td>9+</td><td>fully working</td></tr>
-        </table>
-      </div>
-    </div>
-    <div id="content_footer"></div>
-    <div id="footer">
-      Copyright &copy; melonJS 2011 - 2016
+  </nav>
+
+  <div class="fade-slow jumbotron">
+    <div class="container">
+      <h1>Fresh &amp; Lightweight</h1>
+      <p>melonJS is an open source HTML5 game engine that empowers developers and designers to focus on content.</p>
+      <p>
+        The framework provides a collection of composable entities and support for a number of <a href="#third-party">third-party tools</a>.
+        Giving you a powerful combination that can be used wholesale or piecemeal.
+      </p>
+      <p>
+        <a class="btn btn-primary btn-lg" href="https://github.com/melonjs/melonJS/releases" role="button"><span class="glyphicon glyphicon-save"></span> Download</a>
+        <a class="btn btn-default btn-lg" href="http://melonjs.github.io/docs/" role="button">Read The Docs &raquo;</a>
+      </p>
     </div>
   </div>
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-13050059-3']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-  <script type="text/javascript" src="scripts/jquery-1.8.3.min.js"></script>
-  <script type="text/javascript" src="scripts/jquery.nivo.slider.js"></script>
+  <div id="attract">
+    <div id="screen"></div>
+  </div>
+
+  <div class="fade-slow">
+    <div class="band">
+      <div class="container">
+        <h2>Try Me!</h2>
+        <hr>
+        <p>Use the following keys to start playing a simple game built with melonJS. Try it with a gamepad!<!-- (TODO: Make it work on mobile.) --></p>
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-5">
+            <table class="table table-condensed">
+              <thead>
+                <tr><th>Key</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <tr><th><kbd><span class="glyphicon glyphicon-chevron-up"></span></kbd> <kbd>W</kbd> <kbd>Spacebar</kbd></th><td>Jump</td></tr>
+                <tr><th><kbd><span class="glyphicon glyphicon-chevron-left"></span></kbd> <kbd>A</kbd></th><td>Walk Left</td></tr>
+                <tr><th><kbd><span class="glyphicon glyphicon-chevron-down"></span></kbd> <kbd>S</kbd></th><td>Drop Down</td></tr>
+                <tr><th><kbd><span class="glyphicon glyphicon-chevron-right"></span></kbd> <kbd>D</kbd></th><td>Walk Right</td></tr>
+                <tr><th><kbd>F</kbd></th><td>Full-Screen Mode</td></tr>
+                <tr><th><kbd>Esc</kbd></th><td>Exit Game</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>See you in a bit!</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="container">
+        <p>
+          melonJS is a lightweight yet powerful HTML5 framework designed from the ground up to provide a true plugin-free
+          'write-once, run-everywhere' gaming platform. melonJS is an open-source project and supported by a community of enthusiasts.
+          See our <a href="gallery.html">Gallery</a> for a few examples of games powered by melonJS.
+        </p>
+        <h2>Getting Started<a id="getting-started" class="anchor"></a></h2>
+        <hr>
+        <ul id="getting-started">
+          <li><a href="http://melonjs.github.io/tutorial-platformer/">Platformer Tutorial</a>
+          <li><a href="http://melonjs.github.io/tutorial-space-invaders/">Space Invaders Tutorial</a>
+          <li><a href="https://github.com/melonjs/boilerplate">Boilerplate Project</a>
+        </ul>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Fast</h2>
+            <blockquote>
+              <p>Built with future technology.</p>
+              <ul>
+                <li>WebGL
+                <li>WebAudio
+                <li>ES6 Collections
+              </ul>
+            </blockquote>
+          </div>
+          <div class="col-md-4">
+            <h2>Free</h2>
+            <blockquote>
+              <p>Released under the permissive MIT License.</p>
+              <p>No cost.</p>
+              <p>Royalty free.</p>
+              <p>Forever.</p>
+            </blockquote>
+          </div>
+          <div class="col-md-4">
+            <h2>Elegant</h2>
+            <blockquote>
+              <p>Your scene graph is a hierarchy of containers.</p>
+              <p>Updates and drawing operations are dispatched separately.</p>
+              <p>Draws are opt-in; add compute-only entities for AI, special effects, etc.</p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="container">
+        <h2>Powerful Level Design</h2>
+        <hr>
+        <p>
+          melonJS integrates the popular Tiled map format, allowing designers easily create levels using the
+          <a href="http://www.mapeditor.org/">Tiled map editor</a>, and to focus on the game features itself.
+        </p>
+        <img src="media/alex4-github.png" alt="" title="Fast and Powerful level design through Tiled">
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="container">
+        <h2>Developer Spotlight</h2>
+        <hr>
+        <p><a href="http://masterspygame.com/">Master Spy</a> by Turbogun</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/WpNllTmnXFQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Features</h2>
+            <hr>
+            <ul>
+              <li>A fresh and lightweight 2D sprite-based engine
+              <li>Standalone library (no additional dependencies)
+              <li>Modern HTML5 features; WebGL &amp; WebAudio
+              <li>High DPI &amp; auto scaling video modes
+              <li>Tween &amp; Transition effects
+              <li>2D physics with low cpu requirements:
+                <ul>
+                  <li>Polygon (SAT) based collision algorithm for accurate detection and response
+                  <li>Fast broad-phase collision detection using spatial partitioning
+                  <li>Advanced math API for Vector and Matrix
+                </ul>
+              </li>
+
+              <li>A basic set of extensible Object Entities:
+                <ul>
+                  <li>Object Pooling
+                  <li>Basic Particle System
+                  <li>Basic animation management
+                  <li>Standard spritesheet and Packed Textures (Texture Packer) support
+                  <li>Some basic GUI elements
+                </ul>
+              </li>
+
+              <li>Tiled map format integration for easy level design:
+                <ul>
+                  <li>Orthogonal, Isometric, Hexagonal, and Perspective tilemap support
+                  <li>Multiple layers with parallax scrolling
+                  <li>Shape-based collision layers (Rectangle, Ellipse, Polygon, and Polyline)
+                  <li>JSON and XML formats
+                </ul>
+              </li>
+
+              <li>System and Bitmap fonts
+              <li>A state manager and customizable loader
+              <li>Mouse, Touch, Pointer, and Gamepad device support
+              <li>Device motion, orientation, and accelerometer support
+            </ul>
+          </div>
+
+          <div class="col-md-6">
+            <img class="right vspacer-20" src="media/icons/browser_icons.png" alt="browser icons example">
+            <h2>Compatibility</h2>
+            <hr>
+            <p>See below about melonJS and compatibility with the various existing browsers.</p>
+            <table class="table">
+              <thead>
+                <tr><th>Browser</th><th>Version</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>
+                    <a href="http://www.google.com/chrome/">Chrome</a>
+                  </th>
+                  <td>12+</td>
+                  <td><span class="glyphicon glyphicon-check text-success"></span></td>
+                </tr>
+                <tr>
+                  <th><a href="http://www.apple.com/safari/">Safari</a></th>
+                  <td>5.0+</td>
+                  <td><span class="glyphicon glyphicon-check text-success"></span></td>
+                </tr>
+                <tr>
+                  <th><a href="http://www.mozilla.com/">Firefox</a></th>
+                  <td>4+</td>
+                  <td><span class="glyphicon glyphicon-check text-success"></span></td>
+                </tr>
+                <tr>
+                  <th><a href="http://www.opera.com/">Opera</a></th>
+                  <td>11.00+</td>
+                  <td><span class="glyphicon glyphicon-check text-success"></span></td>
+                </tr>
+                <tr>
+                  <th><a href="http://windows.microsoft.com/en-US/internet-explorer/downloads/ie">IE</a></th>
+                  <td>9+</td>
+                  <td><span class="glyphicon glyphicon-check text-success"></span></td>
+                </tr>
+                <tr>
+                  <th><a href="https://www.ludei.com/cocoonjs/">CocoonJS</a></th>
+                  <td>2.0+</td><td><span class="glyphicon glyphicon-check text-success"></span></td>
+                </tr>
+                <tr>
+                  <th><a href="https://www.google.com/chrome/browser/mobile/">Chrome for Mobile</a></th>
+                  <td><span class="text-warning">?</span></td>
+                  <td><span class="glyphicon glyphicon-check text-success"></span></td>
+                </tr>
+                <tr>
+                  <th><a href="http://www.apple.com/safari/">iOS Safari</a></th>
+                  <td>6+</td>
+                  <td><span class="glyphicon glyphicon-check text-success"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="container">
+        <h3>Third Party Tools Integration<a id="third-party" class="anchor"></a></h3>
+        <hr>
+        melonJS provides native integration and support for the following 3rd party tools :
+        <ul>
+            <li><a href="https://github.com/bjorn/tiled/wiki">Tiled</a>
+            <li><a href="https://github.com/melonjs/melonJS/wiki/How-to-use-Texture-Atlas-with-TexturePacker">TexturePacker</a>
+            <li><a href="https://github.com/melonjs/melonJS/wiki/shoebox">Shoebox</a>
+            <li><a href="https://github.com/melonjs/melonJS/wiki/How-to-load-PhysicEditor-Shapes-into-your-project">PhysicEditor</a>
+            <li><a href="https://github.com/melonjs/melonJS/wiki/How-to-generate-and-use-Bitmap-Font-in-melonJS">BitmapFont Generator</a>
+            <li><a href="https://github.com/melonjs/melonJS/wiki/Making-your-game-into-a-mobile-hybrid-app#cordova">Cordova/PhoneGag</a>
+            <li><a href="https://github.com/melonjs/melonJS/wiki/Making-your-game-into-a-mobile-hybrid-app#cocoon-js">CocoonJS</a>
+            <li><a href="https://github.com/melonjs/melonJS/wiki/How-to-build-your-game-for-tvOS-(or-iOS)-using-Ejecta">Ejecta</a>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="attract"></div>
+
+  <div id="footer" class="fade-slow">
+    <div class="container">
+      <footer>
+        <p>&copy; melonJS team 2011-2016</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- melonJS -->
+  <script src="http://melonjs.github.io/melonJS/build/melonJS.js"></script>
+  <script src="http://melonjs.github.io/melonJS/build/plugins/debug/debugPanel.js"></script>
+  <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/game.js"></script>
+  <!-- https://github.com/melonjs/melonJS/issues/215#issuecomment-263482816 -->
+  <script type="text/javascript" src="js/resources.js"></script>
+  <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/entities/coin.js"></script>
+  <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/entities/enemies.js"></script>
+  <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/entities/player.js"></script>
+  <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/entities/HUD.js"></script>
+  <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/screens/play.js"></script>
   <script type="text/javascript">
-    $(window).load(function() {
-      $('#slider').nivoSlider();
+    window.onReady(function onReady() {
+      game.onload();
+
+      // mute audio for the website
+      me.audio.muteAll();
+
+      // Mobile browser hacks
+      if (me.device.isMobile && !navigator.isCocoonJS) {
+        // Prevent the webview from moving on a swipe
+        window.document.addEventListener("touchmove", function (e) {
+          e.preventDefault();
+          window.scroll(0, 0);
+          return false;
+        }, false);
+
+        // Scroll away mobile GUI
+        (function () {
+          window.scrollTo(0, 1);
+          me.video.onresize(null);
+        }).defer();
+
+        me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
+          window.scrollTo(0, 1);
+        });
+      }
+      else {
+        /*
+         * Some extra magic to toggle the website UI on demand
+         */
+        function fade_in() {
+          var els = document.querySelectorAll(".fade-slow, .fade-fast");
+          Array.prototype.slice.call(els).forEach(function (el) {
+            if (el.classList.contains("transparent")) {
+              el.classList.add("fade-fast");
+              el.classList.remove("fade-slow");
+              el.classList.remove("transparent");
+
+              setTimeout(function () {
+                el.classList.add("fade-slow");
+                el.classList.remove("fade-fast");
+              }, 200);
+            }
+          });
+
+           me.audio.muteAll();
+
+          // Change FPS
+          if (me.sys.fps !== 25) {
+            me.sys.fps = 25;
+            me.game.updateFrameRate();
+          }
+        }
+
+        function fade_out() {
+          var els = document.querySelectorAll(".fade-slow, .fade-fast");
+          Array.prototype.slice.call(els).forEach(function (el) {
+            el.classList.add("transparent");
+          });
+
+           me.audio.unmuteAll();
+
+          // Change FPS
+          if (me.sys.fps !== 60) {
+            me.sys.fps = 60;
+            me.game.updateFrameRate();
+          }
+        }
+
+        me.event.subscribe(me.event.KEYDOWN, function (action, keycode) {
+          switch (keycode) {
+            case me.input.KEY.ESC:
+              fade_in();
+              break;
+
+            case me.input.KEY.W:
+            case me.input.KEY.A:
+            case me.input.KEY.S:
+            case me.input.KEY.D:
+            case me.input.KEY.F:
+            case me.input.KEY.SPACE:
+            case me.input.KEY.UP:
+            case me.input.KEY.DOWN:
+            case me.input.KEY.LEFT:
+            case me.input.KEY.RIGHT:
+              fade_out();
+              break;
+          }
+        });
+
+        setTimeout(function () {
+          window.addEventListener("scroll", fade_in);
+        }, 100);
+      }
     });
   </script>
 </body>
