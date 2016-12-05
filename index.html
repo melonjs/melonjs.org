@@ -334,93 +334,72 @@
       // mute audio for the website
       me.audio.muteAll();
 
-      // Mobile browser hacks
-      if (me.device.isMobile && !navigator.isCocoonJS) {
-        // Prevent the webview from moving on a swipe
-        window.document.addEventListener("touchmove", function (e) {
-          e.preventDefault();
-          window.scroll(0, 0);
-          return false;
-        }, false);
+      /*
+       * Some extra magic to toggle the website UI on demand
+       */
+      function fade_in() {
+        var els = document.querySelectorAll(".fade-slow, .fade-fast");
+        Array.prototype.slice.call(els).forEach(function (el) {
+          if (el.classList.contains("transparent")) {
+            el.classList.add("fade-fast");
+            el.classList.remove("fade-slow");
+            el.classList.remove("transparent");
 
-        // Scroll away mobile GUI
-        (function () {
-          window.scrollTo(0, 1);
-          me.video.onresize(null);
-        }).defer();
-
-        me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
-          window.scrollTo(0, 1);
-        });
-      }
-      else {
-        /*
-         * Some extra magic to toggle the website UI on demand
-         */
-        function fade_in() {
-          var els = document.querySelectorAll(".fade-slow, .fade-fast");
-          Array.prototype.slice.call(els).forEach(function (el) {
-            if (el.classList.contains("transparent")) {
-              el.classList.add("fade-fast");
-              el.classList.remove("fade-slow");
-              el.classList.remove("transparent");
-
-              setTimeout(function () {
-                el.classList.add("fade-slow");
-                el.classList.remove("fade-fast");
-              }, 200);
-            }
-          });
-
-           me.audio.muteAll();
-
-          // Change FPS
-          if (me.sys.fps !== 25) {
-            me.sys.fps = 25;
-            me.game.updateFrameRate();
-          }
-        }
-
-        function fade_out() {
-          var els = document.querySelectorAll(".fade-slow, .fade-fast");
-          Array.prototype.slice.call(els).forEach(function (el) {
-            el.classList.add("transparent");
-          });
-
-           me.audio.unmuteAll();
-
-          // Change FPS
-          if (me.sys.fps !== 60) {
-            me.sys.fps = 60;
-            me.game.updateFrameRate();
-          }
-        }
-
-        me.event.subscribe(me.event.KEYDOWN, function (action, keycode) {
-          switch (keycode) {
-            case me.input.KEY.ESC:
-              fade_in();
-              break;
-
-            case me.input.KEY.W:
-            case me.input.KEY.A:
-            case me.input.KEY.S:
-            case me.input.KEY.D:
-            case me.input.KEY.F:
-            case me.input.KEY.SPACE:
-            case me.input.KEY.UP:
-            case me.input.KEY.DOWN:
-            case me.input.KEY.LEFT:
-            case me.input.KEY.RIGHT:
-              fade_out();
-              break;
+            setTimeout(function () {
+              el.classList.add("fade-slow");
+              el.classList.remove("fade-fast");
+            }, 200);
           }
         });
 
-        setTimeout(function () {
-          window.addEventListener("scroll", fade_in);
-        }, 100);
+         me.audio.muteAll();
+
+        // Change FPS
+        if (me.sys.fps !== 25) {
+          me.sys.fps = 25;
+          me.game.updateFrameRate();
+        }
       }
+
+      function fade_out() {
+        var els = document.querySelectorAll(".fade-slow, .fade-fast");
+        Array.prototype.slice.call(els).forEach(function (el) {
+          el.classList.add("transparent");
+        });
+
+         me.audio.unmuteAll();
+
+        // Change FPS
+        if (me.sys.fps !== 60) {
+          me.sys.fps = 60;
+          me.game.updateFrameRate();
+        }
+      }
+
+      me.event.subscribe(me.event.KEYDOWN, function (action, keycode) {
+        switch (keycode) {
+          case me.input.KEY.ESC:
+            fade_in();
+            break;
+
+          case me.input.KEY.W:
+          case me.input.KEY.A:
+          case me.input.KEY.S:
+          case me.input.KEY.D:
+          case me.input.KEY.F:
+          case me.input.KEY.SPACE:
+          case me.input.KEY.UP:
+          case me.input.KEY.DOWN:
+          case me.input.KEY.LEFT:
+          case me.input.KEY.RIGHT:
+            fade_out();
+            break;
+        }
+      });
+
+      setTimeout(function () {
+        window.addEventListener("scroll", fade_in);
+      }, 100);
     });
   </script>
 </body>
