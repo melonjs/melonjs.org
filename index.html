@@ -229,7 +229,7 @@
           </div>
 
           <div class="col-md-6">
-            <img class="right vspacer-20" width="150" src="media/icons/browser_icons.png" alt="browser icons example">
+            <img class="right vspacer-20" src="media/icons/browser_icons.png" alt="browser icons example">
             <h2>Compatibility</h2>
             <hr>
             <p>See below about melonJS and compatibility with the various existing browsers.</p>
@@ -334,9 +334,26 @@
       // mute audio for the website
       me.audio.muteAll();
 
-      // NOTE : Scrolling does not work on mobile
-      // https://github.com/melonjs/melonjs.org/issues/5
-      if (!me.device.isMobile) {
+      // Mobile browser hacks
+      if (me.device.isMobile && !navigator.isCocoonJS) {
+        // Prevent the webview from moving on a swipe
+        window.document.addEventListener("touchmove", function (e) {
+          e.preventDefault();
+          window.scroll(0, 0);
+          return false;
+        }, false);
+
+        // Scroll away mobile GUI
+        (function () {
+          window.scrollTo(0, 1);
+          me.video.onresize(null);
+        }).defer();
+
+        me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
+          window.scrollTo(0, 1);
+        });
+      }
+      else {
         /*
          * Some extra magic to toggle the website UI on demand
          */
