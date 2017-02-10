@@ -311,7 +311,7 @@
   <div id="footer" class="fade-slow">
     <div class="container">
       <footer>
-        <p>&copy; melonJS team 2011-2016</p>
+        <p>&copy; melonJS team 2011-2017</p>
       </footer>
     </div>
   </div>
@@ -320,8 +320,7 @@
   <script src="http://melonjs.github.io/melonJS/build/melonJS.js"></script>
   <script src="http://melonjs.github.io/melonJS/build/plugins/debug/debugPanel.js"></script>
   <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/game.js"></script>
-  <!-- https://github.com/melonjs/melonJS/issues/215#issuecomment-263482816 -->
-  <script type="text/javascript" src="js/resources.js"></script>
+  <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/resources.js"></script>
   <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/entities/coin.js"></script>
   <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/entities/enemies.js"></script>
   <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/entities/player.js"></script>
@@ -329,6 +328,17 @@
   <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/screens/play.js"></script>
   <script type="text/javascript">
     window.onReady(function onReady() {
+      // enable cross-origin image loading
+      me.loader.crossOrigin = "anonymous"
+      // configure the baseURL for the loader
+      me.loader.setBaseURL("*", "http://melonjs.github.io/melonJS/examples/platformer/");
+      // enable swipe on mobile device
+      if (me.device.isMobile && !me.device.cocoon) {
+          // Prevent the webview from moving on a swipe
+          me.device.enableSwipe();
+      }
+
+      // game boostrap
       game.onload();
 
       // mute audio for the website
