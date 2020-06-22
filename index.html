@@ -191,14 +191,16 @@
             <ul>
               <li>A fresh and lightweight 2D sprite-based engine
               <li>Standalone library (no additional dependencies)
-              <li>Modern HTML5 features; WebGL &amp; WebAudio
+              <li>Fast WebGL renderer for desktop and mobile devices with fallback to Canvas rendering
+              <li>Web Audio support with fallback to Multi-channel HTML5 audio
               <li>High DPI &amp; auto scaling video modes
               <li>Tween &amp; Transition effects
-              <li>2D physics with low cpu requirements:
+              <li>Lightweight 2D physics implementation to ensure low cpu requirements
                 <ul>
                   <li>Polygon (SAT) based collision algorithm for accurate detection and response
                   <li>Fast broad-phase collision detection using spatial partitioning
                   <li>Advanced math API for Vector and Matrix
+                  <li>3rd party tools support for physic body definition (PhysicEditor, Physic Body Editor)
                 </ul>
               </li>
 
@@ -225,6 +227,8 @@
               <li>A state manager and customizable loader
               <li>Mouse, Touch, Pointer, and Gamepad device support
               <li>Device motion, orientation, and accelerometer support
+              <li>Built-in support for 3rd party Application Wrappers such as <a href="https://github.com/melonjs/melonJS/wiki/Making-your-game-into-a-mobile-hybrid-app#cordova">Cordova</a>
+              <li>As light as <a href="https://bundlephobia.com/result?p=melonjs@latest">~70kb</a> minified & gzipped
             </ul>
           </div>
 
@@ -266,10 +270,6 @@
                   <td><span class="glyphicon glyphicon-check text-success"></span></td>
                 </tr>
                 <tr>
-                  <th><a href="https://www.ludei.com/cocoonjs/">CocoonJS</a></th>
-                  <td>2.0+</td><td><span class="glyphicon glyphicon-check text-success"></span></td>
-                </tr>
-                <tr>
                   <th><a href="https://www.google.com/chrome/browser/mobile/">Chrome for Mobile</a></th>
                   <td>55+</td>
                   <td><span class="glyphicon glyphicon-check text-success"></span></td>
@@ -298,7 +298,6 @@
             <li><a href="https://github.com/melonjs/melonJS/wiki/How-to-load-PhysicEditor-Shapes-into-your-project">PhysicEditor</a>
             <li><a href="https://github.com/melonjs/melonJS/wiki/How-to-generate-and-use-Bitmap-Font-in-melonJS">BitmapFont Generator</a>
             <li><a href="https://github.com/melonjs/melonJS/wiki/Making-your-game-into-a-mobile-hybrid-app#cordova">Cordova/PhoneGap</a>
-            <li><a href="https://github.com/melonjs/melonJS/wiki/Making-your-game-into-a-mobile-hybrid-app#cocoon-js">CocoonJS</a>
             <li><a href="https://github.com/melonjs/melonJS/wiki/How-to-build-your-game-for-tvOS-(or-iOS)-using-Ejecta">Ejecta</a>
         </ul>
       </div>
@@ -311,14 +310,14 @@
   <div id="footer" class="fade-slow">
     <div class="container">
       <footer>
-        <p>&copy; melonJS team 2011-2018</p>
+        <p>&copy; melonJS team 2011-2020</p>
       </footer>
     </div>
   </div>
 
   <!-- melonJS -->
-  <script src="http://melonjs.github.io/melonJS/build/melonjs.js"></script>
-  <script src="http://melonjs.github.io/melonJS/plugins/debug/debugPanel.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/melonjs@latest/dist/melonjs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/melonjs@latest/plugins/debug/debugPanel.js"></script>
   <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/game.js"></script>
   <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/resources.js"></script>
   <script type="text/javascript" src="http://melonjs.github.io/melonJS/examples/platformer/js/entities/coin.js"></script>
@@ -334,7 +333,7 @@
       // configure the baseURL for the loader
       me.loader.setBaseURL("*", "http://melonjs.github.io/melonJS/examples/platformer/");
       // enable swipe on mobile device
-      if (me.device.isMobile && !me.device.cocoon) {
+      if (me.device.isMobile) {
           // Prevent the webview from moving on a swipe
           me.device.enableSwipe();
       }
