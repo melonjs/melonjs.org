@@ -6,7 +6,7 @@ body {
   min-height: 100vh;
   font-family: "Droid Sans", Tahoma, "Lucida Grande", sans-serif;
   font-size: 16px;
-  color: #666;
+  color: #fff;
 }
 
 blockquote {
@@ -80,20 +80,18 @@ a.anchor {
 }
 
 .navbar.navbar-inverse {
-  background-image: linear-gradient(to bottom, #666, #444);
-  background-color: #666;
+  background-color: #404040;
 }
 
 .navbar.navbar-inverse .navbar-brand {
-  font-family: "century gothic";
+  font-family: "Droid Sans";
   font-size: 22px;
   color: #fff;
 }
 
 .navbar.navbar-inverse .navbar-nav > .active > a,
 .navbar.navbar-inverse .navbar-nav > .open > a {
-  background-image: linear-gradient(to bottom, #333, #222);
-  background-color: #222;
+  background-color: #202020;
 }
 
 .forkme {
@@ -131,8 +129,8 @@ a.anchor {
 }
 
 .jumbotron {
-  background: url("../media/logo-bg.png") bottom -35px left 15% no-repeat, linear-gradient(to bottom, #5a0, #5ebd00) #5a0;
-  color: #e5f6d3;
+  background: bottom -35px left 15% no-repeat, #202020;
+  color: #fff;
   margin-top: 50px;
   padding-bottom: 68px;
 }
@@ -146,11 +144,12 @@ a.anchor {
 }
 
 .band:nth-child(2n+1) {
-  background-color: #e5f6d3;
+  background-color: #404040;
 }
 
 .band:nth-child(2n+0) {
   background-color: #fff;
+  color: #202020;
 }
 
 #getting-started {
@@ -163,29 +162,5 @@ a.anchor {
   padding-top: 40px;
   background-color: #fff;
   font-size: 14px;
-}
-
-#attract {
-  height: 400px;
-}
-
-/* melonJS */
-#screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-#screen canvas {
-  /* Hide the gap for font descenders. */
-  display: block;
-
-  /* Disable scaling interpolation */
-  image-rendering: optimizeSpeed;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -o-crisp-edges;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: optimize-contrast;
-  -ms-interpolation-mode: nearest-neighbor;
+  color: #202020;
 }
