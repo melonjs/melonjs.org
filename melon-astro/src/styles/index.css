@@ -1,0 +1,152 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+blockquote {
+  font-size: 14px;
+  border-left: 3px solid #ccc;
+}
+
+hr {
+  border-top: 1px solid #ccc;
+  margin-top: 0;
+}
+
+ul,
+ul ul {
+  margin-bottom: 10px;
+}
+
+td {
+  font-size: 14px;
+}
+
+img.right {
+  float: right;
+}
+
+img.vspacer-20 {
+  margin-bottom: 20px;
+}
+
+a.anchor {
+  position: relative;
+  top: -55px;
+  float: left;
+}
+
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  border-top: 1px solid #ccc;
+}
+
+.table > thead > tr > th {
+  border-bottom: 2px solid #ccc;
+}
+
+.fade-slow {
+  transition: opacity 1s ease-in;
+}
+
+.fade-fast {
+  transition: opacity 200ms ease-in;
+}
+
+.transparent {
+  opacity: 0;
+}
+
+.navbar a > span
+
+.navbar {
+  font-size: 15px;
+}
+
+.navbar.navbar-fixed-top {
+  z-index: 1000;
+}
+
+.navbar.navbar-inverse {
+  background-color: $gray;
+}
+
+.navbar.navbar-inverse .navbar-brand {
+}
+
+.navbar.navbar-inverse .navbar-nav > .active > a,
+.navbar.navbar-inverse .navbar-nav > .open > a {
+  background-color: $dark-gray;
+}
+
+.forkme {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+  z-index: 1001;
+}
+
+@media (min-width: 768px) {
+  .forkme.collapse {
+    display: inline;
+  }
+
+  .nav > li.mobile-forkme {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav {
+    width: 600px;
+    height: 50px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 832px) {
+  .nav {
+    width: 550px;
+    height: 50px;
+    overflow: hidden;
+  }
+}
+
+.jumbotron {
+  background: bottom -35px left 15% no-repeat, $dark-gray;
+  color: #fff;
+  margin-top: 50px;
+  padding-bottom: 68px;
+}
+
+.jumbotron p {
+  font-size: 20px;
+}
+
+.band {
+  padding: 20px 0;
+}
+
+.band:nth-child(2n+1) {
+  background-color: $gray;
+}
+
+.band:nth-child(2n+0) {
+  background-color: #fff;
+  color: $dark-gray;
+}
+
+#getting-started {
+  font-size: 20px;
+}
+
+#footer {
+  flex-grow: 1;
+  min-height: 100px;
+  padding-top: 40px;
+  background-color: #fff;
+  font-size: 14px;
+  color: $dark-gray;
+}
