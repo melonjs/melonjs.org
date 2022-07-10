@@ -1,3 +1,4 @@
+@import "variables";
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 
 * {
@@ -14,8 +15,7 @@ body {
 }
 
 a {
-    color: inherit;
-    text-decoration: inherit;
+    color: $ocean;
 }
 
 img {
