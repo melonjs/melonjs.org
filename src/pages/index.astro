@@ -44,7 +44,7 @@ import "../styles/glyphicons.scss";
 			float: right;
 		}
 		blockquote {
-			padding: 4vmin;
+			padding: 2vmax;
 			border-left: 3px solid #ccc;
 			
 		}
@@ -77,9 +77,12 @@ import "../styles/glyphicons.scss";
 				> * {
 					display: inline-block;
 				}
-				&:before { 
-					margin-right:0.5em; 
-				}
+				// &:before { 
+				// 	margin-right:0.5vmin; 
+				// 	@media (min-width: $mobile-width) {
+				// 		margin-right: -0.5vmin;
+				// 	}
+				// }
 				margin: 2vmin 0;
 				width: 100%;
 				//float: left;
@@ -159,6 +162,11 @@ import "../styles/glyphicons.scss";
 							padding: 1vmin;
 						}
 					}
+				}
+			}
+			.no-mobile {
+				@media (max-width: $mobile-width) {
+					display: none;
 				}
 			}
 	</style>
@@ -250,7 +258,7 @@ import "../styles/glyphicons.scss";
 			</div>
 
 			<div class="col-md-6">
-				<img class="right vspacer-20" width="150" src="/img/icons/browser_icons.png" alt="browser icons example">
+				<img class="right no-mobile" width="150" src="/img/icons/browser_icons.png" alt="browser icons example">
 				<h2>Compatibility<a id="compatibility" class="anchor"></a></h2>
 				<hr>
 				<p>melonJS works with any full ES5/ES6 compatible browsers</p>
