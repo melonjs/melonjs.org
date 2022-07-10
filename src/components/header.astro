@@ -1,61 +1,69 @@
 ---
-const pathname = new URL(Astro.request.url).pathname
+const pathname = new URL(Astro.request.url).pathname;
 ---
+
 <header>
-    <style lang="scss">
-        @import "../styles/variables.scss";
-        header {
-            background-color: $gray;
-            //padding: 0 10vmin;
+  <style lang="scss">
+    @import "../styles/variables.scss";
+    header {
+      background-color: $gray;
+      //padding: 0 10vmin;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      nav {
+        ul {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          max-width: 100vw;
+          flex-wrap: wrap;
+          li {
+            position: relative;
+            flex-grow: 1;
+            text-align: center;
+            list-style: none;
+            color: #9d9d9d;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            &.active,
+            &:hover {
+              color: white;
+              background-color: $dark-gray;
+              transition: none;
+            }
             a {
-                color: inherit;
-                text-decoration: none;
+              // position: absolute;
+              // top: 50%;
+              // left: 50%;
+              // transform: translate(-50%, -50%);
+              padding: 3vmin 2vmin;
+              width: calc(100% - 4vmin);
+              height: calc(100% - 6vmin);
+              vertical-align: middle;
+              display: inline-block;
+              vertical-align: middle;
             }
-            nav {
-                ul {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-evenly;
-                    max-width: 100vw;
-                    flex-wrap: wrap;
-                    li {
-                        position: relative;
-                        flex-grow: 1;
-                        text-align: center;
-                        list-style: none;
-                        color: #9d9d9d;
-                        transition: background-color 0.3s ease, color 0.3s ease;
-                        &.active, &:hover {
-                            color: white;
-                            background-color: $dark-gray;
-                            transition: none;
-                        }
-                        a {
-                            // position: absolute;
-                            // top: 50%;
-                            // left: 50%;
-                            // transform: translate(-50%, -50%);
-                            padding: 3vmin 2vmin;
-                            width: calc(100% - 4vmin);
-                            height: calc(100% - 6vmin);
-                            vertical-align: middle;
-                            display: inline-block;
-                            vertical-align: middle;
-                        }
-                    }
-                }
-            }
+          }
         }
-    </style>
-    <nav>
-        <ul>
-            <li class={pathname === "/" ? "active" : null}><a href="#top">Home</a></li>
-            <li><a href="https://www.npmjs.com/package/melonjs">Download</a></li>
-            <li><a href="http://melonjs.github.io/docs/">API</a></li>
-            <li><a href="https://github.com/melonjs/melonJS">Github</a></li>
-            <li><a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS">Gallery</a></li>
-            <li><a href="https://melonjs.discourse.group">Forum</a></li>
-            <li><a href="https://discord.gg/aur7JMk" target="_blank">Discord</a></li>
-        </ul>
-    </nav>
+      }
+    }
+  </style>
+  <nav>
+    <ul>
+      <li class={pathname === "/" ? "active" : null}>
+        <a href="#top">Home</a>
+      </li>
+      <li><a href="https://www.npmjs.com/package/melonjs">Download</a></li>
+      <li><a href="http://melonjs.github.io/docs/">API</a></li>
+      <li><a href="https://github.com/melonjs/melonJS">Github</a></li>
+      <li>
+        <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS"
+          >Gallery
+        </a>
+      </li>
+      <li><a href="https://melonjs.discourse.group">Forum</a></li>
+      <li><a href="https://discord.gg/aur7JMk" target="_blank">Discord</a></li>
+    </ul>
+  </nav>
 </header>

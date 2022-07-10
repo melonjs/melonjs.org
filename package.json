@@ -6,10 +6,13 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "rm -rf ./docs && astro build && mv ./dist ./docs",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "pretty": "npx prettier --write ./src"
   },
   "devDependencies": {
-    "astro": "^1.0.0-beta.65"
+    "astro": "^1.0.0-beta.65",
+    "prettier": "2.7.1",
+    "prettier-plugin-astro": "^0.1.1"
   },
   "dependencies": {
     "sass": "^1.53.0"
