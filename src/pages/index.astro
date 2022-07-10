@@ -46,7 +46,6 @@ import "../styles/glyphicons.scss";
 		blockquote {
 			padding: 2vmax;
 			border-left: 3px solid #ccc;
-			
 		}
 		h1, h2, h3 {
 			margin-top: 4vmin;
@@ -74,22 +73,28 @@ import "../styles/glyphicons.scss";
 			//border: 1vmin solid white;
 		}
 		li {
-				> * {
-					display: inline-block;
-				}
-				// &:before { 
-				// 	margin-right:0.5vmin; 
-				// 	@media (min-width: $mobile-width) {
-				// 		margin-right: -0.5vmin;
-				// 	}
-				// }
-				margin: 2vmin 0;
-				width: 100%;
-				//float: left;
-				ul {
-					margin-left: 10vmin;
-				}
+			list-style: none;
+			&:before{
+				content: "•";
+				vertical-align: top;
+				margin-right: 10px;
 			}
+			> * {
+				display: inline-block;
+			}
+			// &:before { 
+			// 	margin-right:0.5vmin; 
+			// 	@media (min-width: $mobile-width) {
+			// 		margin-right: -0.5vmin;
+			// 	}
+			// }
+			margin: 2vmin 0;
+			width: 100%;
+			//float: left;
+			ul {
+				margin-left: 10vmin;
+			}
+		}
 			.table {
 				text-align: center;
 				width: 100%;
