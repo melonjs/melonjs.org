@@ -11,12 +11,12 @@ import "../styles/glyphicons.scss";
 					padding: 10vmin;
 			}
 			&:nth-child(odd) {
-				background-color: #404040;
+				background-color: $gray;
 				color: white;
 			}
 		}
 		.jumbotron {
-			background-color: #202020 !important;
+			background-color: $dark-gray !important;
 		}
 		.row {
 			display: flex;
@@ -142,6 +142,25 @@ import "../styles/glyphicons.scss";
 				}
 				
 			}
+			.browsers {
+				tbody {
+					tr {
+						//display: block;
+						padding: 5vmin 0;
+						&:not(:first-child) {
+							th, td {
+								border-top: 0.1vmin solid $gray;
+							}
+						}
+						th {
+							color: $ocean;
+						}
+						th, td {
+							padding: 1vmin;
+						}
+					}
+				}
+			}
 	</style>
         <main>
 		<div class="jumbotron">
@@ -235,7 +254,7 @@ import "../styles/glyphicons.scss";
 				<h2>Compatibility<a id="compatibility" class="anchor"></a></h2>
 				<hr>
 				<p>melonJS works with any full ES5/ES6 compatible browsers</p>
-				<table class="table">
+				<table class="table browsers">
 					<thead>
 						<tr><th>Browser</th><th>Version</th><th>Status</th></tr>
 					</thead>

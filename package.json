@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "rm -rf ./docs && astro build && mv ./dist ./docs",
     "preview": "astro preview"
   },
   "devDependencies": {
