@@ -36,7 +36,7 @@ import "../styles/glyphicons.scss";
 
 			&.two > * {
 				@media (min-width: $mobile-width) {
-					width: 50%;
+					width: 48%;
 				}
 			}
 		}
@@ -72,27 +72,13 @@ import "../styles/glyphicons.scss";
 				background-color: $white;
 				color: $black;
 			}
-			//border: 1vmin solid white;
 		}
 		li {
-			// list-style: none;
-			// &:before{
-			// 	content: "•";
-			// 	vertical-align: top;
-			// 	margin-right: 10px;
-			// }
 			> * {
 				display: inline-block;
 			}
-			// &:before { 
-			// 	margin-right:0.5vmin; 
-			// 	@media (min-width: $mobile-width) {
-			// 		margin-right: -0.5vmin;
-			// 	}
-			// }
 			margin: 2vmin 0;
 			width: 100%;
-			//float: left;
 			ul {
 				margin-left: 10vmin;
 			}
@@ -155,7 +141,6 @@ import "../styles/glyphicons.scss";
 			.browsers {
 				tbody {
 					tr {
-						//display: block;
 						padding: 5vmin 0;
 						&:not(:first-child) {
 							th, td {
@@ -175,6 +160,11 @@ import "../styles/glyphicons.scss";
 				@media (max-width: $mobile-width) {
 					display: none;
 				}
+			}
+			hr {
+				background-color: $gray;
+				height: 0.1vmin;
+				border: none;
 			}
 	</style>
         <main>
@@ -231,6 +221,7 @@ import "../styles/glyphicons.scss";
 		<div class="row two">
 			<div>
 				<h2>Features<a id="features" class="anchor"></a></h2>
+				<hr/>
 				<ul>
 					<li>A fresh and lightweight 2D sprite-based engine</li>
 					<li>Standalone library (no additional dependencies)</li>
@@ -328,7 +319,7 @@ import "../styles/glyphicons.scss";
 				<div>
 					<a href="https://www.melongaming.com/games/ne-fi/">Nerd Fight</a> by <a href="https://www.melongaming.com/">melongaming</a>
 					<div class="content">
-						<img width="500" height="315" frameborder="0" src="https://play-lh.googleusercontent.com/diXWPhIE_lLeMs7uk5gAFFzSqCQjEv4LrCGmFKRt60d7E7pJ6sZIkxm1Ii4dttY90w=w1440-h620" alt="nerd fight">
+						<img width="500" height="315" src="https://play-lh.googleusercontent.com/diXWPhIE_lLeMs7uk5gAFFzSqCQjEv4LrCGmFKRt60d7E7pJ6sZIkxm1Ii4dttY90w=w1440-h620" alt="nerd fight">
 					</div>
 				</div>
 			</div>
