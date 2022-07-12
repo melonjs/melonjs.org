@@ -8,9 +8,12 @@ To run the website in development mode:
 
     npm run dev
 
-To rebuild the site for production
+To publish a new version of the site:
 
     npm run build
+    git add .
+    git commit -m "Deploy my new feature!"
+    git push
 
 ## Directory Layout
 
