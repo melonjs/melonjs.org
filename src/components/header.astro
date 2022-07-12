@@ -1,4 +1,5 @@
 ---
+import '../styles/global.scss'
 const pathname = new URL(Astro.request.url).pathname
 ---
 
@@ -52,6 +53,15 @@ const pathname = new URL(Astro.request.url).pathname
                 }
             }
         }
+        .inline {
+            height: 1.5em;
+            margin: 0 0.5em;
+            margin-top: -0.25em;
+            vertical-align: middle;
+            &.big {
+                height: 2em;
+            }
+        }
     </style>
     <nav>
         <ul>
@@ -62,7 +72,6 @@ const pathname = new URL(Astro.request.url).pathname
                 <a href='https://www.npmjs.com/package/melonjs'>NPM</a>
             </li>
             <li><a href='http://melonjs.github.io/docs/'>API</a></li>
-            <li><a href='https://github.com/melonjs/melonJS'>Github</a></li>
             <li>
                 <a
                     href='https://github.com/melonjs/melonJS/wiki/made-with-melonJS'
@@ -71,7 +80,17 @@ const pathname = new URL(Astro.request.url).pathname
             </li>
             <li><a href='https://melonjs.discourse.group'>Forum</a></li>
             <li>
-                <a href='https://discord.gg/aur7JMk' target='_blank'>Discord</a>
+                <a href='https://discord.gg/aur7JMk' target='_blank'
+                    ><img class='inline big' src='/img/discord.svg' />
+                </a>
+            </li>
+            <li>
+                <a href='https://github.com/melonjs/melonJS'
+                    ><span class='no-mobile'>Git</span><img
+                        class='inline'
+                        src='/img/github.svg'
+                    />
+                </a>
             </li>
         </ul>
     </nav>

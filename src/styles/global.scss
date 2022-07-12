@@ -21,3 +21,9 @@ a {
 img {
     user-select: none;
 }
+
+.no-mobile {
+    @media (max-width: $mobile-width) {
+        display: none;
+    }
+}
