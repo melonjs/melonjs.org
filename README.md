@@ -1,7 +1,8 @@
-melonJS
+melonJS.org
 =======
+This is the website for melon.js. To see how to edit it, please see [Astro](https://astro.build). Pages and components are built using HTML templates (ending in `.astro`), allowing us to split our website up into different parts. The Astro framework also supports the use of `.scss` and many other handy libraries if necessary.
 
-A fresh & lightweight HTML5 game engine
+
 -------------------------------------------------------------------------------
 ![melonJS](http://melonjs.org/media/alex4-github.png)
 
