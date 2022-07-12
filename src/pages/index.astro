@@ -6,16 +6,27 @@ import "../styles/glyphicons.scss";
 <BaseLayout>
   <style lang="scss">
     @import "../styles/variables.scss";
-    main > * {
-      padding: 5vmin 20vmin;
-      @media (max-width: $mobile-width) {
-        padding: 5vmin 10vmin;
+    main {
+          h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 5vmin;
+          }
+      & > * {
+        padding: 5vmin 20vmin;
+        @media (max-width: $mobile-width) {
+          padding: 5vmin 10vmin;
+        }
+        &:nth-child(odd) {
+          h1, h2, h3, h4, h5, h6 {
+            color: $light-green;
+          }
+          background-color: $gray;
+          box-shadow: 2vmin 0 2vmin 0 $light-green;
+          color: $white;
+        }
       }
-      &:nth-child(odd) {
-        background-color: $gray;
-        box-shadow: 2vmin 0 2vmin 0 $green;
-        color: $white;
-      }
+    }
+    .computer {
+      margin-top: 5vmin;
     }
     .jumbotron {
       background-color: $dark-gray !important;
@@ -280,6 +291,7 @@ import "../styles/glyphicons.scss";
         title="Fast and Powerful level design through Tiled"
         width="85%"
         height="85%"
+        class="computer"
       />
     </div>
 
