@@ -56,8 +56,7 @@ const pathname = new URL(Astro.request.url).pathname
         }
         .inline {
             height: 1.5em;
-            margin: 0 0.5em;
-            margin-top: -0.25em;
+            margin: -0.25em 0.75em 0 0;
             vertical-align: middle;
             &.big {
                 height: 2em;
@@ -82,15 +81,14 @@ const pathname = new URL(Astro.request.url).pathname
             <li><a href='https://melonjs.discourse.group'>Forum</a></li>
             <li>
                 <a href='https://discord.gg/aur7JMk' target='_blank'
-                    ><img class='inline big' src='/img/discord.svg' />
+                    ><img class='inline' src='/img/discord.svg' />Discord
                 </a>
             </li>
             <li>
                 <a href='https://github.com/melonjs/melonJS'
-                    ><span>GitHub</span><img
-                        class='inline'
-                        src='/img/github.svg'
-                    />
+                    ><img class='inline' src='/img/github.svg' /><span
+                        >GitHub
+                    </span>
                 </a>
             </li>
         </ul>
