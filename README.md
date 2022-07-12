@@ -1,6 +1,6 @@
 # melonJS.org
 
-This is the website for \[melon.js]\(<https://melonjs.org/)>. To see how to edit it, please see [Astro](https://astro.build). Pages and components are built using HTML templates (ending in `.astro`), allowing us to split our website up into different parts. The Astro framework also supports the use of `.scss` and many other handy libraries if necessary.
+This is the website for [melon.js](https://melonjs.org/). To see how to edit it, please see [Astro](https://astro.build). Pages and components are built using HTML templates (ending in `.astro`), allowing us to split our website up into different parts. The Astro framework also supports the use of `.scss` and many other handy libraries if necessary.
 
 ## How to run the site
 
