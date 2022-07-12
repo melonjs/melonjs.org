@@ -190,6 +190,15 @@ import '../styles/glyphicons.scss'
                 }
             }
         }
+        .quick-start {
+            margin-top: 2vmin;
+            ul {
+                list-style: none;
+                li {
+                    display: inline;
+                }
+            }
+        }
         .no-mobile {
             @media (max-width: $mobile-width) {
                 display: none;
@@ -225,39 +234,41 @@ import '../styles/glyphicons.scss'
                     Giving you a powerful combination that can be used wholesale
                     or piecemeal.
                 </p>
-                <nav>
-                    <li>
-                        <a
-                            class='btn primary'
-                            href='https://www.npmjs.com/package/melonjs'
-                            role='button'
-                            ><span class='glyphicon glyphicon-save'></span> Download
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class='btn success'
-                            href='https://github.com/melonjs/melonJS#using-melonjs'
-                            role='button'
-                            >Getting Started
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class='btn danger'
-                            href='https://melonjs.github.io/examples/platformer/'
-                            role='button'
-                            >Demo
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class='btn default'
-                            href='http://melonjs.github.io/docs/'
-                            role='button'
-                            >Read The Docs &raquo;
-                        </a>
-                    </li>
+                <nav class='quick-start'>
+                    <ul>
+                        <li>
+                            <a
+                                class='btn primary'
+                                href='https://www.npmjs.com/package/melonjs'
+                                role='button'
+                                ><span class='glyphicon glyphicon-save'></span> Download
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class='btn success'
+                                href='https://github.com/melonjs/melonJS#using-melonjs'
+                                role='button'
+                                >Getting Started
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class='btn danger'
+                                href='https://melonjs.github.io/examples/platformer/'
+                                role='button'
+                                >Demo
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                class='btn default'
+                                href='http://melonjs.github.io/docs/'
+                                role='button'
+                                >Read The Docs &raquo;
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
             </div>
         </div>
