@@ -1,0 +1,23 @@
+@import "variables";
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Droid Sans", Tahoma, "Lucida Grande", sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: $ocean;
+}
+
+img {
+  user-select: none;
+}
