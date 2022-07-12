@@ -5,22 +5,22 @@ This is the website for \[melon.js]\(<https://melonjs.org/)>. To see how to edit
 ## How to run the site
 
 To run the website in development mode:
-```
-npm run dev
-```
+
+    npm run dev
 
 To publish a new version of the site:
-```
-npm run build
-git add .
-git commit -m "Deploy my new feature!"
-git push
-```
+
+    npm run build
+    git add .
+    git commit -m "Deploy my new feature!"
+    git push
 
 To make the source code look pretty (and enforce consistent styling):
-```
-npm run pretty
-```
+
+    npm run pretty
+    git add .
+    git commit -m "make the source code prettier"
+    git push
 
 ## Directory Layout
 
