@@ -6,6 +6,8 @@ const pathname = new URL(Astro.request.url).pathname;
   <style lang="scss">
     @import "../styles/variables.scss";
     header {
+      position: sticky;
+      top: 0;
       background-color: $gray;
       //padding: 0 10vmin;
       a {
