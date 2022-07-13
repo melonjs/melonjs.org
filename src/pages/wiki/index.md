@@ -47,7 +47,7 @@ Welcome to the melonJS wiki, here you will find help, tutorial and documentation
 -   [Tiled Wiki](https://github.com/bjorn/tiled/wiki) : Link to Tiled wiki and related documentation/help
 -   [Tiled Tutorial Series](http://www.gamefromscratch.com/post/2015/10/14/Tiled-Map-Editor-Tutorial-Series.aspx) : a series of Tiled Map Editor Tutorial on GamesFromScratch.com
 -   [melonJS Particle Studio Editor](https://melonjs.github.io/examples/particles/) : Visual Particle Editor for melonJS
--   [How to configure Shoebox for melonJS](/wiki/shoebox)
+-   [How to configure Shoebox for melonJS](/wiki/ShoeBox)
 -   [How to use TexturePacker with melonJS](/wiki/How-to-use-Texture-Atlas-with-TexturePacker)
 -   [Using sprite sheets in melonJS](https://www.codeandweb.com/texturepacker/tutorials/melonjs) (by [codeandweb](https://www.codeandweb.com))
 -   [How to load PhysicEditor shapes into your melonjs project](/wiki/How-to-load-PhysicEditor-Shapes-into-your-project)
