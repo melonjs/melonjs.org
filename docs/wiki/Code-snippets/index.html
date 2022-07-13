@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Custom styles -->
+        <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/6ea589e4.0bdaeafc.css" />
+<link rel="stylesheet" href="/assets/585a1d6d.14abe3b2.css" /></head>
+    <body>
+        <header class="astro-DKPNACHA">
+    
+    <nav class="astro-DKPNACHA">
+        <ul class="astro-DKPNACHA">
+            <li class="null astro-DKPNACHA">
+                <a href="#top" class="astro-DKPNACHA">Home</a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-DKPNACHA">NPM</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="http://melonjs.github.io/docs/" class="astro-DKPNACHA">API</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="/wiki/made-with-melonJS" class="astro-DKPNACHA">Gallery</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="https://melonjs.discourse.group" class="astro-DKPNACHA">Forum</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://github.com/melonjs/melonJS" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/github.svg"><span class="astro-DKPNACHA">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main><h3 id="1-prevent-the-webview-from-moving-on-a-swipe-"><strong>1. Prevent the webview from moving on a swipe :</strong></h3><p>Simply add the following code to your project (note that this require to register on the window document itself and not the canvas)</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (me.sys.touch) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">/* This code prevents the webview from moving on a swipe */</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">preventDefaultScroll</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">e</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">        e.</span><span style="color: #D2A8FF">preventDefault</span><span style="color: #C9D1D9">()</span></span>
+<span class="line"><span style="color: #C9D1D9">        window.</span><span style="color: #D2A8FF">scroll</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">false</span></span>
+<span class="line"><span style="color: #C9D1D9">    }</span></span>
+<span class="line"><span style="color: #C9D1D9">    window.document.</span><span style="color: #D2A8FF">addEventListener</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;touchmove&#39;</span><span style="color: #C9D1D9">, preventDefaultScroll, </span><span style="color: #79C0FF">false</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><h3 id="2-hide-the-address-bar-on-mobile-devices-"><strong>2. Hide the address bar on mobile devices :</strong></h3><p>Simply add the following code to your project (note that this require to register on the window document itself and not the canvas)</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (me.sys.touch) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    window.</span><span style="color: #D2A8FF">addEventListener</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;load&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> () {</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">setTimeout</span><span style="color: #C9D1D9">(</span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> () {</span></span>
+<span class="line"><span style="color: #C9D1D9">            window.</span><span style="color: #D2A8FF">scrollTo</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">        }, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">    })</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre></main>
+    </body></html>

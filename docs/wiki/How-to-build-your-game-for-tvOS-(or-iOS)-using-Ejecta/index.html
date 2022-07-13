@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Custom styles -->
+        <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/6ea589e4.0bdaeafc.css" />
+<link rel="stylesheet" href="/assets/585a1d6d.14abe3b2.css" /></head>
+    <body>
+        <header class="astro-DKPNACHA">
+    
+    <nav class="astro-DKPNACHA">
+        <ul class="astro-DKPNACHA">
+            <li class="null astro-DKPNACHA">
+                <a href="#top" class="astro-DKPNACHA">Home</a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-DKPNACHA">NPM</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="http://melonjs.github.io/docs/" class="astro-DKPNACHA">API</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="/wiki/made-with-melonJS" class="astro-DKPNACHA">Gallery</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="https://melonjs.discourse.group" class="astro-DKPNACHA">Forum</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://github.com/melonjs/melonJS" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/github.svg"><span class="astro-DKPNACHA">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main><p>In this tutorial we will explain how to build your game under Xcode using <a href="http://impactjs.com/ejecta">Ejecta</a> so that it can be deployed to the new Apple TV (or on any iOS device as well). The below content is largely inspired by the Ejecta <a href="http://impactjs.com/ejecta/overview">overview</a> and adapted to work with melonJS.</p><p>This tutorial does not cover the app submission part, but if you need further assistance on that, we suggest you to check the <a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/SubmittingYourApp/SubmittingYourApp.html">iOS Developer Library</a>.</p><p>Here is below a screenshot of our platformer example running under the apple TV Simulator :
+<img src="https://cloud.githubusercontent.com/assets/4033090/13031966/ea6240a6-d31b-11e5-9486-f233cff49459.png" alt="melonjs-platformer-tvos"></p><h2 id="prerequisites-">Prerequisites :</h2><ul>
+<li>a Mac (or any machine able to run XCode)</li>
+<li><a href="https://developer.apple.com/xcode/download/">XCode</a> 7.1 or higher</li>
+<li><a href="http://impactjs.com/files/ejecta-2.0.zip">Ejecta 2.0</a> or higher</li>
+<li><a href="https://github.com/melonjs/melonJS/releases/tag/3.0.1">melonJS 3.0.x</a> (for melonJS 3.x and higher, you also need Ejecta latest <a href="https://github.com/phoboslab/Ejecta/archive/master.zip">version</a>)</li>
+</ul><h2 id="getting-started">Getting Started</h2><p>After you’ve downloaded and unzipped Ejecta and loaded the Ejecta.xcodeproj file in XCode, it’s a good idea to rename the project: in XCode, select the project in the upper left corner of the sidebar and hit enter. You can now rename the project; hit enter again and XCode will ask you to rename a bunch of other stuff as well – choose Rename.</p><p>The XCode project has two build targets: “Ejecta” - for the iOS version and “Ejecta-TV” for the tvOS version.</p><p>To change the desired screen orientation of your iOS App (portrait or landscape), go to the project settings, select the “Ejecta” target and check the appropriate Device Orientation checkboxes. Note that iPad need to always support both portrait or both landscape modes (or all 4) as per the AppStore guidlines.</p><p>Also in the target settings, be sure to change the Bundle Identifier setting to something that represents you or your company and product name.</p><p>You should now be able to compile and run the project in the Simulator.</p><h2 id="add-your-game">Add your game</h2><p>Ejecta fires up the JavaScriptCore VM, attaches all native Obj-C Classes that should be exposed to JavaScript. It then executes the <code>Source/Ejecta/Ejecta.js</code> file that sets up a bunch of things and finally loads the <code>App/index.js</code> file - which is where you do your stuff.</p><p>Adding your game to the build is then pretty straightforward :</p><p>All your JavaScript source files as well as your assets (sounds/music) should be placed into the <code>App/</code> directory. All files you reference from your code are relative to this directory</p><p>Next step is to define the <code>App/index.js</code> file. Basically this is pretty similar to the <code>index.html</code> provided in our <a href="https://github.com/melonjs/boilerplate">boilerplate</a>, except than here we use the <code>ejecta.include()</code> function to load our scripts, and then we manually initialise melonJS and our game (at the time of writing this article, this is currently required due to a small <a href="https://github.com/phoboslab/Ejecta/issues/613">issue</a> in the DOM implementation provided by Ejecta, and will most certainly be fixed in a next version).</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// Load the game</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">&lt;!--</span><span style="color: #C9D1D9"> melonJS Library </span><span style="color: #FF7B72">--&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">ejecta.</span><span style="color: #D2A8FF">include</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;build/melonJS.js&#39;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">&lt;!--</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">Plugin</span><span style="color: #C9D1D9">(s) </span><span style="color: #FF7B72">--&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">ejecta.</span><span style="color: #D2A8FF">include</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;plugins/debug/debugPanel.js&#39;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">&lt;!--</span><span style="color: #C9D1D9"> Game Scripts </span><span style="color: #FF7B72">--&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">ejecta.</span><span style="color: #D2A8FF">include</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;js/game.js&#39;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">ejecta.</span><span style="color: #D2A8FF">include</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;js/resources.js&#39;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">ejecta.</span><span style="color: #D2A8FF">include</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;js/entities/player.js&#39;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">ejecta.</span><span style="color: #D2A8FF">include</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;js/entities/coin.js&#39;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">ejecta.</span><span style="color: #D2A8FF">include</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;js/entities/enemies.js&#39;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">ejecta.</span><span style="color: #D2A8FF">include</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;js/entities/HUD.js&#39;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">ejecta.</span><span style="color: #D2A8FF">include</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;js/screens/play.js&#39;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// start the game</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">&lt;!--</span><span style="color: #C9D1D9"> init the melonJS Library </span><span style="color: #FF7B72">--&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">me.</span><span style="color: #D2A8FF">boot</span><span style="color: #C9D1D9">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">&lt;!--</span><span style="color: #C9D1D9"> run the game boostrap </span><span style="color: #FF7B72">--&gt;</span></span>
+<span class="line"><span style="color: #C9D1D9">game.</span><span style="color: #D2A8FF">onload</span><span style="color: #C9D1D9">();</span></span></code></pre><p>The <code>index.js</code> is the biggest part of the “porting” effort, once done, you are good to go and you should be able to compile and run your game under the Simulator.</p><p>Note that you can also load a custom TTF font, similary to a CSS @font-face declaration :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// load a custom TTF font</span></span>
+<span class="line"><span style="color: #C9D1D9">ejecta.</span><span style="color: #D2A8FF">loadFont</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;path/to/my/font.ttf&#39;</span><span style="color: #C9D1D9">)</span></span></code></pre><h2 id="audio-format">Audio format</h2><p>Ejecta loads MP3, M4A and Apple’s CAFF format; Ogg Vorbis is not supported at this time.</p><p>For short sound effects, Apple recommends using uncompressed PCM in a CAFF container while Music should be compressed with AAC. However, MP3 should work just fine as well.</p><p>If you want convert your sound files to CAFF, use the following commands in your terminal (OSX) :</p><ul>
+<li>
+<p>sound effects should be in uncompressed PCM format:</p>
+<p><code>afconvert -f caff -d LEI16@44100 -c 1 soundfile.wav</code></p>
+</li>
+<li>
+<p>music can be compressed with AAC</p>
+<p><code>afconvert -f caff -d aac -c 1 music.wav</code></p>
+</li>
+</ul><p>Ejecta will play all sound files < 512kb with OpenAL. Above 512kb Apple’s AVAudioPlayer is used. You can change this limit in Classes/Ejecta/EJAudio/EJBindingAudio.h.</p><p>Also make sure melonJS searches for .caf files first instead of loading .mp3 or .ogg, by adding it in the list of provided file formats when <a href="http://melonjs.github.io/melonJS/docs/me.audio.html#init">initialising</a> the audio :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// initialize the &quot;sound engine&quot;</span></span>
+<span class="line"><span style="color: #C9D1D9">me.audio.</span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;caf,mp3,ogg&#39;</span><span style="color: #C9D1D9">)</span></span></code></pre><h2 id="remote-and-gamepad-support">Remote and Gamepad support</h2><p>Both the Apple TV remote and any paired MFi compatible controller, like the <a href="https://steelseries.com/gaming-controllers/nimbus">Nimbus</a> one, are working out of the box, as Ejecta provides <a href="http://impactjs.com/ejecta/gamepad">support for it</a> through the <a href="http://www.w3.org/TR/gamepad/">W3C Gamepad APIs</a>.</p><p>When using the remote as controller, the controller has the following mapping :</p><ul>
+<li>The touchpad on the remote can be used as a D-pad. The D-pad provides analog input data.</li>
+<li>The touchpad is available as a digital button (<a href="http://melonjs.github.io/melonJS/docs/me.input.GAMEPAD.html#BUTTONS"><code>me.input.GAMEPAD.BUTTONS.FACE_1</code></a>), by firmly pressing on the touchpad.</li>
+<li>The Play/Pause button on the remote is a digital button (<a href="http://melonjs.github.io/melonJS/docs/me.input.GAMEPAD.html#BUTTONS"><code>me.input.GAMEPAD.BUTTONS.FACE_2</code></a>).</li>
+</ul><p>Since you could have at least two controllers connected simultaneously, a good practice in melonJS is to take this in account when binding gamepad input through <a href="http://melonjs.github.io/melonJS/docs/me.input.html#bindGamepad"><code>me.input.bindGamepad()</code></a>, and use both id <code>0</code> and <code>1</code> (respectivelly for the remote and a potential additional controller).</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// Click on touchpad or press face 1</span></span>
+<span class="line"><span style="color: #C9D1D9">me.input.</span><span style="color: #D2A8FF">bindGamepad</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">GAMEPAD</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">BUTTONS</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">FACE_1</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">UP</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">me.input.</span><span style="color: #D2A8FF">bindGamepad</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">GAMEPAD</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">BUTTONS</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">FACE_1</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">UP</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// left/right on the touchpad/d-pad</span></span>
+<span class="line"><span style="color: #C9D1D9">me.input.</span><span style="color: #D2A8FF">bindGamepad</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">GAMEPAD</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">BUTTONS</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">LEFT</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">LEFT</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">me.input.</span><span style="color: #D2A8FF">bindGamepad</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">GAMEPAD</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">BUTTONS</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">RIGHT</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">RIGHT</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">me.input.</span><span style="color: #D2A8FF">bindGamepad</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">GAMEPAD</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">BUTTONS</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">LEFT</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">LEFT</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">me.input.</span><span style="color: #D2A8FF">bindGamepad</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">GAMEPAD</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">BUTTONS</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">RIGHT</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">RIGHT</span><span style="color: #C9D1D9">)</span></span></code></pre><p>If you need more “advanced” control on the gamepad, “standard” gamepad information is available through <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getGamepads">navigator.getGamepads()</a> as under any other browser supporting the gamepad API. Finally, please keep in mind that a maximum of two game controllers (plus one remote) can be connected to an Apple TV at any given time. Your game designs should keep these limitations in mind.</p><h2 id="few-final-considerations">Few final considerations</h2><p>Additional things to keep in mind as well :</p><ul>
+<li>Ejecta does not support TMX/XML loading, so be sure your levels are exported in JSON format (e.g. the 1st level of the Platformer does use a XML map, so it had to be re-exported in JSON before using it here)</li>
+<li>It’s pretty easy to do step-by-step debugging for our own script, since as soon as the simulator is running, you can access it through your browser debugging tools (as if it was a real device connected).</li>
+<li>Performances under the simulator will be slower than the real hardware. So although the Simulator is always a good tool to check on your memory usage or profile your code, always make sure you check the final result on the real hardware if you have any concerns on perfomances</li>
+</ul></main>
+    </body></html>

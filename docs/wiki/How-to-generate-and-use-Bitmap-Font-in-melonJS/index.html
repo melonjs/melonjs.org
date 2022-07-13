@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Custom styles -->
+        <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/6ea589e4.0bdaeafc.css" />
+<link rel="stylesheet" href="/assets/585a1d6d.14abe3b2.css" /></head>
+    <body>
+        <header class="astro-DKPNACHA">
+    
+    <nav class="astro-DKPNACHA">
+        <ul class="astro-DKPNACHA">
+            <li class="null astro-DKPNACHA">
+                <a href="#top" class="astro-DKPNACHA">Home</a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-DKPNACHA">NPM</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="http://melonjs.github.io/docs/" class="astro-DKPNACHA">API</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="/wiki/made-with-melonJS" class="astro-DKPNACHA">Gallery</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="https://melonjs.discourse.group" class="astro-DKPNACHA">Forum</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://github.com/melonjs/melonJS" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/github.svg"><span class="astro-DKPNACHA">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main><p>melonJS 4.0.0 and higher)</p><h2 id="convert-your-truetype-font">convert your truetype font</h2><p>The first step is to convert your <code>.TTF</code> fine into a <code>.PNG</code> (the actual texture) and a <code>.FNT</code> (the font definition file) that can be later used in melonJS. As you can see below (in the tools section), there are several converters available, but for its ease of use (and also because it’s free) we have been using <a href="http://kvazars.com/littera/">Littera</a> sucessfully on our side and therefore currently recommend that one.</p><p><img src="https://cloud.githubusercontent.com/assets/4033090/19712364/a8d3dfce-9b6f-11e6-9ee1-55fa04d42070.png" alt="image"></p><p>We won’t go here into exhaustive details on how to use any of these tools, but make sure you respect the following points when configuring it :</p><ul>
+<li>name your font using the original TTF font name</li>
+<li>use the TXT (.fnt) format for the output, as this is the only format that can be directly used by our loader.</li>
+<li>make sure to use the right character set when exporting your font (like “basic” for example if you need a basic set with both characters and numbers).</li>
+<li>make sure to use a “power of 2” image size</li>
+<li>melonJS only supports 1 page (so one .PNG per .FNT file), so if your characters do not fit into the current PNG, do rather increase the size instead of forcing the tool to generate a second one.</li>
+</ul><h2 id="preload-your-bitmap-font">preload your bitmap font</h2><p>pretty straightforward here, assuming that the font name is PressStart2P, you just need to add the following line to your existing assset lists :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">{ </span><span style="color: #FFA657">name</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">&quot;PressStart2P&quot;</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">type</span><span style="color: #C9D1D9">:</span><span style="color: #A5D6FF">&quot;image&quot;</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">src</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">&quot;data/fnt/PressStart2P.png&quot;</span><span style="color: #C9D1D9"> },</span></span>
+<span class="line"><span style="color: #C9D1D9">{ </span><span style="color: #FFA657">name</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">&quot;PressStart2P&quot;</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">type</span><span style="color: #C9D1D9">:</span><span style="color: #A5D6FF">&quot;binary&quot;</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">src</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">&quot;data/fnt/PressStart2P.fnt&quot;</span><span style="color: #C9D1D9">},</span></span></code></pre><p>be careful here, as the <code>.FNT</code> file type need to be set to <code>binary</code>.</p><h2 id="using-your-bitmap-font">using your bitmap font</h2><p>quite easy as well, as all we need is to instantiante a <code>me.BitmapFont object</code>, and specify the two files we previously loaaded :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.font </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">BitmapFont</span><span style="color: #C9D1D9">(</span></span>
+<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getBinary</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;PressStart2P&#39;</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getImage</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;PressStart2P&#39;</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">)</span></span></code></pre><p>and then we can just use as follow :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.font.</span><span style="color: #D2A8FF">draw</span><span style="color: #C9D1D9">(context, </span><span style="color: #A5D6FF">&#39;myText&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.pos.x, </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.pos.y)</span></span></code></pre><p>for more details on how to change alignements, size and others, you can refer to the documentation <a href="https://melonjs.github.io/melonJS/docs/me.BitmapFont.html">here</a></p><h2 id="available-tools-and-ressources">Available Tools and ressources</h2><h3 id="tools">Tools</h3><p><strong>Online</strong></p><ul>
+<li><a href="http://kvazars.com/littera/">http://kvazars.com/littera/</a> (web based, free)</li>
+</ul><p><strong>OSX</strong></p><ul>
+<li><a href="https://71squared.com/glyphdesigner">https://71squared.com/glyphdesigner</a> (ongoing paid license)</li>
+<li><a href="https://www.bmglyph.com/">https://www.bmglyph.com/</a> (Pay once)</li>
+</ul><p><strong>Windows</strong></p><ul>
+<li><a href="http://www.angelcode.com/products/bmfont/">http://www.angelcode.com/products/bmfont/</a></li>
+</ul><p><strong>Crossplatform</strong></p><ul>
+<li><a href="https://libgdx.badlogicgames.com/nightlies/runnables/runnable-hiero.jar">https://libgdx.badlogicgames.com/nightlies/runnables/runnable-hiero.jar</a> (need to have java installed, but it’s free)</li>
+<li><a href="https://github.com/andryblack/fontbuilder">https://github.com/andryblack/fontbuilder</a></li>
+<li><a href="https://github.com/vladimirgamalyan/fontbm">https://github.com/vladimirgamalyan/fontbm</a></li>
+</ul><h3 id="font-resources">Font Resources</h3><ul>
+<li><a href="https://www.fontsquirrel.com/">https://www.fontsquirrel.com/</a> (100% free commercial use, and webfont generation tool)</li>
+</ul></main>
+    </body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Custom styles -->
+        <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/6ea589e4.0bdaeafc.css" />
+<link rel="stylesheet" href="/assets/585a1d6d.14abe3b2.css" /></head>
+    <body>
+        <header class="astro-DKPNACHA">
+    
+    <nav class="astro-DKPNACHA">
+        <ul class="astro-DKPNACHA">
+            <li class="null astro-DKPNACHA">
+                <a href="#top" class="astro-DKPNACHA">Home</a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-DKPNACHA">NPM</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="http://melonjs.github.io/docs/" class="astro-DKPNACHA">API</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="/wiki/made-with-melonJS" class="astro-DKPNACHA">Gallery</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="https://melonjs.discourse.group" class="astro-DKPNACHA">Forum</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://github.com/melonjs/melonJS" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/github.svg"><span class="astro-DKPNACHA">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main><p>MelonJS handles resources such as images, and map data by storing it in a single hash. You can see an example from our <a href="https://github.com/melonjs/es6-boilerplate/blob/main/src/manifest.js">boilerplate</a>:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">DataManifest</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">/* Graphics.</span></span>
+<span class="line"><span style="color: #8B949E">     * @example</span></span>
+<span class="line"><span style="color: #8B949E">     * {name: &quot;example&quot;, type:&quot;image&quot;, src: &quot;data/img/example.png&quot;},</span></span>
+<span class="line"><span style="color: #8B949E">     */</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">/* Atlases</span></span>
+<span class="line"><span style="color: #8B949E">     * @example</span></span>
+<span class="line"><span style="color: #8B949E">     * {name: &quot;example_tps&quot;, type: &quot;tps&quot;, src: &quot;data/img/example_tps.json&quot;},</span></span>
+<span class="line"><span style="color: #8B949E">     */</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">/* Maps.</span></span>
+<span class="line"><span style="color: #8B949E">     * @example</span></span>
+<span class="line"><span style="color: #8B949E">     * {name: &quot;example01&quot;, type: &quot;tmx&quot;, src: &quot;data/map/example01.tmx&quot;},</span></span>
+<span class="line"><span style="color: #8B949E">     * {name: &quot;example01&quot;, type: &quot;tmx&quot;, src: &quot;data/map/example01.json&quot;},</span></span>
+<span class="line"><span style="color: #8B949E">     */</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">/* Background music.</span></span>
+<span class="line"><span style="color: #8B949E">     * @example</span></span>
+<span class="line"><span style="color: #8B949E">     * {name: &quot;example_bgm&quot;, type: &quot;audio&quot;, src: &quot;data/bgm/&quot;, channel : 1},</span></span>
+<span class="line"><span style="color: #8B949E">     */</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">/* Sound effects.</span></span>
+<span class="line"><span style="color: #8B949E">     * @example</span></span>
+<span class="line"><span style="color: #8B949E">     * {name: &quot;example_sfx&quot;, type: &quot;audio&quot;, src: &quot;data/sfx/&quot;, channel : 2}</span></span>
+<span class="line"><span style="color: #8B949E">     */</span></span>
+<span class="line"><span style="color: #C9D1D9">]</span></span>
+<span class="line"><span style="color: #FF7B72">export</span><span style="color: #FFA657"> </span><span style="color: #FF7B72">default</span><span style="color: #FFA657"> </span><span style="color: #C9D1D9">DataManifest</span></span></code></pre><p>To make it easy for you on handling your resources, melonJS allows you to load them all at once. This is done by calling the <a href="http://melonjs.github.io/melonJS/docs/me.loader.html#.preload"><code>me.loader.preload</code></a> method, specifying the list of assets to be preloaded and a callback for when everything is ready :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.loader.</span><span style="color: #D2A8FF">preload</span><span style="color: #C9D1D9">(resources, </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.loaded.</span><span style="color: #D2A8FF">bind</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">))</span></span></code></pre><p>Once the loading screen finishes, all your resources will be loaded. MelonJS uses AJAX requests to grab the file data, and will then parse the data. MelonJS will parse and load the data differently depending on the type specified.</p><h3 id="resource-types">Resource Types</h3><p>The types currently supported are:</p><ul>
+<li>binary</li>
+<li>image</li>
+<li>json</li>
+<li>tmx</li>
+<li>tsx</li>
+<li>xml</li>
+</ul><p><strong>binary</strong> This can be used to load all other sorts of data. If you need to even just load a text file, it’s a option to go.</p><p><strong>image</strong> This loads all different image types that you will use for your sprites. Note that image type should be used even when it’s a packed texture. Ensure that the file you reference here is of a proper image mime type.</p><p><strong>json</strong> Simple loads and parses a json file. This format should be used for loading the Texture Packer atlas file, or any other supported sprite sheet atlas.</p><p><strong>tmx</strong> & <strong>tsx</strong> This is to load the <a href="http://mapeditor.org">Tiled</a> map file. You can also save the TMX file as JSON instead, however be sure to still use this file type.</p><p><strong>xml</strong> Similar to the JSON type, this can be used to load an XML data file.</p><h3 id="load-resources-later-or-lazy-loading">Load Resources Later or Lazy Loading</h3><p>If you need to load a single resource after the fact, or load asset individually for lazy loading, you can do so by using the same hash that you would in the resources asset list, For example:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.loader.</span><span style="color: #D2A8FF">load</span><span style="color: #C9D1D9">(</span></span>
+<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">&#39;workstation&#39;</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">&#39;image&#39;</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">&#39;data/img/workstation.jpg&#39;</span><span style="color: #C9D1D9"> },</span></span>
+<span class="line"><span style="color: #C9D1D9">    callback,</span></span>
+<span class="line"><span style="color: #C9D1D9">    errorcallback</span></span>
+<span class="line"><span style="color: #C9D1D9">)</span></span></code></pre><p>Much like the example there, you simply use the same options. Pass a callback to execute when the loading is done, and optionally provide a callback if the resource fails to load.</p></main>
+    </body></html>

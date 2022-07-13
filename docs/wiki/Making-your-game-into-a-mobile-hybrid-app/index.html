@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Custom styles -->
+        <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/6ea589e4.0bdaeafc.css" />
+<link rel="stylesheet" href="/assets/585a1d6d.14abe3b2.css" /></head>
+    <body>
+        <header class="astro-DKPNACHA">
+    
+    <nav class="astro-DKPNACHA">
+        <ul class="astro-DKPNACHA">
+            <li class="null astro-DKPNACHA">
+                <a href="#top" class="astro-DKPNACHA">Home</a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-DKPNACHA">NPM</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="http://melonjs.github.io/docs/" class="astro-DKPNACHA">API</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="/wiki/made-with-melonJS" class="astro-DKPNACHA">Gallery</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="https://melonjs.discourse.group" class="astro-DKPNACHA">Forum</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://github.com/melonjs/melonJS" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/github.svg"><span class="astro-DKPNACHA">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main><p>There’s a lot of good tools out there for building web apps into mobile apps, by loading static html, css and javascript. MelonJS is no different. There’s a couple tools we recommend to doing this.</p><h2 id="cocoon-js"><a href="https://cocoon.io/">Cocoon JS</a></h2><p>If you need to support iOS 8 and older, you may want to have a look at this. Ludei has a cocoonjs app out on both android & ios, which can load a zip file of static web assets. Put your index.html in a zip, add it to your phone and give it a try with their app. Be sure to select canvas+, as that’s the most optimized for games.</p><p>The downside to cocoonjs is it has a bit more limitations on what you can do functionality wise. Canvas+ disables most DOM manipulation, and typical browser functions. It has its own implementation of canvas draw calls, and webgl.</p><p>Building a cocoon app for distribution is all done in the cloud with their platform. Makes it easier for handling icons and binaries. Ludei also adds their own splash screen in builds to your game. You can remove this, but have to have a paid plan.</p><h2 id="adobe-phonegap"><a href="https://cordova.apache.org/">Adobe PhoneGap</a></h2><p>Adobe PhoneGap framework is an open source distribution of Cordova — providing the advantage of the Cordova framework with PhoneGap robust tools like the PhoneGap Desktop app, the PhoneGap Developer app, and PhoneGap Build. You can follow <a href="https://phonegap.com/getstarted/">these steps</a> to install PhoneGap and get an app running on your mobile device in minutes.</p><h2 id="cordova"><a href="https://cordova.apache.org/">Cordova</a></h2><p>This is a great choice if you can support iOS 9 or higher, and Android 4.4 or higher which has chrome backing the android webview. On the iOS side you’ll want to enable the wkwebview. This runs much faster than UIWebView. You can do this by adding the plugin: <a href="https://github.com/apache/cordova-plugins/tree/wkwebview-engine-localhost">https://github.com/apache/cordova-plugins/tree/wkwebview-engine-localhost</a>. If you get a black screen when your game loads, check the console using Safari debugging to see if there are any xhr errors.</p></main>
+    </body></html>
