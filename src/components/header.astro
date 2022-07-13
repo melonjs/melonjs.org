@@ -56,7 +56,9 @@ const pathname = new URL(Astro.request.url).pathname
         }
         .inline {
             height: 1.25em;
-            margin: -0.25em 0.75em 0 0;
+            &:not(.no-bump) {
+                margin: -0.25em 0.75em 0 0;
+            }
             vertical-align: middle;
             &.big {
                 height: 2em;
@@ -69,7 +71,7 @@ const pathname = new URL(Astro.request.url).pathname
                 <a href='#top'>Home</a>
             </li>
             <li>
-                <a href='https://www.npmjs.com/package/melonjs'><img alt="npm" class="inline" src="/img/npm.svg"/></a>
+                <a href='https://www.npmjs.com/package/melonjs'><img alt="npm" class="inline no-bump" src="/img/npm.svg"/></a>
             </li>
             <li><a href='http://melonjs.github.io/docs/'>API</a></li>
             <li>
