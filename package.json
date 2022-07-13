@@ -1,6 +1,33 @@
 {
-  "name": "@example/minimal",
-  "version": "3.0.2",
+  "name": "melonjs.org",
+  "version": "3.0.3",
+  "description": "official website for melonJS",
+  "homepage": "http://melonjs.org",
+  "keywords": [
+    "2D",
+    "HTML5",
+    "javascript",
+    "TypeScript",
+    "es6",
+    "Canvas",
+    "WebGL",
+    "WebGL2",
+    "WebAudio",
+    "game",
+    "engine",
+    "tiled",
+    "tileset",
+    "mapeditor",
+    "browser",
+    "electron",
+    "mobile",
+    "cordova"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melonjs/melonjs.org.git"
+  },
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "astro dev",
