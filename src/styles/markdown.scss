@@ -1,0 +1,31 @@
+@import 'variables';
+
+main {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        padding: 5vmin 0 2vmin 0vmin;
+    }
+    h1 {
+        text-decoration: underline;
+    }
+    padding: 5vmin 10vmin;
+    display: flex;
+    flex-direction: column;
+    & > * {
+        width: fit-content;
+        margin: auto;
+    }
+    img {
+        margin: 2vmin auto;
+        width: 95vmin;
+    }
+    pre {
+        padding: 3vmin;
+        margin: 4vmin auto;
+        border: 1vmin solid $dark-green;
+    }
+}

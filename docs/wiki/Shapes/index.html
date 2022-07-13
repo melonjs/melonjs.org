@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Custom styles -->
+        <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/6ea589e4.0bdaeafc.css" />
+<link rel="stylesheet" href="/assets/585a1d6d.14abe3b2.css" /></head>
+    <body>
+        <header class="astro-DKPNACHA">
+    
+    <nav class="astro-DKPNACHA">
+        <ul class="astro-DKPNACHA">
+            <li class="null astro-DKPNACHA">
+                <a href="#top" class="astro-DKPNACHA">Home</a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-DKPNACHA">NPM</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="http://melonjs.github.io/docs/" class="astro-DKPNACHA">API</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="/wiki/made-with-melonJS" class="astro-DKPNACHA">Gallery</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="https://melonjs.discourse.group" class="astro-DKPNACHA">Forum</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://github.com/melonjs/melonJS" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/github.svg"><span class="astro-DKPNACHA">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main><p>A collision shape is either a <code>me.Rect</code>, <code>me.Ellipse</code>, <code>me.Line</code> or <code>me.Polygon</code> object attached to the object physic <a href="http://melonjs.github.io/melonJS/docs/me.Body.html">body</a>, and (when using Tiled), a collision Shape is automatically added to your renderable based on the object size and shape defined in Tiled.</p><p>Collision shape can also be manually managed through the following functions :</p><ul>
+<li><code>addShape()</code> to add a new shape to your objects</li>
+<li><code>removeShape()</code>/<code>removeShapeAt()</code> to remove the specified shape from the body shape list</li>
+<li><code>getShape()</code> to get the current collision shape at the given index</li>
+</ul><p>Note that when adding a <code>me.Rect</code> object using <code>addShape</code> to an entity body, it will be automatically converted to a corresponding <code>me.Polygon</code> object.</p><p>Shape object are also relative to their parent object (here an entity), which means that by default their position vector is <code>(0, 0)</code></p><p>Additionally Shape objects also define a <code>getBounds</code> function that is used to get the corresponding bounding box (rectangle) of that Shape, that is useful most of all when managing non rectangular shape (melonJS uses this internally to define to calculate the collision using AABB and generate the quadtree, or identify which objects has been clicked).</p><h1 id="usage-example">Usage example</h1><p>Let’s take the example where for any reason we need to know the size of the object collision shape :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> size </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> myRenderable.body.</span><span style="color: #D2A8FF">getBounds</span><span style="color: #C9D1D9">().width</span></span></code></pre><p>This gives you the width of the body’s bounding box (the smallest rectangular set which contains all of its shapes).</p></main>
+    </body></html>

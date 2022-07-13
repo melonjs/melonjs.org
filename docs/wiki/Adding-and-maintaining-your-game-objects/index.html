@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Custom styles -->
+        <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/6ea589e4.0bdaeafc.css" />
+<link rel="stylesheet" href="/assets/585a1d6d.14abe3b2.css" /></head>
+    <body>
+        <header class="astro-DKPNACHA">
+    
+    <nav class="astro-DKPNACHA">
+        <ul class="astro-DKPNACHA">
+            <li class="null astro-DKPNACHA">
+                <a href="#top" class="astro-DKPNACHA">Home</a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-DKPNACHA">NPM</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="http://melonjs.github.io/docs/" class="astro-DKPNACHA">API</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="/wiki/made-with-melonJS" class="astro-DKPNACHA">Gallery</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="https://melonjs.discourse.group" class="astro-DKPNACHA">Forum</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://github.com/melonjs/melonJS" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/github.svg"><span class="astro-DKPNACHA">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main><p>As you create and work with various <a href="Renderables">renderable</a> objects, you need to tell melonJS that they need to be executed as part of the game loop.</p><p>melonJS provides an <a href="http://melonjs.github.io/melonJS/docs/me.Container.html"><code>Container</code></a> class, as well as an instance of it at <code>me.game.world</code>, in which you can add your game objects to it via:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">addChild</span><span style="color: #C9D1D9">(mySprite)</span></span></code></pre><p>The Container will handle the sorting for you, but you can also tell melonJS the draw order. By default, melonJS uses the z property on your objects to sort. The lower the number gets updated & painted first, the highest number gets updated & painted last. You can tell MelonJS the draw order one of two ways.</p><p>First, declare it in your object definitions:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> mySprite </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Sprite</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, { image: </span><span style="color: #A5D6FF">&#39;boingball&#39;</span><span style="color: #C9D1D9"> })</span></span></code></pre><p>The second way is by using <code>me.game.add</code> and passing the z-index as the second parameter:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">addChild</span><span style="color: #C9D1D9">(mySprite, </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">)</span></span></code></pre><p>This effectively accomplishes the same thing, the latter simply sets the z-index property on the object. You can of course alter the z property on your objects at any time in game.</p><h2 id="object-persistence">Object Persistence</h2><p>When melonJS changes state and loads another <code>me.Stage</code>, the world object container will be reset. Any object that is not set to be persisted, will be removed from the container. If you need to have an object that exists across multiple screens, simply set <code>isPersistent</code> to be true on the object, before you switch states.</p><h2 id="the-object-pool">The object pool</h2><p>The object pool is a way of managing your objects without having to create new ones unless you absolutely need them. The <a href="http://melonjs.org/tutorial">tutorial</a> uses examples on combining tiled with the object pool. The docs also cover basic usage <a href="http://melonjs.github.io/docs/me.pool.html">here</a>.</p><p>The key is to tell the pool what objects you want. Just be sure to only call it once, such as in your screen setup:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FFA657">onResetEvent</span><span style="color: #C9D1D9">: </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">   </span><span style="color: #8B949E">// tell the entity pool what classes it needs to work with</span></span>
+<span class="line"><span style="color: #C9D1D9">   me.pool.</span><span style="color: #D2A8FF">register</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;main&#39;</span><span style="color: #C9D1D9">, myMainEntity, </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">   me.pool.</span><span style="color: #D2A8FF">register</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;renderable&#39;</span><span style="color: #C9D1D9">, myRenderableEntity, </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">},</span></span></code></pre><p>That tells the object pool to create pools for each of those types. When you need to either create a new object, or grab an unallocated object from the pool, simply invoke:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> mainObject </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.pool.</span><span style="color: #D2A8FF">pull</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;main&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">)</span></span></code></pre><p>The first parameter is the name you used in the add method, and the following params are what you wish to pass to the <code>init</code> of your object. From there, you simply work with the object as you normal. Add it via:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">addChild</span><span style="color: #C9D1D9">(mainObject)</span></span></code></pre><p>Then when you’re done with it:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">removeChild</span><span style="color: #C9D1D9">(mainObject)</span></span></code></pre><p>Removing the child will remove it from the Container, but it will keep it as an available object in the entity pool. Invoking pull, will simply reset it.</p><p>Last but not least for your object to be “poolable” it must implement a <code>onResetEvent()</code> function that will allow to reset the object properly when pulled back from the object pool :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">class</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">main</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">extends</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">somethingElse</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">onResetEvent</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// reset object specific properties</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.lifeBar </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">100</span></span>
+<span class="line"><span style="color: #C9D1D9">    }</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre></main>
+    </body></html>

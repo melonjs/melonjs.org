@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Custom styles -->
+        <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/6ea589e4.0bdaeafc.css" />
+<link rel="stylesheet" href="/assets/585a1d6d.14abe3b2.css" /></head>
+    <body>
+        <header class="astro-DKPNACHA">
+    
+    <nav class="astro-DKPNACHA">
+        <ul class="astro-DKPNACHA">
+            <li class="null astro-DKPNACHA">
+                <a href="#top" class="astro-DKPNACHA">Home</a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-DKPNACHA">NPM</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="http://melonjs.github.io/docs/" class="astro-DKPNACHA">API</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="/wiki/made-with-melonJS" class="astro-DKPNACHA">Gallery</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="https://melonjs.discourse.group" class="astro-DKPNACHA">Forum</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://github.com/melonjs/melonJS" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/github.svg"><span class="astro-DKPNACHA">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main><p>To enable interaction between a renderable object and the physic game world, a physic <a href="http://melonjs.github.io/melonJS/docs/me.Body.html">body</a> can easily be added to any <a href="http://melonjs.github.io/melonJS/docs/me.Renderable.html#body">renderable</a> :</p><p>in the below example we add a basic body with a rectangular shape at the dimension of the renderable itself, and assign some maximum velocity value and friction :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// add a physic body</span></span>
+<span class="line"><span style="color: #C9D1D9">myRenderable.body </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Body</span><span style="color: #C9D1D9">(myRenderable)</span></span>
+<span class="line"><span style="color: #8B949E">// add a default collision shape</span></span>
+<span class="line"><span style="color: #C9D1D9">myRenderable.body.</span><span style="color: #D2A8FF">addShape</span><span style="color: #C9D1D9">(</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Rect</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, myRenderable.width, myRenderable.height)</span></span>
+<span class="line"><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #8B949E">// configure max speed and friction</span></span>
+<span class="line"><span style="color: #C9D1D9">myRenderable.body.</span><span style="color: #D2A8FF">setMaxVelocity</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">15</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">myRenderable.body.</span><span style="color: #D2A8FF">setFriction</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0.4</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #8B949E">// add a horizontal positive force (e.g. move it right)</span></span>
+<span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.body.force.x </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">3</span></span></code></pre><blockquote>
+<p>Note:When using melonJS 10 and higher, melonJS will automatically update the body physic and check for collision with other object in the scene graph</p>
+</blockquote></main>
+    </body></html>

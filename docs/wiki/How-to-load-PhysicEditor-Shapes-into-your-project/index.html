@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Custom styles -->
+        <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/6ea589e4.0bdaeafc.css" />
+<link rel="stylesheet" href="/assets/585a1d6d.14abe3b2.css" /></head>
+    <body>
+        <header class="astro-DKPNACHA">
+    
+    <nav class="astro-DKPNACHA">
+        <ul class="astro-DKPNACHA">
+            <li class="null astro-DKPNACHA">
+                <a href="#top" class="astro-DKPNACHA">Home</a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-DKPNACHA">NPM</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="http://melonjs.github.io/docs/" class="astro-DKPNACHA">API</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="/wiki/made-with-melonJS" class="astro-DKPNACHA">Gallery</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="https://melonjs.discourse.group" class="astro-DKPNACHA">Forum</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://github.com/melonjs/melonJS" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/github.svg"><span class="astro-DKPNACHA">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main><p>First create your physics data using the <a href="https://www.codeandweb.com/physicseditor">Physic Editor Tool</a> :</p><p><img src="https://cloud.githubusercontent.com/assets/4033090/11137962/ba1421fc-89f7-11e5-95d5-5e4d2b1a0295.png" alt="featurecarousel_physiceditor"></p><p>As the Physic Editor does not currently feature a specific melonJS exporter, we are going to use the one that provide a standard JSON output, the <code>Lime+Corona</code> Exporter. This should give you a file looking like this one for example :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">{</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&quot;hotdog&quot;</span><span style="color: #C9D1D9">: [</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">		{</span></span>
+<span class="line"><span style="color: #C9D1D9">			</span><span style="color: #A5D6FF">&quot;density&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&quot;friction&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&quot;bounce&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">			</span><span style="color: #A5D6FF">&quot;filter&quot;</span><span style="color: #C9D1D9">: { </span><span style="color: #A5D6FF">&quot;categoryBits&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&quot;maskBits&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">65535</span><span style="color: #C9D1D9"> },</span></span>
+<span class="line"><span style="color: #C9D1D9">			</span><span style="color: #A5D6FF">&quot;shape&quot;</span><span style="color: #C9D1D9">: [   </span><span style="color: #79C0FF">6</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">30</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">11</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">23</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">104</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">92</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">53</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">57</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">63</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">32</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">63</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">8</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">49</span><span style="color: #C9D1D9">  ]</span></span>
+<span class="line"><span style="color: #C9D1D9">		}  ,</span></span>
+<span class="line"><span style="color: #C9D1D9">		{</span></span>
+<span class="line"><span style="color: #C9D1D9">			</span><span style="color: #A5D6FF">&quot;density&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&quot;friction&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&quot;bounce&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">			</span><span style="color: #A5D6FF">&quot;filter&quot;</span><span style="color: #C9D1D9">: { </span><span style="color: #A5D6FF">&quot;categoryBits&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&quot;maskBits&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #79C0FF">65535</span><span style="color: #C9D1D9"> },</span></span>
+<span class="line"><span style="color: #C9D1D9">			</span><span style="color: #A5D6FF">&quot;shape&quot;</span><span style="color: #C9D1D9">: [   </span><span style="color: #79C0FF">123</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">24</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">113</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">39</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">92</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">53</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">104</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">  ,  </span><span style="color: #79C0FF">121</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">15</span><span style="color: #C9D1D9">  ]</span></span>
+<span class="line"><span style="color: #C9D1D9">		}</span></span>
+<span class="line"><span style="color: #C9D1D9">    ]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>(Note that as of melonJS 2.1.x, only the <code>shape</code> properties are being used by the engine, the other <code>density</code> and <code>filter</code> values are therefore currently ignored)</p><p>Now it’s time to add the resulting JSON file to your resources list, I will call this one <code>shapesdef</code> in this examples, as it includes multiple shape definitions.</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">{</span><span style="color: #FFA657">name</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">&quot;shapesdef&quot;</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">type</span><span style="color: #C9D1D9">:</span><span style="color: #A5D6FF">&quot;json&quot;</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">src</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">&quot;data/json/shapesdef.json&quot;</span><span style="color: #C9D1D9">}</span></span></code></pre><p>and finally it’s time to use it to define the collision shape of your entity, which is easily done by calling the <a href="http://melonjs.github.io/melonJS/docs/Body.html#fromJSON"><code>me.body.fromJSON()</code></a> method from your constructor :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">myEntity extends me.Entity {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">/**</span></span>
+<span class="line"><span style="color: #8B949E">     * constructor</span></span>
+<span class="line"><span style="color: #8B949E">     */</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">constructor</span><span style="color: #C9D1D9">(x, y, settings) {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// ensure we do not create a default shape</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// (as we manually add it later)</span></span>
+<span class="line"><span style="color: #C9D1D9">        settings.shapes </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// call the super constructor</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">super</span><span style="color: #C9D1D9">(x, y, settings);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// add the &quot;hotdog&quot; shape(s) to the entity body</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.body.</span><span style="color: #D2A8FF">fromJSON</span><span style="color: #C9D1D9">(me.loader.</span><span style="color: #D2A8FF">getJSON</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&quot;shapesdef&quot;</span><span style="color: #C9D1D9">), </span><span style="color: #A5D6FF">&quot;hotdog&quot;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// add the hotdog sprite</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.renderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Sprite</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, {image: me.loader.</span><span style="color: #D2A8FF">getImage</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&quot;hotdog&quot;</span><span style="color: #C9D1D9">)});</span></span>
+<span class="line"><span style="color: #C9D1D9">    }</span></span>
+<span class="line"><span style="color: #C9D1D9">};</span></span></code></pre><p>and that’s it !</p><p>PS: As a side note, and as the PE tool will automatically decomposes concave shapes into convex polygons, this will most probably define several shapes representing your original shape. This is of course supported by melonJS when resolving collision, but keep this in mind if you need to perform any manual operations on these shapes.</p></main>
+    </body></html>

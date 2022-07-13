@@ -1,20 +1,24 @@
+---
+layout: ../../layouts/MDLayout.astro
+---
+
 melonJS currently operates quite similar to that of most game frameworks. It manages the game loop for you, giving you update & draw/paint calls to work with.
 
 melonJS provides various named states to work with, in conjunction with [me.Stage](http://melonjs.github.io/melonJS/docs/me.Stage.html) to better manage different views and controls for the game.
 
 The default states are:
 
-| name | index |
-|------|-------|
-| LOADING | 0 |
-| MENU | 1 |
-| READY | 2 |
-| PLAY | 3 |
-| GAMEOVER | 4 |
-| GAME_END | 5 |
-| SCORE | 6 |
-| CREDITS | 7 |
-| SETTINGS | 8 |
+| name     | index |
+| -------- | ----- |
+| LOADING  | 0     |
+| MENU     | 1     |
+| READY    | 2     |
+| PLAY     | 3     |
+| GAMEOVER | 4     |
+| GAME_END | 5     |
+| SCORE    | 6     |
+| CREDITS  | 7     |
+| SETTINGS | 8     |
 
 You can define if your own states as well.
 
@@ -49,5 +53,5 @@ Each child object's draw function calls the appropriate methods on the current r
 
 To learn more about the object types explained here, check out:
 
-* [Container](Container)
-* [Renderables](Renderables)
+-   [Container](Container)
+-   [Renderables](Renderables)

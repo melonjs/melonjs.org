@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Custom styles -->
+        <link rel="icon" href="/favicon.png">
+    <link rel="stylesheet" href="/assets/6ea589e4.0bdaeafc.css" />
+<link rel="stylesheet" href="/assets/585a1d6d.14abe3b2.css" /></head>
+    <body>
+        <header class="astro-DKPNACHA">
+    
+    <nav class="astro-DKPNACHA">
+        <ul class="astro-DKPNACHA">
+            <li class="null astro-DKPNACHA">
+                <a href="#top" class="astro-DKPNACHA">Home</a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-DKPNACHA">NPM</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="http://melonjs.github.io/docs/" class="astro-DKPNACHA">API</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="/wiki/made-with-melonJS" class="astro-DKPNACHA">Gallery</a>
+            </li>
+            <li class="astro-DKPNACHA"><a href="https://melonjs.discourse.group" class="astro-DKPNACHA">Forum</a></li>
+            <li class="astro-DKPNACHA">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-DKPNACHA">
+                <a href="https://github.com/melonjs/melonJS" class="astro-DKPNACHA"><img class="inline astro-DKPNACHA" src="/img/github.svg"><span class="astro-DKPNACHA">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main><ul>
+<li><a href="Renderables#renderable">Renderable</a></li>
+<li><a href="Renderables#sprite">Sprite</a></li>
+</ul><h3 id="renderable">Renderable</h3><p><strong>Overview</strong> - Object for simple drawing on screen. Used as a base class, no built-in image support, but you can write just about any logic on top of it.</p><p>This is the base object literal that melonJS uses for any display objects. It extends Rect, which is essentially a simple geometric rectangle, that stores various pieces of data to make it easy for working with a rectangle on screen. Basic positioning, drawing sizes, etc. The renderable does not do a whole lot, other then give you a basic object to work with for rendering to the screen.</p><p>The details for the Renderable class can be found here: <a href="http://melonjs.github.io/melonJS/docs/me.Renderable.html">http://melonjs.github.io/melonJS/docs/me.Renderable.html</a>.</p><p>A really simple implementation of a renderable can be done as follows:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">*</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">as</span><span style="color: #C9D1D9"> me </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;melonjs/dist/melonjs.module.js&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">class</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">MyRenderable</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">extends</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">me</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">Renderable</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">constructor</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// x, y, width, height</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">super</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// set the depth of the renderable</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.z </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">100</span></span>
+<span class="line"><span style="color: #C9D1D9">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">update</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">dt</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// don&#39;t redraw this item</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">false</span></span>
+<span class="line"><span style="color: #C9D1D9">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">draw</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">renderer</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">        renderer.</span><span style="color: #D2A8FF">setColor</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;#000&#39;</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">        renderer.</span><span style="color: #D2A8FF">fillRect</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.pos.x, </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.pos.y, </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.width, </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.height)</span></span>
+<span class="line"><span style="color: #C9D1D9">    }</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">addChild</span><span style="color: #C9D1D9">(</span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">myRenderable</span><span style="color: #C9D1D9">())</span></span></code></pre><p>To explain the details, the constructor is calling the parent one passing the default position, and dimension. The draw method simply uses the given reference to the active <a href="https://melonjs.github.io/melonJS/docs/me.Renderer.html">renderer</a> to draw a simple rectangle. The update returns false, as nothing needs to be processed for that object, since in this case it is not colliding with anything, nor moving.</p><h3 id="sprite">Sprite</h3><p><strong>Overview</strong> Useful to draw sprite image, from single static sprite, to complex spritesheet and packed sprite texture.</p><p>The <code>me.Sprite</code> class takes the Renderable steps further. It is an ideal object of choice when you want to work with a static image. It gives you features such as flipping the image, scaling, easier rotation, a flicker effect, and just makes it easier to draw a simple image over implementing it yourself with the <code>me.Renderable</code>.</p><p>It’s worth checking out the docs to see what methods are available for Sprite class: <a href="http://melonjs.github.io/melonJS/docs/me.Sprite.html">http://melonjs.github.io/melonJS/docs/me.Sprite.html</a></p><p>And it can require very little code to get going:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> mySprite </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Sprite</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, { image: </span><span style="color: #A5D6FF">&#39;ball&#39;</span><span style="color: #C9D1D9"> })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">addChild</span><span style="color: #C9D1D9">(mySprite)</span></span></code></pre><p>To setup an animation, instead of accepting a width & height of the total image, it accepts the width & height for dimensions of a single frame. Then it parses the source image size, and keeps track of the coordinates for each frame.</p><p>Once the animation sheet is setup, you can create animations by telling it which index to use. The docs explain this fairly well, under the <code>addAnimation</code> method: <a href="http://melonjs.github.io/melonJS/docs/me.Sprite.html#addAnimation">http://melonjs.github.io/melonJS/docs/me.Sprite.html#addAnimation</a></p><p>An animation object can be setup like so:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> runner </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Sprite</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, {</span></span>
+<span class="line"><span style="color: #C9D1D9">    image: </span><span style="color: #A5D6FF">&#39;ball&#39;</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    spritewidth: </span><span style="color: #79C0FF">64</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    spriteheight: </span><span style="color: #79C0FF">64</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">runner.</span><span style="color: #D2A8FF">addAnimation</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;running&#39;</span><span style="color: #C9D1D9">, [</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">4</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">], </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">runner.</span><span style="color: #D2A8FF">setCurrentAnimation</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;running&#39;</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">addChild</span><span style="color: #C9D1D9">(runner, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">)</span></span></code></pre></main>
+    </body></html>

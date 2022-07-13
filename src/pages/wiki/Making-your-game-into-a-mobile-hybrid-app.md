@@ -1,3 +1,7 @@
+---
+layout: ../../layouts/MDLayout.astro
+---
+
 There's a lot of good tools out there for building web apps into mobile apps, by loading static html, css and javascript. MelonJS is no different. There's a couple tools we recommend to doing this.
 
 ## [Cocoon JS](https://cocoon.io/)
@@ -10,7 +14,7 @@ Building a cocoon app for distribution is all done in the cloud with their platf
 
 ## [Adobe PhoneGap](https://cordova.apache.org/)
 
-Adobe PhoneGap framework is an open source distribution of Cordova — providing the advantage of the Cordova framework with PhoneGap robust tools like the PhoneGap Desktop app, the PhoneGap Developer app, and PhoneGap Build. You can follow [these steps](https://phonegap.com/getstarted/) to install PhoneGap and get an app running on your mobile device in minutes. 
+Adobe PhoneGap framework is an open source distribution of Cordova — providing the advantage of the Cordova framework with PhoneGap robust tools like the PhoneGap Desktop app, the PhoneGap Developer app, and PhoneGap Build. You can follow [these steps](https://phonegap.com/getstarted/) to install PhoneGap and get an app running on your mobile device in minutes.
 
 ## [Cordova](https://cordova.apache.org/)
 
