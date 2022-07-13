@@ -14,7 +14,7 @@ Welcome to the melonJS wiki, here you will find help, tutorial and documentation
 -   [Forum](http://www.html5gamedevs.com/forum/32-melonjs/) : official melonJS forum
 -   [Blog](http://blog.melonjs.org) : official melonJS blog
 -   [Boilerplate](https://github.com/melonjs/es6-boilerplate) : When starting your own projects (_deprecated boilerplate for the legacy version [here](https://github.com/melonjs/boilerplate))_
--   [Code Snippets](/wiki/Code-Snippets) : a collection of useful code snippets
+-   [Code Snippets](/wiki/Code-snippets) : a collection of useful code snippets
 -   [Upgrade Guide](/wiki/Upgrade-Guide) : APIs change guideline when upgrading from a previous version
 -   [Upgrade to melonJS 2](/wiki/Upgrading-to-melonJS-2) : quick step by step how-to on upgrading to melonJS 2
 -   [made with melonJS](/wiki/made-with-melonJS) : a non exhaustive list of games and demos made with melonJS
