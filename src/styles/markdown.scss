@@ -27,5 +27,6 @@ main {
         padding: 3vmin;
         margin: 4vmin auto;
         border: 1vmin solid $dark-green;
+        max-width: calc(100% - 8vmin);
     }
 }
