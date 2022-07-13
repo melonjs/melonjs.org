@@ -1,0 +1,17 @@
+---
+const {to} = Astro.props
+if (typeof to != 'string') throw new Error("Please supply a valid to")
+---
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content={"0; url=" + to}>
+        <script type="text/javascript" define:vars={{to}}>
+            window.location.href = to
+        </script>
+        <title>Page Redirection - Melon</title>
+    </head>
+    <body>
+        If you are not redirected automatically, follow this <a href={to}>link to example</a>.
+    </body>
+</html>
