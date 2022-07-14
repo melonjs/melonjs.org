@@ -21,7 +21,8 @@
     "browser",
     "electron",
     "mobile",
-    "cordova"
+    "cordova",
+    "astro-component"
   ],
   "repository": {
     "type": "git",
