@@ -1,15 +1,16 @@
 ---
 import Header from '../components/Header.astro'
 import '../styles/global.scss'
+const {description="melonJS is an open source HTML5 game engine", title="melonJS"} = Astro.props
 ---
 
 <html lang='en'>
     <head>
-        <title>melonJS</title>
+        <title>{title}</title>
+        <meta name="description" content={description}>
         <meta charset='utf-8' />
         <meta http-equiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <!-- Custom styles -->
         <link rel='icon' href='/favicon.png' />
     </head>
     <body>
