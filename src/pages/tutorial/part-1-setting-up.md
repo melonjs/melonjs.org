@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MDLayout.astro
 ---
-# Part 1 Setting Up the Template
+# Part 1: Setting Up the Template
 First open your terminal and navigate to the folder where you'd like to setup the project.
 
 Next, clone the template repository:
