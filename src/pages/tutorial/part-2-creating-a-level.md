@@ -2,7 +2,7 @@
 layout: ../../layouts/MDLayout.astro
 ---
 # Part 2: Creating a level using Tiled
-*Note: Before starting, and if you are new to Tiled, we strongly encourage you to read this introduction here, that provides the basic on how to get started and how the editor is working.*
+*Note: Before starting, and if you are new to Tiled, we strongly encourage you to read this introduction [here](https://doc.mapeditor.org/en/stable/manual/introduction/), that provides the basics on how the editor works.*
 
 First let's open Tiled and create a new map : for this tutorial we will we use a 640x480 canvas, and since we have 32x32 tiles, we must specify at least 20 and 15 for the map size. In my example I'll define a 40x15 level, so we can play with scrolling background later.
 
