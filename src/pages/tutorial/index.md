@@ -9,6 +9,6 @@ Before we continue you will need to install the following software:
 2. [Git Source Code Manager](https://git-scm.com/downloads)
 3. [VSCode Code Editor](https://code.visualstudio.com/)
 
-You will also need to [be familiar with how to use the terminal](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).
+You will need to [be familiar with how to use the terminal](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955), and know [how to use VSCode](https://code.visualstudio.com/docs/introvideos/basics) too.
 
 [Next: Part 1 Setting Up](/tutorial/part-1-setting-up)
