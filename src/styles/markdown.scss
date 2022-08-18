@@ -1,6 +1,10 @@
 @import 'variables';
 
-main {
+main.md {
+    text-align: center;
+    background-color: $dark-gray;
+    color: $white;
+    min-height: 100vh;
     h1,
     h2,
     h3,
@@ -19,14 +23,30 @@ main {
         width: fit-content;
         margin: auto;
     }
+    p:nth-of-type(1) {
+        margin-bottom: 5vmin;
+        text-align: center;
+    }
     img {
-        margin: 2vmin auto;
-        width: 95vmin;
+        margin: 8vmin auto;
+        width: calc(30vmin + 20vmax);
+        max-width: 80vmax;
+        &.large {
+            width: 100%;
+        }
     }
     pre {
         padding: 3vmin;
         margin: 4vmin auto;
         border: 1vmin solid $dark-green;
         max-width: calc(100% - 8vmin);
+    }
+    a {
+        color: $green;
+    }
+    a.next {
+        margin: 5vmin auto;
+        border: 1vmin solid $green;
+        padding: 2vmin;
     }
 }

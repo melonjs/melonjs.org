@@ -31,3 +31,4 @@ npm run dev
 
 This command runs the "development server". A website is hosted on your computer (usually at http://localhost:9000) so you can edit your game and try out your changes in your browser right away!
 
+<a href="/tutorial/part-2-creating-a-level" class="next">Up Next: Creating a level using Tiled</a>

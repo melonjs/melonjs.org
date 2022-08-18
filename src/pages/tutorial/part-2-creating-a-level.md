@@ -19,7 +19,7 @@ For the beauty of it, we will create two layers - one background layer, and one 
 
 Here's what my level looked like when I finished it:
 
-![Tiled Preview](/img/tutorial/step1_tiled_level_design.png)
+<img alt="Tiled Preview" class="large" src="/img/tutorial/step1_tiled_level_design.png"/>
 
 Finally, let's define a background color for our level, by using the color picker tool (Map/Map Properties), and just specify any color you prefer.
 Setting a background color in Tiled
