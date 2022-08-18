@@ -28,3 +28,6 @@ We've finished setting up, so from now on whenever you'd like to start coding yo
 ```
 npm run dev
 ```
+
+This command runs the "development server". A website is hosted on your computer (usually at http://localhost:9000) so you can edit your game and try out your changes in your browser right away!
+
