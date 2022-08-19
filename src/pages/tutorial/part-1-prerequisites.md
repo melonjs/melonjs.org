@@ -15,9 +15,9 @@ Before we continue you will need to install the following software:
 To install the web server you must first install Node.js then open a new terminal and run the following command:
 ```
 npm install -g http-server
-``
+```
 
 ## Required Knowledge
-You will need to [be familiar with how to use the terminal](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955), and know [how to use VSCode](https://code.visualstudio.com/docs/introvideos/basics) too.
+You will need to [be familiar with how to use the terminal](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955), and know [how to use VSCode](https://code.visualstudio.com/docs/introvideos/basics) too, also a basic understanding of JavaScript will be necessary.
 
 <a href="/tutorial/part-2-setting-up" class="next">Up Next: Setting Up the Template</a>
