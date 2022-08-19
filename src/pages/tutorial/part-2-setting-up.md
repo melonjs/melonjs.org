@@ -17,7 +17,7 @@ npm install
 
 We've finished setting up, so from now on whenever you'd like to start coding your game you can navigate into the `platformer` folder in your terminal and run this command
 ```
-ws
+http-server .
 ```
 
 This command runs a web server in the current directory the terminal is in. A website is hosted on your computer (usually at http://localhost:9000) so you can edit your game and try out your changes in your browser right away!

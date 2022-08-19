@@ -13,7 +13,7 @@ Before we continue you will need to install the following software:
 ## Installing the Web Server
 To install the web server you must first install Node.js then open a new terminal and run the following command:
 ```
-npm install -g ws
+npm install -g http-server
 ``
 
 ## Required Knowledge
