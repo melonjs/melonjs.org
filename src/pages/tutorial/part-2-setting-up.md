@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MDLayout.astro
 ---
-# Part 1: Setting Up the Template
+# Part 2: Setting Up the Template
 First open your terminal and navigate to the folder where you'd like to setup the project.
 
 Next, clone the template repository:
@@ -31,4 +31,4 @@ npm run dev
 
 This command runs the "development server". A website is hosted on your computer (usually at http://localhost:9000) so you can edit your game and try out your changes in your browser right away!
 
-<a href="/tutorial/part-2-creating-a-level" class="next">Up Next: Creating a level using Tiled</a>
+<a href="" class="next">Up Next: ?</a>
