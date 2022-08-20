@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MDLayout.astro
+layout: ../../layouts/TutorialLayout.astro
 ---
 # Part 2: Setting Up the Template
 First open your terminal and navigate to the folder where you'd like to setup the project.

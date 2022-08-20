@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MDLayout.astro
+layout: ../../layouts/TutorialLayout.astro
 ---
 # Part 3: Modifying the game
 Changing different types of game files requires different software. Which software you should use depends on whether you are editing code files, image files, tilemaps, etc.
