@@ -29,4 +29,4 @@ Next, create a new layer (see how to use layers [here](https://www.youtube.com/w
 
 ![Custom skin running in my browser](/img/tutorial/new-skin-demo.png)
 
-*I can see the new skin for my character in my web browser*
+*I can see the new skin for my character in my web browser, and as I walk around and I can see the new outfit doing the walking animation*
