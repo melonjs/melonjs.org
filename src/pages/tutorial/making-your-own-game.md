@@ -1,3 +1,6 @@
+---
+layout: ../../layouts/TutorialLayout.astro
+---
 # Making your own game
 If you'd like to make your own game this is the guide for you.
 

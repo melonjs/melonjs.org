@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MDLayout.astro
+layout: ../../layouts/TutorialLayout.astro
 ---
 # Part 1: Prerequisites
 ## Software to Install
