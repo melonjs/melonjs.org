@@ -14,4 +14,4 @@ Remember how we made a level in the last section? Let's try swapping out the cur
 
 TODO: load in the level "src/data/map/area01.tmx"
 
-<a href="/tutorial/" class="next">Up Next: ?</a>
+<a href="/tutorial/part-4-going-beyond" class="next">Up Next: Going beyond this tutorial</a>
