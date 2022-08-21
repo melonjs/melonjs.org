@@ -10,4 +10,8 @@ You should be able to see the files for the platformer example on the left side 
 
 These are the files used by the web server running on your computer. VS Code (the program in the screenshot) is a great tool to edit these files to change your code. However if you'd like to modify the images you're going to need specialized image editing software.
 
+Remember how we made a level in the last section? Let's try swapping out the current level for that one instead!
+
+TODO: load in the level "src/data/map/area01.tmx"
+
 <a href="/tutorial/" class="next">Up Next: ?</a>
