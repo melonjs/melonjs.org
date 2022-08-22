@@ -15,7 +15,15 @@ Once you have it open, your application should look very similar to this:
 
 In the middle section you have the level editor. The right side has the layers view on the top and the tileset on the bottom you can pick from to use to draw in the level editor. Always make sure you're drawing your tiles in the right layer, otherwise they might overlap each other.
 
+<img alt="Putting mushrooms in the sky" class="large" src="/img/tutorial/mushroom-sky.png">
+
+As you can see I put a bunch of mushrooms in the sky, and I put them in the front layer because that's where the elements like plants and the ground go. We can quickly see which part of the level an element is from by toggling the visibility of each layer (by clicking the 👁 icon). Layers are used to organize the different parts of our level neatly and set the order they are stacked.
+
 Once you are done editing, at the top click on `File > Save`. Then click on `File > Export As`, then change the file type to JSON to save it as `map1.json` so that it can be imported easily in our code. You will need to do this each time you save your level to see the updates.
+
+![Screenshot of our hacked version of the platformer game](/img/tutorial/hacked-game.png)
+
+Now in the browser we can see that we have a custom character, and the sky is filled with mushrooms! Also we put a little bit of snow on the box.
 
 To learn more about the Tiled level editor [see here.](https://doc.mapeditor.org/en/stable/)
 
