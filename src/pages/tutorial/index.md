@@ -6,8 +6,8 @@ This tutorial will teach you how to hack a pre-made platformer game (a platforme
 
 This tutorial has four parts:
 1. [Prerequisites](/tutorial/part-1-prerequisites.md)
-2. [Setting Up the Template](/Users/lilith/projects/melonjs.org/src/pages/tutorial/part-2-setting-up.md)
-3. [Modifying the game](/Users/lilith/projects/melonjs.org/src/pages/tutorial/part-3-modifying-the-game.md)
-4. [Going beyond this tutorial](/Users/lilith/projects/melonjs.org/src/pages/tutorial/part-4-going-beyond.md)
+2. [Setting Up the Template](/tutorial/part-2-setting-up.md)
+3. [Modifying the game](/tutorial/part-3-modifying-the-game.md)
+4. [Going beyond this tutorial](/tutorial/part-4-going-beyond.md)
 
 <a href="/tutorial/part-1-prerequisites" class="next">Getting Started: Prerequisites</a>
