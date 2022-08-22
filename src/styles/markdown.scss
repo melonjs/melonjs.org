@@ -5,13 +5,15 @@ main.md {
     background-color: $dark-gray;
     color: $white;
     min-height: 100vh;
+    line-height: calc(2.5vmin + 2vmax);
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-        padding: 5vmin 0 2vmin 0vmin;
+        line-height: calc(2.5vmin + 4vmax);
+        margin: 5vmin auto 2vmin auto;
     }
     h1 {
         text-decoration: underline;
