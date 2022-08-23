@@ -19,4 +19,7 @@ Next, create a new layer (see how to use layers [here](https://www.youtube.com/w
 
 *I can see the new skin for my character in my web browser, and as I walk around and I can see the new outfit doing the walking animation*
 
+## Footnote: General art concepts
+This tutorial does not cover the basics of art itself. [Click here for more information about how to make art.](/tutorial/learn-about-art)
+
 <a href="/tutorial/part-3-2-modifying-the-level" class="next">Up Next: Modifying the level using Tiled</a>
