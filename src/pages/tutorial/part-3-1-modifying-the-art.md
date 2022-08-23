@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
 ---
-## Part 3-1: Modifying the images
-VSCode is a code editor. This means it reads and writes text files (usually containing code but not always). This also means that it is not useful for editing images, which provide the visual layer of your game. If you want to change how your game looks you'll need to edit your image files with an image editor like [Krita (it's free and open source, so consider donating if you like it)](https://krita.org/en/). Other alternatives include Aseprite (specialized pixel art software), Photoshop, GIMP, and more.
+## Part 3-1: Modifying the art
+VSCode is a code editor. This means it reads and writes text files (usually containing code but not always). This also means that it is not useful for editing images, which provide the art layer of your game. If you want to change how your game looks you'll need to edit your image files with an image editor like [Krita (it's free and open source, so consider donating if you like it)](https://krita.org/en/). Other alternatives include Aseprite (specialized pixel art software), Photoshop, GIMP, and more.
 
 Let's use Krita to change how the main character looks. Launch Krita, then in at the top click **File => Open**, then click open the following image:
 ```
@@ -18,5 +18,8 @@ Next, create a new layer (see how to use layers [here](https://www.youtube.com/w
 ![Custom skin running in my browser](/img/tutorial/new-skin-demo.png)
 
 *I can see the new skin for my character in my web browser, and as I walk around and I can see the new outfit doing the walking animation*
+
+## Footnote: General art concepts
+This tutorial does not cover the basics of art itself. [Click here for more information about how to make art.](/tutorial/learn-about-art)
 
 <a href="/tutorial/part-3-2-modifying-the-level" class="next">Up Next: Modifying the level using Tiled</a>

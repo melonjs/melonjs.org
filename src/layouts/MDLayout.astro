@@ -1,8 +1,11 @@
 ---
 import BaseLayout from './BaseLayout.astro'
 import '../styles/markdown.scss'
+const {props} = Astro
+const passProps = {...props?.content}
+delete passProps.astro
 ---
 
-<BaseLayout>
+<BaseLayout {...passProps}>
     <main class="md"><slot></slot></main>
 </BaseLayout>
