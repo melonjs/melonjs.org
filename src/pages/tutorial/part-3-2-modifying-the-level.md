@@ -25,6 +25,8 @@ Once you are done editing, at the top click on `File > Save`. Then click on `Fil
 
 Now in the browser we can see that we have a custom character, and the sky is filled with mushrooms! Also we put a little bit of snow on the box.
 
-To learn more about the Tiled level editor [see here.](https://doc.mapeditor.org/en/stable/)
+You can learn more about the Tiled level editor [here.](https://doc.mapeditor.org/en/stable/)
+
+The solid black lines in the level represent the collisions (this means things the walls and the floors and boxes, anything you can't walk through) You can learn more about how collisions are made [here.](https://github.com/melonjs/melonJS/wiki/How-to-define-world-collision-shapes-in-Tiled)
 
 <a href="/tutorial/part-3-3-modifying-the-code" class="next">Up Next: Modifying the Code</a>
