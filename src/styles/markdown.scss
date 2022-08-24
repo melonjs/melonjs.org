@@ -37,6 +37,10 @@ main.md {
         margin: 2vmin auto;
         width: 45vw;
         min-width: 80vmin;
+        &.small {
+            width: calc(20vmin + 20vmax);
+            min-width: 0;
+        }
         &.medium {
             width: 65vw;
             margin: 6vmin auto;
