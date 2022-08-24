@@ -5,7 +5,7 @@ title: Hacking a Platformer Game
 
 # melonJS: Hacking a Platformer Game
 
-This tutorial will teach you how to hack a pre-made platformer game (a platformer game is a side-scrolling game like mario) to add your own custom assets and code in. It's sometimes easier to take something apart even if putting it back together seems challenging.
+This tutorial will show you how to hack a pre-made platformer game (a platformer game is a side-scrolling game like mario) to add your own custom assets and code in. Taking it apart will help you learn how to make 2D games that run in the web browser using melonJS.
 
 This tutorial has four parts:
 
