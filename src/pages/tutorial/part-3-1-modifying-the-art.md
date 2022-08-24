@@ -5,7 +5,9 @@ layout: ../../layouts/TutorialLayout.astro
 VSCode is a code editor. This means it reads and writes text files (usually containing code but not always). This also means that it is not useful for editing images, which provide the art layer of your game. If you want to change how your game looks you'll need to edit your image files with an image editor like [Krita (it's free and open source, so consider donating if you like it)](https://krita.org/en/).
 [![Krita](/img/tutorial/krita-logo.png)](https://krita.org/en/)
 
-Other alternatives include Aseprite (specialized pixel art software), Photoshop, GIMP, and more.
+Other alternatives include Aseprite, Photoshop, GIMP, and more. Here's a basic chart of their features:
+
+<img alt="venn diagram of art software" class="large" src="/img/tutorial/art-chart.svg">
 
 Let's use Krita to change how the main character looks. Launch Krita, then in at the top click **File => Open**, then click open the following image:
 ```
