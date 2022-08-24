@@ -2,7 +2,10 @@
 layout: ../../layouts/TutorialLayout.astro
 ---
 ## Part 3-1: Modifying the art
-VSCode is a code editor. This means it reads and writes text files (usually containing code but not always). This also means that it is not useful for editing images, which provide the art layer of your game. If you want to change how your game looks you'll need to edit your image files with an image editor like [Krita (it's free and open source, so consider donating if you like it)](https://krita.org/en/). Other alternatives include Aseprite (specialized pixel art software), Photoshop, GIMP, and more.
+VSCode is a code editor. This means it reads and writes text files (usually containing code but not always). This also means that it is not useful for editing images, which provide the art layer of your game. If you want to change how your game looks you'll need to edit your image files with an image editor like [Krita (it's free and open source, so consider donating if you like it)](https://krita.org/en/).
+[![Krita](/img/tutorial/krita-logo.png)](https://krita.org/en/)
+
+Other alternatives include Aseprite (specialized pixel art software), Photoshop, GIMP, and more.
 
 Let's use Krita to change how the main character looks. Launch Krita, then in at the top click **File => Open**, then click open the following image:
 ```
