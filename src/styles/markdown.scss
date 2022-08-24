@@ -31,11 +31,16 @@ main.md {
         text-align: center;
     }
     img {
+        display: block;
         margin: 8vmin auto;
-        width: calc(30vmin + 20vmax);
-        max-width: 80vmax;
+        width: calc(30vw + 30vmax);
+        &.medium {
+            min-width: 80vmin;
+            width: 60vw;
+        }
         &.large {
-            width: 100%;
+            min-width: 90vmin;
+            width: 80vw;
         }
     }
     pre {
@@ -48,6 +53,7 @@ main.md {
         color: $green;
     }
     a.next {
+        display: block;
         margin: 5vmin auto;
         border: 1vmin solid $green;
         padding: 2vmin;

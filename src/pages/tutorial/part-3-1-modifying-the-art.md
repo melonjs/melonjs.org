@@ -7,7 +7,7 @@ VSCode is a code editor. This means it reads and writes text files (usually cont
 
 Other alternatives include Aseprite, Photoshop, GIMP, and more. Here's a basic chart of their features:
 
-<img alt="venn diagram of art software" class="large" src="/img/tutorial/art-chart.svg">
+<img alt="venn diagram of art software" class="medium" src="/img/tutorial/art-chart.svg">
 
 Let's use Krita to change how the main character looks. Launch Krita, then in at the top click **File => Open**, then click open the following image:
 ```
