@@ -6,11 +6,15 @@ const { props } = Astro
 const passProps = { ...props.content }
 delete passProps.astro
 ---
-
 <MDLayout {...passProps}>
+    <style>
+        .tutorial-home {
+            margin-bottom: -5vmin;
+        }
+    </style>
     {
         pathname === '/tutorial' ? null : (
-            <a href="/tutorial">Tutorial: Hacking a Platformer Game</a>
+            <a class="tutorial-home" href="/tutorial">Tutorial: Hacking a Platformer Game</a>
         )
     }
     <slot />
