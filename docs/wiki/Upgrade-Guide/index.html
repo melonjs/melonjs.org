@@ -1,64 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
     <head>
         <title>melonJS</title>
+        <meta name="description" content="melonJS is an open source HTML5 game engine">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Custom styles -->
-        <link rel="icon" href="/favicon.png">
-    <link rel="stylesheet" href="/assets/8999c0a0.6927e5d3.css" />
-<link rel="stylesheet" href="/assets/1a12d8c4.3afb37a6.css" /></head>
+        <link rel="icon" href="/img/favicon.svg">
+    <link rel="stylesheet" href="/assets/ff2699bd.19d698c1.css" />
+<link rel="stylesheet" href="/assets/28abb143.e2dc0990.css" /></head>
     <body>
-        <header class="astro-I2FXUJMC">
+        <header class="astro-S6RBVFWI">
     
-    <nav class="astro-I2FXUJMC">
-        <ul class="astro-I2FXUJMC">
-            <li class="null astro-I2FXUJMC">
-                <a href="/#top" class="astro-I2FXUJMC">Home</a>
+    <nav class="astro-S6RBVFWI">
+        <ul class="astro-S6RBVFWI">
+            <li class="null astro-S6RBVFWI">
+                <a href="/#top" class="astro-S6RBVFWI">Home</a>
             </li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://www.npmjs.com/package/melonjs" class="astro-I2FXUJMC"><img alt="npm" class="inline no-bump astro-I2FXUJMC" src="/img/npm.svg"></a>
-            </li>
-            <li class="astro-I2FXUJMC"><a href="https://melonjs.github.io/docs/" class="astro-I2FXUJMC">API</a></li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS" class="astro-I2FXUJMC">Gallery</a>
-            </li>
-            <li class="astro-I2FXUJMC"><a href="https://melonjs.discourse.group" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/discourse.svg">Forum</a></li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/discord.svg">Discord
+            <li class="astro-S6RBVFWI">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-S6RBVFWI"><img alt="npm" class="inline no-bump astro-S6RBVFWI" src="/img/npm.svg">
                 </a>
             </li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://github.com/melonjs/melonJS" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/github.svg"><span class="astro-I2FXUJMC">GitHub
+            <li class="astro-S6RBVFWI"><a href="https://melonjs.github.io/docs/" class="astro-S6RBVFWI">API</a></li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS" class="astro-S6RBVFWI">Gallery
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://melonjs.discourse.group" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/discourse.svg">Forum
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://github.com/melonjs/melonJS" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/github.svg"><span class="astro-S6RBVFWI">GitHub
                     </span>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
-        <main><p>This page list the public APIs change between melonJS release, and will provide you guideline to easily upgrade.</p><blockquote>
+        <main class="md"><p>This page list the public APIs change between melonJS release, and will provide you guideline to easily upgrade.</p>
+<blockquote>
 <p>melonJS uses <a href="https://semver.org">Semantic Versioning</a>, which means that only MAJOR version (e.g. moving from 9.x.x to 10.x.x) will introduce breaking API changes; nevertheless we always provide backward compatibility as much as possible by providing method <a href="https://github.com/melonjs/melonJS/blob/master/src/lang/deprecated.js">wrapping</a> on public deprecated API(s). For any other MINOR or PATCH version, melonJS API provides seamless upgrade.</p>
-</blockquote><h2 id="melonjs-2-es6-version">melonJS 2 (ES6) Version</h2><blockquote>
+</blockquote>
+<h2 id="melonjs-2-es6-version">melonJS 2 (ES6) Version</h2>
+<blockquote>
 <p>Note: As the initial 10.0 version marks the release of melonJS2, that is now fully ES6 compliant, all deprecated API and method from previous “legacy” versions (9.x and lower) have been removed. see as well <a href="/wiki/Upgrading-to-melonJS-2">here</a> for a dedicated upgrading guide from Legacy version of melonJS to melonJS 2</p>
-</blockquote><h1 id="120x-to-130x-stable">12.0.x to 13.0.x (Stable)</h1><ul>
+</blockquote>
+<h1 id="120x-to-130x-stable">12.0.x to 13.0.x (Stable)</h1>
+<ul>
 <li>device: as part of <code>device</code> refactoring to a proper ES6 syntax, the previous <code>device.isFullScreen</code> property has been changed into a <code>device.isFullScreen()</code> function</li>
 <li>device: deprecated function <code>device.turnOnPointerLock</code> and <code>device.turnOffPointerLock</code> since version 10.3 have been removed; please use <code>input.requestPointerLock()</code> or <code>input.exitPointerLock()</code></li>
-</ul><h1 id="110x-to-120x-stable">11.0.x to 12.0.x (Stable)</h1><ul>
+</ul>
+<h1 id="110x-to-120x-stable">11.0.x to 12.0.x (Stable)</h1>
+<ul>
 <li>Core: <code>utils.string</code> helper trim functions have been removed in favour to their native es10 equivalent (<code>String.trimLeft</code> and <code>String.trimRight</code>)</li>
-</ul><h1 id="1012x-to-110x-stable">10.12.x to 11.0.x (Stable)</h1><ul>
+</ul>
+<h1 id="1012x-to-110x-stable">10.12.x to 11.0.x (Stable)</h1>
+<ul>
 <li>Renderable: the <a href="http://melonjs.github.io/melonJS/docs/melonjs/Light2d.html">Light2d</a> constructor now takes an additional parameter (<code>x, y, radiusX, [radiusY], [color], [intensity])</code> allowing to create elliptical shaped lights</li>
-</ul><h1 id="105x-to-1012x-stable">10.5.x to 10.12.x (Stable)</h1><p>no breaking API changes</p><h1 id="104x-to-105x-stable">10.4.x to 10.5.x (Stable)</h1><ul>
+</ul>
+<h1 id="105x-to-1012x-stable">10.5.x to 10.12.x (Stable)</h1>
+<p>no breaking API changes</p>
+<h1 id="104x-to-105x-stable">10.4.x to 10.5.x (Stable)</h1>
+<ul>
 <li>Renderable: <code>DraggableEntity</code> and <code>DroptargetEntity</code> have been renamed to <a href="http://melonjs.github.io/melonJS/docs/melonjs/Draggable.html"><code>Draggable</code></a> and <a href="http://melonjs.github.io/melonJS/docs/melonjs/DropTarget.html"><code>DropTarget</code></a></li>
-</ul><h1 id="103x-to-104x-stable">10.3.x to 10.4.x (Stable)</h1><ul>
+</ul>
+<h1 id="103x-to-104x-stable">10.3.x to 10.4.x (Stable)</h1>
+<ul>
 <li>Renderer: the <code>video.renderer.Texture</code> class is now directly available as <code>TextureAtlas</code></li>
-</ul><h1 id="100x-to-103x-stable">10.0.x to 10.3.x (Stable)</h1><ul>
+</ul>
+<h1 id="100x-to-103x-stable">10.0.x to 10.3.x (Stable)</h1>
+<ul>
 <li>Input: <code>device.turnOnPointerLock()</code> and <code>device.turnOffPointerLock()</code> have been replaced respectively by <code>input.requestPointerLock()</code> and <code>input.exitPointerLock()</code>, and updated to the latest 2.0 specs</li>
-</ul><h1 id="91x-to-100x-stable">9.1.x to 10.0.x (Stable)</h1><ul>
+</ul>
+<h1 id="91x-to-100x-stable">9.1.x to 10.0.x (Stable)</h1>
+<ul>
 <li>Core : <code>me.timer.lastUpdate</code> has been moved to <a href="http://melonjs.github.io/melonJS/docs/me.game.html#.lastUpdate"><code>me.game.lastUpdate</code></a></li>
 <li>Physic : physic body update and collision check is now automatically done through the world simulation update loop (see the specific wiki entry on upgrading to melonJS 2)</li>
 <li>Event : minPubSub event based implementation has been replaced by a nodeJS event emitter based implementation, with <code>me.event.publish()</code>, <code>me.event.subscribe()</code> and <code>me.event.unsubscribe()</code> being replaced respectively by <a href="https://melonjs.github.io/melonJS/docs/me.event.html#.emit"><code>me.event.emit()</code></a>, <a href="https://melonjs.github.io/melonJS/docs/me.event.html#.on"><code>me.event.on()</code></a> (or <a href="https://melonjs.github.io/melonJS/docs/me.event.html#.once"><code>me.event.once()</code></a>) and <a href="https://melonjs.github.io/melonJS/docs/me.event.html#.off"><code>me.event.off()</code></a>.</li>
-</ul><h2 id="legacy-version">Legacy Version</h2><h1 id="80x-to-91x-stable">8.0.x to 9.1.x (Stable)</h1><ul>
+</ul>
+<h2 id="legacy-version">Legacy Version</h2>
+<h1 id="80x-to-91x-stable">8.0.x to 9.1.x (Stable)</h1>
+<ul>
 <li>Tilemap: <code>me.levelDirector</code> has been renamed to <a href="http://melonjs.github.io/melonJS/docs/me.level.html"><code>me.level</code></a>, together with the functions <code>loadLevel()</code>, <code>reloadLevel()</code>, <code>nextLevel()</code> and <code>previousLevel</code>, respectively renamed to <code>load()</code>, <code>reload()</code>, <code>next()</code> and <code>previous()</code></li>
 <li>Shape: <code>translateV()</code> is now deprecated and available through a single <code>translate()</code> method accepting both numerals or vector as parameter(s)</li>
 <li>Shape: <code>containsPoint()</code> and <code>containsPointV()</code> are now deprecated and available through a single <code>contains()</code> method accepting numerals, vector, or other similar shape object as parameter(s)</li>
@@ -66,18 +92,25 @@
 <li>Renderer : WebGL2 is now the default mode when using the WebGL renderer (use <code>preferWebGL1 = true</code> when calling <a href="http://melonjs.github.io/melonJS/docs/me.video.html#.init">me.video.init</a> if you need to force WebGL1)</li>
 <li>Entity: <code>me.CollectableEntity</code> and <code>me.LevelEntity</code> are now deprecated and replaced respectively by more generic <a href="https://melonjs.github.io/melonJS/docs/me.Collectable.html"><code>me.Collectable</code></a> and <a href="https://melonjs.github.io/melonJS/docs/me.Trigger.html"><code>me.Trigger</code></a> objects that do not extend me.Entity anymore</li>
 <li><code>me.video.getWrapper()</code> has been renamed to <a href="http://melonjs.github.io/melonJS/docs/me.video.html#.getParent"><code>me.video.getParent()</code></a></li>
-</ul><h1 id="71x-to-80x-stable">7.1.x to 8.0.x (Stable)</h1><ul>
+</ul>
+<h1 id="71x-to-80x-stable">7.1.x to 8.0.x (Stable)</h1>
+<ul>
 <li>Physic : <a href="http://melonjs.github.io/melonJS/docs/me.game.html#.world"><code>me.game.world</code></a> is now a specific container (as opposed to a generic <code>me.Container</code> object) that will manage all related physic updates, and that contains properties and instances used by the physic simulation such as the global gravity setting or the quadtree used for broadphase.</li>
 <li>Physic : gravity for physic bodies is now defined globally under <a href="http://melonjs.github.io/melonJS/docs/me.World.html#.gravity"><code>me.game.world.gravity</code></a>, and can be scaled individually using <a href="http://melonjs.github.io/melonJS/docs/me.Body.html#.gravityScale"><code>me.Body.gravityScale</code></a>. As a consequences <code>me.sys.gravity</code> is now deprecated and when set will automatically change the value of <code>me.game.world.gravity.y</code>. Similarly the <code>gravity</code> property of <a href="http://melonjs.github.io/melonJS/docs/me.Body.html"><code>me.Body</code></a> is replaced by <a href="http://melonjs.github.io/melonJS/docs/me.Body.html#.gravityScale"><code>me.Body.gravityScale</code></a> that allows specifying individually to which degree a specific body is affected by the world gravity.</li>
-</ul><p>before (now deprecated) :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// change default gravity value globally</span></span>
+</ul>
+<p>before (now deprecated) :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// change default gravity value globally</span></span>
 <span class="line"><span style="color: #C9D1D9">me.sys.gravity </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0.98</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E">// change gravity value for a specific physic body</span></span>
-<span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.body.gravity </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span></span></code></pre><p>now :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// change default gravity value globally</span></span>
+<span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.body.gravity </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span></span></code></pre>
+<p>now :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// change default gravity value globally</span></span>
 <span class="line"><span style="color: #C9D1D9">me.game.world.gravity.</span><span style="color: #D2A8FF">set</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0.98</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E">// change gravity value for a specific physic body</span></span>
-<span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.body.gravityScale </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span></span></code></pre><ul>
+<span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.body.gravityScale </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span></span></code></pre>
+<ul>
 <li>
 <p>Physic : <a href="http://melonjs.github.io/melonJS/docs/me.Body.html#.addShapesFromJSON"><code>me.Body.addShapesFromJSON </code></a> has been renamed to <a href="http://melonjs.github.io/melonJS/docs/me.Body.html#.fromJSON"><code>me.Body.fromJSON </code></a></p>
 </li>
@@ -97,43 +130,63 @@
 <li>
 <p>video : the <code>options.wrapper</code> element from the <a href="http://melonjs.github.io/melonJS/docs/me.video.html#.init">video init parameters</a>, that is used to indicate the DOM element where to hold the canvas in the HTML file, has been renamed to <code>options.parent</code>.</p>
 </li>
-</ul><h1 id="700-to-710-stable">7.0.0 to 7.1.0 (Stable)</h1><ul>
+</ul>
+<h1 id="700-to-710-stable">7.0.0 to 7.1.0 (Stable)</h1>
+<ul>
 <li>video : <code>me.video.updateDisplaySize()</code> and <code>me.Renderer.scaleCanvas()</code> are deprecated and replaced by <a href="http://melonjs.github.io/melonJS/docs/me.video.html#.scale"><code>me.video.scale()</code></a> as the two former methods were actually redundant and doing basically the same thing.</li>
 <li>Renderable : <code>distanceToPoint()</code>, and <code>angleToPoint()</code> are now deprecated and have been merged respectively with the <a href="http://melonjs.github.io/melonJS/docs/me.Renderable.html#.distanceTo"><code>distanceTo()</code></a> and <a href="http://melonjs.github.io/melonJS/docs/me.Renderable.html#.angleTo"><code>angleTo</code></a> method.</li>
-</ul><h1 id="640-to-700">6.4.0 to 7.0.0</h1><ul>
+</ul>
+<h1 id="640-to-700">6.4.0 to 7.0.0</h1>
+<ul>
 <li>CocoonJS : following the service shutdown (<a href="https://blog.cocoon.io/shutting-down-cocoon/">https://blog.cocoon.io/shutting-down-cocoon/</a>) the support for CocoonJS has been removed from melonJS</li>
 <li>Renderer : although not a API change, the renderer selection is now set to AUTO by default (Attempt WebGL first, with fallback to Canvas). The WebGL renderer is now stable since several releases, and offer multiple advantages over the Canvas one, including both higher performances and additional features (e.g. shader, color tinting, …)</li>
 <li>WebGL Shaders : the shader implementation has been rewritten to allow for a much more generic approach, and ease the use of custom shader with the <a href="http://melonjs.github.io/melonJS/docs/me.WebGLRenderer.Compositor.html">Compositor</a>. Custom shaders can now be created by extending or using the base <a href="http://melonjs.github.io/melonJS/docs/me.GLShader.html">me.GLShader</a> object as follow :</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// create a basic shader</span></span>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// create a basic shader</span></span>
 <span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myShader </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">GLShader</span><span style="color: #C9D1D9">(</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// WebGL rendering context</span></span>
 <span class="line"><span style="color: #C9D1D9">    gl,</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// vertex shader</span></span>
 <span class="line"><span style="color: #C9D1D9">    [</span></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #A5D6FF">&#39;void main() {&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #A5D6FF">&#39;    gl_Position = doMathToMakeClipspaceCoordinates;&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #A5D6FF">&#39;}&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">    ].</span><span style="color: #D2A8FF">join</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">&#39;</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #A5D6FF">'void main() {'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #A5D6FF">'    gl_Position = doMathToMakeClipspaceCoordinates;'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #A5D6FF">'}'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    ].</span><span style="color: #D2A8FF">join</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">'</span><span style="color: #C9D1D9">),</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// fragment shader</span></span>
-<span class="line"><span style="color: #C9D1D9">    [</span><span style="color: #A5D6FF">&#39;void main() {&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&#39;    gl_FragColor = doMathToMakeAColor;&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&#39;}&#39;</span><span style="color: #C9D1D9">].</span><span style="color: #D2A8FF">join</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">&#39;</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">    [</span><span style="color: #A5D6FF">'void main() {'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'    gl_FragColor = doMathToMakeAColor;'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'}'</span><span style="color: #C9D1D9">].</span><span style="color: #D2A8FF">join</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">'</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #8B949E">// use the shader</span></span>
-<span class="line"><span style="color: #C9D1D9">myShader.</span><span style="color: #D2A8FF">bind</span><span style="color: #C9D1D9">()</span></span></code></pre><ul>
+<span class="line"><span style="color: #C9D1D9">myShader.</span><span style="color: #D2A8FF">bind</span><span style="color: #C9D1D9">()</span></span></code></pre>
+<ul>
 <li>
 <p>video : although more for internal usage, <code>me.video.getPos()</code> has been deprecated and replaced by <code>me.video.renderer.getBounds()</code> that will now properly return the parent container position and size. Additionally a <code>me.video.renderer.updateBounds()</code> method has been added that allows end-user to rebuild the internal coordinates cache in case the page or parent layout is programmatically modified without triggering a <a href="https://developer.mozilla.org/en-US/docs/Web/Events/resize">resize</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/Events/orientationchange">orientationchange</a> event.</p>
 </li>
 <li>
 <p>error : <code>me.Error</code> is deprecated and replaced by the standard <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a> object.</p>
 </li>
-</ul><h1 id="630-to-640">6.3.0 to 6.4.0</h1><ul>
+</ul>
+<h1 id="630-to-640">6.3.0 to 6.4.0</h1>
+<ul>
 <li><code>me.WebGLRenderer.Texture</code> and <code>me.CanvasRenderer.Texture</code> have been merged into a single <code>me.Renderer.Texture</code> object. this does not really break the current API as the <code>me.Renderer.Texture</code> reference was already available before as a global reference for Texture object, but <code>me.WebGLRenderer.Texture</code> and <code>me.CanvasRenderer.Texture</code> are now only aliases and will be removed in the future.</li>
-</ul><h1 id="620-to-630">6.2.0 to 6.3.0</h1><h3 id="renderer">Renderer</h3><ul>
+</ul>
+<h1 id="620-to-630">6.2.0 to 6.3.0</h1>
+<h3 id="renderer">Renderer</h3>
+<ul>
 <li><code>drawShape()</code> is deprecated and has been replaced by a <code>fill()</code> and <code>stroke()</code> methods (for backward compatibility, calling <code>drawShape()</code> will call the <code>stroke()</code> method to replicate previous behaviour).</li>
-</ul><h1 id="610-to-620">6.1.0 to 6.2.0</h1><h3 id="state">State</h3><ul>
+</ul>
+<h1 id="610-to-620">6.1.0 to 6.2.0</h1>
+<h3 id="state">State</h3>
+<ul>
 <li><code>me.ScreenObject</code> is now deprecated and replaced by <a href="http://melonjs.github.io/melonJS/docs/me.Stage.html"><code>me.Stage</code></a> (<code>me.ScreenObject</code> still available as an alias for backward compatibility)</li>
-</ul><h3 id="renderable">Renderable</h3><ul>
+</ul>
+<h3 id="renderable">Renderable</h3>
+<ul>
 <li><code>me.Font</code> and <code>me.BitmapFont</code> are now deprecated and replaced by <code>me.Text</code> and <code>me.BitmapText</code> (former objects are still available to guarantee backward compatibility). The new <a href="http://melonjs.github.io/melonJS/docs/me.Text.html"><code>me.Text</code></a> and <a href="http://melonjs.github.io/melonJS/docs/me.BitmapText.html"><code>me.BitmapText</code></a> objects are now much more generic, can be added directly to a container, and their corresponding bounding boxes are now properly computed. Additionally it allows melonJS to add support for the Text Object Feature introduced recently in Tiled.</li>
-</ul><h1 id="600-to-610">6.0.0 to 6.1.0</h1><p>no breaking API changes</p><h1 id="5xx-to-600">5.x.x to 6.0.0</h1><ul>
+</ul>
+<h1 id="600-to-610">6.0.0 to 6.1.0</h1>
+<p>no breaking API changes</p>
+<h1 id="5xx-to-600">5.x.x to 6.0.0</h1>
+<ul>
 <li>
 <p>API update to sandbox all previous language extension under the me namespace :</p>
 <ul>
@@ -162,108 +215,180 @@
 <li><code>window.throttle</code> -> `me.utils.function.throttle()</li>
 </ul>
 </li>
-</ul><h3 id="physic-body">Physic Body</h3><ul>
+</ul>
+<h3 id="physic-body">Physic Body</h3>
+<ul>
 <li><code>me.body.gravity</code> is now a <code>me.Vector2d</code> object, allowing to define gravity on both axis</li>
 <li>Solid bodies now defines a new <code>me.Body.force</code> property allowing to automatically apply a force or acceleration</li>
 <li><code>me.Body.accel</code> and <code>me.Body.setVelocity</code> are now deprecated and to be replaced by <code>me.Body.force</code></li>
-</ul><h3 id="medevice">me.device</h3><ul>
+</ul>
+<h3 id="medevice">me.device</h3>
+<ul>
 <li><code>me.device.getPixelRatio()</code> has been removed, and replaced by a <code>me.device.devicePixelRatio</code> property that can directly be used.</li>
-</ul><h3 id="megameviewport">me.game.viewport</h3><ul>
+</ul>
+<h3 id="megameviewport">me.game.viewport</h3>
+<ul>
 <li>the camera system now supports damping for smoother movement. On top of the new <code>damping</code> property, the <code>me.Viewport.follow(target, axis, damping)</code> function accepts an optional third parameter to specify a damping value between 0 and 1.</li>
 <li>the base me.Viewport class has been renamed to me.Camera2d to prepare for future changes. <code>me.game.viewport</code> stays however as the main reference to the game viewport.</li>
-</ul><h1 id="50x-to-510-stable">5.0.x to 5.1.0 (Stable)</h1><h3 id="bootstrap">Bootstrap</h3><ul>
+</ul>
+<h1 id="50x-to-510-stable">5.0.x to 5.1.0 (Stable)</h1>
+<h3 id="bootstrap">Bootstrap</h3>
+<ul>
 <li><code>window.onReady</code> has been deprecated, in favor of <a href="http://melonjs.github.io/melonJS/docs/me.device.html#onReady"><code>me.device.onReady</code></a>. This is to ensure that melonJS is contained as much as possible under the <code>me</code> namespace.</li>
-</ul><h3 id="renderable-1">Renderable</h3><ul>
+</ul>
+<h3 id="renderable-1">Renderable</h3>
+<ul>
 <li><a href="http://melonjs.github.io/melonJS/docs/me.Renderable.html#isKinematic"><code>isKinematic</code></a> is now true by default except for <code>me.Entity</code>, <code>me.Container</code> and <code>me.GUI</code> objects. Which means that if you use <code>me.Renderable</code> as a base for a custom object responding to collision or pointer event, you will need to set it back to false within the constructor.</li>
-</ul><h1 id="4xx-to-50x-stable">4.x.x to 5.0.x (Stable)</h1><h3 id="device">Device</h3><ul>
+</ul>
+<h1 id="4xx-to-50x-stable">4.x.x to 5.0.x (Stable)</h1>
+<h3 id="device">Device</h3>
+<ul>
 <li>the orientation related functions have been updated to match the new draft <a href="https://developer.mozilla.org/en-US/docs/Web/API/Screen/orientation">Orientation API</a>; as a consequence, current device orientation can be now obtained through the <code>me.device.getScreenOrientation()</code> function. The former <code>me.device orientation</code> property has been removed as it was relying on a deprecated <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/orientation">Orientation API</a>.</li>
-</ul><h3 id="input">Input</h3><ul>
+</ul>
+<h3 id="input">Input</h3>
+<ul>
 <li>remove a set of deprecated items : argument type for <code>me.input.bindGamepad()</code>, <code>mousewheel</code> event, and <code>MS</code> prefixed Pointer Event</li>
 <li>melonJS will now provide a <a href="http://melonjs.github.io/melonJS/docs/me.Pointer.html">me.Pointer</a> object to callback (when registering on pointer event), instead of providing the corresponding Event Object. Implementation is still backward compatible as most of the useful standard properties are provided directly through me.Pointer</li>
-</ul><h1 id="3xx-to-40x-stable">3.x.x to 4.0.x (Stable)</h1><h3 id="bitmapfont">BitmapFont</h3><ul>
+</ul>
+<h1 id="3xx-to-40x-stable">3.x.x to 4.0.x (Stable)</h1>
+<h3 id="bitmapfont">BitmapFont</h3>
+<ul>
 <li>the <code>me.BitmapFont</code> has been greatly improved, and now supports non fixed font size. The caveat is however that a new font data is now required when calling the constructor, but the rest of the API did not change. See <a href="/wiki/How-to-generate-and-use-Bitmap-Font-in-melonJS">here</a> for a quick guide on how to generate and use the new format.</li>
-</ul><h3 id="renderer-1">Renderer</h3><ul>
-<li>Canvas & WebGL renderer functions <code>prepareSurface()</code>, <code>clearSurface()</code> and <code>blit()</code> have been respectively renamed to <code>clear()</code>, <code>clearColor()</code> and <code>flush</code>.</li>
+</ul>
+<h3 id="renderer-1">Renderer</h3>
+<ul>
+<li>Canvas &#x26; WebGL renderer functions <code>prepareSurface()</code>, <code>clearSurface()</code> and <code>blit()</code> have been respectively renamed to <code>clear()</code>, <code>clearColor()</code> and <code>flush</code>.</li>
 <li><code>clearColor()</code> function now only takes 2 arguments (a color, and optional boolean to allow or not transparency). This allows simplifying the api (and be closer from the WebGL one) and also align both renderer (for the <code>clearColor</code> function).</li>
 <li>a <code>getColor()</code> function has been added to match the existing <code>setColor()</code> one, returning the current fill and stroke style.</li>
 <li>the WebGL renderer now has a <code>verbose</code> flag, that allows to display additional details as to what the renderer is doing. The flag is now off by default (as opposed to the previous behavior, where the renderer was always outputting additional messages)</li>
-</ul><h3 id="renderable-2">Renderable</h3><ul>
+</ul>
+<h3 id="renderable-2">Renderable</h3>
+<ul>
 <li><code>me.Renderable</code> objects now have a new <code>currentTransform</code> property that defines the renderable transformation matrix. this can be used for more “advanced” transformation use cases (on top of the existing functions), or to retrieve the current object transformation matrix.</li>
 <li>the <code>me.Sprite</code> <code>angle</code> property has been removed in favor of the new transformation matrix based implementation. If you now need to apply an angle to your renderable, use <code>mySprite.currentTransform.rotate()</code>.</li>
 <li>Transformation can now be automatically applied for <code>me.Renderable</code>, through the <code>autoTransform</code> flag. Once enabled, the engine will automatically apply any transformation set (through <code>currentTransform</code>) when calling the renderable <code>draw()</code> function. this is currently off by default for end-user defined objects.</li>
 <li><code>me.AnimationSheet</code> has been merged into <code>me.Sprite</code>, providing a single object for both static and animated objects. <code>me.AnimationSheet</code> still exists for backward compatibility purpose, but is nothing more than an alias, so you can just safely rename all your <code>me.AnimationSheet</code> objects to <code>me.Sprite</code></li>
-</ul><h1 id="30x-to-31x-stable">3.0.x to 3.1.x (Stable)</h1><h3 id="bootstrap-1">Bootstrap</h3><ul>
+</ul>
+<h1 id="30x-to-31x-stable">3.0.x to 3.1.x (Stable)</h1>
+<h3 id="bootstrap-1">Bootstrap</h3>
+<ul>
 <li>in order the simplify and minize the amount of code required to launch a melonJS game, the <a href="https://github.com/melonjs/boilerplate/blob/master/index.html#L39-L51">mobile optimisation tricks</a> we previously had in the <a href="https://github.com/melonjs/boilerplate">boilerplate</a> have been moved directly into the melonJS codebase, shrinking down the “bootstrap” code to its bare minimum :</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">&lt;!--</span><span style="color: #C9D1D9"> Bootstrap </span><span style="color: #FF7B72">--&gt;</span></span>
-<span class="line"><span style="color: #C9D1D9">&lt;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">type</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">&quot;text/javascript&quot;</span><span style="color: #C9D1D9">&gt;</span></span>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">&#x3C;!--</span><span style="color: #C9D1D9"> Bootstrap </span><span style="color: #FF7B72">--></span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">type</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">"text/javascript"</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">    window.onReady(function onReady() {</span></span>
 <span class="line"><span style="color: #C9D1D9">        game.</span><span style="color: #D2A8FF">onload</span><span style="color: #C9D1D9">();</span></span>
 <span class="line"><span style="color: #C9D1D9">    });</span></span>
-<span class="line"><span style="color: #C9D1D9">&lt;/</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">&gt;</span></span></code></pre><h3 id="debug">Debug</h3><ul>
+<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span></code></pre>
+<h3 id="debug">Debug</h3>
+<ul>
 <li>the <a href="https://github.com/melonjs/melonJS/tree/master/plugins/debug">debug panels</a> will now automatically register themselves upon loading, which means that the following code is <em><strong>not</strong></em> required anymore in your <a href="https://github.com/melonjs/boilerplate/blob/master/js/game.js">game.js</a> file :</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// add &quot;#debug&quot; to the URL to enable the debug Panel</span></span>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// add "#debug" to the URL to enable the debug Panel</span></span>
 <span class="line"><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (me.game.</span><span style="color: #79C0FF">HASH</span><span style="color: #C9D1D9">.debug </span><span style="color: #FF7B72">===</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">) {</span></span>
 <span class="line"><span style="color: #C9D1D9">    window.</span><span style="color: #D2A8FF">onReady</span><span style="color: #C9D1D9">(</span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> () {</span></span>
-<span class="line"><span style="color: #C9D1D9">        me.plugin.register.</span><span style="color: #D2A8FF">defer</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">, me.debug.Panel, </span><span style="color: #A5D6FF">&#39;debug&#39;</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">V</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">        me.plugin.register.</span><span style="color: #D2A8FF">defer</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">, me.debug.Panel, </span><span style="color: #A5D6FF">'debug'</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">V</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #C9D1D9">    })</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><h3 id="input-1">Input</h3><ul>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<h3 id="input-1">Input</h3>
+<ul>
 <li>The <a href="http://melonjs.github.io/melonJS/docs/me.input.html#bindGamepad"><code>bindGamepad</code></a> function has been improved to allow binding of axes. Note that the function is still backward compatible with the 3.0.x API and will still accept the old parameter definition (it is recommended to follow the new parameter signature, as the deprecated one will be removed in future versions)</li>
-</ul><p>before (now deprecated) :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.input.</span><span style="color: #D2A8FF">bindGamepad</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">GAMEPAD</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">BUTTONS</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">FACE_1</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">X</span><span style="color: #C9D1D9">)</span></span></code></pre><p>now :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.input.</span><span style="color: #D2A8FF">bindGamepad</span><span style="color: #C9D1D9">(</span></span>
+</ul>
+<p>before (now deprecated) :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.input.</span><span style="color: #D2A8FF">bindGamepad</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">GAMEPAD</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">BUTTONS</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">FACE_1</span><span style="color: #C9D1D9">, me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">X</span><span style="color: #C9D1D9">)</span></span></code></pre>
+<p>now :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.input.</span><span style="color: #D2A8FF">bindGamepad</span><span style="color: #C9D1D9">(</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    {</span></span>
-<span class="line"><span style="color: #C9D1D9">        type: </span><span style="color: #A5D6FF">&#39;buttons&#39;</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">        type: </span><span style="color: #A5D6FF">'buttons'</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">        code: me.input.</span><span style="color: #79C0FF">GAMEPAD</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">BUTTONS</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">FACE_1</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    },</span></span>
 <span class="line"><span style="color: #C9D1D9">    me.input.</span><span style="color: #79C0FF">KEY</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">X</span></span>
-<span class="line"><span style="color: #C9D1D9">)</span></span></code></pre><h3 id="preloader">Preloader</h3><ul>
+<span class="line"><span style="color: #C9D1D9">)</span></span></code></pre>
+<h3 id="preloader">Preloader</h3>
+<ul>
 <li>the <a href="http://melonjs.github.io/melonJS/docs/me.loader.html#preload"><code>me.loader.preloader</code></a> function now takes two additional (and optional) parameters that allow to directly specify the unload callback and if you want to switch to the built-in loading screen/state (default being yes). Note that both the following examples are still working, this just provide a shorter way to perform the same operation</li>
-</ul><p>before :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// set all resources to be loaded</span></span>
+</ul>
+<p>before :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// set all resources to be loaded</span></span>
 <span class="line"><span style="color: #C9D1D9">me.loader.onload </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.loaded.</span><span style="color: #D2A8FF">bind</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E">// set all resources to be loaded</span></span>
 <span class="line"><span style="color: #C9D1D9">me.loader.</span><span style="color: #D2A8FF">preload</span><span style="color: #C9D1D9">(game.assets)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #8B949E">// load everything &amp; display a loading screen</span></span>
-<span class="line"><span style="color: #C9D1D9">me.state.</span><span style="color: #D2A8FF">change</span><span style="color: #C9D1D9">(me.state.</span><span style="color: #79C0FF">LOADING</span><span style="color: #C9D1D9">)</span></span></code></pre><p>now :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// load all assets and switch to the default loading screen</span></span>
-<span class="line"><span style="color: #C9D1D9">me.loader.</span><span style="color: #D2A8FF">preload</span><span style="color: #C9D1D9">(game.assets, </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.loaded.</span><span style="color: #D2A8FF">bind</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">))</span></span></code></pre><h3 id="state-1">State</h3><ul>
+<span class="line"><span style="color: #8B949E">// load everything &#x26; display a loading screen</span></span>
+<span class="line"><span style="color: #C9D1D9">me.state.</span><span style="color: #D2A8FF">change</span><span style="color: #C9D1D9">(me.state.</span><span style="color: #79C0FF">LOADING</span><span style="color: #C9D1D9">)</span></span></code></pre>
+<p>now :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// load all assets and switch to the default loading screen</span></span>
+<span class="line"><span style="color: #C9D1D9">me.loader.</span><span style="color: #D2A8FF">preload</span><span style="color: #C9D1D9">(game.assets, </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.loaded.</span><span style="color: #D2A8FF">bind</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">))</span></span></code></pre>
+<h3 id="state-1">State</h3>
+<ul>
 <li>the behavior of the <code>me.state.change</code> function has changed as nothing will now happen if you try to change again to the current state. If you need/want to call again the current state screen object <code>onResetEvent</code> function, you can do so using <code>me.state.current().onResetEvent();</code> (and eventually call as well <code>me.game.reset()</code> if required).</li>
-</ul><hr><h1 id="21x-to-30x-stable">2.1.x to 3.0.x (stable)</h1><h3 id="es6">ES6</h3><ul>
+</ul>
+<hr>
+<h1 id="21x-to-30x-stable">2.1.x to 3.0.x (stable)</h1>
+<h3 id="es6">ES6</h3>
+<ul>
 <li><code>String.contains</code> and <code>Number.sign</code> have been respectively replaced by their ES6 equivalent : <code>String.includes</code> and <code>Math.sign</code></li>
-</ul><h3 id="namespace">namespace</h3><ul>
+</ul>
+<h3 id="namespace">namespace</h3>
+<ul>
 <li><code>Object.extend</code> has been renamed to <code>me.Object.extend</code>, to fix compatiblity issues with other framework also modifying the base javascript Object (e.g. Facebook SDK, Underscore/loadash)</li>
 <li>plugins are now registered to <code>me.plugins</code> to prevent collisions within the <code>me.plugin</code> namespace</li>
-</ul><h3 id="renderables">Renderables</h3><ul>
+</ul>
+<h3 id="renderables">Renderables</h3>
+<ul>
 <li>renderables are now using a 3d Vector for position, using the z axis for layer ordering, which means that the <code>z</code> value is now available as a component of the renderable <code>pos</code> property. This applies to all objects derivating from the <code>me.Renderable</code> class, including <code>me.Entity</code>.</li>
 <li>Default value for the anchor point has been changed to the center [0.5, 0.5]</li>
-</ul><h3 id="entity">Entity</h3><ul>
+</ul>
+<h3 id="entity">Entity</h3>
+<ul>
 <li>renderable are now positioned respectively to its anchor and the Entity’s body anchor. Default value have also been changed to the center <code>[0.5, 0.5]</code></li>
-</ul><h3 id="input-2">Input</h3><ul>
+</ul>
+<h3 id="input-2">Input</h3>
+<ul>
 <li><code>me.input.mouse</code> has been renamed to <code>me.input.pointer</code>; this is more consistent with the melonJS input/pointer API, as this object can not only represent a mouse, but also a pen or a finger.</li>
 <li>the <code>me.event.MOVEMOVE</code>event name has been renamed to<code>me.event.POINTERMOVE</code>, as well to be more consistent with the pointer API.</li>
-</ul><h3 id="containers">Containers</h3><ul>
+</ul>
+<h3 id="containers">Containers</h3>
+<ul>
 <li>object containers now have an <code>auto-depth</code> feature that will automatically increment a child z value when added.</li>
-</ul><h3 id="tmx--level">TMX / Level</h3><ul>
+</ul>
+<h3 id="tmx--level">TMX / Level</h3>
+<ul>
 <li><code>me.game.currentLevel</code> has been removed; if you need any information on the current level please use <code>me.game.world</code> (or any container in which you loaded your level) to get a reference to the “live” loaded level (instantiated objects, layers, etc…), or <code>me.LevelDirector.getCurrentLevel()</code> to get a reference to the current level definition (level size, amount of objects, etc…)</li>
 <li><code>me.ImageLayer</code> is now drawn relative to the viewport boundary, and can be anchored appropriately</li>
 <li>the <code>me.TMXTileMap.moveToCenter</code> and <code>me.TMXTileMap.reset</code> methods have been removed</li>
-</ul><hr><h1 id="20x-to-21x-stable">2.0.x to 2.1.x (stable)</h1><h3 id="general">General</h3><ul>
+</ul>
+<hr>
+<h1 id="20x-to-21x-stable">2.0.x to 2.1.x (stable)</h1>
+<h3 id="general">General</h3>
+<ul>
 <li>Most keyword and name lookups have been made <em>case-sensitive</em>. This affects file names, pooling, and container child searches. If you need case-INsensitive container child searches, <code>me.Container.getChildByProp</code> and friends now accepts RegExp values.</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">getChildByProp</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;name&#39;</span><span style="color: #C9D1D9">,</span><span style="color: #A5D6FF"> /case-insensitive/</span><span style="color: #FF7B72">i</span><span style="color: #C9D1D9">)</span></span></code></pre><h3 id="renderable-3">Renderable</h3><ul>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">getChildByProp</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'name'</span><span style="color: #C9D1D9">,</span><span style="color: #A5D6FF"> /case-insensitive/</span><span style="color: #FF7B72">i</span><span style="color: #C9D1D9">)</span></span></code></pre>
+<h3 id="renderable-3">Renderable</h3>
+<ul>
 <li>
 <p>Renamed spritewidth/-height to <code>framewidth</code>/<code>frameheight</code> in <code>me.Sprite</code>, <code>me.AnimationSheet</code> and <code>me.ImageLayer</code>; this will clarify the api and limit confusion with the property name usage.</p>
 </li>
 <li>
 <p>In an effort to normalize class constructor in melonJS, constructor signatures have been update to follow the following pattern : <code>(x, y, settings)</code>, with settings being an object containing additional parameters (please see related documentation for further details).</p>
 </li>
-</ul><p>As an example, the following will now create a new <code>me.Sprite</code> object :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// create a static Sprite Object</span></span>
+</ul>
+<p>As an example, the following will now create a new <code>me.Sprite</code> object :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// create a static Sprite Object</span></span>
 <span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> mySprite </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Sprite</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, {</span></span>
-<span class="line"><span style="color: #C9D1D9">    image: </span><span style="color: #A5D6FF">&#39;mySpriteImage&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre><p>and the following a new <code>me.AnimationSheet</code> object :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// standalone image</span></span>
+<span class="line"><span style="color: #C9D1D9">    image: </span><span style="color: #A5D6FF">'mySpriteImage'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
+<p>and the following a new <code>me.AnimationSheet</code> object :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// standalone image</span></span>
 <span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> animationSheet </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">AnimationSheet</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, {</span></span>
-<span class="line"><span style="color: #C9D1D9">    image: </span><span style="color: #A5D6FF">&#39;animationsheet&#39;</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    image: </span><span style="color: #A5D6FF">'animationsheet'</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    framewidth: </span><span style="color: #79C0FF">64</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    frameheight: </span><span style="color: #79C0FF">64</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre><ul>
+<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
+<ul>
 <li>The <code>me.Font</code> API has been changed to accept a Renderer reference (as opposed to a Context2D reference previously) to better match the <code>me.BitmapFont</code> API, but also to be compatible with the WebGL renderer:
 <ul>
 <li>me.Font#measureText</li>
@@ -271,21 +396,25 @@
 <li>me.Font#drawStroke</li>
 </ul>
 </li>
-</ul><h3 id="video">Video</h3><ul>
+</ul>
+<h3 id="video">Video</h3>
+<ul>
 <li>
 <p><code>me.CanvasRenderer</code> and <code>me.WebGLRenderer</code> are now classes that can be instantiated with the <code>new</code> keyword. This allows creating renderer objects that can be passed to any draw method; the draw will be performed to the destination renderer instead of the screen renderer.</p>
 </li>
 <li>
 <p>the <code>me.video.init()</code> has been refactored to be more flexible in terms of arguments. It now requires 3 parameters: <code>width</code>, <code>height</code> and a list of properties for the various options, all of them being optional :</p>
 </li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// init the video with a 640x480 canvas</span></span>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// init the video with a 640x480 canvas</span></span>
 <span class="line"><span style="color: #C9D1D9">me.video.</span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">640</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">480</span><span style="color: #C9D1D9">, {</span></span>
-<span class="line"><span style="color: #C9D1D9">    wrapper: </span><span style="color: #A5D6FF">&#39;screen&#39;</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    wrapper: </span><span style="color: #A5D6FF">'screen'</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    renderer: me.video.</span><span style="color: #79C0FF">CANVAS</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">    scale: </span><span style="color: #A5D6FF">&#39;auto&#39;</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    scale: </span><span style="color: #A5D6FF">'auto'</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    maintainAspectRatio: </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    transparent: </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre><ul>
+<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
+<ul>
 <li>
 <p>the video <code>me.sys.scalingInterpolation</code> setting, that is used to enable or disable anti-aliasing, has been renamed to <code>antiAlias</code> and is now available as part of the here above list of video option settings.</p>
 </li>
@@ -298,9 +427,15 @@
 <li>
 <p><code>me.video.shader.createShader()</code> has been updated to accept vertex and fragment shader GLSL source arguments.</p>
 </li>
-</ul><h3 id="matrix">Matrix</h3><ul>
+</ul>
+<h3 id="matrix">Matrix</h3>
+<ul>
 <li><code>me.Matrix3d</code> has been removed; please use <code>me.Matrix2d</code> instead.</li>
-</ul><hr><h1 id="11x-to-20x">1.1.x to 2.0.x</h1><h3 id="collision-handling">Collision Handling</h3><ul>
+</ul>
+<hr>
+<h1 id="11x-to-20x">1.1.x to 2.0.x</h1>
+<h3 id="collision-handling">Collision Handling</h3>
+<ul>
 <li>
 <p>world shape-based collision system : the former tile-based collision system has been replaced by the same SAT implementation used for entities. World collision shapes can be defined in Tiled using all standard objects like polygon (only convex with clockwise winding), ellipse, and polyline. Have a look at the <a href="https://github.com/melonjs/melonJS/tree/99afd065b730712b6df0ec14a06fd5c1765d8cbc/examples/platformer">Platformer example</a> for details. You need to replace your “collision” tile layer with a “collision” object layer; the name is important.</p>
 </li>
@@ -325,43 +460,70 @@
 <li>
 <p>old (undocumented, deprecated, for-backward-compatibility-only) properties on the collision response object have been removed: <code>x</code>, <code>y</code>, <code>type</code>, <code>obj</code>. Please use the documented properties instead: <a href="http://melonjs.github.io/docs/me.collision.html#ResponseObject">http://melonjs.github.io/docs/me.collision.html#ResponseObject</a></p>
 </li>
-</ul><h3 id="body">Body</h3><ul>
+</ul>
+<h3 id="body">Body</h3>
+<ul>
 <li>as <code>me.Body</code> now supports multiple shapes, few function signature have been modified to reflect this change. Most noticeably, the <code>getShape()</code> function now takes an index as argument that allows to return the shape specified at the given Index.</li>
 <li>a <code>removeShape()</code> and <code>removeShapeAt()</code> function have also been added allowing to manipulate the list of active shapes for a body.</li>
-</ul><h3 id="shapes">Shapes</h3><ul>
+</ul>
+<h3 id="shapes">Shapes</h3>
+<ul>
 <li><code>me.PolyShape</code> has been renamed to <code>me.Polygon</code>. Its constructor also no longer has a fourth <code>closed</code> parameter; polygons are always closed shapes.</li>
-</ul><h3 id="canvasrenderer">CanvasRenderer</h3><ul>
+</ul>
+<h3 id="canvasrenderer">CanvasRenderer</h3>
+<ul>
 <li>all <code>fill*</code> and <code>stroke* </code>methods have removed the <code>color</code> and <code>lineWidth</code> parameters. Use the new <code>setColor()</code> and <code>setLineWidth()</code> methods.</li>
-</ul><h3 id="renderable-4">Renderable</h3><ul>
+</ul>
+<h3 id="renderable-4">Renderable</h3>
+<ul>
 <li>
 <p>the <code>me.Sprite.resize()</code> function has been renamed to <code>me.Sprite.scale()</code> in order to avoid confusion with the <code>me.Rect</code> <code>resize</code> function. By default, when scaling a renderable, the associated <code>me.Rect</code> object will keep the size of the original sprite.</p>
 </li>
 <li>
 <p>removed <code>strokeLine()</code>, was a duplicate of <code>drawLine()</code>.</p>
 </li>
-</ul><h3 id="entities">Entities</h3><ul>
+</ul>
+<h3 id="entities">Entities</h3>
+<ul>
 <li>
 <p><code>me.Entity</code> properties related to collision state have been removed: <code>onslope</code>, <code>onladder</code>, <code>disableTopLadderCollision</code>, <code>canBreakTile</code>, <code>onTileBreak</code>, and the private <code>collisionMap</code> have all been fully retired. These properties and features can now be reimplemented through clever use of the <code>onCollision</code> callback, as described above.</p>
 </li>
 <li>
 <p>the <code>flipX</code>/<code>flipY</code>have been removed from <code>me.Entity</code> and <code>me.Body</code>, as these are pure renderable function (shape objects do not support these functions), and are now available only through the entity renderable child component. So in a custom me.Entity object, you would flip via: <code>this.renderable.flipX(true);</code></p>
 </li>
-</ul><h3 id="container">Container</h3><ul>
+</ul>
+<h3 id="container">Container</h3>
+<ul>
 <li>A “floating child” within a “non-floating container” will disappear when the screen is scrolled. In 1.1.x and older, there was a bug that allowed non-floating containers to always be within the viewport. This bug is now fixed, but it also means the previous HUD pattern needs to be changed so that the HUD (container) is floating, instead of its children.</li>
-</ul><h3 id="random-numbers">Random Numbers</h3><p>The <code>Number.prototype.random()</code> function has been fixed to follow the standard JavaScript <code>Math.random()</code> in regard to its exclusive range. It will no longer return the <code>max</code> value provided, but instead <code>max-1</code>. You can offset this by adding 1 to the max number if you want it to be inclusive:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// melonJS 1.1.x and older</span></span>
+</ul>
+<h3 id="random-numbers">Random Numbers</h3>
+<p>The <code>Number.prototype.random()</code> function has been fixed to follow the standard JavaScript <code>Math.random()</code> in regard to its exclusive range. It will no longer return the <code>max</code> value provided, but instead <code>max-1</code>. You can offset this by adding 1 to the max number if you want it to be inclusive:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// melonJS 1.1.x and older</span></span>
 <span class="line"><span style="color: #79C0FF">Number</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">prototype</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">random</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">) </span><span style="color: #8B949E">// return a random number; one of 0, 1, 2</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E">// melonJS 2.0.0</span></span>
-<span class="line"><span style="color: #79C0FF">Number</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">prototype</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">random</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">) </span><span style="color: #8B949E">// return a random number; one of 0, 1, 2</span></span></code></pre><p>This fixes a bug that makes it very easy to overflow array bounds by accident. E.g. The following now works as expected:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// Select a random frame</span></span>
-<span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.curFrame </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.frames[</span><span style="color: #79C0FF">Number</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">prototype</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">random</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.frames.</span><span style="color: #79C0FF">length</span><span style="color: #C9D1D9">)]</span></span></code></pre><p>In older versions, you would have to <em>subtract 1</em> from the array length to make this kind of access safe.</p><hr><h1 id="10x-to-11x">1.0.x to 1.1.x</h1><h3 id="inheritance-changes">Inheritance Changes</h3><p>The inheritance logic has changed substantially, and is now based on <a href="https://github.com/parasyte/jay-inheritance">Jay’s fast inheritance micro library</a>. You will need to re-work your game to use the new changes, otherwise you will get many many errors. Presently in 1.0.x and previous, you would extend a base class and call the base methods like so:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.Renderable.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
+<span class="line"><span style="color: #79C0FF">Number</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">prototype</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">random</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">) </span><span style="color: #8B949E">// return a random number; one of 0, 1, 2</span></span></code></pre>
+<p>This fixes a bug that makes it very easy to overflow array bounds by accident. E.g. The following now works as expected:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// Select a random frame</span></span>
+<span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.curFrame </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.frames[</span><span style="color: #79C0FF">Number</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">prototype</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">random</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.frames.</span><span style="color: #79C0FF">length</span><span style="color: #C9D1D9">)]</span></span></code></pre>
+<p>In older versions, you would have to <em>subtract 1</em> from the array length to make this kind of access safe.</p>
+<hr>
+<h1 id="10x-to-11x">1.0.x to 1.1.x</h1>
+<h3 id="inheritance-changes">Inheritance Changes</h3>
+<p>The inheritance logic has changed substantially, and is now based on <a href="https://github.com/parasyte/jay-inheritance">Jay’s fast inheritance micro library</a>. You will need to re-work your game to use the new changes, otherwise you will get many many errors. Presently in 1.0.x and previous, you would extend a base class and call the base methods like so:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.Renderable.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">: </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> () {</span></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">parent</span><span style="color: #C9D1D9">(</span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Vector2d</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">), </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #C9D1D9">    },</span></span>
-<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre><p>To make performance improvements and enforce better rules you now need to invoke a <code>_super</code> method. Passing the base class itself, a string representing the method name, and an array of the arguments:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.Renderable.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
+<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
+<p>To make performance improvements and enforce better rules you now need to invoke a <code>_super</code> method. Passing the base class itself, a string representing the method name, and an array of the arguments:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.Renderable.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">: </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> () {</span></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">_super</span><span style="color: #C9D1D9">(me.Renderable, </span><span style="color: #A5D6FF">&#39;init&#39;</span><span style="color: #C9D1D9">, [</span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Vector2d</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">), </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">])</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">_super</span><span style="color: #C9D1D9">(me.Renderable, </span><span style="color: #A5D6FF">'init'</span><span style="color: #C9D1D9">, [</span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Vector2d</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">), </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">])</span></span>
 <span class="line"><span style="color: #C9D1D9">    },</span></span>
-<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre><p>Note that parent properties can still be referenced as per 1.0.x.</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myClass </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">Object</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
+<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
+<p>Note that parent properties can still be referenced as per 1.0.x.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myClass </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">Object</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">: </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> () {</span></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.myProp </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">10</span></span>
 <span class="line"><span style="color: #C9D1D9">    },</span></span>
@@ -369,28 +531,36 @@
 <span class="line"></span>
 <span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myClassTwo </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> myClass.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">: </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> () {</span></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">_super</span><span style="color: #C9D1D9">(myClass, </span><span style="color: #A5D6FF">&#39;init&#39;</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">_super</span><span style="color: #C9D1D9">(myClass, </span><span style="color: #A5D6FF">'init'</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #C9D1D9">        console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.myProp) </span><span style="color: #8B949E">// outputs 10</span></span>
 <span class="line"><span style="color: #C9D1D9">    },</span></span>
-<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre><p>When extending another class, you must define an <code>init</code> method, even if you simply keep it empty:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.Renderable.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
+<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
+<p>When extending another class, you must define an <code>init</code> method, even if you simply keep it empty:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.Renderable.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">: </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> () {},</span></span>
-<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre><p>Not passing an init will throw an exception.</p><p>Note that in the hash you pass to it, only methods can be defined, not properties. If you need to define a property, do so in the init method (constructor):</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.Renderable.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
+<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
+<p>Not passing an init will throw an exception.</p>
+<p>Note that in the hash you pass to it, only methods can be defined, not properties. If you need to define a property, do so in the init method (constructor):</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.Renderable.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// wont work</span></span>
 <span class="line"><span style="color: #C9D1D9">    radius: </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">: </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> () {</span></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">_super</span><span style="color: #C9D1D9">(me.Renderable, </span><span style="color: #A5D6FF">&#39;init&#39;</span><span style="color: #C9D1D9">, [</span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Vector2d</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">), </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">])</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">_super</span><span style="color: #C9D1D9">(me.Renderable, </span><span style="color: #A5D6FF">'init'</span><span style="color: #C9D1D9">, [</span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Vector2d</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">), </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">])</span></span>
 <span class="line"><span style="color: #C9D1D9">    },</span></span>
 <span class="line"><span style="color: #C9D1D9">})</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.Renderable.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">({</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">: </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> () {</span></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">_super</span><span style="color: #C9D1D9">(me.Renderable, </span><span style="color: #A5D6FF">&#39;init&#39;</span><span style="color: #C9D1D9">, [</span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Vector2d</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">), </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">])</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">_super</span><span style="color: #C9D1D9">(me.Renderable, </span><span style="color: #A5D6FF">'init'</span><span style="color: #C9D1D9">, [</span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Vector2d</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">), </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">])</span></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// correct</span></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.radius </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">10</span></span>
 <span class="line"><span style="color: #C9D1D9">    },</span></span>
-<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre><p>If you do pass a property in the hash, it will raise an exception.</p><h3 id="animationsheet-now-accepts-x-y-and-a-settings-hash-to-its-constructor">AnimationSheet now accepts x, y and a settings hash to its constructor.</h3><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// this is the new constructor</span></span>
+<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
+<p>If you do pass a property in the hash, it will raise an exception.</p>
+<h3 id="animationsheet-now-accepts-x-y-and-a-settings-hash-to-its-constructor">AnimationSheet now accepts x, y and a settings hash to its constructor.</h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// this is the new constructor</span></span>
 <span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> animationSheet </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">AnimationSheet</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">200</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">55</span><span style="color: #C9D1D9">, {</span></span>
-<span class="line"><span style="color: #C9D1D9">    image: me.loader.</span><span style="color: #D2A8FF">getImage</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;player&#39;</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    image: me.loader.</span><span style="color: #D2A8FF">getImage</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'player'</span><span style="color: #C9D1D9">),</span></span>
 <span class="line"><span style="color: #C9D1D9">    spritewidth: </span><span style="color: #79C0FF">55</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    spriteheight: </span><span style="color: #79C0FF">55</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">})</span></span>
@@ -399,21 +569,36 @@
 <span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> animationSheet </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">AnimationSheet</span><span style="color: #C9D1D9">(</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">200</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">55</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getImage</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;player&#39;</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getImage</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'player'</span><span style="color: #C9D1D9">),</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">55</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">55</span></span>
-<span class="line"><span style="color: #C9D1D9">)</span></span></code></pre><h3 id="renderable-5">Renderable</h3><p>The base renderable class now accepts x & y integer values over a <code>me.Vector2d</code> instance. Example:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Renderable</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">20</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">)</span></span></code></pre><p>Renderable objects now all implements the two following functions, replacing the former <code>onResetEvent</code> and <code>onDestroyEvent</code> callbacks :</p><ul>
+<span class="line"><span style="color: #C9D1D9">)</span></span></code></pre>
+<h3 id="renderable-5">Renderable</h3>
+<p>The base renderable class now accepts x &#x26; y integer values over a <code>me.Vector2d</code> instance. Example:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRenderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Renderable</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">20</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">)</span></span></code></pre>
+<p>Renderable objects now all implements the two following functions, replacing the former <code>onResetEvent</code> and <code>onDestroyEvent</code> callbacks :</p>
+<ul>
 <li><code>onActivateEvent</code>, that is triggered when the object is “born” into the world, and where you can do things like setting its initial position, animation, health, register pointer event handlers, and other state information.</li>
 <li><code>onDeactivateEvent</code>, triggered when the world is destroyed, and where you should do things like deregistering pointer events, and unsubscribing from minpubsub.</li>
-</ul><h3 id="meaudioplay-callback-works-the-same-as-pre-100">me.audio.play callback works the same as pre-1.0.0</h3><p>In 1.0.x, the callback for me.audio.play changed from “called when sound clip ends” to “called to inform you of the audio clip’s internal ID after it is created”. This is of limited use, and just exposes some of the internals.</p><p>1.1.0 fixes this broken behavior and goes back to being called when the sound clip ends. If you want to get the sound ID for any reason, there’s a new <code>oncreate</code> callback that you can pass to <code>me.audio.play()</code> as the fifth parameter which works like <code>callback</code> did in 1.0.x.</p><h3 id="entity-object-design-change">Entity Object Design change</h3><ul>
+</ul>
+<h3 id="meaudioplay-callback-works-the-same-as-pre-100">me.audio.play callback works the same as pre-1.0.0</h3>
+<p>In 1.0.x, the callback for me.audio.play changed from “called when sound clip ends” to “called to inform you of the audio clip’s internal ID after it is created”. This is of limited use, and just exposes some of the internals.</p>
+<p>1.1.0 fixes this broken behavior and goes back to being called when the sound clip ends. If you want to get the sound ID for any reason, there’s a new <code>oncreate</code> callback that you can pass to <code>me.audio.play()</code> as the fifth parameter which works like <code>callback</code> did in 1.0.x.</p>
+<h3 id="entity-object-design-change">Entity Object Design change</h3>
+<ul>
 <li>the previous entity object design has been re-structured using a composition approach (as opposed to the previous inheritance based design), which will provide a more modular approach, but will also enable faster execution time by lowering the amount of properties per object.</li>
 <li>Entity now has a new <code>me.Body</code> child object that will hold all physic/collision related properties and functions, and where are also defined all collision shapes (introduced in 1.0.x) :</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">me.Entity</span></span>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">me.Entity</span></span>
 <span class="line"><span style="color: #c9d1d9">     |__ me.Body</span></span>
 <span class="line"><span style="color: #c9d1d9">             |____ me.Shapes[]</span></span>
-<span class="line"><span style="color: #c9d1d9">     |__ me.Renderable</span></span></code></pre><p>you can also read more about the key benefits of this new design by reading the following article : <a href="http://www.radicalfishgames.com/?p=1725">http://www.radicalfishgames.com/?p=1725</a></p><ul>
+<span class="line"><span style="color: #c9d1d9">     |__ me.Renderable</span></span></code></pre>
+<p>you can also read more about the key benefits of this new design by reading the following article : <a href="http://www.radicalfishgames.com/?p=1725">http://www.radicalfishgames.com/?p=1725</a></p>
+<ul>
 <li>to better highlight this change during the old ‘me.ObjectEntity’ object has been renamed to ‘me.Entity’</li>
-</ul><h3 id="collision-check-and-collision-filtering">Collision check and collision filtering</h3><ul>
+</ul>
+<h3 id="collision-check-and-collision-filtering">Collision check and collision filtering</h3>
+<ul>
 <li>
 <p>The collision algorithm has been “upgraded” with a full SAT based one, which now allows for polygon based collision detection, and for more accurate collision response. The previous collision check function has therefore been deprecated and replaced by a new <a href="http://melonjs.github.io/docs/me.collision.html#check"><code>me.collision.check()</code></a> function.</p>
 </li>
@@ -423,26 +608,51 @@
 <li>
 <p>the new <a href="http://melonjs.github.io/docs/me.Body.html#setCollisionMask"><code>me.body.setCollisionMask</code></a> function can also now be used to disable collision detection for a specific object, by clearing the specified filter : <code>this.body.setCollisionMask(me.collision.types.NO_OBJECT);</code></p>
 </li>
-</ul><h3 id="shape-object-changes">Shape object changes</h3><ul>
+</ul>
+<h3 id="shape-object-changes">Shape object changes</h3>
+<ul>
 <li><code>me.Ellipse</code> now takes the given coordinates in the constructor as the ellipse center point (as opposed to the top-left coordinates), width and height specifying the “horizontal” and “vertical” diameter of the ellipse.</li>
-<li>All shape objects (<code>me.Rect</code>, <code>me.PolyShape</code>, <code>me.Ellipse</code>) now accept x & y integers over a <code>me.Vector2d</code> instance. Example:</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRect </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Rect</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">)</span></span>
-<span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myEllipse </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Ellipse</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">15</span><span style="color: #C9D1D9">)</span></span></code></pre><h3 id="object-name-changes">Object name changes</h3><p>on top of the new <code>me.Entity</code> object here above described, the following class names have been change :</p><ul>
+<li>All shape objects (<code>me.Rect</code>, <code>me.PolyShape</code>, <code>me.Ellipse</code>) now accept x &#x26; y integers over a <code>me.Vector2d</code> instance. Example:</li>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myRect </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Rect</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> myEllipse </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Ellipse</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">50</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">15</span><span style="color: #C9D1D9">)</span></span></code></pre>
+<h3 id="object-name-changes">Object name changes</h3>
+<p>on top of the new <code>me.Entity</code> object here above described, the following class names have been change :</p>
+<ul>
 <li><code>me.SpriteObject</code> has been renamed to <code>me.Sprite</code></li>
 <li><code>me.ObjectContainer</code> has been renamed to <code>me.Container</code></li>
-</ul><h3 id="video-changes">Video changes</h3><p>The <code>me.video.init</code> method that you call at the beginning of your game now has an additional parameter, placed in the 2nd spot. It only accepts one value for now, but this is in prep for 1.2.0 changes to support WebGL. So update your method call as such:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.video.</span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;screen&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">800</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">600</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&#39;auto&#39;</span><span style="color: #C9D1D9">)</span></span></code></pre><p>Changes to:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.video.</span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;screen&#39;</span><span style="color: #C9D1D9">, me.video.</span><span style="color: #79C0FF">CANVAS</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">800</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">600</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&#39;auto&#39;</span><span style="color: #C9D1D9">)</span></span></code></pre><p>Also note that the <code>me.CanvasRenderer</code> object is passed to the draw calls of all the objects added to the world container and other subsequent containers. This means if you are doing anything like:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FFA657">draw</span><span style="color: #C9D1D9"> : </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">context</span><span style="color: #C9D1D9">) {</span></span>
-<span class="line"><span style="color: #C9D1D9">    context.fillStyle </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;#f00&#39;</span><span style="color: #C9D1D9">;</span></span>
+</ul>
+<h3 id="video-changes">Video changes</h3>
+<p>The <code>me.video.init</code> method that you call at the beginning of your game now has an additional parameter, placed in the 2nd spot. It only accepts one value for now, but this is in prep for 1.2.0 changes to support WebGL. So update your method call as such:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.video.</span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'screen'</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">800</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">600</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'auto'</span><span style="color: #C9D1D9">)</span></span></code></pre>
+<p>Changes to:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.video.</span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'screen'</span><span style="color: #C9D1D9">, me.video.</span><span style="color: #79C0FF">CANVAS</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">800</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">600</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'auto'</span><span style="color: #C9D1D9">)</span></span></code></pre>
+<p>Also note that the <code>me.CanvasRenderer</code> object is passed to the draw calls of all the objects added to the world container and other subsequent containers. This means if you are doing anything like:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FFA657">draw</span><span style="color: #C9D1D9"> : </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">context</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    context.fillStyle </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'#f00'</span><span style="color: #C9D1D9">;</span></span>
 <span class="line"><span style="color: #C9D1D9">    context.</span><span style="color: #D2A8FF">fillRect</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">);</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>That will no longer work as expected. As a simple work around, you can grab the context directly:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FFA657">draw</span><span style="color: #C9D1D9"> : </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">renderer</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>That will no longer work as expected. As a simple work around, you can grab the context directly:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FFA657">draw</span><span style="color: #C9D1D9"> : </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">renderer</span><span style="color: #C9D1D9">) {</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> context </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> renderer.</span><span style="color: #D2A8FF">getContext</span><span style="color: #C9D1D9">();</span></span>
-<span class="line"><span style="color: #C9D1D9">    context.fillStyle </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;#f00&#39;</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">    context.fillStyle </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'#f00'</span><span style="color: #C9D1D9">;</span></span>
 <span class="line"><span style="color: #C9D1D9">    context.</span><span style="color: #D2A8FF">fillRect</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">);</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>But then you are still stuck on the canvas renderer when we implement the WebGL renderer for 1.2.0. So try to use the methods on me.CanvasRenderer when possible:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FFA657">draw</span><span style="color: #C9D1D9"> : </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">renderer</span><span style="color: #C9D1D9">) {</span></span>
-<span class="line"><span style="color: #C9D1D9">    renderer.</span><span style="color: #D2A8FF">fillRect</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&#39;#f00&#39;</span><span style="color: #C9D1D9">);</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>We will continue to add new drawing functions to the canvas render to support things like line drawing. Anything really fancy, you’re probably better off drawing to a canvas to create a texture. Or you can stick with the canvas renderer entirely.</p><p><strong>getSystemCanvas getSystemContext getScreenCanvas getScreenContext methods</strong></p><p>If you used any of the above, the equivalents are now on the renderer:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.video.renderer.</span><span style="color: #D2A8FF">getCanvas</span><span style="color: #C9D1D9">() </span><span style="color: #8B949E">// getSystemCanvas</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>But then you are still stuck on the canvas renderer when we implement the WebGL renderer for 1.2.0. So try to use the methods on me.CanvasRenderer when possible:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FFA657">draw</span><span style="color: #C9D1D9"> : </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">renderer</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    renderer.</span><span style="color: #D2A8FF">fillRect</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'#f00'</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>We will continue to add new drawing functions to the canvas render to support things like line drawing. Anything really fancy, you’re probably better off drawing to a canvas to create a texture. Or you can stick with the canvas renderer entirely.</p>
+<p><strong>getSystemCanvas getSystemContext getScreenCanvas getScreenContext methods</strong></p>
+<p>If you used any of the above, the equivalents are now on the renderer:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">me.video.renderer.</span><span style="color: #D2A8FF">getCanvas</span><span style="color: #C9D1D9">() </span><span style="color: #8B949E">// getSystemCanvas</span></span>
 <span class="line"><span style="color: #C9D1D9">me.video.renderer.</span><span style="color: #D2A8FF">getContext</span><span style="color: #C9D1D9">() </span><span style="color: #8B949E">// getSystemContext</span></span>
 <span class="line"><span style="color: #C9D1D9">me.video.renderer.</span><span style="color: #D2A8FF">getScreenCanvas</span><span style="color: #C9D1D9">()</span></span>
-<span class="line"><span style="color: #C9D1D9">me.video.renderer.</span><span style="color: #D2A8FF">getScreenContext</span><span style="color: #C9D1D9">()</span></span></code></pre><h3 id="new-error-classes-for-error-handling">New <code>Error</code> classes for error handling</h3><p>Pre-1.1.0 versions would throw exceptions using a string. While this does the job, it isn’t easy to do proper error handling. Now we expose new classes that can be used to handle errors with fine-grained control.</p><p>All exceptions extend the base class <code>me.Error</code>. Here is the class hierarchy for the exception classes:</p><ul>
+<span class="line"><span style="color: #C9D1D9">me.video.renderer.</span><span style="color: #D2A8FF">getScreenContext</span><span style="color: #C9D1D9">()</span></span></code></pre>
+<h3 id="new-error-classes-for-error-handling">New <code>Error</code> classes for error handling</h3>
+<p>Pre-1.1.0 versions would throw exceptions using a string. While this does the job, it isn’t easy to do proper error handling. Now we expose new classes that can be used to handle errors with fine-grained control.</p>
+<p>All exceptions extend the base class <code>me.Error</code>. Here is the class hierarchy for the exception classes:</p>
+<ul>
 <li><code>me.Error</code></li>
 <li><code>me.audio.Error</code></li>
 <li><code>me.Body.Error</code></li>
@@ -456,7 +666,9 @@
 <li><code>me.TextureAtlas.Error</code></li>
 <li><code>me.Vector2d.Error</code></li>
 <li><code>me.video.Error</code></li>
-</ul><p>And here is an example using the error classes for fine-grained error handling:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">try</span><span style="color: #C9D1D9"> {</span></span>
+</ul>
+<p>And here is an example using the error classes for fine-grained error handling:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">try</span><span style="color: #C9D1D9"> {</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// Do something which throws an exception ...</span></span>
 <span class="line"><span style="color: #C9D1D9">} </span><span style="color: #FF7B72">catch</span><span style="color: #C9D1D9"> (e) {</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (e </span><span style="color: #FF7B72">instanceof</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">me</span><span style="color: #C9D1D9">.</span><span style="color: #FFA657">Entity</span><span style="color: #C9D1D9">.</span><span style="color: #FFA657">Error</span><span style="color: #C9D1D9">) {</span></span>
@@ -467,9 +679,14 @@
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// Raise other errors to the next handler in the call stack.</span></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #FF7B72">throw</span><span style="color: #C9D1D9"> e</span></span>
 <span class="line"><span style="color: #C9D1D9">    }</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>For additional reading on these changes, also check out the wonderful post by <a href="https://github.com/aaschmitz">Andre Antonio Schmitz</a> <a href="http://blog.ciangames.com/2014/09/upgrading-to-melonjs-11.html">http://blog.ciangames.com/2014/09/upgrading-to-melonjs-11.html</a></p><hr><h1 id="091x-to-10x">0.9.1x to 1.0.x</h1><ul>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>For additional reading on these changes, also check out the wonderful post by <a href="https://github.com/aaschmitz">Andre Antonio Schmitz</a> <a href="http://blog.ciangames.com/2014/09/upgrading-to-melonjs-11.html">http://blog.ciangames.com/2014/09/upgrading-to-melonjs-11.html</a></p>
+<hr>
+<h1 id="091x-to-10x">0.9.1x to 1.0.x</h1>
+<ul>
 <li><code>me.audio.play()</code> Callback no longer works as expected. See <a href="https://github.com/melonjs/melonJS/issues/515">#515</a> for details. Here is a workaround that will allow <code>callback</code> to work as it did pre-1.0.0:</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">play</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">soundName</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">loop</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">callback</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">volume</span><span style="color: #C9D1D9">) {</span></span>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">play</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">soundName</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">loop</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">callback</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">volume</span><span style="color: #C9D1D9">) {</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> soundId </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">-</span><span style="color: #79C0FF">1</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">saveSoundId</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">id</span><span style="color: #C9D1D9">) {</span></span>
 <span class="line"><span style="color: #C9D1D9">        soundId </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> id</span></span>
@@ -479,22 +696,26 @@
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (id </span><span style="color: #FF7B72">===</span><span style="color: #C9D1D9"> soundId) {</span></span>
 <span class="line"><span style="color: #C9D1D9">            </span><span style="color: #D2A8FF">callback</span><span style="color: #C9D1D9">()</span></span>
 <span class="line"><span style="color: #C9D1D9">        }</span></span>
-<span class="line"><span style="color: #C9D1D9">        sound.</span><span style="color: #D2A8FF">off</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;end&#39;</span><span style="color: #C9D1D9">, endSound)</span></span>
+<span class="line"><span style="color: #C9D1D9">        sound.</span><span style="color: #D2A8FF">off</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'end'</span><span style="color: #C9D1D9">, endSound)</span></span>
 <span class="line"><span style="color: #C9D1D9">    }</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> sound </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.audio.</span><span style="color: #D2A8FF">play</span><span style="color: #C9D1D9">(soundName, loop, saveSoundId, volume)</span></span>
-<span class="line"><span style="color: #C9D1D9">    sound.</span><span style="color: #D2A8FF">on</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;end&#39;</span><span style="color: #C9D1D9">, endSound)</span></span>
+<span class="line"><span style="color: #C9D1D9">    sound.</span><span style="color: #D2A8FF">on</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'end'</span><span style="color: #C9D1D9">, endSound)</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> sound</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>Just call this <code>play</code> function in place of <code>me.audio.play</code>, and it will work as expected!</p><ul>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>Just call this <code>play</code> function in place of <code>me.audio.play</code>, and it will work as expected!</p>
+<ul>
 <li>Object <code>update()</code> function now has a <code>dt</code> parameter that provides the elapsed time since the last update in milliseconds. If you do redefine the function in your own object, be sure to pass the parameter when calling the parent function. Example:</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FFA657">update</span><span style="color: #C9D1D9"> : </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">delta</span><span style="color: #C9D1D9">) {</span></span>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FFA657">update</span><span style="color: #C9D1D9"> : </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">delta</span><span style="color: #C9D1D9">) {</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">updateMovement</span><span style="color: #C9D1D9">();</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.vel.x </span><span style="color: #FF7B72">!=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">||</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.vel.y </span><span style="color: #FF7B72">!=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">) {</span></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">parent</span><span style="color: #C9D1D9">(delta);</span></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">;</span></span>
 <span class="line"><span style="color: #C9D1D9">    }</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">false</span><span style="color: #C9D1D9">;</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><ul>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<ul>
 <li>Obsolete functions under the <code>me.game</code> namespace (like add, remove, sort objects) have been removed as they are now accessible in a more standard way through the <code>me.ObjectContainer</code> API (and ultimately <code>me.game.world</code>)</li>
 <li><code>me.ObjectContainer.getEntityBy*</code> style function have been renamed to a corresponding <code>getChildBy*</code> function</li>
 <li>the <code>me.game.getEntityContainer()</code> function has been renamed to <code>me.game.getParentContainer()</code></li>
@@ -506,12 +727,16 @@
 <li>Entity’s <code>collisionBox</code> properties have been replaced by a more “standardized” approach. Collisions boxes are now defined through Shape objects, and accessible through the <code>addShape</code>, <code>setShape</code>, <code>getShape</code> functions. Collision shape object position is now also relative to their parent object.</li>
 <li>melonJS now properly support non rectangular shapes (Ellipse and Polygon), although AABB collision detection is still performed using the corresponding bounding rect (using the also new <code>getBounds</code> functions).</li>
 <li>Now obsolete/deprectated <code>updateColRect</code> and <code>adjustSize</code> functions have been removed, as related properties can now directly be set on shape object, as shown below :
-before (<0.9.11) :</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// update the hit box</span></span>
-<span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">updateColRect</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">20</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">32</span><span style="color: #C9D1D9">, </span><span style="color: #FF7B72">-</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">)</span></span></code></pre><p>now (1.0.0):</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// update the collision shape rect</span></span>
+before (&#x3C;0.9.11) :</li>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// update the hit box</span></span>
+<span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">updateColRect</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">20</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">32</span><span style="color: #C9D1D9">, </span><span style="color: #FF7B72">-</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">)</span></span></code></pre>
+<p>now (1.0.0):</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// update the collision shape rect</span></span>
 <span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> shape </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">getShape</span><span style="color: #C9D1D9">()</span></span>
 <span class="line"><span style="color: #C9D1D9">shape.pos.x </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">20</span></span>
-<span class="line"><span style="color: #C9D1D9">shape.</span><span style="color: #D2A8FF">resize</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">32</span><span style="color: #C9D1D9">, shape.height)</span></span></code></pre><ul>
+<span class="line"><span style="color: #C9D1D9">shape.</span><span style="color: #D2A8FF">resize</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">32</span><span style="color: #C9D1D9">, shape.height)</span></span></code></pre>
+<ul>
 <li>
 <p>the possibility to add a <code>ScreenObject</code> to the world container has been removed. This was a hack-ish implementation, inducing multiple small bugs difficult to fix (as more or less opposed to the engine philosophy). If you were using this feature, please use instead the more standard <code>Renderable</code> update/draw pattern (check out the redesigned default Loading Screen if you need an example).</p>
 </li>
@@ -533,7 +758,7 @@ before (<0.9.11) :</li>
 </ul>
 </li>
 <li>
-<p>the deprecated and duplicated <code>collide()</code> and <code>collideType</code> functions have been removed from <code>ObjectEntity</code> and <code>me.game</code>. These functions are now (officially) only available using the world object : <code>me.game.world.collide</code> & <code>me.game.world.collideType</code></p>
+<p>the deprecated and duplicated <code>collide()</code> and <code>collideType</code> functions have been removed from <code>ObjectEntity</code> and <code>me.game</code>. These functions are now (officially) only available using the world object : <code>me.game.world.collide</code> &#x26; <code>me.game.world.collideType</code></p>
 </li>
 <li>
 <p>the <code>me.Vector2d.scale()</code> function has been updated to now accept scalar values. To multiply a vector by another vector please use the new ‘me.Vector2d.scaleV()` function.</p>
@@ -544,9 +769,15 @@ before (<0.9.11) :</li>
 <li>
 <p>The <code>visible</code> property has been removed from <code>me.Renderable</code>. Now if you do not want a renderable object to be visible, the recommended way is either to actually remove the object from the stage, or make it fully transparent (using <code>setOpacity</code>).</p>
 </li>
-</ul><hr><h1 id="099-to-091x">0.9.9 to 0.9.1x</h1><ul>
+</ul>
+<hr>
+<h1 id="099-to-091x">0.9.9 to 0.9.1x</h1>
+<ul>
 <li>No API Change</li>
-</ul><hr><h1 id="098-to-099">0.9.8 to 0.9.9</h1><ul>
+</ul>
+<hr>
+<h1 id="098-to-099">0.9.8 to 0.9.9</h1>
+<ul>
 <li>
 <p>the <code>me.video.createCanvasSurface()</code> function has been removed and superseed by a <code>me.video.getContext2d(canvas)</code> function, that will also now enable/disable antialiasing option when required. To update your code just replace the current (for example) <code>var ctx = me.video.createCanvasSurface(100, 20);</code> by <code>var ctx = me.video.getContext2d(me.video.createCanvas(100, 20));</code></p>
 </li>
@@ -574,15 +805,17 @@ before (<0.9.11) :</li>
 <li>
 <p>melonJS now automatically and properly manage high-DPI devices, which means that the following lines from the previous boilerplate html file must be removed :</p>
 </li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// Retina viewport settings</span></span>
-<span class="line"><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (window.devicePixelRatio </span><span style="color: #FF7B72">&gt;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">) {</span></span>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// Retina viewport settings</span></span>
+<span class="line"><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (window.devicePixelRatio </span><span style="color: #FF7B72">></span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">) {</span></span>
 <span class="line"><span style="color: #C9D1D9">    document</span></span>
-<span class="line"><span style="color: #C9D1D9">        .</span><span style="color: #D2A8FF">getElementById</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;viewport&#39;</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">        .</span><span style="color: #D2A8FF">getElementById</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'viewport'</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #C9D1D9">        .</span><span style="color: #D2A8FF">setAttribute</span><span style="color: #C9D1D9">(</span></span>
-<span class="line"><span style="color: #C9D1D9">            </span><span style="color: #A5D6FF">&#39;content&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">            </span><span style="color: #A5D6FF">&#39;width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0&#39;</span></span>
+<span class="line"><span style="color: #C9D1D9">            </span><span style="color: #A5D6FF">'content'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">            </span><span style="color: #A5D6FF">'width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=0'</span></span>
 <span class="line"><span style="color: #C9D1D9">        )</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><ul>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<ul>
 <li>
 <p><code>me.Rect.getRect()</code> has been renamed to <code>me.Rect.getBounds()</code></p>
 </li>
@@ -592,7 +825,10 @@ before (<0.9.11) :</li>
 <li>
 <p><code>me.HUD</code> and <code>me.HUD_Object</code> have been removed in favor of the new <code>me.ObjectContainer</code> class. A full implementation is available in the <a href="https://github.com/melonjs/melonJS/blob/master/examples/platformer/js/entities/HUD.js">Platformer Example</a>.</p>
 </li>
-</ul><hr><h1 id="097-to-098">0.9.7 to 0.9.8</h1><ul>
+</ul>
+<hr>
+<h1 id="097-to-098">0.9.7 to 0.9.8</h1>
+<ul>
 <li>
 <p>the <code>tps</code> data type used when preloading “Atlas” file has been redefined into a generic <code>json</code> data type (Atlas file format supported in melonJS are anyway JSON based formatted).</p>
 </li>
@@ -605,7 +841,10 @@ before (<0.9.11) :</li>
 <li>
 <p>the <code>me.input.registerMouseEvent</code> and <code>me.input.releaseMouseEvent</code> have been removed to <code>me.input.registerPointerEvent</code> and <code>me.input.releasePointerEvent</code> in order to be more generic in terms of naming</p>
 </li>
-</ul><hr><h1 id="096-to-097">0.9.6 to 0.9.7</h1><ul>
+</ul>
+<hr>
+<h1 id="096-to-097">0.9.6 to 0.9.7</h1>
+<ul>
 <li>
 <p>default alignment for <a href="http://melonjs.github.io/docs/me.BitmapFont.html"><code>me.BitmapFont</code></a> has been changed to ‘left’, in order to be inline with <a href="http://melonjs.github.io/docs/me.Font.html"><code>me.Font</code></a> and the corresponding default CSS text align property.</p>
 </li>
@@ -642,9 +881,15 @@ before (<0.9.11) :</li>
 <li>
 <p><code>me.ObjectEntity</code> <a href="http://melonjs.github.io/docs/me.ObjectEntity.html#collidable"><code>collidable</code></a> property is now also used, when resolving collision, to determine if the object should collide with the environment (was previously only used for entities against entities collision detection).</p>
 </li>
-</ul><hr><h1 id="095-to-096">0.9.5 to 0.9.6</h1><ul>
+</ul>
+<hr>
+<h1 id="095-to-096">0.9.5 to 0.9.6</h1>
+<ul>
 <li>no API change</li>
-</ul><hr><h1 id="094-to-095">0.9.4 to 0.9.5</h1><ul>
+</ul>
+<hr>
+<h1 id="094-to-095">0.9.4 to 0.9.5</h1>
+<ul>
 <li>
 <p><a href="http://melonjs.github.io/docs/me.GUI_Object.html"><code>me.GUI_Object</code></a> :<br>
 the <code>onClicked()</code> function has been renamed to <code>onClick()</code></p>
@@ -672,14 +917,24 @@ the function also takes an optional parameter to specify if melonJS should check
 <p>Parallax Layers :<br>
 The previous (hackish) parallax layer implementation has been rewritten using the new Image Layer feature available in Tiled 0.9.0.</p>
 </li>
-</ul><hr><h1 id="093-to-094">0.9.3 to 0.9.4</h1><ul>
+</ul>
+<hr>
+<h1 id="093-to-094">0.9.3 to 0.9.4</h1>
+<ul>
 <li>Map rendering : melonJS added a dynamic layer rendering feature (configurable <a href="http://melonjs.github.io/docs/me.sys.html#.preRender">globally</a> or per layer through Tiled by adding the <code>preRender</code> property in your layer property list). Layers are now using the dynamic renderer by default (while previous version of melonJS was using off-screen rendering)</li>
-</ul><hr><h1 id="092-to-093">0.9.2 to 0.9.3</h1><ul>
+</ul>
+<hr>
+<h1 id="092-to-093">0.9.2 to 0.9.3</h1>
+<ul>
 <li>no API change</li>
-</ul><hr><h1 id="091-to-092">0.9.1 to 0.9.2</h1><ul>
+</ul>
+<hr>
+<h1 id="091-to-092">0.9.1 to 0.9.2</h1>
+<ul>
 <li><strong><a href="http://melonjs.github.io/docs/me.ObjectEntity.html#updateMovement"><code>ObjectEntity.updateMovement()</code> function</a> :</strong><br>
 In the previous version of melonJS, the <code>updateMovement()</code> function was returning a Boolean, indicating if the player velocity changed (final velocity different from 0) :</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// check &amp; update player movement</span></span>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// check &#x26; update player movement</span></span>
 <span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> updated </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">updateMovement</span><span style="color: #C9D1D9">()</span></span>
 <span class="line"><span style="color: #8B949E">// update animation if updated</span></span>
 <span class="line"><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (updated) {</span></span>
@@ -687,7 +942,9 @@ In the previous version of melonJS, the <code>updateMovement()</code> function w
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">parent</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">true</span></span>
 <span class="line"><span style="color: #C9D1D9">}</span></span>
-<span class="line"><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">false</span></span></code></pre><p>In the 0.9.2 version of melonJS, the <code>updateMovement()</code> function now returns a collision “vector”, giving you indication on how you collided with the environment (the level itself, not other entities). Assuming that you don’t need that information, if you just want to upgrade you existing game, the simple solution is to do the following :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// check &amp; update player movement</span></span>
+<span class="line"><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">false</span></span></code></pre>
+<p>In the 0.9.2 version of melonJS, the <code>updateMovement()</code> function now returns a collision “vector”, giving you indication on how you collided with the environment (the level itself, not other entities). Assuming that you don’t need that information, if you just want to upgrade you existing game, the simple solution is to do the following :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// check &#x26; update player movement</span></span>
 <span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">updateMovement</span><span style="color: #C9D1D9">()</span></span>
 <span class="line"><span style="color: #8B949E">// update animation if updated</span></span>
 <span class="line"><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.vel.x </span><span style="color: #FF7B72">!=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">||</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.vel.y </span><span style="color: #FF7B72">!=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">) {</span></span>
@@ -695,11 +952,21 @@ In the previous version of melonJS, the <code>updateMovement()</code> function w
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">parent</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">true</span></span>
 <span class="line"><span style="color: #C9D1D9">}</span></span>
-<span class="line"><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">false</span></span></code></pre><p>As you can see, we replaced the <code>updated</code> variable by a check on <code>(this.vel.x!=0 || this.vel.y!=0)</code>, and since this what was returned by the <code>updateMovement()</code> in the previous version, it gives us exactly the same behavior.</p><ul>
+<span class="line"><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">false</span></span></code></pre>
+<p>As you can see, we replaced the <code>updated</code> variable by a check on <code>(this.vel.x!=0 || this.vel.y!=0)</code>, and since this what was returned by the <code>updateMovement()</code> in the previous version, it gives us exactly the same behavior.</p>
+<ul>
 <li><strong><a href="http://melonjs.github.io/docs/me.state.html#transition"><code>me.state.transition()</code> fadeIn/fadeout functions</a> :</strong><br></li>
-</ul><p>in melonJS 0.9.2, the fade effect are now taking as input a duration in ms, where it was in framecount for the previous version :</p><p>before :<br></p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// set a fade transition effect</span></span>
-<span class="line"><span style="color: #C9D1D9">me.state.</span><span style="color: #D2A8FF">transition</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;fade&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&#39;#000000&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">30</span><span style="color: #C9D1D9">) </span><span style="color: #8B949E">// 30 frame</span></span></code></pre><p>now :<br></p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// set a fade transition effect</span></span>
-<span class="line"><span style="color: #C9D1D9">me.state.</span><span style="color: #D2A8FF">transition</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;fade&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">&#39;#000000&#39;</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">) </span><span style="color: #8B949E">// 500ms</span></span></code></pre><hr><h1 id="090-to-091">0.9.0 to 0.9.1</h1><ul>
+</ul>
+<p>in melonJS 0.9.2, the fade effect are now taking as input a duration in ms, where it was in framecount for the previous version :</p>
+<p>before :<br></p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// set a fade transition effect</span></span>
+<span class="line"><span style="color: #C9D1D9">me.state.</span><span style="color: #D2A8FF">transition</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'fade'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'#000000'</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">30</span><span style="color: #C9D1D9">) </span><span style="color: #8B949E">// 30 frame</span></span></code></pre>
+<p>now :<br></p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// set a fade transition effect</span></span>
+<span class="line"><span style="color: #C9D1D9">me.state.</span><span style="color: #D2A8FF">transition</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'fade'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'#000000'</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">) </span><span style="color: #8B949E">// 500ms</span></span></code></pre>
+<hr>
+<h1 id="090-to-091">0.9.0 to 0.9.1</h1>
+<ul>
 <li>no API change</li>
 </ul></main>
     </body></html>

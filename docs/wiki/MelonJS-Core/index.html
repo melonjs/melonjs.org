@@ -1,91 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
     <head>
         <title>melonJS</title>
+        <meta name="description" content="melonJS is an open source HTML5 game engine">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Custom styles -->
-        <link rel="icon" href="/favicon.png">
-    <link rel="stylesheet" href="/assets/8999c0a0.6927e5d3.css" />
-<link rel="stylesheet" href="/assets/1a12d8c4.3afb37a6.css" /></head>
+        <link rel="icon" href="/img/favicon.svg">
+    <link rel="stylesheet" href="/assets/ff2699bd.19d698c1.css" />
+<link rel="stylesheet" href="/assets/28abb143.e2dc0990.css" /></head>
     <body>
-        <header class="astro-I2FXUJMC">
+        <header class="astro-S6RBVFWI">
     
-    <nav class="astro-I2FXUJMC">
-        <ul class="astro-I2FXUJMC">
-            <li class="null astro-I2FXUJMC">
-                <a href="/#top" class="astro-I2FXUJMC">Home</a>
+    <nav class="astro-S6RBVFWI">
+        <ul class="astro-S6RBVFWI">
+            <li class="null astro-S6RBVFWI">
+                <a href="/#top" class="astro-S6RBVFWI">Home</a>
             </li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://www.npmjs.com/package/melonjs" class="astro-I2FXUJMC"><img alt="npm" class="inline no-bump astro-I2FXUJMC" src="/img/npm.svg"></a>
-            </li>
-            <li class="astro-I2FXUJMC"><a href="https://melonjs.github.io/docs/" class="astro-I2FXUJMC">API</a></li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS" class="astro-I2FXUJMC">Gallery</a>
-            </li>
-            <li class="astro-I2FXUJMC"><a href="https://melonjs.discourse.group" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/discourse.svg">Forum</a></li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/discord.svg">Discord
+            <li class="astro-S6RBVFWI">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-S6RBVFWI"><img alt="npm" class="inline no-bump astro-S6RBVFWI" src="/img/npm.svg">
                 </a>
             </li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://github.com/melonjs/melonJS" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/github.svg"><span class="astro-I2FXUJMC">GitHub
+            <li class="astro-S6RBVFWI"><a href="https://melonjs.github.io/docs/" class="astro-S6RBVFWI">API</a></li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS" class="astro-S6RBVFWI">Gallery
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://melonjs.discourse.group" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/discourse.svg">Forum
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://github.com/melonjs/melonJS" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/github.svg"><span class="astro-S6RBVFWI">GitHub
                     </span>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
-        <main><p>melonJS currently operates quite similar to that of most game frameworks. It manages the game loop for you, giving you update & draw/paint calls to work with.</p><p>melonJS provides various named states to work with, in conjunction with <a href="http://melonjs.github.io/melonJS/docs/me.Stage.html">me.Stage</a> to better manage different views and controls for the game.</p><p>The default states are:</p><table>
-<thead>
-<tr>
-<th>name</th>
-<th>index</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>LOADING</td>
-<td>0</td>
-</tr>
-<tr>
-<td>MENU</td>
-<td>1</td>
-</tr>
-<tr>
-<td>READY</td>
-<td>2</td>
-</tr>
-<tr>
-<td>PLAY</td>
-<td>3</td>
-</tr>
-<tr>
-<td>GAMEOVER</td>
-<td>4</td>
-</tr>
-<tr>
-<td>GAME_END</td>
-<td>5</td>
-</tr>
-<tr>
-<td>SCORE</td>
-<td>6</td>
-</tr>
-<tr>
-<td>CREDITS</td>
-<td>7</td>
-</tr>
-<tr>
-<td>SETTINGS</td>
-<td>8</td>
-</tr>
-</tbody>
-</table><p>You can define if your own states as well.</p><p>melonJS provides <a href="Resources">resource management</a> to make it easy to load various images, sounds, etc.</p><p>There is a near complete <a href="https://www.mapeditor.org">Tiled Map</a> integration with melonJS, the details on how to use are in the <a href="https://github.com/melonjs/melonJS/wiki#tutorial">tutorial</a>.</p><h2 id="framework-workflow">Framework Workflow</h2><p>When you initialize melonjs via <code>me.video.init</code>, it sets up the camera, the world object (an instance of <a href="http://melonjs.github.io/melonJS/docs/me.World.html"><code>me.World</code></a>), and the game loop.</p><p>Since melonJS is an HTML5 game engine, it depends on the <code>requestAnimationFrame</code> function that modern browsers provide. <a href="https://developer.mozilla.org/en-US/docs/Web/API/window.requestAnimationFrame?redirectlocale=en-US&redirectslug=DOM%2Fwindow.requestAnimationFrame">Mozilla Developer Network</a> covers the details on the function pretty well, but the short of it is that the requestAnimationFrame tries to run at 60 frames per second. It accepts a function to execute each time a frame runs. So with melon, we tell it to update the game objects as we have defined and to execute all the draw calls.</p><p>The requestAnimationFrame is utilized to call two main operations: update & draw.</p><p>The update function invokes the update on the <code>me.game.world</code> object, which is a <code>me.Container</code>. The update function of the container loops through each of its child objects. If the child object is another container, then that container will invoke all its children’s update functions, etc.</p><p>The container update function goes through a couple checks before updating the child object:</p><ol>
+        <main class="md"><p>melonJS currently operates quite similar to that of most game frameworks. It manages the game loop for you, giving you update &#x26; draw/paint calls to work with.</p>
+<p>melonJS provides various named states to work with, in conjunction with <a href="http://melonjs.github.io/melonJS/docs/me.Stage.html">me.Stage</a> to better manage different views and controls for the game.</p>
+<p>The default states are:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>name</th><th>index</th></tr></thead><tbody><tr><td>LOADING</td><td>0</td></tr><tr><td>MENU</td><td>1</td></tr><tr><td>READY</td><td>2</td></tr><tr><td>PLAY</td><td>3</td></tr><tr><td>GAMEOVER</td><td>4</td></tr><tr><td>GAME_END</td><td>5</td></tr><tr><td>SCORE</td><td>6</td></tr><tr><td>CREDITS</td><td>7</td></tr><tr><td>SETTINGS</td><td>8</td></tr></tbody></table>
+<p>You can define if your own states as well.</p>
+<p>melonJS provides <a href="Resources">resource management</a> to make it easy to load various images, sounds, etc.</p>
+<p>There is a near complete <a href="https://www.mapeditor.org">Tiled Map</a> integration with melonJS, the details on how to use are in the <a href="https://github.com/melonjs/melonJS/wiki#tutorial">tutorial</a>.</p>
+<h2 id="framework-workflow">Framework Workflow</h2>
+<p>When you initialize melonjs via <code>me.video.init</code>, it sets up the camera, the world object (an instance of <a href="http://melonjs.github.io/melonJS/docs/me.World.html"><code>me.World</code></a>), and the game loop.</p>
+<p>Since melonJS is an HTML5 game engine, it depends on the <code>requestAnimationFrame</code> function that modern browsers provide. <a href="https://developer.mozilla.org/en-US/docs/Web/API/window.requestAnimationFrame?redirectlocale=en-US&#x26;redirectslug=DOM%2Fwindow.requestAnimationFrame">Mozilla Developer Network</a> covers the details on the function pretty well, but the short of it is that the requestAnimationFrame tries to run at 60 frames per second. It accepts a function to execute each time a frame runs. So with melon, we tell it to update the game objects as we have defined and to execute all the draw calls.</p>
+<p>The requestAnimationFrame is utilized to call two main operations: update &#x26; draw.</p>
+<p>The update function invokes the update on the <code>me.game.world</code> object, which is a <code>me.Container</code>. The update function of the container loops through each of its child objects. If the child object is another container, then that container will invoke all its children’s update functions, etc.</p>
+<p>The container update function goes through a couple checks before updating the child object:</p>
+<ol>
 <li>Will skip the update if the game state is set to paused, and the object is not set to update when paused.</li>
 <li>The object must be either in viewport, floating or set to alwaysUpdate.</li>
-</ol><p>Delta time since the last frame (or last update) is passed to the update call. The update method is expected to return a boolean or a falsey value. The update return value tells the engine if the particular object should be re-drawn. It is a good practice to only return true from your update methods when you absolutely need to, such as having your entity fall (<code>this.body.vel.x !== 0</code>) due to gravity. The tutorial mentions this with the HUD: <a href="https://github.com/melonjs/tutorial-platformer/blob/fc6e1d63dffb049e12a4f7cea80a7bbf00876140/tutorial_step2/js/entities/HUD.js#L55">https://github.com/melonjs/tutorial-platformer/blob/fc6e1d63dffb049e12a4f7cea80a7bbf00876140/tutorial_step2/js/entities/HUD.js#L55</a>.</p><p>Once all updates are complete, the draw cycle begins if any of the update functions have returned <code>true</code>. If all update functions return some falsey value, all draws are skipped for this frame. This is an optimization for screens that have no activity.</p><p>The container draw function checks all of its child objects in the same way. Ensures the game is not paused, and that the object is either in view or set to always update. It also checks if the object is considered a renderable (<code>isRenderable</code> set to true). There may be some objects you want to have update in the game loop, but not draw anything.</p><p>Each child object’s draw function calls the appropriate methods on the current renderer. By default melonJS will use a canvas renderer, but this can be overwritten through the (me.video.init)[<a href="http://melonjs.github.io/melonJS/docs/me.video.html">http://melonjs.github.io/melonJS/docs/me.video.html</a>] call.</p><h3 id="details">Details</h3><p>To learn more about the object types explained here, check out:</p><ul>
+</ol>
+<p>Delta time since the last frame (or last update) is passed to the update call. The update method is expected to return a boolean or a falsey value. The update return value tells the engine if the particular object should be re-drawn. It is a good practice to only return true from your update methods when you absolutely need to, such as having your entity fall (<code>this.body.vel.x !== 0</code>) due to gravity. The tutorial mentions this with the HUD: <a href="https://github.com/melonjs/tutorial-platformer/blob/fc6e1d63dffb049e12a4f7cea80a7bbf00876140/tutorial_step2/js/entities/HUD.js#L55">https://github.com/melonjs/tutorial-platformer/blob/fc6e1d63dffb049e12a4f7cea80a7bbf00876140/tutorial_step2/js/entities/HUD.js#L55</a>.</p>
+<p>Once all updates are complete, the draw cycle begins if any of the update functions have returned <code>true</code>. If all update functions return some falsey value, all draws are skipped for this frame. This is an optimization for screens that have no activity.</p>
+<p>The container draw function checks all of its child objects in the same way. Ensures the game is not paused, and that the object is either in view or set to always update. It also checks if the object is considered a renderable (<code>isRenderable</code> set to true). There may be some objects you want to have update in the game loop, but not draw anything.</p>
+<p>Each child object’s draw function calls the appropriate methods on the current renderer. By default melonJS will use a canvas renderer, but this can be overwritten through the (me.video.init)[<a href="http://melonjs.github.io/melonJS/docs/me.video.html">http://melonjs.github.io/melonJS/docs/me.video.html</a>] call.</p>
+<h3 id="details">Details</h3>
+<p>To learn more about the object types explained here, check out:</p>
+<ul>
 <li><a href="Container">Container</a></li>
 <li><a href="Renderables">Renderables</a></li>
 </ul></main>

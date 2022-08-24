@@ -1,103 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
     <head>
         <title>melonJS</title>
+        <meta name="description" content="melonJS is an open source HTML5 game engine">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Custom styles -->
-        <link rel="icon" href="/favicon.png">
-    <link rel="stylesheet" href="/assets/8999c0a0.6927e5d3.css" />
-<link rel="stylesheet" href="/assets/1a12d8c4.3afb37a6.css" /></head>
+        <link rel="icon" href="/img/favicon.svg">
+    <link rel="stylesheet" href="/assets/ff2699bd.19d698c1.css" />
+<link rel="stylesheet" href="/assets/28abb143.e2dc0990.css" /></head>
     <body>
-        <header class="astro-I2FXUJMC">
+        <header class="astro-S6RBVFWI">
     
-    <nav class="astro-I2FXUJMC">
-        <ul class="astro-I2FXUJMC">
-            <li class="null astro-I2FXUJMC">
-                <a href="/#top" class="astro-I2FXUJMC">Home</a>
+    <nav class="astro-S6RBVFWI">
+        <ul class="astro-S6RBVFWI">
+            <li class="null astro-S6RBVFWI">
+                <a href="/#top" class="astro-S6RBVFWI">Home</a>
             </li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://www.npmjs.com/package/melonjs" class="astro-I2FXUJMC"><img alt="npm" class="inline no-bump astro-I2FXUJMC" src="/img/npm.svg"></a>
-            </li>
-            <li class="astro-I2FXUJMC"><a href="https://melonjs.github.io/docs/" class="astro-I2FXUJMC">API</a></li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS" class="astro-I2FXUJMC">Gallery</a>
-            </li>
-            <li class="astro-I2FXUJMC"><a href="https://melonjs.discourse.group" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/discourse.svg">Forum</a></li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/discord.svg">Discord
+            <li class="astro-S6RBVFWI">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-S6RBVFWI"><img alt="npm" class="inline no-bump astro-S6RBVFWI" src="/img/npm.svg">
                 </a>
             </li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://github.com/melonjs/melonJS" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/github.svg"><span class="astro-I2FXUJMC">GitHub
+            <li class="astro-S6RBVFWI"><a href="https://melonjs.github.io/docs/" class="astro-S6RBVFWI">API</a></li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS" class="astro-S6RBVFWI">Gallery
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://melonjs.discourse.group" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/discourse.svg">Forum
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://github.com/melonjs/melonJS" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/github.svg"><span class="astro-S6RBVFWI">GitHub
                     </span>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
-        <main><p><img src="https://cloud.githubusercontent.com/assets/4033090/10114747/0c568f58-6429-11e5-975a-f32eedfc1505.png" alt="featurecarousel_texturepacker"></p><p>Using a texture Atlas will generally allow you to :</p><ul>
+        <main class="md"><p><img src="https://cloud.githubusercontent.com/assets/4033090/10114747/0c568f58-6429-11e5-975a-f32eedfc1505.png" alt="featurecarousel_texturepacker"></p>
+<p>Using a texture Atlas will generally allow you to :</p>
+<ul>
 <li>save memory, by packing all your sprites into a single texture</li>
 <li>increase your framerate, by optimising the GPU usage</li>
 <li>make your game start faster, by loading a single texture</li>
-</ul><p>In this tutorial we are going to see how to :</p><ul>
+</ul>
+<p>In this tutorial we are going to see how to :</p>
+<ul>
 <li>use <a href="https://www.codeandweb.com/texturepacker">TexturePacker</a> to create a texture atlas</li>
 <li>import the generated texture into a melonJS project</li>
 <li>add a static renderable sprite</li>
 <li>add a renderable animation</li>
-</ul><h1 id="create-a-texture-atlas">Create a Texture atlas</h1><p>To create a new texture atlas, star by opening TexturePacker, and choose the <em><strong>JSON Array data</strong></em> format (earlier version of TexturePacker had a melonJS data format, but this is not required anymore). You should see a screen similar to the one below after you’ve installed TexturePacker:</p><p><img src="https://cloud.githubusercontent.com/assets/4033090/11137431/921f57de-89f2-11e5-84d2-2ed1d0bbfc25.png" alt="create new project"></p><p>Then drag & drop the directory containing your sprite images to the Sprites area of TexturePacker. TexturePacker will automatically load and lay out all image files. For this example we use the assets from the texture packer example <a href="https://github.com/melonjs/examples/tree/master/texturepacker/data/img/assets">here</a> (see under the cityscene folder).</p><p><img src="https://cloud.githubusercontent.com/assets/4033090/10100023/7a659c04-63c1-11e5-8f83-8693de9d7ee5.png" alt="imported files"></p><p>After that use the file selection button to enter a Data file, name it <code>cityscene.json</code> and place it in the <code>data/img</code> folder (to follow the melonJS <a href="https://github.com/melonjs/es6-boilerplate#folder-structure">boilerplate structure</a>), and do the same for the texture file by choosing <code>cityscene.png</code> in Texture file’s file selector.</p><p>Recommended settings :</p><ul>
+</ul>
+<h1 id="create-a-texture-atlas">Create a Texture atlas</h1>
+<p>To create a new texture atlas, star by opening TexturePacker, and choose the <em><strong>JSON Array data</strong></em> format (earlier version of TexturePacker had a melonJS data format, but this is not required anymore). You should see a screen similar to the one below after you’ve installed TexturePacker:</p>
+<p><img src="https://cloud.githubusercontent.com/assets/4033090/11137431/921f57de-89f2-11e5-84d2-2ed1d0bbfc25.png" alt="create new project"></p>
+<p>Then drag &#x26; drop the directory containing your sprite images to the Sprites area of TexturePacker. TexturePacker will automatically load and lay out all image files. For this example we use the assets from the texture packer example <a href="https://github.com/melonjs/examples/tree/master/texturepacker/data/img/assets">here</a> (see under the cityscene folder).</p>
+<p><img src="https://cloud.githubusercontent.com/assets/4033090/10100023/7a659c04-63c1-11e5-8f83-8693de9d7ee5.png" alt="imported files"></p>
+<p>After that use the file selection button to enter a Data file, name it <code>cityscene.json</code> and place it in the <code>data/img</code> folder (to follow the melonJS <a href="https://github.com/melonjs/es6-boilerplate#folder-structure">boilerplate structure</a>), and do the same for the texture file by choosing <code>cityscene.png</code> in Texture file’s file selector.</p>
+<p>Recommended settings :</p>
+<ul>
 <li>use “Power of Two” size for the texture (unless all devices you target are supporting WebGL2), to optimize the use of GPU memory</li>
 <li>we recommend not to use texture rotation when possible (although this usually increases the final texture size), as it forces melonJS to apply a default rotation angle when drawing sprites and, based on how many sprites are to be displayed, can impact performance.</li>
-</ul><p>Finally press the <code>Publish sprite sheet</code> button to create the sprite sheet, and we are done in TexturePacker !</p><h1 id="import-the-generated-texture-into-a-melonjs-project">Import the generated texture into a melonJS project</h1><p>As this tutorial is focusing on using TexturePacker, we will assume that you are already familiar with melonJS and that you have at least a first project up & running. If you need help on starting with melonJS, we recommend you to first check either our <a href="http://melonjs.github.io/tutorial-platformer/">platformer</a> or <a href="http://melonjs.github.io/tutorial-space-invaders/">space invaders</a> tutorials.</p><h2 id="loading-the-texture-atlas-and-sprite-sheet-in-melonjs-">Loading the texture atlas and sprite sheet in melonJS :</h2><p>The first step is of course to add our two files to the list of assets to be loaded (as a rule of thumb, be sure to always name atlas and source image the same, and be sure to respect name as defined in your project, so that they match with the JSON meta data) :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> resources </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
-<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">&#39;cityscene&#39;</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">&#39;json&#39;</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">&#39;data/img/cityscene.json&#39;</span><span style="color: #C9D1D9"> },</span></span>
-<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">&#39;cityscene&#39;</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">&#39;image&#39;</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">&#39;data/img/cityscene.png&#39;</span><span style="color: #C9D1D9"> },</span></span>
-<span class="line"><span style="color: #C9D1D9">]</span></span></code></pre><p>Note: when using multipack texture, please make sure to follow the filename pattern as defined in TexturePacker, for example if using <code>n-1</code> then the above example would need to be changed as follow (assuming the texture and atlas is split into 2 textures) :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> resources </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
-<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">&#39;cityscene-0&#39;</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">&#39;json&#39;</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">&#39;data/img/cityscene-0.json&#39;</span><span style="color: #C9D1D9"> },</span></span>
-<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">&#39;cityscene-1&#39;</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">&#39;json&#39;</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">&#39;data/img/cityscene-1.json&#39;</span><span style="color: #C9D1D9"> },</span></span>
-<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">&#39;cityscene-0&#39;</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">&#39;image&#39;</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">&#39;data/img/cityscene-0.png&#39;</span><span style="color: #C9D1D9"> },</span></span>
-<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">&#39;cityscene-1&#39;</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">&#39;image&#39;</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">&#39;data/img/cityscene-1.png&#39;</span><span style="color: #C9D1D9"> },</span></span>
-<span class="line"><span style="color: #C9D1D9">]</span></span></code></pre><p>Then let’s create a global reference of our <a href="http://melonjs.github.io/melonJS/docs/TextureAtlas.html">Texture Atlas</a> under the <code>game</code> namespace, so that we can reuse it later :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// load the texture atlas file</span></span>
+</ul>
+<p>Finally press the <code>Publish sprite sheet</code> button to create the sprite sheet, and we are done in TexturePacker !</p>
+<h1 id="import-the-generated-texture-into-a-melonjs-project">Import the generated texture into a melonJS project</h1>
+<p>As this tutorial is focusing on using TexturePacker, we will assume that you are already familiar with melonJS and that you have at least a first project up &#x26; running. If you need help on starting with melonJS, we recommend you to first check either our <a href="http://melonjs.github.io/tutorial-platformer/">platformer</a> or <a href="http://melonjs.github.io/tutorial-space-invaders/">space invaders</a> tutorials.</p>
+<h2 id="loading-the-texture-atlas-and-sprite-sheet-in-melonjs">Loading the texture atlas and sprite sheet in melonJS :</h2>
+<p>The first step is of course to add our two files to the list of assets to be loaded (as a rule of thumb, be sure to always name atlas and source image the same, and be sure to respect name as defined in your project, so that they match with the JSON meta data) :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> resources </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
+<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">'cityscene'</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">'json'</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">'data/img/cityscene.json'</span><span style="color: #C9D1D9"> },</span></span>
+<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">'cityscene'</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">'image'</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">'data/img/cityscene.png'</span><span style="color: #C9D1D9"> },</span></span>
+<span class="line"><span style="color: #C9D1D9">]</span></span></code></pre>
+<p>Note: when using multipack texture, please make sure to follow the filename pattern as defined in TexturePacker, for example if using <code>n-1</code> then the above example would need to be changed as follow (assuming the texture and atlas is split into 2 textures) :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> resources </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
+<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">'cityscene-0'</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">'json'</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">'data/img/cityscene-0.json'</span><span style="color: #C9D1D9"> },</span></span>
+<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">'cityscene-1'</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">'json'</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">'data/img/cityscene-1.json'</span><span style="color: #C9D1D9"> },</span></span>
+<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">'cityscene-0'</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">'image'</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">'data/img/cityscene-0.png'</span><span style="color: #C9D1D9"> },</span></span>
+<span class="line"><span style="color: #C9D1D9">    { name: </span><span style="color: #A5D6FF">'cityscene-1'</span><span style="color: #C9D1D9">, type: </span><span style="color: #A5D6FF">'image'</span><span style="color: #C9D1D9">, src: </span><span style="color: #A5D6FF">'data/img/cityscene-1.png'</span><span style="color: #C9D1D9"> },</span></span>
+<span class="line"><span style="color: #C9D1D9">]</span></span></code></pre>
+<p>Then let’s create a global reference of our <a href="http://melonjs.github.io/melonJS/docs/TextureAtlas.html">Texture Atlas</a> under the <code>game</code> namespace, so that we can reuse it later :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// load the texture atlas file</span></span>
 <span class="line"><span style="color: #C9D1D9">game.texture </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">TextureAtlas</span><span style="color: #C9D1D9">(</span></span>
-<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getJSON</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;texture&#39;</span><span style="color: #C9D1D9">),</span></span>
-<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getImage</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;texture&#39;</span><span style="color: #C9D1D9">)</span></span>
-<span class="line"><span style="color: #C9D1D9">)</span></span></code></pre><blockquote>
+<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getJSON</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'texture'</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getImage</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'texture'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">)</span></span></code></pre>
+<blockquote>
 <p>Note: when using multipack texture, the <a href="http://melonjs.github.io/melonJS/docs/TextureAtlas.html">constructor</a> would then <em>take an array of Atlas and an array of source image file</em> (do note that the second argument is optional, and if not present source image name will be extracted from the atlas itself) :</p>
-<pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// load the texture atlas file</span></span>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// load the texture atlas file</span></span>
 <span class="line"><span style="color: #C9D1D9">game.texture </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">TextureAtlas</span><span style="color: #C9D1D9">([</span></span>
-<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getJSON</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;texture-0&#39;</span><span style="color: #C9D1D9">),</span></span>
-<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getJSON</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;texture-1&#39;</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getJSON</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'texture-0'</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    me.loader.</span><span style="color: #D2A8FF">getJSON</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'texture-1'</span><span style="color: #C9D1D9">),</span></span>
 <span class="line"><span style="color: #C9D1D9">])</span></span></code></pre>
-</blockquote><p>Make sure of you course to do this after all resources have been preloaded (in our example we inserted this code into the <code>loaded</code> callback).</p><h1 id="add-the-static-background">Add the static background</h1><p>Adding a static background is pretty easy, and for that we will use the sprite from our texture called background :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// create the background object</span></span>
-<span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> background </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> game.texture.</span><span style="color: #D2A8FF">createSpriteFromName</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;background&#39;</span><span style="color: #C9D1D9">)</span></span>
+</blockquote>
+<p>Make sure of you course to do this after all resources have been preloaded (in our example we inserted this code into the <code>loaded</code> callback).</p>
+<h1 id="add-the-static-background">Add the static background</h1>
+<p>Adding a static background is pretty easy, and for that we will use the sprite from our texture called background :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// create the background object</span></span>
+<span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> background </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> game.texture.</span><span style="color: #D2A8FF">createSpriteFromName</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'background'</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E">// set position to the middle of the viewport</span></span>
 <span class="line"><span style="color: #8B949E">// (as the sprite anchorPoint is (0.5, 0.5)</span></span>
 <span class="line"><span style="color: #C9D1D9">background.pos.</span><span style="color: #D2A8FF">set</span><span style="color: #C9D1D9">(me.game.viewport.width </span><span style="color: #FF7B72">/</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, me.game.viewport.height </span><span style="color: #FF7B72">/</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E">// add to the scene</span></span>
-<span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">addChild</span><span style="color: #C9D1D9">(background)</span></span></code></pre><p>Note that as the default settings in TexturePacker is to use <code>center</code> as the anchorPoint, we also set the default position for the background to the center of the screen, but you can of course change it to top-left or whatever you need, and change the default position accordingly (that would be <code>[0, 0]</code> if top-left coordinates are used for the anchor point).</p><p>Alternatively you can also create a <a href="http://melonjs.github.io/docs/me.Sprite.html"><code>me.Sprite</code></a> directly using a texture atlas, as shown below :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// add the Background with default position to the middle of the viewport</span></span>
+<span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">addChild</span><span style="color: #C9D1D9">(background)</span></span></code></pre>
+<p>Note that as the default settings in TexturePacker is to use <code>center</code> as the anchorPoint, we also set the default position for the background to the center of the screen, but you can of course change it to top-left or whatever you need, and change the default position accordingly (that would be <code>[0, 0]</code> if top-left coordinates are used for the anchor point).</p>
+<p>Alternatively you can also create a <a href="http://melonjs.github.io/docs/me.Sprite.html"><code>me.Sprite</code></a> directly using a texture atlas, as shown below :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// add the Background with default position to the middle of the viewport</span></span>
 <span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> background </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> me.</span><span style="color: #D2A8FF">Sprite</span><span style="color: #C9D1D9">(</span></span>
 <span class="line"><span style="color: #C9D1D9">    me.game.viewport.width </span><span style="color: #FF7B72">/</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    me.game.viewport.height </span><span style="color: #FF7B72">/</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    {</span></span>
 <span class="line"><span style="color: #C9D1D9">        image: game.texture,</span></span>
-<span class="line"><span style="color: #C9D1D9">        region: </span><span style="color: #A5D6FF">&#39;background.png&#39;</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">        region: </span><span style="color: #A5D6FF">'background.png'</span><span style="color: #C9D1D9">,</span></span>
 <span class="line"><span style="color: #C9D1D9">    }</span></span>
 <span class="line"><span style="color: #C9D1D9">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E">// add to the scene</span></span>
-<span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">addChild</span><span style="color: #C9D1D9">(background, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">)</span></span></code></pre><h1 id="add-the-cap-guy-animation">Add the cap guy animation</h1><p>Finally we are going to add a renderable <a href="http://melonjs.github.io/docs/me.AnimationSheet.html">animation</a> for our CapGuy <a href="http://melonjs.github.io/docs/me.Entity.html">Entity</a>.</p><p>In our example we use a very simple Entity, that is displayed in the middle of the screen and move along the x axis until it leaves the screen. To add the renderable component to our Entity, we just simply add the following to the Entity constructor :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// create an animation using the cap guy sprites, and add as renderable</span></span>
+<span class="line"><span style="color: #C9D1D9">me.game.world.</span><span style="color: #D2A8FF">addChild</span><span style="color: #C9D1D9">(background, </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">)</span></span></code></pre>
+<h1 id="add-the-cap-guy-animation">Add the cap guy animation</h1>
+<p>Finally we are going to add a renderable <a href="http://melonjs.github.io/docs/me.AnimationSheet.html">animation</a> for our CapGuy <a href="http://melonjs.github.io/docs/me.Entity.html">Entity</a>.</p>
+<p>In our example we use a very simple Entity, that is displayed in the middle of the screen and move along the x axis until it leaves the screen. To add the renderable component to our Entity, we just simply add the following to the Entity constructor :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// create an animation using the cap guy sprites, and add as renderable</span></span>
 <span class="line"><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.renderable </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> game.texture.</span><span style="color: #D2A8FF">createAnimationFromName</span><span style="color: #C9D1D9">([</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&#39;capguy/walk/0001&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&#39;capguy/walk/0002&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&#39;capguy/walk/0003&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&#39;capguy/walk/0004&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&#39;capguy/walk/0005&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&#39;capguy/walk/0006&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&#39;capguy/walk/0007&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&#39;capguy/walk/0008&#39;</span><span style="color: #C9D1D9">,</span></span>
-<span class="line"><span style="color: #C9D1D9">])</span></span></code></pre><p>We just use the default animation here, which contains all defined frames. Of course it’s also possible to define other animations using the <a href="http://melonjs.github.io/docs/me.AnimationSheet.html#addAnimation"><code>addAnimation</code></a> function.</p><p>If you start the demo now you’ll see CapGuy walking… but he’s not yet moving. Let’s add the following code block to <code>entity.js</code></p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">/**</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">'capguy/walk/0001'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">'capguy/walk/0002'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">'capguy/walk/0003'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">'capguy/walk/0004'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">'capguy/walk/0005'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">'capguy/walk/0006'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">'capguy/walk/0007'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">'capguy/walk/0008'</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">])</span></span></code></pre>
+<p>We just use the default animation here, which contains all defined frames. Of course it’s also possible to define other animations using the <a href="http://melonjs.github.io/docs/me.AnimationSheet.html#addAnimation"><code>addAnimation</code></a> function.</p>
+<p>If you start the demo now you’ll see CapGuy walking… but he’s not yet moving. Let’s add the following code block to <code>entity.js</code></p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">/**</span></span>
 <span class="line"><span style="color: #8B949E"> * manage the enemy movement</span></span>
 <span class="line"><span style="color: #8B949E"> */</span></span>
 <span class="line"><span style="color: #D2A8FF">update</span><span style="color: #C9D1D9">(dt) {</span></span>
@@ -106,7 +147,7 @@
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.pos.x </span><span style="color: #FF7B72">+=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0.3</span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9">dt;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// repeat once leaving the viewport</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.pos.x </span><span style="color: #FF7B72">&gt;=</span><span style="color: #C9D1D9"> me.game.viewport.width) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.pos.x </span><span style="color: #FF7B72">>=</span><span style="color: #C9D1D9"> me.game.viewport.width) {</span></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.pos.x </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">;</span></span>
 <span class="line"><span style="color: #C9D1D9">    }</span></span>
 <span class="line"></span>
@@ -114,6 +155,10 @@
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #79C0FF">super</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">update</span><span style="color: #C9D1D9">(dt);</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">;</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>This will moves CapGuy a bit to the right. (<code>dt</code> is the time difference between the last frame and the current frame, and we use this here as a base for the update keeps the animation speed constant). The <code>if</code> block resets CapGuy to the left border after he left to the right.</p><p>And voila !</p><h1 id="source-code">Source code</h1><p>Full source code of this example is available in our repository at :
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>This will moves CapGuy a bit to the right. (<code>dt</code> is the time difference between the last frame and the current frame, and we use this here as a base for the update keeps the animation speed constant). The <code>if</code> block resets CapGuy to the left border after he left to the right.</p>
+<p>And voila !</p>
+<h1 id="source-code">Source code</h1>
+<p>Full source code of this example is available in our repository at :
 <a href="https://github.com/melonjs/examples/tree/master/texturepacker/">https://github.com/melonjs/examples/tree/master/texturepacker/</a></p></main>
     </body></html>

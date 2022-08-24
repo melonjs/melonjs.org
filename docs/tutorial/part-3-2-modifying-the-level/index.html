@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en">
+    <head>
+        <title>melonJS</title>
+        <meta name="description" content="melonJS is an open source HTML5 game engine">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="/img/favicon.svg">
+    <link rel="stylesheet" href="/assets/ff2699bd.19d698c1.css" />
+<link rel="stylesheet" href="/assets/28abb143.e2dc0990.css" /></head>
+    <body>
+        <header class="astro-S6RBVFWI">
+    
+    <nav class="astro-S6RBVFWI">
+        <ul class="astro-S6RBVFWI">
+            <li class="null astro-S6RBVFWI">
+                <a href="/#top" class="astro-S6RBVFWI">Home</a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-S6RBVFWI"><img alt="npm" class="inline no-bump astro-S6RBVFWI" src="/img/npm.svg">
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI"><a href="https://melonjs.github.io/docs/" class="astro-S6RBVFWI">API</a></li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS" class="astro-S6RBVFWI">Gallery
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://melonjs.discourse.group" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/discourse.svg">Forum
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://github.com/melonjs/melonJS" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/github.svg"><span class="astro-S6RBVFWI">GitHub
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+        <main class="md"><a href="/tutorial">Tutorial: Hacking a Platformer Game</a><h1 id="part-3-2-modifying-the-level-using-tiled">Part 3-2: Modifying the level using Tiled</h1>
+<p><em>Note: Before starting if you are new to Tiled we strongly encourage you to read the <a href="https://doc.mapeditor.org/en/stable/manual/introduction/">introduction here</a>, that provides the basics on how the editor works.</em></p>
+<p>To start open the Tiled Application. Now let’s edit the first level. It is located here:
+<code>/data/maps/map1.tmx</code>
+Once you have it open, your application should look very similar to this:</p>
+<img alt="Tiled editor screenshot" class="large" src="/img/tutorial/tiled-editor-full.png">
+<p><em>I’m using the Mac version, it might be slightly different on your system but it should look very similar</em></p>
+<p>In the middle section you have the level editor. The right side has the layers view on the top and the tileset on the bottom you can pick from to use to draw in the level editor. Always make sure you’re drawing your tiles in the right layer, otherwise they might overlap each other.</p>
+<img alt="Putting mushrooms in the sky" class="large" src="/img/tutorial/mushroom-sky.png">
+<p>As you can see I put a bunch of mushrooms in the sky, and I put them in the front layer because that’s where the elements like plants and the ground go. We can quickly see which part of the level an element is from by toggling the visibility of each layer (by clicking the 👁 icon). Layers are used to organize the different parts of our level neatly and set the order they are stacked.</p>
+<p>Once you are done editing, at the top click on <code>File > Save</code>. Then click on <code>File > Export As</code>, then change the file type to JSON to save it as <code>map1.json</code> so that it can be imported easily in our code. You will need to do this each time you save your level to see the updates.</p>
+<p><img src="/img/tutorial/hacked-game.png" alt="Screenshot of our hacked version of the platformer game"></p>
+<p>Now in the browser we can see that we have a custom character, and the sky is filled with mushrooms! Also we put a little bit of snow on the box.</p>
+<p>You can learn more about the Tiled level editor <a href="https://doc.mapeditor.org/en/stable/">here.</a></p>
+<p>The solid black lines in the level represent the collisions (this means things the walls and the floors and boxes, anything you can’t walk through) You can learn more about how collisions are made <a href="https://github.com/melonjs/melonJS/wiki/How-to-define-world-collision-shapes-in-Tiled">here.</a></p>
+<p><a href="/tutorial/part-3-3-modifying-the-code" class="next">Up Next: Modifying the Code</a></p></main>
+    </body></html>

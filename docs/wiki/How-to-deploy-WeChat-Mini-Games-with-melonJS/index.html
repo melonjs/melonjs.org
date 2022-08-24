@@ -1,50 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
     <head>
         <title>melonJS</title>
+        <meta name="description" content="melonJS is an open source HTML5 game engine">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Custom styles -->
-        <link rel="icon" href="/favicon.png">
-    <link rel="stylesheet" href="/assets/8999c0a0.6927e5d3.css" />
-<link rel="stylesheet" href="/assets/1a12d8c4.3afb37a6.css" /></head>
+        <link rel="icon" href="/img/favicon.svg">
+    <link rel="stylesheet" href="/assets/ff2699bd.19d698c1.css" />
+<link rel="stylesheet" href="/assets/28abb143.e2dc0990.css" /></head>
     <body>
-        <header class="astro-I2FXUJMC">
+        <header class="astro-S6RBVFWI">
     
-    <nav class="astro-I2FXUJMC">
-        <ul class="astro-I2FXUJMC">
-            <li class="null astro-I2FXUJMC">
-                <a href="/#top" class="astro-I2FXUJMC">Home</a>
+    <nav class="astro-S6RBVFWI">
+        <ul class="astro-S6RBVFWI">
+            <li class="null astro-S6RBVFWI">
+                <a href="/#top" class="astro-S6RBVFWI">Home</a>
             </li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://www.npmjs.com/package/melonjs" class="astro-I2FXUJMC"><img alt="npm" class="inline no-bump astro-I2FXUJMC" src="/img/npm.svg"></a>
-            </li>
-            <li class="astro-I2FXUJMC"><a href="https://melonjs.github.io/docs/" class="astro-I2FXUJMC">API</a></li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS" class="astro-I2FXUJMC">Gallery</a>
-            </li>
-            <li class="astro-I2FXUJMC"><a href="https://melonjs.discourse.group" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/discourse.svg">Forum</a></li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/discord.svg">Discord
+            <li class="astro-S6RBVFWI">
+                <a href="https://www.npmjs.com/package/melonjs" class="astro-S6RBVFWI"><img alt="npm" class="inline no-bump astro-S6RBVFWI" src="/img/npm.svg">
                 </a>
             </li>
-            <li class="astro-I2FXUJMC">
-                <a href="https://github.com/melonjs/melonJS" class="astro-I2FXUJMC"><img class="inline astro-I2FXUJMC" src="/img/github.svg"><span class="astro-I2FXUJMC">GitHub
+            <li class="astro-S6RBVFWI"><a href="https://melonjs.github.io/docs/" class="astro-S6RBVFWI">API</a></li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS" class="astro-S6RBVFWI">Gallery
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://melonjs.discourse.group" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/discourse.svg">Forum
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://discord.gg/aur7JMk" target="_blank" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/discord.svg">Discord
+                </a>
+            </li>
+            <li class="astro-S6RBVFWI">
+                <a href="https://github.com/melonjs/melonJS" class="astro-S6RBVFWI"><img class="inline astro-S6RBVFWI" src="/img/github.svg"><span class="astro-S6RBVFWI">GitHub
                     </span>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
-        <main><h1 id="quick-how-to">Quick How-To</h1><p>The following How-To provides basic information on how to use an existing melonJS game on an already setup WeChat dev environment. For more complete tutorial on WeChat, please do refer below to the Link section.</p><p><img src="https://user-images.githubusercontent.com/4033090/42258316-b0032d1e-7f8d-11e8-8bce-20e693777827.png" alt=""></p><h1 id="requirements">Requirements</h1><ul>
+        <main class="md"><h1 id="quick-how-to">Quick How-To</h1>
+<p>The following How-To provides basic information on how to use an existing melonJS game on an already setup WeChat dev environment. For more complete tutorial on WeChat, please do refer below to the Link section.</p>
+<p><img src="https://user-images.githubusercontent.com/4033090/42258316-b0032d1e-7f8d-11e8-8bce-20e693777827.png" alt=""></p>
+<h1 id="requirements">Requirements</h1>
+<ul>
 <li>melonJS <a href="https://github.com/melonjs/melonJS/releases">6.0.0</a> or higher</li>
 <li><a href="https://github.com/finscn/weapp-adapter/blob/master/README_EN.md">WeChat app-adapter (see below)</a></li>
-</ul><h2 id="introduction"><strong>Introduction</strong></h2><p>the WeChat Mini Game environment is based on JavaScriptCore on iOS, and V8 on Android. All of them are running environments without both BOM and DOM. There is no global document and no window object. So, if you want to use the DOM API to create elements like Canvas and Image, it will throw an error.</p><p>To bridge the gap between the Web and WeChat Mini Games, the WeChat team has released a <a href="https://github.com/finscn/weapp-adapter/blob/master/README_EN.md">weapp-adapter</a>, with the goal to make web libraries compatible with Minigames.</p><p>To include the weapp-adapter, just download it from the link here above, and just import it first in your project.</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;./js/libs/weapp-adapter/index.js&#39;</span></span></code></pre><h2 id="project-structure"><strong>Project Structure</strong></h2><p>Folder Structure is a bit different from the regular melonJS boilerplate, with the following differences :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">├───game.js : main entry point, equivalent to the index.html page</span></span>
+</ul>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+<p>the WeChat Mini Game environment is based on JavaScriptCore on iOS, and V8 on Android. All of them are running environments without both BOM and DOM. There is no global document and no window object. So, if you want to use the DOM API to create elements like Canvas and Image, it will throw an error.</p>
+<p>To bridge the gap between the Web and WeChat Mini Games, the WeChat team has released a <a href="https://github.com/finscn/weapp-adapter/blob/master/README_EN.md">weapp-adapter</a>, with the goal to make web libraries compatible with Minigames.</p>
+<p>To include the weapp-adapter, just download it from the link here above, and just import it first in your project.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'./js/libs/weapp-adapter/index.js'</span></span></code></pre>
+<h2 id="project-structure"><strong>Project Structure</strong></h2>
+<p>Folder Structure is a bit different from the regular melonJS boilerplate, with the following differences :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">├───game.js : main entry point, equivalent to the index.html page</span></span>
 <span class="line"><span style="color: #c9d1d9">├───game.json : minigame configuration</span></span>
 <span class="line"><span style="color: #c9d1d9">├───data : asset folder (as in the boilerplate)</span></span>
 <span class="line"><span style="color: #c9d1d9">└───js</span></span>
-<span class="line"><span style="color: #c9d1d9">    ├───index.js : the game &quot;main&quot; file</span></span>
+<span class="line"><span style="color: #c9d1d9">    ├───index.js : the game "main" file</span></span>
 <span class="line"><span style="color: #c9d1d9">    │   ├───entities</span></span>
 <span class="line"><span style="color: #c9d1d9">    │   │   ├───player.js : object definitions</span></span>
 <span class="line"><span style="color: #c9d1d9">    │   │   ├───enemies.js : object definitions</span></span>
@@ -54,23 +70,31 @@
 <span class="line"><span style="color: #c9d1d9">    └───libs</span></span>
 <span class="line"><span style="color: #c9d1d9">        ├───weapp-adapter.js</span></span>
 <span class="line"><span style="color: #c9d1d9">        └───melonJS.js</span></span>
-<span class="line"><span style="color: #c9d1d9"></span></span></code></pre><h2 id="es6-and-melonjs-classes"><strong>ES6 and melonJS classes</strong></h2><p>WeChat expect a ES6 syntax by default, which melonJS is compatible with, and it can be imported directly using <code>import</code>.</p><p>the root game.js file (see above) :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;./js/libs/weapp-adapter&#39;</span></span>
-<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;./js/libs/melonjs&#39;</span></span>
+<span class="line"><span style="color: #c9d1d9"></span></span></code></pre>
+<h2 id="es6-and-melonjs-classes"><strong>ES6 and melonJS classes</strong></h2>
+<p>WeChat expect a ES6 syntax by default, which melonJS is compatible with, and it can be imported directly using <code>import</code>.</p>
+<p>the root game.js file (see above) :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'./js/libs/weapp-adapter'</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'./js/libs/melonjs'</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;./js/index&#39;</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'./js/index'</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;./js/entities/entities&#39;</span></span>
-<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;./js/entities/HUD&#39;</span></span>
-<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;./js/screens/play&#39;</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'./js/entities/entities'</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'./js/entities/HUD'</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'./js/screens/play'</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { game } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;./js/index.js&#39;</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { game } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'./js/index.js'</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E">/* Bootstrap */</span></span>
 <span class="line"><span style="color: #C9D1D9">me.device.</span><span style="color: #D2A8FF">onReady</span><span style="color: #C9D1D9">(</span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">onReady</span><span style="color: #C9D1D9">() {</span></span>
 <span class="line"><span style="color: #C9D1D9">    game.</span><span style="color: #D2A8FF">onload</span><span style="color: #C9D1D9">()</span></span>
-<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre><p>the game.json file is a simple configuration file for now that only contains the device orientation :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">{</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">&quot;deviceOrientation&quot;</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">&quot;portrait&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>the main index.js file, is the equivalent to the <code>game.js</code> file in the boilerplate, only different here is the ES6 syntax to export <code>game</code> by default.</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">export</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">let</span><span style="color: #C9D1D9"> game </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
+<p>the game.json file is a simple configuration file for now that only contains the device orientation :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">{</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">"deviceOrientation"</span><span style="color: #C9D1D9">: </span><span style="color: #A5D6FF">"portrait"</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>the main index.js file, is the equivalent to the <code>game.js</code> file in the boilerplate, only different here is the ES6 syntax to export <code>game</code> by default.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">export</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">let</span><span style="color: #C9D1D9"> game </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> {</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">/**</span></span>
 <span class="line"><span style="color: #8B949E">     * local game data</span></span>
@@ -88,38 +112,49 @@
 <span class="line"></span>
 <span class="line"></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// Initialize the video.</span></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (</span><span style="color: #FF7B72">!</span><span style="color: #C9D1D9">me.video.</span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1024</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">768</span><span style="color: #C9D1D9">, {wrapper : </span><span style="color: #A5D6FF">&quot;screen&quot;</span><span style="color: #C9D1D9">, scale : </span><span style="color: #A5D6FF">&quot;auto&quot;</span><span style="color: #C9D1D9">, scaleMethod : </span><span style="color: #A5D6FF">&quot;stretch&quot;</span><span style="color: #C9D1D9">, subPixel : </span><span style="color: #79C0FF">false</span><span style="color: #C9D1D9"> })) {</span></span>
-<span class="line"><span style="color: #C9D1D9">            </span><span style="color: #D2A8FF">alert</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&quot;Your browser does not support HTML5 canvas.&quot;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (</span><span style="color: #FF7B72">!</span><span style="color: #C9D1D9">me.video.</span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1024</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">768</span><span style="color: #C9D1D9">, {wrapper : </span><span style="color: #A5D6FF">"screen"</span><span style="color: #C9D1D9">, scale : </span><span style="color: #A5D6FF">"auto"</span><span style="color: #C9D1D9">, scaleMethod : </span><span style="color: #A5D6FF">"stretch"</span><span style="color: #C9D1D9">, subPixel : </span><span style="color: #79C0FF">false</span><span style="color: #C9D1D9"> })) {</span></span>
+<span class="line"><span style="color: #C9D1D9">            </span><span style="color: #D2A8FF">alert</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"Your browser does not support HTML5 canvas."</span><span style="color: #C9D1D9">);</span></span>
 <span class="line"><span style="color: #C9D1D9">            </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9">;</span></span>
 <span class="line"><span style="color: #C9D1D9">        }</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// initialize the &quot;sound engine&quot;</span></span>
-<span class="line"><span style="color: #C9D1D9">        me.audio.</span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&quot;mp3,ogg&quot;</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// initialize the "sound engine"</span></span>
+<span class="line"><span style="color: #C9D1D9">        me.audio.</span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"mp3,ogg"</span><span style="color: #C9D1D9">);</span></span>
 <span class="line"><span style="color: #C9D1D9">    }</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">...</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">...</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><p>last but not least here is an example of entity definition (notice that we are importing game from index, so that we can declare myEntity under that namespace) :</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { game } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#39;../index.js&#39;</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>last but not least here is an example of entity definition (notice that we are importing game from index, so that we can declare myEntity under that namespace) :</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> { game } </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'../index.js'</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #8B949E">// myEntity definition under the `game` namespace</span></span>
 <span class="line"><span style="color: #C9D1D9">game.myEntity </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> me.Sprite.</span><span style="color: #D2A8FF">extend</span><span style="color: #C9D1D9">(</span></span>
 <span class="line"><span style="color: #C9D1D9">{</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">init</span><span style="color: #C9D1D9">:</span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">x</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">y</span><span style="color: #C9D1D9">) {</span></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #8B949E">// call the constructor</span></span>
-<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">_super</span><span style="color: #C9D1D9">(me.Sprite, </span><span style="color: #A5D6FF">&quot;init&quot;</span><span style="color: #C9D1D9">, [x, y , { image: me.loader.</span><span style="color: #D2A8FF">getImage</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&quot;my Image&quot;</span><span style="color: #C9D1D9">), framewidth: </span><span style="color: #79C0FF">178</span><span style="color: #C9D1D9">, frameheight: </span><span style="color: #79C0FF">140</span><span style="color: #C9D1D9">}]);</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">_super</span><span style="color: #C9D1D9">(me.Sprite, </span><span style="color: #A5D6FF">"init"</span><span style="color: #C9D1D9">, [x, y , { image: me.loader.</span><span style="color: #D2A8FF">getImage</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"my Image"</span><span style="color: #C9D1D9">), framewidth: </span><span style="color: #79C0FF">178</span><span style="color: #C9D1D9">, frameheight: </span><span style="color: #79C0FF">140</span><span style="color: #C9D1D9">}]);</span></span>
 <span class="line"><span style="color: #C9D1D9">        </span><span style="color: #FF7B72">...</span></span>
 <span class="line"><span style="color: #C9D1D9">    }</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">...</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre><h1 id="limitations">Limitations</h1><p>As the WeChat Mini Game platform and especially the <code>weapp-adapter</code> is still in alpha stage, some issues are to be unfortunately expected when running melonJS or any other framework :</p><ul>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<h1 id="limitations">Limitations</h1>
+<p>As the WeChat Mini Game platform and especially the <code>weapp-adapter</code> is still in alpha stage, some issues are to be unfortunately expected when running melonJS or any other framework :</p>
+<ul>
 <li><strong>Audio</strong> : melonJS built-in Audio <a href="https://github.com/melonjs/melonJS/issues/934">does not currently work</a>, however you can use the Audio component provided by the weapp-adapter :</li>
-</ul><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">let</span><span style="color: #C9D1D9"> au </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">Audio</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">&#39;http://url/to/audio.mp3&#39;</span><span style="color: #C9D1D9">)</span></span>
+</ul>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">let</span><span style="color: #C9D1D9"> au </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">Audio</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'http://url/to/audio.mp3'</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #C9D1D9">au.</span><span style="color: #D2A8FF">play</span><span style="color: #C9D1D9">()</span></span>
-<span class="line"><span style="color: #C9D1D9">au.</span><span style="color: #D2A8FF">pause</span><span style="color: #C9D1D9">()</span></span></code></pre><ul>
+<span class="line"><span style="color: #C9D1D9">au.</span><span style="color: #D2A8FF">pause</span><span style="color: #C9D1D9">()</span></span></code></pre>
+<ul>
 <li><strong>scaling mode</strong> : the basic “fit” scaling mode does not work as expected, as the canvas is stretched to the full display size, causing errors in the touch event detection (as melonJS rightly assume the canvas is not stretched). Use the “fill” scaling mode or other matching with your needs.</li>
 <li><strong>preloader</strong> : JSON, audio and other binary files require a full URL (relative path does not work, as WeChat throws a invalid URL error). Also be careful that the behaviour might be different between the simulator and a real mobile when it comes to relative path (e.g. <code>./data/to/file</code> will only work in the simulator, where <code>/data/to/file</code> will work on both)</li>
-</ul><h1 id="links">Links</h1><ul>
+</ul>
+<h1 id="links">Links</h1>
+<ul>
 <li><a href="https://medium.com/@yelin.qiu/a-complete-manual-on-wechat-mini-program-development-8fd28a85ee0d">Complete manual on Wechat Mini Program development (English)</a></li>
 <li><a href="https://developers.weixin.qq.com/minigame/dev/tutorial/base/adapter.html?t=201832">Official Minigame documentation (Chinese)</a></li>
 <li><a href="http://www.html5gamedevs.com/forum/32-melonjs/">Official melonJS forum</a></li>
 <li><a href="http://melonjs.github.io/melonJS/docs/">Official melonJS documentation</a></li>
-</ul><h1 id="credits">Credits</h1><p>Thank you to <a href="https://github.com/qichunren">qichuren</a>, a web developer from Shanghai, for his help on identifying and fixing various initial issues between melonJS and WeChat.</p></main>
+</ul>
+<h1 id="credits">Credits</h1>
+<p>Thank you to <a href="https://github.com/qichunren">qichuren</a>, a web developer from Shanghai, for his help on identifying and fixing various initial issues between melonJS and WeChat.</p></main>
     </body></html>
