@@ -4,7 +4,7 @@ const pathname = new URL(Astro.request.url).pathname
 ---
 
 <header>
-    <style lang='scss'>
+    <style lang="scss">
         @import '../styles/variables.scss';
         header {
             font-size: 1.2em;
@@ -68,33 +68,33 @@ const pathname = new URL(Astro.request.url).pathname
     <nav>
         <ul>
             <li class={pathname === '/' ? 'active' : null}>
-                <a href='/#top'>Home</a>
+                <a href="/#top">Home</a>
             </li>
             <li>
-                <a href='https://www.npmjs.com/package/melonjs'
-                    ><img alt='npm' class='inline no-bump' src='/img/npm.svg' />
+                <a href="https://www.npmjs.com/package/melonjs"
+                    ><img alt="npm" class="inline no-bump" src="/img/npm.svg" />
                 </a>
             </li>
-            <li><a href='https://melonjs.github.io/docs/'>API</a></li>
+            <li><a href="https://melonjs.github.io/docs/">API</a></li>
             <li>
                 <a
-                    href='https://github.com/melonjs/melonJS/wiki/made-with-melonJS'
+                    href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS"
                     >Gallery
                 </a>
             </li>
             <li>
-                <a href='https://melonjs.discourse.group'
-                    ><img class='inline' src='/img/discourse.svg' />Forum
+                <a href="https://melonjs.discourse.group"
+                    ><img class="inline" src="/img/discourse.svg" />Forum
                 </a>
             </li>
             <li>
-                <a href='https://discord.gg/aur7JMk' target='_blank'
-                    ><img class='inline' src='/img/discord.svg' />Discord
+                <a href="https://discord.gg/aur7JMk" target="_blank"
+                    ><img class="inline" src="/img/discord.svg" />Discord
                 </a>
             </li>
             <li>
-                <a href='https://github.com/melonjs/melonJS'
-                    ><img class='inline' src='/img/github.svg' /><span
+                <a href="https://github.com/melonjs/melonJS"
+                    ><img class="inline" src="/img/github.svg" /><span
                         >GitHub
                     </span>
                 </a>

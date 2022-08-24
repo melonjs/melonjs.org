@@ -3,11 +3,11 @@ const { to } = Astro.props
 if (typeof to != 'string') throw new Error('Please supply a valid to')
 ---
 
-<html lang='en'>
+<html lang="en">
     <head>
-        <meta charset='UTF-8' />
-        <meta http-equiv='refresh' content={'0; url=' + to} />
-        <script type='text/javascript' define:vars={{ to }}>
+        <meta charset="UTF-8" />
+        <meta http-equiv="refresh" content={'0; url=' + to} />
+        <script type="text/javascript" define:vars={{ to }}>
             window.location.href = to
         </script>
         <title>Page Redirection - melonJS</title>

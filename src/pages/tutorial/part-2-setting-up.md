@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
 ---
+
 # Part 2: Setting Up the Template
 
 First, go to https://github.com/melonjs/examples and download the repository, by clicking on "Code" and then "Download ZIP" :
@@ -8,8 +9,7 @@ First, go to https://github.com/melonjs/examples and download the repository, by
 
 Optionally you can also clone the repository if you are already familiar with Git, but won't cover that part in this tutorial.
 
-
-For this tutorial we're going to be working on the platformer example. Inside the directory where you downloaded the repository, you can see there is the `platformer` directory. 
+For this tutorial we're going to be working on the platformer example. Inside the directory where you downloaded the repository, you can see there is the `platformer` directory.
 
 We've finished setting up, so from now on whenever you'd like to start coding your game you can navigate into the `platformer` folder in your terminal and run this command :
 

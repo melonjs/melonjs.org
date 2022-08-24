@@ -2,11 +2,16 @@
 import MDLayout from './MDLayout.astro'
 import '../styles/markdown.scss'
 const pathname = new URL(Astro.request.url).pathname
-const {props} = Astro
-const passProps = {...props.content}
+const { props } = Astro
+const passProps = { ...props.content }
 delete passProps.astro
 ---
+
 <MDLayout {...passProps}>
-    {pathname === "/tutorial" ? null : (<a href="/tutorial">Tutorial: Hacking a Platformer Game</a>)}
-    <slot></slot>
+    {
+        pathname === '/tutorial' ? null : (
+            <a href="/tutorial">Tutorial: Hacking a Platformer Game</a>
+        )
+    }
+    <slot />
 </MDLayout>

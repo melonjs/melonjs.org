@@ -7,17 +7,17 @@ const {
 } = Astro.props
 ---
 
-<html lang='en'>
+<html lang="en">
     <head>
         <title>{title}</title>
-        <meta name='description' content={description} />
-        <meta charset='utf-8' />
-        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/img/favicon.svg' />
+        <meta name="description" content={description} />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/img/favicon.svg" />
     </head>
     <body>
         <Header />
-        <slot></slot>
+        <slot />
     </body>
 </html>
