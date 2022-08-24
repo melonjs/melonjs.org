@@ -16,7 +16,7 @@ Before we continue you will need to install the following software:
         <a href="https://code.visualstudio.com/"><img alt="Visual Studio Code logo" src="/img/tutorial/visualstudiocode-logo.png"/></a>
     </li>
     <li>
-        <a href="https://krita.org/en/"><img alt="Krita logo" src="/img/tutorial/krita-logo.png"/></a>
+        <a href="https://krita.org/en/"><img alt="Krita logo" class="krita" src="/img/tutorial/krita-logo.png"/></a>
     </li>
 </ul>
 
