@@ -31,16 +31,20 @@ main.md {
         text-align: center;
     }
     img {
-        display: block;
-        margin: 8vmin auto;
-        width: calc(30vw + 30vmax);
+        &:not(.inline) {
+            display: block;
+        }
+        margin: 2vmin auto;
+        width: 45vw;
+        min-width: 80vmin;
         &.medium {
-            min-width: 80vmin;
-            width: 60vw;
+            width: 65vw;
+            margin: 6vmin auto;
         }
         &.large {
             min-width: 90vmin;
             width: 80vw;
+            margin: 8vmin auto;
         }
     }
     pre {
