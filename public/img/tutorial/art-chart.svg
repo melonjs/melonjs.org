@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="387.89972mm"
-   height="254.03391mm"
-   viewBox="0 0 387.89973 254.03391"
+   width="387.89975mm"
+   height="289.18414mm"
+   viewBox="0 0 387.89976 289.18415"
    version="1.1"
    id="svg5"
    inkscape:version="1.2 (dc2aeda, 2022-05-15)"
@@ -25,14 +25,14 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.5946522"
-     inkscape:cx="810.55783"
-     inkscape:cy="549.90127"
+     inkscape:cx="769.35728"
+     inkscape:cy="682.75204"
      inkscape:window-width="1680"
      inkscape:window-height="1050"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g33365" />
+     inkscape:current-layer="layer1" />
   <defs
      id="defs2">
     <rect
@@ -64,10 +64,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(76.542936,-35.869448)">
+     transform="translate(76.542937,-0.71935)">
     <g
        id="g28462"
-       inkscape:label="venn">
+       inkscape:label="venn"
+       transform="translate(0,-35.150098)">
       <path
          id="path186-9-9"
          style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#474747;stroke-width:6.485;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
@@ -123,7 +124,8 @@
     </g>
     <g
        id="g33365"
-       inkscape:label="labels">
+       inkscape:label="labels"
+       transform="translate(0,-35.150098)">
       <g
          aria-label="Free"
          transform="rotate(-7.7976589,10.832412,33.532631)"
@@ -172,8 +174,7 @@
            id="path33433" />
       </g>
       <g
-         aria-label="Pixel 
-Art"
+         aria-label="Pixel  Art"
          transform="rotate(18.651495)"
          id="text1741-8"
          style="font-size:42.3333px;font-family:'Cormorant SC';-inkscape-font-specification:'Cormorant SC';display:inline;fill:#5cc2ff;fill-opacity:0.99723;stroke:#4d6f84;stroke-width:1.454;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
