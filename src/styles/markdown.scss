@@ -46,9 +46,6 @@ main.md {
             width: 80vw;
             margin: 8vmin auto;
         }
-        &.krita {
-            filter: drop-shadow(-0.25vmin 0.25vmin 0.25vmin #ffffffc2);
-        }
     }
     pre {
         padding: 3vmin;
@@ -76,5 +73,8 @@ main.md {
     }
     li {
         list-style: none;
+    }
+    .krita {
+        filter: drop-shadow(-0.25vmin 0.25vmin 0.25vmin #ffffffc2);
     }
 }
