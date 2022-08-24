@@ -62,4 +62,16 @@ main.md {
         border: 1vmin solid $green;
         padding: 2vmin;
     }
+    ol, ul {
+        &.display {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 90vw;
+        }
+    }
+    li {
+        list-style: none;
+    }
 }

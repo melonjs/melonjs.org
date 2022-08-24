@@ -8,15 +8,15 @@ layout: ../../layouts/TutorialLayout.astro
 
 Before we continue you will need to install the following software:
 
-<ul>
+<ul class="display">
     <li>
         <a href="http://www.mapeditor.org/"><img alt="Tiled map editor logo" src="/img/tutorial/tiled-logo-header.png"/></a>
     </li>
     <li>
-        <a href="https://code.visualstudio.com/">Visual Studio Code<img alt="Visual Studio Code logo" src="/img/tutorial/visualstudiocode-logo.png"/></a>
+        <a href="https://code.visualstudio.com/"><img alt="Visual Studio Code logo" src="/img/tutorial/visualstudiocode-logo.png"/></a>
     </li>
     <li>
-        <a href="https://krita.org/en/">Krita<img alt="Krita logo" src="/img/tutorial/krita-logo.png"/></a>
+        <a href="https://krita.org/en/"><img alt="Krita logo" src="/img/tutorial/krita-logo.png"/></a>
     </li>
 </ul>
 
