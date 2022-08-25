@@ -10,8 +10,18 @@ You should be able to see the files for the platformer example on the left side 
 
 <img alt="VSCode Screenshot" class="large" src="/img/tutorial/VSCode-platformer-files.webp"/>
 
-These are the files used by the web server running on your computer. VS Code is a great tool to edit your code file files (the program in the screenshot). You can also notice all of the code is organized in the `js` folder. We can open and close folders/directories by clicking the triangles next to them on the left side.
+These are the files used by the web server running on your computer. VS Code is a great tool to edit your code files (the program in the screenshot). You can also notice all of the code is organized in the `js` folder. We can open and close folders/directories by clicking the triangles next to them on the left side.
 
 For more resources on how to code in JavaScript [see here.](https://webslc.com/musings/learn-js/)
+
+Let's try giving the player speed hacks. Open this file in VSCode:
+`js/entities/player.js`
+Then, go to line 16
+```
+this.body.setMaxVelocity(3, 15);
+```
+The arguments being given to the function are the max X and Y speed (respectively). Try messing around with these values and seeing what happens.
+<!-- TODO: PUT A GIF OF THE VALUES BEING EDITED THEN A PLAYER WITH SPEED HACKS -->
+Tadaa! You now can make the character slow like a turtle or super fast like a cheater.
 
 <a href="/tutorial/part-4-going-beyond" class="next">Up Next: Going beyond this tutorial</a>
