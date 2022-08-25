@@ -20,7 +20,7 @@ Then, go to line 16
 ```
 this.body.setMaxVelocity(3, 15);
 ```
-The arguments being given to the function are the max X and Y speed (respectively). Try messing around with these values and seeing what happens.
+Try messing around with the code and see what happens.
 <details>
   <summary>Click me if you give up</summary>
   Tadaa! By changing those values you now can make the character slow like a turtle or super fast like a cheater. The first value is the X speed, and the second value is the Y speed.
