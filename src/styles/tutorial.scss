@@ -6,12 +6,20 @@
         transform: translate(10%, -10%) rotateZ(30deg);
     }
   }
-@keyframes destroy {
+@keyframes doshatter {
     70% {
         opacity: 0;
     }
     90% {
         opacity: 100%;
+    }
+}
+@keyframes destroydot {
+    70% {
+        opacity: 100%;
+    }
+    0%, 90% {
+        opacity: 0%;
     }
 }
 
@@ -24,8 +32,15 @@
         animation-iteration-count: infinite;
     }
     #shatter {
+        animation-name: doshatter;
         animation-timing-function: ease;
-        animation-name: destroy;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+    #dot {
+        opacity: 0;
+        animation-name: destroydot;
+        animation-timing-function: ease;
         animation-duration: 4s;
         animation-iteration-count: infinite;
     }
