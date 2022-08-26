@@ -23,10 +23,15 @@ function getSVG(name) {
   };
 }
 
-const { icon, ...attributes } = Astro.props as Props;
+const defaultAttributes = {
+    "aria-hidden": "true", 
+    focusable: "false"
+}
+
+const { icon, ...attributes } = Astro.props;
 const { attributes: baseAttributes, innerHTML } = getSVG(icon);
 
-const svgAttributes = { ...baseAttributes, ...attributes };
+const svgAttributes = { ...defaultAttributes, ...baseAttributes, ...attributes };
 delete svgAttributes.inline
 delete svgAttributes.class
 let classes = ["icon", icon]
