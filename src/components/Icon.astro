@@ -2,13 +2,9 @@
 import { parse } from 'node-html-parser';
 import "../styles/Icon.scss"
 
-export interface Props {
-  icon: string;
-}
-
-function getSVG(name: string) {
-  const filepath = `/src/svgs/${name}.svg`;
-  const files = import.meta.globEager<string>('/src/svgs/**/*.svg', {
+function getSVG(name) {
+  const filepath = `/src/svgs/${name.replace(/[\s]+/g, '-')}.svg`;
+  const files = import.meta.globEager('/src/svgs/**/*.svg', {
     as: 'raw',
   });
 
