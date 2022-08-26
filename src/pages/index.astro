@@ -55,13 +55,19 @@ import Icon from '../components/Icon.astro';
         }
         .display {
             list-style: none;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: grid;
+            gap: 1rem;
             width: 100%;
-            li {
-                width: fit-content;
+            grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            li { 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-width: fit-content;
+                a {
+                    margin: auto;
+                }
             }
         }
         .row {
