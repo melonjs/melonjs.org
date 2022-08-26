@@ -9,6 +9,8 @@ title: Hacking a Platformer Game
 
 This tutorial will show you how to hack a pre-made platformer game (a platformer game is a side-scrolling game like mario) to add your own custom assets and code in. Taking it apart will help you learn how to make 2D games that run in the web browser using melonJS.
 
+Making a videogame can include a lot of skills, including but not limited to art, coding, writing, and more. This course will talk about the skills that you need and provide some resources, but it will not hold your hand or go in depth. You will find a lot more success when developing games by being very proactive in your learning and asking a lot of questions.
+
 This tutorial has four parts:
 
 1. [Prerequisites](/tutorial/part-1-prerequisites)
