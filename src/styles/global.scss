@@ -27,3 +27,9 @@ img {
         display: none;
     }
 }
+
+blockquote {
+    ul, ol {
+        list-style: none;
+    }
+}

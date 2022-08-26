@@ -290,37 +290,43 @@ import Icon from '../components/Icon.astro';
                 />
                 <blockquote>
                     <p>Built with modern technology.</p>
-                    <li><p>ES6</p></li>
-                    <li><p>WebGL 2</p></li>
-                    <li><p>WebAudio</p></li>
+                    <ul>
+                        <li><p>ES6</p></li>
+                        <li><p>WebGL 2</p></li>
+                        <li><p>WebAudio</p></li>
+                    </ul>
                 </blockquote>
             </div>
             <div>
                 <h2>Free</h2>
                 <blockquote>
                     <p>Released under the permissive MIT License.</p>
-                    <li><p>No cost.</p></li>
-                    <li><p>Forever.</p></li>
+                    <ul aria-label="reasons">
+                        <li><p>No cost.</p></li>
+                        <li><p>Forever.</p></li>
+                    </ul>
                 </blockquote>
             </div>
             <div>
                 <h2>Elegant</h2>
                 <blockquote>
-                    <li>
-                        <p>Your scene graph is a hierarchy of containers.</p>
-                    </li>
-                    <li>
-                        <p>
-                            Updates and drawing operations are dispatched
-                            separately.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Draws are opt-in; add compute-only renderable for
-                            AI, special effects, etc.
-                        </p>
-                    </li>
+                    <ul>
+                        <li>
+                            <p>Your scene graph is a hierarchy of containers.</p>
+                        </li>
+                        <li>
+                            <p>
+                                Updates and drawing operations are dispatched
+                                separately.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Draws are opt-in; add compute-only renderable for
+                                AI, special effects, etc.
+                            </p>
+                        </li>
+                    </ul>
                 </blockquote>
             </div>
         </div>
@@ -531,6 +537,7 @@ import Icon from '../components/Icon.astro';
                     </a>
                     <div class="content">
                         <iframe
+                            title="King of the Castle - Crypto Gaming #3"
                             class="youtube"
                             width="500"
                             height="315"
