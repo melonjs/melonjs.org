@@ -1,6 +1,9 @@
 .icon {
 	user-select: none;
 	display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 3vmin 0;
     &.inline {
         height: 1em;
         margin: 0 0.4em -0.1em 0.2em;

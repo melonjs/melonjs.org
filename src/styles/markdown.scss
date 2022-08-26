@@ -37,19 +37,19 @@ main.md {
         margin: 2vmin auto;
         width: 45vw;
         min-width: 80vmin;
-        &.small {
-            width: calc(20vmin + 20vmax);
-            min-width: 0;
-        }
-        &.medium {
-            width: 65vw;
-            margin: 6vmin auto;
-        }
-        &.large {
-            min-width: 90vmin;
-            width: 80vw;
-            margin: 8vmin auto;
-        }
+    }
+    .small {
+        width: calc(20vmin + 20vmax);
+        min-width: 0;
+    }
+    .medium {
+        width: 65vw;
+        margin: 6vmin auto;
+    }
+    .large {
+        min-width: 90vmin;
+        width: 80vw;
+        margin: 8vmin auto;
     }
     pre {
         padding: 3vmin;
