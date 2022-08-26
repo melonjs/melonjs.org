@@ -31,6 +31,17 @@ import Icon from '../components/Icon.astro';
                     h5,
                     h6,
                     a {
+                        color: $light-green;
+                    }
+                }
+                &:first-child {
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6,
+                    a {
                         color: $dark-green;
                     }
                 }
@@ -87,12 +98,13 @@ import Icon from '../components/Icon.astro';
                 margin-left: 0;
             }
             color: $white !important;
+            text-shadow: 1px 1px 0.4vmin black;
             text-decoration: none;
             display: inline-block;
             padding: 2vmin;
             margin: 2vmin 0.5vmin;
             border-radius: 2vmin;
-            background-color: $green;
+            background-color: $dark-green;
             &.primary {
                 background-color: $ocean;
             }
@@ -102,6 +114,7 @@ import Icon from '../components/Icon.astro';
             &.default {
                 background-color: $white;
                 color: $black !important;
+                text-shadow: none;
             }
         }
         li {
@@ -557,31 +570,37 @@ import Icon from '../components/Icon.astro';
             <ul>
                 <a href="https://www.mapeditor.org">
                     <img
+                        alt="Tiled map editor"
                         src="https://user-images.githubusercontent.com/4033090/136762999-5a7f377b-4136-4205-9fe0-83728c90cb9b.png"
                     />
                 </a>
                 <a href="https://www.codeandweb.com/texturepacker">
                     <img
+                        alt="TexturePacker"
                         src="https://user-images.githubusercontent.com/4033090/136762472-bc55a638-c69b-4ff5-9d03-c684c8bea0ea.png"
                     />
                 </a>
                 <a href="https://free-tex-packer.com">
                     <img
+                        alt="Free Texture packer"
                         src="https://user-images.githubusercontent.com/4033090/136762061-1d3a0dfe-dbe0-4d3d-808d-47a49ecf5309.png"
                     />
                 </a>
                 <a href="https://www.codeandweb.com/physicseditor">
                     <img
+                        alt="Physics Editor"
                         src="https://user-images.githubusercontent.com/4033090/136762890-b1010c7f-cb19-4d35-a3f1-f5048db07835.png"
                     />
                 </a>
                 <a href="https://renderhjs.net/shoebox/">
                     <img
+                        alt="Shoebox"
                         src="https://user-images.githubusercontent.com/4033090/136762705-92027d94-d87c-4a95-b051-26647410248d.png"
                     />
                 </a>
                 <a href="https://cordova.apache.org">
                     <img
+                        alt="Cordova"
                         src="https://user-images.githubusercontent.com/4033090/136763147-6d157ce6-6921-437e-bb8f-0287b86109da.png"
                     />
                 </a>
