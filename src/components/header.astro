@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro';
 import '../styles/global.scss'
 const pathname = new URL(Astro.request.url).pathname
 ---
@@ -72,7 +73,7 @@ const pathname = new URL(Astro.request.url).pathname
             </li>
             <li>
                 <a href="https://www.npmjs.com/package/melonjs"
-                    ><img alt="npm" class="inline no-bump" src="/img/npm.svg" />
+                    ><Icon icon="npm" alt="npm" class="inline no-bump"/>
                 </a>
             </li>
             <li><a href="https://melonjs.github.io/docs/">API</a></li>
@@ -89,12 +90,12 @@ const pathname = new URL(Astro.request.url).pathname
             </li>
             <li>
                 <a href="https://discord.gg/aur7JMk" target="_blank"
-                    ><img class="inline" src="/img/discord.svg" />Discord
+                    ><Icon icon="discord" class="inline"/>Discord
                 </a>
             </li>
             <li>
                 <a href="https://github.com/melonjs/melonJS"
-                    ><img class="inline" src="/img/github.svg" /><span
+                    ><Icon icon="github" class="inline" /><span
                         >GitHub
                     </span>
                 </a>

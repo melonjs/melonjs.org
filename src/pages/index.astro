@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import '../styles/glyphicons.scss'
+import Icon from '../components/Icon.astro';
 ---
 
 <BaseLayout>
@@ -211,9 +212,8 @@ import '../styles/glyphicons.scss'
     <main>
         <div class="jumbotron">
             <div class="container">
-                <img
+                <Icon icon="logo"
                     class="banner"
-                    src="/img/logo.svg"
                     alt="melonjs banner"
                     width="80%"
                 />
