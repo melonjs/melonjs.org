@@ -1,0 +1,45 @@
+---
+import { parse } from 'node-html-parser';
+import "../styles/Icon.scss"
+
+export interface Props {
+  icon: string;
+}
+
+function getSVG(name: string) {
+  const filepath = `/src/svgs/${name}.svg`;
+  const files = import.meta.globEager<string>('/src/svgs/**/*.svg', {
+    as: 'raw',
+  });
+
+  if (!(filepath in files)) {
+    throw new Error(`${filepath} not found`);
+  }
+
+  const root = parse(files[filepath]);
+
+  const svg = root.querySelector('svg');
+  const { attributes, innerHTML } = svg;
+
+  return {
+    attributes,
+    innerHTML,
+  };
+}
+
+const { icon, ...attributes } = Astro.props as Props;
+const { attributes: baseAttributes, innerHTML } = getSVG(icon);
+
+const svgAttributes = { ...baseAttributes, ...attributes };
+delete svgAttributes.inline
+delete svgAttributes.class
+let classes = ["icon", icon]
+if (attributes.inline) classes.push("inline")
+if (typeof attributes.class == 'string') classes = classes.concat(attributes.class.split(' ').filter(str => str))
+const className = classes.join(' ')
+---
+
+<svg class={className}
+  {...svgAttributes}
+  set:html={innerHTML}
+></svg>
