@@ -1,0 +1,32 @@
+@keyframes pound {
+    0%, 100% {
+        transform: none;
+    }
+    80% {
+        transform: translate(10%, -10%) rotateZ(30deg);
+    }
+  }
+@keyframes destroy {
+    70% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 100%;
+    }
+}
+
+#melon-hack {
+    overflow: visible;
+    #hammer {
+        animation-name: pound;
+        transform-origin: center;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+    #shatter {
+        animation-timing-function: ease;
+        animation-name: destroy;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+}
