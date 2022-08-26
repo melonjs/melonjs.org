@@ -108,19 +108,26 @@ import Icon from '../components/Icon.astro';
             &:nth-of-type(1) {
                 margin-left: 0;
             }
-            color: $white !important;
-            text-shadow: 1px 1px 0.4vmin black;
+            color: $black !important;
+            text-shadow: 1px 1px 0.4vmin #ffffffa3;
             text-decoration: none;
             display: inline-block;
             padding: 2vmin;
             margin: 2vmin 0.5vmin;
             border-radius: 2vmin;
-            background-color: $dark-green;
+            &.success {
+                background-color: $light-green;
+                color: $black !important;
+            }
             &.primary {
                 background-color: $ocean;
             }
             &.danger {
                 background-color: $red;
+            }
+            &.primary, &.danger {
+                color: white !important;
+                text-shadow: 1px 1px 0.4vmin #000000a3;
             }
             &.default {
                 background-color: $white;
@@ -128,7 +135,7 @@ import Icon from '../components/Icon.astro';
                 text-shadow: none;
             }
         }
-        ul:not(.display) {
+        ul {
             li {
                 > * {
                     display: inline-block;
@@ -136,7 +143,7 @@ import Icon from '../components/Icon.astro';
                 margin: 2vmin 0;
                 width: 100%;
             }
-            margin-left: 10vmin;
+            //margin-left: 10vmin;
         }
         .table {
             text-align: center;
