@@ -6,7 +6,7 @@ layout: ../../layouts/TutorialLayout.astro
 
 ## Software to Install
 
-Before we continue you will need to install the following software:
+Before we continue you will need to install the following software. All of these projects are FOSS (free and open source) so consider donating :)
 
 <ul class="display">
     <li>
