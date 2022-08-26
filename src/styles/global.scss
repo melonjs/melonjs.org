@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+html {
+    scroll-padding-top: calc(4.5vmin + 1em);
+}
+
 body {
     display: flex;
     flex-direction: column;
