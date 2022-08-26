@@ -46,6 +46,8 @@
     "prettier-plugin-astro": "^0.5.1"
   },
   "dependencies": {
+    "astro-i18next": "^1.0.0-beta.4",
+    "i18next-fs-backend": "^1.1.5",
     "sass": "^1.54.5"
   }
 }

@@ -1,16 +1,17 @@
 ---
 import Header from '../components/Header.astro'
 import '../styles/global.scss'
+import { t } from "i18next"
 const {
-    description = 'melonJS is an open source HTML5 game engine',
+    description = '',
     title = 'melonJS',
 } = Astro.props
 ---
 
-<html lang="en">
+<html lang={i18next.language}>
     <head>
         <title>{title}</title>
-        <meta name="description" content={description} />
+        <meta name="description" content={t("site.description")} />
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
