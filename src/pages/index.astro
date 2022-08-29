@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import '../styles/glyphicons.scss'
+import Icon from '../components/Icon.astro';
 ---
 
 <BaseLayout>
@@ -30,6 +31,17 @@ import '../styles/glyphicons.scss'
                     h5,
                     h6,
                     a {
+                        color: $light-green;
+                    }
+                }
+                &:first-child {
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6,
+                    a {
                         color: $dark-green;
                     }
                 }
@@ -40,6 +52,23 @@ import '../styles/glyphicons.scss'
         }
         .jumbotron {
             background-color: $dark-gray !important;
+        }
+        .display {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+            width: 100%;
+            grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            li { 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-width: fit-content;
+                a {
+                    margin: auto;
+                }
+            }
         }
         .row {
             display: flex;
@@ -85,30 +114,41 @@ import '../styles/glyphicons.scss'
             &:nth-of-type(1) {
                 margin-left: 0;
             }
-            color: $white !important;
+            color: $black !important;
+            //text-shadow: 1px 1px 0.4vmin #ffffffa3;
             text-decoration: none;
             display: inline-block;
             padding: 2vmin;
             margin: 2vmin 0.5vmin;
             border-radius: 2vmin;
-            background-color: $green;
+            &.success {
+                background-color: $dark-green;
+                color: $black !important;
+            }
             &.primary {
                 background-color: $ocean;
             }
             &.danger {
                 background-color: $red;
             }
+            &.primary, &.danger {
+                color: white !important;
+                text-shadow: 1px 1px 0.4vmin #000000a3;
+            }
             &.default {
                 background-color: $white;
                 color: $black !important;
+                text-shadow: none;
             }
         }
-        li {
-            > * {
-                display: inline-block;
+        ul {
+            li {
+                > * {
+                    display: inline-block;
+                }
+                margin: 2vmin 0;
+                width: 100%;
             }
-            margin: 2vmin 0;
-            width: 100%;
             ul {
                 margin-left: 10vmin;
             }
@@ -205,15 +245,14 @@ import '../styles/glyphicons.scss'
             margin-bottom: 3vmin;
         }
         ul {
-            margin-top: 3vmin;
+            //margin-top: 3vmin;
         }
     </style>
     <main>
         <div class="jumbotron">
             <div class="container">
-                <img
+                <Icon icon="logo"
                     class="banner"
-                    src="/img/logo.svg"
                     alt="melonjs banner"
                     width="80%"
                 />
@@ -277,37 +316,43 @@ import '../styles/glyphicons.scss'
                 />
                 <blockquote>
                     <p>Built with modern technology.</p>
-                    <li><p>ES6</p></li>
-                    <li><p>WebGL 2</p></li>
-                    <li><p>WebAudio</p></li>
+                    <ul>
+                        <li><p>ES6</p></li>
+                        <li><p>WebGL 2</p></li>
+                        <li><p>WebAudio</p></li>
+                    </ul>
                 </blockquote>
             </div>
             <div>
                 <h2>Free</h2>
                 <blockquote>
                     <p>Released under the permissive MIT License.</p>
-                    <li><p>No cost.</p></li>
-                    <li><p>Forever.</p></li>
+                    <ul aria-label="reasons">
+                        <li><p>No cost.</p></li>
+                        <li><p>Forever.</p></li>
+                    </ul>
                 </blockquote>
             </div>
             <div>
                 <h2>Elegant</h2>
                 <blockquote>
-                    <li>
-                        <p>Your scene graph is a hierarchy of containers.</p>
-                    </li>
-                    <li>
-                        <p>
-                            Updates and drawing operations are dispatched
-                            separately.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Draws are opt-in; add compute-only renderable for
-                            AI, special effects, etc.
-                        </p>
-                    </li>
+                    <ul>
+                        <li>
+                            <p>Your scene graph is a hierarchy of containers.</p>
+                        </li>
+                        <li>
+                            <p>
+                                Updates and drawing operations are dispatched
+                                separately.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Draws are opt-in; add compute-only renderable for
+                                AI, special effects, etc.
+                            </p>
+                        </li>
+                    </ul>
                 </blockquote>
             </div>
         </div>
@@ -331,7 +376,7 @@ import '../styles/glyphicons.scss'
 
         <div class="row two">
             <div>
-                <h2>Features<a id="features" class="anchor"></a></h2>
+                <h2 id="features"><a href="/#features" class="anchor">Features</a></h2>
                 <hr />
                 <ul>
                     <li>A fresh and lightweight 2D sprite-based engine</li>
@@ -410,7 +455,7 @@ import '../styles/glyphicons.scss'
                     src="/img/icons/browser_icons.png"
                     alt="browser icons example"
                 />
-                <h2>Compatibility<a id="compatibility" class="anchor"></a></h2>
+                <h2 id="compatible"><a href="/#compatible" class="anchor">Compatibility</a></h2>
                 <hr />
                 <p>melonJS works with any full ES5/ES6 compatible browsers</p>
                 <table class="table browsers">
@@ -518,6 +563,7 @@ import '../styles/glyphicons.scss'
                     </a>
                     <div class="content">
                         <iframe
+                            title="King of the Castle - Crypto Gaming #3"
                             class="youtube"
                             width="500"
                             height="315"
@@ -546,45 +592,62 @@ import '../styles/glyphicons.scss'
         </div>
 
         <div>
-            <h3>
-                Third Party Tools Integration<a id="third-party" class="anchor"
-                ></a>
+            <h3 id="third-party">
+                <a href="/#third-party" class="anchor">Third Party Tools Integration</a>
             </h3>
             <hr />
             melonJS provides native integration and support for the following 3rd
             party tools :
             <br />
-            <ul>
-                <a href="https://www.mapeditor.org">
-                    <img
-                        src="https://user-images.githubusercontent.com/4033090/136762999-5a7f377b-4136-4205-9fe0-83728c90cb9b.png"
-                    />
-                </a>
-                <a href="https://www.codeandweb.com/texturepacker">
-                    <img
-                        src="https://user-images.githubusercontent.com/4033090/136762472-bc55a638-c69b-4ff5-9d03-c684c8bea0ea.png"
-                    />
-                </a>
-                <a href="https://free-tex-packer.com">
-                    <img
-                        src="https://user-images.githubusercontent.com/4033090/136762061-1d3a0dfe-dbe0-4d3d-808d-47a49ecf5309.png"
-                    />
-                </a>
-                <a href="https://www.codeandweb.com/physicseditor">
-                    <img
-                        src="https://user-images.githubusercontent.com/4033090/136762890-b1010c7f-cb19-4d35-a3f1-f5048db07835.png"
-                    />
-                </a>
-                <a href="https://renderhjs.net/shoebox/">
-                    <img
-                        src="https://user-images.githubusercontent.com/4033090/136762705-92027d94-d87c-4a95-b051-26647410248d.png"
-                    />
-                </a>
-                <a href="https://cordova.apache.org">
-                    <img
-                        src="https://user-images.githubusercontent.com/4033090/136763147-6d157ce6-6921-437e-bb8f-0287b86109da.png"
-                    />
-                </a>
+            <ul class="display">
+                <li>
+                    <a href="https://www.mapeditor.org">
+                        <img
+                            alt="Tiled map editor"
+                            src="https://user-images.githubusercontent.com/4033090/136762999-5a7f377b-4136-4205-9fe0-83728c90cb9b.png"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.codeandweb.com/texturepacker">
+                        <img
+                            alt="TexturePacker"
+                            src="https://user-images.githubusercontent.com/4033090/136762472-bc55a638-c69b-4ff5-9d03-c684c8bea0ea.png"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://free-tex-packer.com">
+                        <img
+                            alt="Free Texture packer"
+                            src="https://user-images.githubusercontent.com/4033090/136762061-1d3a0dfe-dbe0-4d3d-808d-47a49ecf5309.png"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.codeandweb.com/physicseditor">
+                        <img
+                            alt="Physics Editor"
+                            src="https://user-images.githubusercontent.com/4033090/136762890-b1010c7f-cb19-4d35-a3f1-f5048db07835.png"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://renderhjs.net/shoebox/">
+                        <img
+                            alt="Shoebox"
+                            src="https://user-images.githubusercontent.com/4033090/136762705-92027d94-d87c-4a95-b051-26647410248d.png"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://cordova.apache.org">
+                        <img
+                            alt="Cordova"
+                            src="https://user-images.githubusercontent.com/4033090/136763147-6d157ce6-6921-437e-bb8f-0287b86109da.png"
+                        />
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="band">

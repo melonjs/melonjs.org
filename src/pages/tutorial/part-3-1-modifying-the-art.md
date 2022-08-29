@@ -2,7 +2,7 @@
 layout: ../../layouts/TutorialLayout.astro
 ---
 ## Part 3-1: Modifying the art
-VSCode is a code editor. This means it reads and writes text files (usually containing code but not always). This also means that it is not useful for editing images, which provide the art layer of your game. If you want to change how your game looks you'll need to edit your image files with an image editor like [Krita (it's free and open source, so consider donating if you like it)](https://krita.org/en/).
+VSCode is a code editor. This means it reads and writes text files (usually containing code but not always). This also means that it is not useful for editing images, which provide the art layer of your game. If you want to change how your game looks you'll need to edit your image files with an image editor like [Krita](https://krita.org/en/).
 
 <a href="https://krita.org/en/"><img class="krita" alt="Krita logo" src="/img/tutorial/krita-logo.png"></a>
 

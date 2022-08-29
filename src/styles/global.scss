@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+html {
+    scroll-padding-top: calc(6.5vmin + 2em);
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -25,5 +29,11 @@ img {
 .no-mobile {
     @media (max-width: $mobile-width) {
         display: none;
+    }
+}
+
+blockquote {
+    ul, ol {
+        list-style: none;
     }
 }
