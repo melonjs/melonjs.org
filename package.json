@@ -47,9 +47,10 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^0.10.2",
-    "node-html-parser": "^5.4.2-0",
     "astro-i18next": "^1.0.0-beta.4",
+    "fill-range": "^7.0.1",
     "i18next-fs-backend": "^1.1.5",
+    "node-html-parser": "^5.4.2-0",
     "sass": "^1.54.5"
   }
 }

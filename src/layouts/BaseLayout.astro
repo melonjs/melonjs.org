@@ -5,10 +5,11 @@ import { t } from "i18next"
 const {
     description = '',
     title = 'melonJS',
+    language="en"
 } = Astro.props
 ---
 
-<html lang={i18next.language}>
+<html lang={language}>
     <head>
         <title>{title}</title>
         <meta name="description" content={t("site.description")} />
