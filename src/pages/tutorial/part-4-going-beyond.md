@@ -4,9 +4,13 @@ layout: ../../layouts/TutorialLayout.astro
 
 # Part 4: Going beyond this tutorial
 
-Congratulations! If you've made it this far then you've completed this tutorial. This page contains more stuff to do if you'd like to learn more about melonJS.
+Congratulations! If you've made it this far then you've completed this tutorial. This page further reading that can help you finish your game.
+## Game Design & Related Concepts
+-   [Learn to understand Game Design as a Creative process](/tutorial/game-design-creative-resources)
+- [Learn the basics of Art](/tutorial/learn-about-art)
 
+## More about using melonJS
 -   You can use the steps in this tutorial to play around with all of the example projects (inside the `examples` directory) to see how they were made
 -   [Read the wiki for melonJS](https://github.com/melonjs/melonJS/wiki)
 -   [Read the docs for melonJS](https://melonjs.github.io/melonJS/docs/)
--   [See how to make your own melonJS project with our es6 starter template](/tutorial/making-your-own-game)
+-   [See how to make your own melonJS project with our es6 starter template (es6 means JavaScript that uses modules)](/tutorial/making-games-with-es6)
