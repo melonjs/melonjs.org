@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/TutorialLayout.astro
+layout: ../layouts/MDLayout.astro
 ---
 
 # Making your own game
