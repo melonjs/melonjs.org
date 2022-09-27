@@ -11,11 +11,6 @@ const pathname = new URL(Astro.request.url).pathname
             <li class={pathname === '/' ? 'active' : null}>
                 <a href="/#top"><Icon icon="favicon" inline/>Home</a>
             </li>
-            <li>
-                <a aria-label="NPM" href="https://www.npmjs.com/package/melonjs"
-                    ><Icon icon="npm" alt="npm" class="inline no-bump"/>
-                </a>
-            </li>
             <li><a href="https://melonjs.github.io/docs/">API</a></li>
             <li>
                 <a
@@ -26,18 +21,6 @@ const pathname = new URL(Astro.request.url).pathname
             <li>
                 <a href="https://melonjs.discourse.group"
                     ><Icon icon="discourse" class="inline"/>Forum
-                </a>
-            </li>
-            <li>
-                <a href="https://discord.gg/aur7JMk" target="_blank"
-                    ><Icon icon="discord" class="inline"/>Discord
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/melonjs/melonJS"
-                    ><Icon icon="github" class="inline" /><span
-                        >GitHub
-                    </span>
                 </a>
             </li>
         </ul>

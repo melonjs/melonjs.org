@@ -439,14 +439,31 @@ import Icon from '../components/Icon.astro';
                 </li>
             </ul>
         </div>
-        <div class="band">
-            <footer>
-                <p>&#169; AltByte Pte Ltd 2011-2022</p>
-                <img
-                    src="https://user-images.githubusercontent.com/4033090/136692693-35dca8aa-5012-4a37-9ea2-51640d2e6d73.png"
-                    alt="AltByte"
-                />
-            </footer>
-        </div>
+        <footer class="band">
+            <ul class="socials">  
+                <li>
+                    <a aria-label="NPM" href="https://www.npmjs.com/package/melonjs"
+                        ><Icon icon="npm" alt="npm" class="inline no-bump"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discord.gg/aur7JMk" target="_blank"
+                        ><Icon icon="discord" class="inline"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/melonjs/melonJS"
+                        ><Icon icon="github" class="inline" /><span
+                            >
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <p>&#169; AltByte Pte Ltd 2011-2022</p>
+            <img
+                src="https://user-images.githubusercontent.com/4033090/136692693-35dca8aa-5012-4a37-9ea2-51640d2e6d73.png"
+                alt="AltByte"
+            />
+        </footer>
     </main>
 </BaseLayout>
