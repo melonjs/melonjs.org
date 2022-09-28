@@ -25,8 +25,8 @@ main {
         display: grid;
         gap: 1rem;
         width: 100%;
-        grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         li { 
             display: flex;
             justify-content: center;
