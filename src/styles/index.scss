@@ -98,6 +98,12 @@ main {
         &.danger {
             background-color: $red;
         }
+        &.discord {
+            background-color: #ccc;
+            path {
+                fill: black;
+            }
+        }
         &.primary, &.danger {
             color: white !important;
             text-shadow: 1px 1px 0.4vmin #000000a3;
