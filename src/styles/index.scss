@@ -146,7 +146,7 @@ main {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        & > *:not(script):not(style) {
+        & > *:not(script):not(style):not(astro-island) {
             margin-top: 2vmin;
             display: inline-block;
             width: 100%;
