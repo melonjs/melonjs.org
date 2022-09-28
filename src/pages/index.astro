@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import '../styles/glyphicons.scss'
 import '../styles/index.scss'
 import Icon from '../components/Icon.astro';
+import Carousel from '../components/Carousel';
+import gallery from '../carousels/gallery.json'
 ---
 
 <BaseLayout>
@@ -346,37 +348,7 @@ import Icon from '../components/Icon.astro';
         <div>
             <h2>Developer Spotlight</h2>
             <div class="spotlight">
-                <div>
-                    <a href="https://playerkillers.exchange"
-                        >Player Killers' Exchange
-                    </a>
-                    <div class="content">
-                        <iframe
-                            title="King of the Castle - Crypto Gaming #3"
-                            class="youtube"
-                            width="500"
-                            height="315"
-                            src="https://www.youtube.com/embed/ArryxLedtDI"
-                            frameborder="0"
-                            allow="utoplay; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div>
-                    <a href="https://www.melongaming.com/games/ne-fi/"
-                        >Nerd Fight
-                    </a> by <a href="https://www.melongaming.com/"
-                        >melongaming
-                    </a>
-                    <div class="content">
-                        <img
-                            width="500"
-                            height="315"
-                            src="https://play-lh.googleusercontent.com/diXWPhIE_lLeMs7uk5gAFFzSqCQjEv4LrCGmFKRt60d7E7pJ6sZIkxm1Ii4dttY90w=w1440-h620"
-                            alt="nerd fight"
-                        />
-                    </div>
-                </div>
+                <Carousel entries={gallery} client:load/>
             </div>
         </div>
 

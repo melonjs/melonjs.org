@@ -38,19 +38,20 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/solid-js": "^1.1.0",
     "astro": "^1.0.7",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-astro": "^0.17.1",
     "prettier": "2.7.1",
-    "prettier-plugin-astro": "^0.5.1"
+    "prettier-plugin-astro": "^0.5.1",
+    "solid-js": "^1.5.6"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.10.2",
     "i18next": "^21.9.1",
     "melon-solid": "^0.1.0",
     "node-html-parser": "^5.4.2-0",
-    "sass": "^1.54.5",
-    "solid-js": "^1.5.2"
+    "sass": "^1.54.5"
   }
 }
