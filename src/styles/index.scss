@@ -142,10 +142,6 @@ main {
     }
     .spotlight {
         position: relative;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
         & > *:not(script):not(style):not(astro-island) {
             margin-top: 2vmin;
             display: inline-block;
