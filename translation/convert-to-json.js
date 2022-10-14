@@ -7,7 +7,7 @@ const translations = {}
 const langRegex = /(?=[^\.]+\.)[^\.]+(?=\.html$)/
 
 const queryMap = {
-    fresh: '.jumbotron .container h1',
+    introTitle: '.jumbotron .container h1',
     introPart1: '.jumbotron .container p:nth-of-type(1)',
     introPart2: '.jumbotron .container p:nth-of-type(2)',
 }
