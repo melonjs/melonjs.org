@@ -6,14 +6,12 @@ const files = glob.sync('**/*.html', { cwd: __dirname })
 const langRegex = /(?=[^\.]+\.)[^\.]+(?=\.html$)/
 
 const queryMap = {
-    introTitle: '.jumbotron .container h1',
-    introPart1: '.jumbotron .container p:nth-of-type(1)',
-    introPart2: '.jumbotron .container p:nth-of-type(2)',
-    benefitsSection: {
-        one: {
-            title: '.band:nth-of-type(3) .col-md-4 h2',
-        },
+    intro: {
+        title: '.jumbotron .container h1',
+        part1: '.jumbotron .container p:nth-of-type(1)',
+        part2: '.jumbotron .container p:nth-of-type(2)',
     },
+    benefitsSection: [{ title: '.band:nth-of-type(3) .col-md-4 h2' }],
 }
 
 files.forEach((file) => {
@@ -22,7 +20,12 @@ files.forEach((file) => {
     const outputData = {}
     const doc = parse(readFileSync(join(__dirname, file)))
     const getPiece = (piece, query, target) => {
-        if (typeof query == 'object' && query !== null) {
+        if (Array.isArray(query)) {
+            const newTarget = (target[piece] = [])
+            query.forEach((subQuery, index) => {
+                getPiece(index, subQuery, newTarget)
+            })
+        } else if (typeof query == 'object' && query !== null) {
             if (!target.hasOwnProperty(piece)) target[piece] = {}
             const newTarget = target[piece]
             Object.entries(query).forEach(([piece, query]) => {
