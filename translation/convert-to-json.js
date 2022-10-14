@@ -8,6 +8,8 @@ const langRegex = /(?=[^\.]+\.)[^\.]+(?=\.html$)/
 
 const queryMap = {
     fresh: '.jumbotron .container h1',
+    introPart1: '.jumbotron .container p:nth-of-type(1)',
+    introPart2: '.jumbotron .container p:nth-of-type(2)',
 }
 
 files.forEach((file) => {
@@ -16,8 +18,7 @@ files.forEach((file) => {
     const outputData = {}
     const doc = parse(readFileSync(join(__dirname, file)))
     Object.entries(queryMap).forEach(([piece, query]) => {
-        outputData[piece] = doc.querySelector(query).innerText
+        outputData[piece] = doc.querySelector(query).innerText.trim()
     })
     writeFileSync(outputPath, JSON.stringify(outputData))
 })
-console.log(translations)
