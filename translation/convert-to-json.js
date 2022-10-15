@@ -8,8 +8,10 @@ const langRegex = /(?=[^\.]+\.)[^\.]+(?=\.html$)/
 const queryMap = {
     intro: {
         title: '.jumbotron .container h1',
-        part1: '.jumbotron .container p:nth-of-type(1)',
-        part2: '.jumbotron .container p:nth-of-type(2)',
+        parts: [
+            '.jumbotron .container p:nth-of-type(1)',
+            '.jumbotron .container p:nth-of-type(2)',
+        ],
     },
     benefits: [
         {
