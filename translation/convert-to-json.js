@@ -11,7 +11,17 @@ const queryMap = {
         part1: '.jumbotron .container p:nth-of-type(1)',
         part2: '.jumbotron .container p:nth-of-type(2)',
     },
-    benefitsSection: [{ title: '.band:nth-of-type(3) .col-md-4 h2' }],
+    benefits: [
+        {
+            title: '.band:nth-of-type(3) .col-md-4 h2',
+            summary: '.band:nth-of-type(3) .col-md-4 blockquote p',
+            reasons: [
+                '.band:nth-of-type(3) .col-md-4 blockquote li',
+                '.band:nth-of-type(3) .col-md-4 blockquote li:nth-of-type(2)',
+                '.band:nth-of-type(3) .col-md-4 blockquote li:nth-of-type(3)',
+            ],
+        },
+    ],
 }
 
 files.forEach((file) => {
