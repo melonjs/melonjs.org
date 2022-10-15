@@ -21,6 +21,26 @@ const queryMap = {
                 '.band:nth-of-type(3) .col-md-4 blockquote li:nth-of-type(3)',
             ],
         },
+        {
+            title: '.band:nth-of-type(3) .col-md-4:nth-of-type(2) h2',
+            summary:
+                '.band:nth-of-type(3) .col-md-4:nth-of-type(2) blockquote p',
+            reasons: [
+                '.band:nth-of-type(3) .col-md-4:nth-of-type(2) blockquote p:nth-of-type(2)',
+                '.band:nth-of-type(3) .col-md-4:nth-of-type(2) blockquote p:nth-of-type(3)',
+                '.band:nth-of-type(3) .col-md-4:nth-of-type(2) blockquote p:nth-of-type(4)',
+            ],
+        },
+        {
+            title: '.band:nth-of-type(3) .col-md-4:nth-of-type(3) h2',
+            summary:
+                '.band:nth-of-type(3) .col-md-4:nth-of-type(3) blockquote p',
+            reasons: [
+                '.band:nth-of-type(3) .col-md-4:nth-of-type(3) blockquote p',
+                '.band:nth-of-type(3) .col-md-4:nth-of-type(3) blockquote p:nth-of-type(2)',
+                '.band:nth-of-type(3) .col-md-4:nth-of-type(3) blockquote p:nth-of-type(3)',
+            ],
+        },
     ],
 }
 
@@ -42,10 +62,15 @@ files.forEach((file) => {
                 getPiece(piece, query, newTarget)
             })
         } else {
-            const element = doc.querySelector(query)
+            let element
+            try {
+                element = doc.querySelector(query)
+            } catch (error) {
+                console.error(error)
+            }
             if (!element)
                 return console.warn(
-                    `Could not find the target using query ${query}`
+                    `Could not find the target using query ${query}, lang: ${lang}`
                 )
             target[piece] = element.innerText.trim()
         }
