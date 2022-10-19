@@ -46,10 +46,12 @@ const queryMap = {
     ],
 }
 
+const completeOutput = {}
+
 files.forEach((file) => {
     const lang = file.match(langRegex)
     const outputPath = join(__dirname, 'json', lang + '.json')
-    const outputData = {}
+    const outputData = (completeOutput[lang] = {})
     const doc = parse(readFileSync(join(__dirname, file)))
     const getPiece = (piece, query, target) => {
         if (Array.isArray(query)) {
@@ -82,3 +84,6 @@ files.forEach((file) => {
     )
     writeFileSync(outputPath, JSON.stringify(outputData))
 })
+
+const completeOutputPath = join(__dirname, 'json', 'complete.json')
+writeFileSync(completeOutputPath, JSON.stringify(completeOutput))
