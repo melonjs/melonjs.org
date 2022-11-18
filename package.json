@@ -44,7 +44,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-astro": "^0.17.1",
     "glob": "^8.0.3",
-    "node-html-parser": "^6.1.1",
+    "node-html-parser": "^6.1.4",
     "prettier": "2.7.1",
     "prettier-plugin-astro": "^0.5.1",
     "solid-js": "^1.5.6"

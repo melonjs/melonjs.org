@@ -44,6 +44,11 @@ const queryMap = {
             ],
         },
     ],
+    powerful: {
+        title: '.band:nth-of-type(4) h2',
+        description: '.band:nth-of-type(4) p',
+    },
+    spotlight: {},
 }
 
 const completeOutput = {}
