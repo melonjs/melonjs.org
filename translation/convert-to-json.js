@@ -63,16 +63,25 @@ const queryMap = {
             '.band:nth-of-type(6) ul > li:nth-of-type(6)',
             '.band:nth-of-type(6) ul > li:nth-of-type(7)',
             [
-                '.band:nth-of-type(6) ul > li:nth-of-type(8) li:nth-of-type(1)',
-                '.band:nth-of-type(6) ul > li:nth-of-type(8) li:nth-of-type(2)',
-                '.band:nth-of-type(6) ul > li:nth-of-type(8) li:nth-of-type(3)',
-                '.band:nth-of-type(6) ul > li:nth-of-type(8) li:nth-of-type(4)',
+                '.band:nth-of-type(6) ul > li:nth-of-type(7) li:nth-of-type(1)',
+                '.band:nth-of-type(6) ul > li:nth-of-type(7) li:nth-of-type(2)',
+                '.band:nth-of-type(6) ul > li:nth-of-type(7) li:nth-of-type(3)',
+                '.band:nth-of-type(6) ul > li:nth-of-type(7) li:nth-of-type(4)',
             ],
         ],
+    },
+    compatibility: {
+        title: '.band:nth-of-type(6) .col-md-6:nth-of-type(2) h2',
+        description: '.band:nth-of-type(6) .col-md-6:nth-of-type(2) p',
     },
 }
 
 const completeOutput = {}
+
+const extract = (node) => {
+    const text = [...node.childNodes].find((child) => child.nodeType === 3)
+    return text && text.textContent.trim()
+}
 
 files.forEach((file) => {
     const lang = file.match(langRegex)
@@ -102,7 +111,7 @@ files.forEach((file) => {
                 return console.warn(
                     `Could not find the target using query ${query}, lang: ${lang}`
                 )
-            target[piece] = element.innerText.trim()
+            target[piece] = extract(element)
         }
     }
     Object.entries(queryMap).forEach(([piece, query]) =>
