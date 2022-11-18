@@ -2,6 +2,7 @@ const glob = require('glob')
 const { join } = require('path')
 const { parse } = require('node-html-parser')
 const { writeFileSync, readFileSync } = require('fs')
+const { type } = require('os')
 const files = glob.sync('**/*.html', { cwd: __dirname })
 const langRegex = /(?=[^\.]+\.)[^\.]+(?=\.html$)/
 
@@ -48,7 +49,27 @@ const queryMap = {
         title: '.band:nth-of-type(4) h2',
         description: '.band:nth-of-type(4) p',
     },
-    spotlight: {},
+    spotlight: {
+        title: '.band:nth-of-type(5) h2',
+    },
+    features: {
+        title: '.band:nth-of-type(6) h2',
+        list: [
+            '.band:nth-of-type(6) ul > li:nth-of-type(1)',
+            '.band:nth-of-type(6) ul > li:nth-of-type(2)',
+            '.band:nth-of-type(6) ul > li:nth-of-type(3)',
+            '.band:nth-of-type(6) ul > li:nth-of-type(4)',
+            '.band:nth-of-type(6) ul > li:nth-of-type(5)',
+            '.band:nth-of-type(6) ul > li:nth-of-type(6)',
+            '.band:nth-of-type(6) ul > li:nth-of-type(7)',
+            [
+                '.band:nth-of-type(6) ul > li:nth-of-type(8) li:nth-of-type(1)',
+                '.band:nth-of-type(6) ul > li:nth-of-type(8) li:nth-of-type(2)',
+                '.band:nth-of-type(6) ul > li:nth-of-type(8) li:nth-of-type(3)',
+                '.band:nth-of-type(6) ul > li:nth-of-type(8) li:nth-of-type(4)',
+            ],
+        ],
+    },
 }
 
 const completeOutput = {}
