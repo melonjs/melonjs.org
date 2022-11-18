@@ -1,6 +1,6 @@
 const glob = require('glob')
 const { join } = require('path')
-const { parse } = require('node-html-parser')
+const { parse, TextNode } = require('node-html-parser')
 const { writeFileSync, readFileSync } = require('fs')
 const { type } = require('os')
 const files = glob.sync('**/*.html', { cwd: __dirname })
@@ -95,13 +95,22 @@ const queryMap = {
         title: '.band:nth-of-type(6) .col-md-6:nth-of-type(2) h2',
         description: '.band:nth-of-type(6) .col-md-6:nth-of-type(2) p',
     },
+    thirdParty: {
+        title: '.band:nth-of-type(7) h3',
+        description: '.band:nth-of-type(7) .container',
+    },
 }
 
 const completeOutput = {}
 
-const extract = (node) => {
-    const text = [...node.childNodes].find((child) => child.nodeType === 3)
-    return text && text.textContent.trim()
+const extract = (node, deep = false) => {
+    let nodes = [...node.childNodes]
+    if (!deep) nodes = nodes.filter((child) => child instanceof TextNode)
+
+    return nodes
+        .map((child) => String(child))
+        .join('')
+        .trim()
 }
 
 files.forEach((file) => {
