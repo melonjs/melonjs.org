@@ -1,6 +1,6 @@
 {
   "name": "melonjs.org",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "official website for melonJS",
   "homepage": "http://melonjs.org",
   "keywords": [
@@ -38,21 +38,21 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/solid-js": "^1.1.0",
-    "astro": "^1.0.7",
-    "eslint": "^8.22.0",
+    "@astrojs/solid-js": "^1.2.3",
+    "astro": "^1.7.2",
+    "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-astro": "^0.17.1",
+    "eslint-plugin-astro": "^0.21.1",
     "glob": "^8.0.3",
     "node-html-parser": "^6.1.4",
-    "prettier": "2.7.1",
-    "prettier-plugin-astro": "^0.5.1",
-    "solid-js": "^1.5.6"
+    "prettier": "2.8.1",
+    "prettier-plugin-astro": "^0.7.0",
+    "solid-js": "^1.6.6"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.10.2",
-    "i18next": "^21.9.1",
+    "@astrojs/mdx": "^0.13.0",
+    "i18next": "^22.4.6",
     "melon-solid": "^0.1.0",
-    "sass": "^1.54.5"
+    "sass": "^1.57.1"
   }
 }
