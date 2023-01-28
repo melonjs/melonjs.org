@@ -39,4 +39,4 @@ To make the source code look pretty (and enforce consistent styling):
 
 [melonJS](https://github.com/melonjs/melonJS) is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
-Copyright (C) 2011 - 2022, AltByte Pte Ltd
+Copyright (C) AltByte Pte Ltd
