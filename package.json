@@ -1,6 +1,6 @@
 {
   "name": "melonjs.org",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "official website for melonJS",
   "homepage": "http://melonjs.org",
   "keywords": [
@@ -42,15 +42,15 @@
     "astro": "^2.0.2",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-astro": "^0.23.0",
-    "glob": "^8.1.0",
+    "eslint-plugin-astro": "^0.26.1",
+    "glob": "^10.1.0",
     "node-html-parser": "^6.1.4",
-    "prettier": "2.8.3",
+    "prettier": "2.8.7",
     "prettier-plugin-astro": "^0.8.0",
     "solid-js": "^1.6.9"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.15.1",
+    "@astrojs/mdx": "^0.19.0",
     "i18next": "^22.4.9",
     "melon-solid": "^0.1.0",
     "sass": "^1.57.1"
