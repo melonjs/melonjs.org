@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 main {
     .socials {
         list-style: none;
@@ -27,7 +27,7 @@ main {
         width: 100%;
         grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        li { 
+        li {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -104,7 +104,8 @@ main {
                 fill: black;
             }
         }
-        &.primary, &.danger {
+        &.primary,
+        &.danger {
             color: white !important;
             text-shadow: 1px 1px 0.4vmin #000000a3;
         }

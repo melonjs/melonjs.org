@@ -1,46 +1,44 @@
 ---
-import { parse } from 'node-html-parser';
-import "../styles/Icon.scss"
+import { parse } from 'node-html-parser'
+import '../styles/Icon.scss'
 
 function getSVG(name) {
-  const filepath = `/src/svgs/${name.replace(/[\s]+/g, '-')}.svg`;
-  const files = import.meta.globEager('/src/svgs/**/*.svg', {
-    as: 'raw',
-  });
+    const filepath = `/src/svgs/${name.replace(/[\s]+/g, '-')}.svg`
+    const files = import.meta.globEager('/src/svgs/**/*.svg', {
+        as: 'raw',
+    })
 
-  if (!(filepath in files)) {
-    throw new Error(`${filepath} not found`);
-  }
+    if (!(filepath in files)) {
+        throw new Error(`${filepath} not found`)
+    }
 
-  const root = parse(files[filepath]);
+    const root = parse(files[filepath])
 
-  const svg = root.querySelector('svg');
-  const { attributes, innerHTML } = svg;
+    const svg = root.querySelector('svg')
+    const { attributes, innerHTML } = svg
 
-  return {
-    attributes,
-    innerHTML,
-  };
+    return {
+        attributes,
+        innerHTML,
+    }
 }
 
 const defaultAttributes = {
-    "aria-hidden": "true", 
-    focusable: "false"
+    'aria-hidden': 'true',
+    focusable: 'false',
 }
 
-const { icon, ...attributes } = Astro.props;
-const { attributes: baseAttributes, innerHTML } = getSVG(icon);
+const { icon, ...attributes } = Astro.props
+const { attributes: baseAttributes, innerHTML } = getSVG(icon)
 
-const svgAttributes = { ...defaultAttributes, ...baseAttributes, ...attributes };
+const svgAttributes = { ...defaultAttributes, ...baseAttributes, ...attributes }
 delete svgAttributes.inline
 delete svgAttributes.class
-let classes = ["icon", icon]
-if (attributes.inline) classes.push("inline")
-if (typeof attributes.class == 'string') classes = classes.concat(attributes.class.split(' ').filter(str => str))
+let classes = ['icon', icon]
+if (attributes.inline) classes.push('inline')
+if (typeof attributes.class == 'string')
+    classes = classes.concat(attributes.class.split(' ').filter((str) => str))
 const className = classes.join(' ')
 ---
 
-<svg class={className}
-  {...svgAttributes}
-  set:html={innerHTML}
-></svg>
+<svg class={className} {...svgAttributes} set:html={innerHTML} />

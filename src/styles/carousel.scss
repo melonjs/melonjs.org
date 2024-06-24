@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 .carousel {
     color: white;
@@ -61,7 +61,7 @@
         color: white;
         min-height: 90vmin;
         width: 100%;
-        & >button {
+        & > button {
             color: white;
             position: absolute;
             top: 0;
@@ -75,11 +75,12 @@
             vertical-align: middle;
             width: 20%;
         }
-        
-        & >img:first-child {
+
+        & > img:first-child {
         }
     }
-    .left, .right {
+    .left,
+    .right {
         transition: opacity 0.5s linear;
         position: absolute;
         top: 50%;

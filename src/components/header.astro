@@ -1,5 +1,5 @@
 ---
-import Icon from './Icon.astro';
+import Icon from './Icon.astro'
 import '../styles/global.scss'
 import '../styles/header.scss'
 const pathname = new URL(Astro.request.url).pathname
@@ -9,9 +9,9 @@ const pathname = new URL(Astro.request.url).pathname
     <nav>
         <ul>
             <li class={pathname === '/' ? 'active' : null}>
-                <a href="/#top"><Icon icon="favicon" inline/>Home</a>
+                <a href="/#top"><Icon icon="favicon" inline />Home</a>
             </li>
-            <li><a href="http://melonjs.github.io/melonJS/">API</a></li>
+            <li><a href="https://melonjs.github.io/melonJS">API</a></li>
             <li>
                 <a
                     href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS"
@@ -20,7 +20,7 @@ const pathname = new URL(Astro.request.url).pathname
             </li>
             <li>
                 <a href="https://melonjs.discourse.group"
-                    ><Icon icon="discourse" class="inline"/>Forum
+                    ><Icon icon="discourse" class="inline" />Forum
                 </a>
             </li>
         </ul>

@@ -17,10 +17,13 @@ For more resources on how to code in JavaScript [see here.](https://webslc.com/m
 Let's try giving the player speed hacks. Open this file in VSCode:
 `js/entities/player.js`
 Then, go to line 16
+
 ```
 this.body.setMaxVelocity(3, 15);
 ```
+
 Try messing around with the code and see what happens.
+
 <details>
   <summary>Click me if you give up</summary>
   Tadaa! By changing those values you now can make the character slow like a turtle or super fast like a cheater. The first value is the X speed, and the second value is the Y speed.
