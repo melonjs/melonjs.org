@@ -1,6 +1,6 @@
 # melonJS.org
 
-This is the website for [melonJS](https://melonjs.org/). To see how to edit it, please see [Astro](https://astro.build). Pages and components are built using HTML templates (ending in `.astro`), allowing us to split our website up into different parts. The Astro framework also supports the use of `.scss` and many other handy libraries if necessary.
+This is the website for [melonJS](https://melonjs.org/). Built with [Astro](https://astro.build), using plain CSS and vanilla JavaScript.
 
 ## How to run the site
 
@@ -8,35 +8,27 @@ To run the website in development mode:
 
     npm run dev
 
-To publish a new version of the site:
+To publish a new version of the site (automatically formats code with Prettier):
 
     npm run build
     git add .
     git commit -m "Deploy my new feature!"
     git push
 
-To make the source code look pretty (and enforce consistent styling):
-
-    npm run pretty
-    git add .
-    git commit -m "make the source code prettier"
-    git push
-
 ## Directory Layout
 
-| Directory        | Purpose                                                                             |
-| :--------------- | :---------------------------------------------------------------------------------- |
-| /public/         | Static Assets                                                                       |
-| /src/pages/      | Pages (routing based on file path, we can also put MD files in here!)               |
-| /src/components/ | Components (little HTML pieces we can re-use across the site, like the site header) |
-| /src/layout/     | Re-usable layouts we can use on any page we want.                                   |
-| /src/styles/     | Where all of the styles are stored (except inline ones)                             |
+| Directory        | Purpose                                                        |
+| :--------------- | :------------------------------------------------------------- |
+| /public/         | Static assets (images, etc.)                                   |
+| /src/pages/      | Pages (file-based routing, supports `.md` and `.mdx`)          |
+| /src/components/ | Reusable Astro components (header, carousel, icons)            |
+| /src/layouts/    | Page layouts                                                   |
+| /src/styles/     | Global stylesheets (plain CSS with native nesting & variables) |
 
 ***
 
-## about melonJS
--------------------------------------------------------------------------------
+## About melonJS
 
-[melonJS](https://github.com/melonjs/melonJS) is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php)
+[melonJS](https://github.com/melonjs/melonJS) is licensed under the [MIT License](https://opensource.org/licenses/mit-license.php)
 
 Copyright (C) AltByte Pte Ltd
