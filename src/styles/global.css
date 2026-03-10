@@ -1,5 +1,4 @@
-@import 'variables';
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
 
 * {
     padding: 0;
@@ -19,22 +18,22 @@ body {
 }
 
 a {
-    color: $ocean;
+    color: var(--ocean);
 }
 
 img {
     user-select: none;
 }
 
-.no-mobile {
-    @media (max-width: $mobile-width) {
+@media (max-width: 640px) {
+    .no-mobile {
         display: none;
     }
 }
 
 blockquote {
-    ul,
-    ol {
+    & ul,
+    & ol {
         list-style: none;
     }
 }

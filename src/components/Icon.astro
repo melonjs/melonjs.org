@@ -1,11 +1,13 @@
 ---
 import { parse } from 'node-html-parser'
-import '../styles/Icon.scss'
+import '../styles/Icon.css'
 
 function getSVG(name) {
     const filepath = `/src/svgs/${name.replace(/[\s]+/g, '-')}.svg`
-    const files = import.meta.globEager('/src/svgs/**/*.svg', {
-        as: 'raw',
+    const files = import.meta.glob('/src/svgs/**/*.svg', {
+        query: '?raw',
+        import: 'default',
+        eager: true,
     })
 
     if (!(filepath in files)) {

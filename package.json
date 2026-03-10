@@ -2,7 +2,7 @@
   "name": "melonjs.org",
   "version": "4.0.1",
   "description": "official website for melonJS",
-  "homepage": "http://melonjs.org",
+  "homepage": "https://melonjs.org",
   "keywords": [
     "2D",
     "HTML5",
@@ -17,11 +17,7 @@
     "engine",
     "tiled",
     "tileset",
-    "mapeditor",
-    "browser",
-    "electron",
-    "mobile",
-    "cordova"
+    "mapeditor"
   ],
   "repository": {
     "type": "git",
@@ -31,29 +27,17 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "rm -rf ./docs && astro build && mv ./dist ./docs",
-    "preview": "astro preview",
-    "pretty": "npx prettier --write ./src"
+    "build": "prettier --write ./src && rm -rf ./docs && astro build && mv ./dist ./docs"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^1.4.0",
-    "@astrojs/solid-js": "^2.2.1",
-    "astro": "^2.10.15",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^8.10.0",
-    "eslint-plugin-astro": "^0.26.2",
-    "glob": "^10.4.2",
-    "node-html-parser": "^6.1.13",
-    "prettier": "2.8.7",
-    "prettier-plugin-astro": "^0.14.0",
-    "solid-js": "^1.8.17"
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.18.0",
+    "node-html-parser": "^7.1.0",
+    "prettier": "3.8.1",
+    "prettier-plugin-astro": "^0.14.1"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.19.7",
-    "i18next": "^22.5.1",
-    "melon-solid": "^0.1.0",
-    "sass": "^1.77.6"
+    "@astrojs/mdx": "^4.3.13"
   },
-  "packageManager": "npm@10.8.1"
+  "packageManager": "npm@11.11.0"
 }

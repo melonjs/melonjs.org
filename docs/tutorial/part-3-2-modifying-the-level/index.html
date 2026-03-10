@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>melonJS</title>
-        <meta name="description" content="melonJS is an open source HTML5 game engine">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="/img/favicon.svg">
-    <link rel="stylesheet" href="/_astro/part-1-prerequisites.4fd667a5.css" />
-<link rel="stylesheet" href="/_astro/part-1-prerequisites.bc7f59be.css" />
-<link rel="stylesheet" href="/_astro/part-1-prerequisites.60509d40.css" /></head>
-    <body>
-        <header>
-    <nav>
-        <ul>
-            <li>
-                <a href="/#top"><svg class="icon favicon inline" aria-hidden="true" focusable="false" width="395.99954" height="395.9996" viewBox="0 0 395.99954 395.9996" fill="none" version="1.1" id="svg20" sodipodi:docname="favicon.svg" inkscape:version="1.2 (dc2aeda, 2022-05-15)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<!DOCTYPE html><html lang="en"> <head><title>melonJS</title><meta name="description" content="melonJS is an open source HTML5 game engine"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/img/favicon.svg"><style>main.md{text-align:center;background-color:var(--dark-gray);color:var(--white);min-height:100vh;line-height:calc(2.5vmin + 2vmax);padding:5vmin 10vmin;display:flex;flex-direction:column;& h1,h2,h3,h4,h5,h6{line-height:calc(2.5vmin + 4vmax);margin:5vmin auto 2vmin}& h1{text-decoration:underline}>*{width:fit-content;margin-left:auto;margin-right:auto}& p:nth-of-type(1){margin-bottom:5vmin;text-align:center}& img:not(.inline){display:block}& img{margin:2vmin auto;width:45vw;min-width:80vmin}.small{width:calc(20vmin + 20vmax);min-width:0}.medium{width:65vw;margin:6vmin auto}.large{min-width:90vmin;width:80vw;margin:8vmin auto}& pre{padding:3vmin;margin:4vmin auto;border:1vmin solid var(--dark-green);max-width:calc(100% - 8vmin)}& a{color:var(--green)}& a.next{display:block;margin:5vmin auto;border:1vmin solid var(--green);padding:2vmin}& li{list-style:none}.krita{filter:drop-shadow(-.25vmin .25vmin .5vmin #ffffffc2)}}
+@keyframes pound{0%,80%,to{transform:none}60%{transform:translate(10%,-10%) rotate(30deg)}}@keyframes doshatter{0%,70%{opacity:0%}90%{opacity:100%}}@keyframes destroydot{70%{opacity:100%}0%,90%{opacity:0%}}#melon-hack{overflow:visible;#hammer{animation-name:pound;transform-origin:center;animation-duration:4s;animation-iteration-count:infinite}#shatter{animation-name:doshatter;animation-timing-function:ease;animation-duration:4s;animation-iteration-count:infinite}#dot{opacity:0;animation-name:destroydot;animation-timing-function:ease;animation-duration:4s;animation-iteration-count:infinite}}.tutorial-home[data-astro-cid-ds6ctzq3]{margin-bottom:-5vmin}
+@import"https://fonts.googleapis.com/css?family=Droid+Sans";.icon{user-select:none;display:block;max-width:100%;height:auto;margin:3vmin 0;&.inline{height:1em;margin:-.2em .4em -.1em .2em;display:inline;width:auto}}*{padding:0;margin:0}html{scroll-padding-top:calc(6.5vmin + 2em)}body{display:flex;flex-direction:column;font-family:Droid Sans,Tahoma,Lucida Grande,sans-serif;max-width:100vw;overflow-x:hidden}a{color:var(--ocean)}img{user-select:none}@media(max-width:640px){.no-mobile{display:none}}blockquote{& ul,ol{list-style:none}}header{font-size:1.2em;position:sticky;top:0;z-index:100;background-color:var(--gray);border-bottom:.5vmin solid var(--dark-gray);& a{color:inherit;text-decoration:none}& nav ul{display:flex;flex-direction:row;justify-content:space-evenly;max-width:100vw;flex-wrap:wrap;& li{position:relative;flex-grow:1;text-align:center;list-style:none;color:#dadada;transition:background-color .3s ease,color .3s ease;&.active,&:hover{color:#fff;background-color:var(--dark-gray);transition:none}& a{padding:3vmin 2vmin;width:calc(100% - 4vmin);height:calc(100% - 6vmin);display:inline-block;vertical-align:middle}}}}.inline{height:.75em;vertical-align:middle;&.big{height:1.5em}}:root{--mobile-width: 640px;--desktop-width: 1080px;--dark-green: #6ba832;--green: #82c743;--light-green: #8de48d;--deep-green: #57b302;--jean: #77a4a9;--ocean: #337ab7;--cream: #efad72;--dust: #b7a5a6;--ash: #eadee3;--clay: #8d555b;--red: #d9534f;--white: white;--black: black;--gray: #404040;--dark-gray: #202020}
+</style></head> <body> <header> <nav> <ul> <li> <a href="/#top"><svg class="icon favicon inline" aria-hidden="true" focusable="false" width="395.99954" height="395.9996" viewBox="0 0 395.99954 395.9996" fill="none" version="1.1" id="svg20" sodipodi:docname="favicon.svg" inkscape:version="1.2 (dc2aeda, 2022-05-15)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
   <defs      id="defs24" ></defs>
   <sodipodi:namedview      id="namedview22"
      pagecolor="#ffffff"
@@ -51,30 +37,10 @@
        id="path18"
        style="display:inline" ></path>
   </g>
-</svg>Home</a>
-            </li>
-            <li><a href="https://melonjs.github.io/melonJS">API</a></li>
-            <li>
-                <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS">Gallery
-                </a>
-            </li>
-            <li>
-                <a href="https://melonjs.discourse.group"><svg class="icon discourse inline" aria-hidden="true" focusable="false" width="24px" height="24px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
-    <path         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
-        d="M12.103 0C18.666 0 24 5.485 24 11.997c0 6.51-5.33 11.99-11.9 11.99L0 24V11.79C0 5.28 5.532 0 12.103 0zm.116 4.563a7.395 7.395 0 0 0-6.337 3.57 7.247 7.247 0 0 0-.148 7.22L4.4 19.61l4.794-1.074a7.424 7.424 0 0 0 8.136-1.39 7.256 7.256 0 0 0 1.737-7.997 7.375 7.375 0 0 0-6.84-4.585h-.008z"
-    ></path>
-</svg>Forum
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-        
-    <main class="md">
-    
-    <a class="tutorial-home astro-DS6CTZQ3" href="/tutorial">
-                Tutorial: Hacking a Platformer Game
-            </a><h1 id="part-3-2-modifying-the-level-using-tiled">Part 3-2: Modifying the level using Tiled</h1>
+</svg>Home</a> </li> <li><a href="https://melonjs.github.io/melonJS">API</a></li> <li> <a href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS">Gallery
+</a> </li> </ul> </nav> </header>  <main class="md">  <a class="tutorial-home" href="/tutorial" data-astro-cid-ds6ctzq3>
+Tutorial: Hacking a Platformer Game
+</a><h1 id="part-3-2-modifying-the-level-using-tiled">Part 3-2: Modifying the level using Tiled</h1>
 <p><em>Note: Before starting if you are new to Tiled we strongly encourage you to read the <a href="https://doc.mapeditor.org/en/stable/manual/introduction/">introduction here</a>, that provides the basics on how the editor works.</em></p>
 <p>To start open the Tiled Application. Now let’s edit the first level. It is located here:
 <code>/data/maps/map1.tmx</code>
@@ -89,7 +55,4 @@ Once you have it open, your application should look very similar to this:</p>
 <p>Now in the browser we can see that we have a custom character, and the sky is filled with mushrooms! Also we put a little bit of snow on the box.</p>
 <p>You can learn more about the Tiled level editor <a href="https://doc.mapeditor.org/en/stable/">here.</a></p>
 <p>The solid black lines in the level represent the collisions (this means things the walls and the floors and boxes, anything you can’t walk through) You can learn more about how collisions are made <a href="https://github.com/melonjs/melonJS/wiki/How-to-define-world-collision-shapes-in-Tiled">here.</a></p>
-<p><a href="/tutorial/part-3-3-modifying-the-code" class="next">Up Next: Modifying the Code</a></p>
-</main>
-
-    </body></html>
+<p><a href="/tutorial/part-3-3-modifying-the-code" class="next">Up Next: Modifying the Code</a></p> </main>  </body></html>

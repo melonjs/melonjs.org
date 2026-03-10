@@ -1,75 +1,87 @@
-@import 'variables';
-
 main.md {
     text-align: center;
-    background-color: $dark-gray;
-    color: $white;
+    background-color: var(--dark-gray);
+    color: var(--white);
     min-height: 100vh;
     line-height: calc(2.5vmin + 2vmax);
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        line-height: calc(2.5vmin + 4vmax);
-        margin: 5vmin auto 2vmin auto;
-    }
-    h1 {
-        text-decoration: underline;
-    }
     padding: 5vmin 10vmin;
     display: flex;
     flex-direction: column;
+
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+        line-height: calc(2.5vmin + 4vmax);
+        margin: 5vmin auto 2vmin auto;
+    }
+
+    & h1 {
+        text-decoration: underline;
+    }
+
     & > * {
         width: fit-content;
         margin-left: auto;
         margin-right: auto;
     }
-    p:nth-of-type(1) {
+
+    & p:nth-of-type(1) {
         margin-bottom: 5vmin;
         text-align: center;
     }
-    img {
-        &:not(.inline) {
-            display: block;
-        }
+
+    & img:not(.inline) {
+        display: block;
+    }
+
+    & img {
         margin: 2vmin auto;
         width: 45vw;
         min-width: 80vmin;
     }
-    .small {
+
+    & .small {
         width: calc(20vmin + 20vmax);
         min-width: 0;
     }
-    .medium {
+
+    & .medium {
         width: 65vw;
         margin: 6vmin auto;
     }
-    .large {
+
+    & .large {
         min-width: 90vmin;
         width: 80vw;
         margin: 8vmin auto;
     }
-    pre {
+
+    & pre {
         padding: 3vmin;
         margin: 4vmin auto;
-        border: 1vmin solid $dark-green;
+        border: 1vmin solid var(--dark-green);
         max-width: calc(100% - 8vmin);
     }
-    a {
-        color: $green;
+
+    & a {
+        color: var(--green);
     }
-    a.next {
+
+    & a.next {
         display: block;
         margin: 5vmin auto;
-        border: 1vmin solid $green;
+        border: 1vmin solid var(--green);
         padding: 2vmin;
     }
-    li {
+
+    & li {
         list-style: none;
     }
-    .krita {
+
+    & .krita {
         filter: drop-shadow(-0.25vmin 0.25vmin 0.5vmin #ffffffc2);
     }
 }

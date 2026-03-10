@@ -1,7 +1,7 @@
 ---
 import Icon from './Icon.astro'
-import '../styles/global.scss'
-import '../styles/header.scss'
+import '../styles/global.css'
+import '../styles/header.css'
 const pathname = new URL(Astro.request.url).pathname
 ---
 
@@ -16,11 +16,6 @@ const pathname = new URL(Astro.request.url).pathname
                 <a
                     href="https://github.com/melonjs/melonJS/wiki/made-with-melonJS"
                     >Gallery
-                </a>
-            </li>
-            <li>
-                <a href="https://melonjs.discourse.group"
-                    ><Icon icon="discourse" class="inline" />Forum
                 </a>
             </li>
         </ul>

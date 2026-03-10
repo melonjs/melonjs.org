@@ -1,0 +1,27 @@
+---
+import '../styles/carousel.css'
+const { entries } = Astro.props
+---
+
+<div class="carousel" data-entries={JSON.stringify(entries)}>
+    <div class="inner" set:html={entries[0]} />
+    <img class="left" alt="left" src="/img/right-arrow.svg" />
+    <img class="right" alt="right" src="/img/right-arrow.svg" />
+</div>
+
+<script>
+    const carousel = document.querySelector('.carousel')
+    const inner = carousel.querySelector('.inner')
+    const entries = JSON.parse(carousel.dataset.entries)
+    let position = 0
+
+    carousel.querySelector('.left').addEventListener('click', () => {
+        position = (position - 1 + entries.length) % entries.length
+        inner.innerHTML = entries[position]
+    })
+
+    carousel.querySelector('.right').addEventListener('click', () => {
+        position = (position + 1) % entries.length
+        inner.innerHTML = entries[position]
+    })
+</script>

@@ -1,0 +1,54 @@
+.carousel {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    width: 100%;
+
+    & .main {
+        pointer-events: none;
+        user-select: none;
+        width: auto;
+        height: 90vmin;
+        border-width: 0 3px;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0 auto;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &.loading {
+            display: none;
+        }
+    }
+
+    & .left,
+    & .right {
+        transition: opacity 0.5s linear;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 20vmin;
+        border: none;
+        cursor: pointer;
+        user-select: none;
+        margin: 0;
+        filter: drop-shadow(0 0 1vmin rgba(0, 0, 0, 0.615));
+    }
+
+    & .left {
+        text-align: left;
+        left: 0;
+        transform: translateY(-50%) rotateZ(180deg);
+    }
+
+    & .right {
+        text-align: right;
+        right: 0;
+    }
+}
