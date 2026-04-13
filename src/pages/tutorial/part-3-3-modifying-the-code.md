@@ -1,5 +1,7 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
+title: "Part 3-3: Modifying the Game Code — melonJS Platformer Tutorial"
+description: Edit JavaScript game code in VS Code to change gameplay mechanics in your melonJS HTML5 platformer. Modify entities, physics, and game logic.
 ---
 
 # Part 3-3: Modifying the code

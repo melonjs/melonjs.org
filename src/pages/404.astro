@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import '../styles/variables.css'
+---
+
+<BaseLayout
+    title="Page Not Found — melonJS"
+    description="The page you're looking for doesn't exist. Head back to the melonJS homepage."
+>
+    <style>
+        .not-found {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 60vh;
+            padding: var(--section-pad-y) var(--section-pad-x);
+            background-color: var(--gray);
+            color: var(--white);
+
+            & h1 {
+                font-size: clamp(4rem, 10vw, 8rem);
+                color: var(--dark-green);
+                line-height: 1;
+                margin-bottom: 1rem;
+            }
+
+            & p {
+                font-size: 1.2em;
+                opacity: 0.8;
+                margin-bottom: 2rem;
+            }
+
+            & a {
+                display: inline-block;
+                padding: 0.75rem 2rem;
+                background: var(--dark-green);
+                color: var(--black);
+                text-decoration: none;
+                border-radius: 8px;
+                font-weight: 600;
+                transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+    </style>
+    <main>
+        <div class="not-found">
+            <h1>404</h1>
+            <p>This page doesn't exist. Maybe it was eaten by a melon?</p>
+            <a href="/">Back to Homepage</a>
+        </div>
+    </main>
+</BaseLayout>

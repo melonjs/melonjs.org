@@ -1,5 +1,7 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
+title: "Part 3-2: Modifying Levels with Tiled — melonJS Platformer Tutorial"
+description: Design and edit platformer game levels using the Tiled map editor with melonJS. Add tiles, platforms, and collision layers.
 ---
 
 # Part 3-2: Modifying the level using Tiled

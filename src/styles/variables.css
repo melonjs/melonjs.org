@@ -16,4 +16,6 @@
     --black: black;
     --gray: #404040;
     --dark-gray: #202020;
+    --section-pad-x: clamp(2rem, 8vw, 12rem);
+    --section-pad-y: clamp(3rem, 6vw, 6rem);
 }

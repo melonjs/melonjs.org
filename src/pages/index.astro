@@ -5,9 +5,35 @@ import '../styles/index.css'
 import Icon from '../components/Icon.astro'
 import Carousel from '../components/Carousel.astro'
 import gallery from '../carousels/gallery.json'
+
+const scaffoldCode = `npm create melonjs@latest my-game
+cd my-game
+npm install
+npm run dev`
+
+const helloCode = `<span class="kw">import</span> { Application, Text } <span class="kw">from</span> <span class="str">"melonjs"</span>;
+
+<span class="cmt">// create a new melonJS application</span>
+<span class="kw">const</span> app = <span class="kw">new</span> Application(<span class="num">1218</span>, <span class="num">562</span>, {
+    parent: <span class="str">"screen"</span>,
+    scale: <span class="str">"auto"</span>,
+});
+
+<span class="cmt">// add a text display object</span>
+app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>, <span class="num">281</span>, {
+    font: <span class="str">"Arial"</span>,
+    size: <span class="num">160</span>,
+    fillStyle: <span class="str">"#FFFFFF"</span>,
+    textBaseline: <span class="str">"middle"</span>,
+    textAlign: <span class="str">"center"</span>,
+    text: <span class="str">"Hello World !"</span>,
+}));`
 ---
 
-<BaseLayout>
+<BaseLayout
+    title="melonJS — A Modern & Lightweight HTML5 Game Engine"
+    description="Build 2D games with melonJS, a free and open-source HTML5 game engine. Lightweight, fast WebGL rendering, Tiled map editor support, and zero dependencies. Under 100kb gzipped."
+>
     <style>
         main {
             & h1,
@@ -16,13 +42,10 @@ import gallery from '../carousels/gallery.json'
             & h4,
             & h5,
             & h6 {
-                margin-bottom: 5vmin;
+                margin-bottom: 1.5rem;
             }
             & > * {
-                padding: 5vmin 20vmin;
-                @media (max-width: 640px) {
-                    padding: 5vmin 10vmin;
-                }
+                padding: var(--section-pad-y) var(--section-pad-x);
                 &:nth-child(odd) {
                     background-color: var(--gray);
                     color: var(--white);
@@ -63,14 +86,28 @@ import gallery from '../carousels/gallery.json'
                 <p>
                     melonJS is an open-source HTML5 game engine for building
                     2D games with JavaScript and TypeScript. Lightweight,
-                    dependency-free, and fully tree-shakeable.
+                    dependency-free, and under 100kb gzipped.
                 </p>
+                <div class="badges">
+                    <a href="https://www.npmjs.com/package/melonjs">
+                        <img alt="npm version" src={`https://img.shields.io/npm/v/melonjs?style=flat-square&color=6ba832&label=npm`} height="20" />
+                    </a>
+                    <a href="https://github.com/melonjs/melonJS">
+                        <img alt="GitHub stars" src={`https://img.shields.io/github/stars/melonjs/melonJS?style=flat-square&color=6ba832`} height="20" />
+                    </a>
+                    <a href="https://www.jsdelivr.com/package/npm/melonjs">
+                        <img alt="jsDelivr hits" src={`https://img.shields.io/jsdelivr/npm/hm/melonjs?style=flat-square&color=6ba832&label=downloads`} height="20" />
+                    </a>
+                    <a href="https://github.com/melonjs/melonJS/blob/master/LICENSE">
+                        <img alt="license MIT" src={`https://img.shields.io/badge/license-MIT-6ba832?style=flat-square`} height="20" />
+                    </a>
+                </div>
                 <nav class="quick-start">
                     <ul>
                         <li>
                             <a
                                 class="btn danger"
-                                href="https://melonjs.github.io/examples/platformer/"
+                                href="https://melonjs.github.io/melonJS/examples/#/platformer"
                                 role="button"
                                 ><Icon icon="film" inline />Demo
                             </a>
@@ -88,6 +125,7 @@ import gallery from '../carousels/gallery.json'
                                 class="btn discord"
                                 href="https://discord.gg/aur7JMk"
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 <Icon icon="discord" class="inline" />Chat with
                                 Us
@@ -104,9 +142,9 @@ import gallery from '../carousels/gallery.json'
                         <li>
                             <a
                                 class="btn primary"
-                                href="https://github.com/melonjs/melonJS/releases"
+                                href="https://melonjs.github.io/melonJS/examples/"
                                 role="button"
-                                ><Icon icon="download" inline />Download
+                                ><Icon icon="film" inline />Examples
                             </a>
                         </li>
                     </ul>
@@ -116,7 +154,7 @@ import gallery from '../carousels/gallery.json'
         <div class="row three highlights">
             <div>
                 <h2>Fast</h2>
-                <p>ES6 classes &amp; tree-shaking. WebGL renderer with Canvas fallback. Web Audio with 3D spatial sound.</p>
+                <p>Modern ES6 architecture. WebGL renderer with Canvas fallback. Web Audio with 3D spatial sound.</p>
             </div>
             <div>
                 <h2>Free</h2>
@@ -133,6 +171,37 @@ import gallery from '../carousels/gallery.json'
             </div>
         </div>
 
+        <div class="why-section">
+            <h2 id="why">Why melonJS?</h2>
+            <div class="why-cards">
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>Canvas2D-Inspired API</h3>
+                    <p>
+                        The rendering system follows familiar HTML5 Canvas patterns &mdash;
+                        <code>save</code>, <code>restore</code>, <code>translate</code>, <code>rotate</code>.
+                        If you've used the Canvas API, you already know melonJS.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>True Renderer Abstraction</h3>
+                    <p>
+                        Write your game once, run it on WebGL or Canvas2D.
+                        Automatic GPU fallback with zero code changes required.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>Batteries Included</h3>
+                    <p>
+                        Physics, tilemaps, 3D mesh rendering, custom shaders, spatial audio,
+                        particles and UI &mdash; all in one package with no external dependencies.
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <div class="band">
             <h2>Powerful Level Design</h2>
             <p>
@@ -144,6 +213,7 @@ import gallery from '../carousels/gallery.json'
             <br />
             <img
                 src="/img/alex4-github.png"
+                alt="melonJS level design with Tiled map editor showing platformer game"
                 title="Fast and Powerful level design through Tiled"
                 width="85%"
                 height="85%"
@@ -151,12 +221,30 @@ import gallery from '../carousels/gallery.json'
             />
         </div>
 
+        <div>
+            <h2 id="try-it">Try it Live</h2>
+            <p>Jump right into a melonJS game &mdash; playable in your browser.</p>
+            <div class="demo-embed">
+                <iframe
+                    src="https://melonjs.github.io/melonJS/examples/#/platformer"
+                    title="melonJS platformer demo"
+                    loading="lazy"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+
+        <div>
+            <h2 id="get-started">Get Started in Seconds</h2>
+            <p>Scaffold a new project with a single command:</p>
+            <pre class="code-block"><code set:html={scaffoldCode} /></pre>
+            <p>Or use the API directly for a quick Hello World:</p>
+            <pre class="code-block"><code set:html={helloCode} /></pre>
+        </div>
+
         <div class="row two">
             <div>
-                <h2 id="features">
-                    <a href="/#features" class="anchor">Features</a>
-                </h2>
-                <hr />
+                <h2 id="features">Features</h2>
                 <ul>
                     <li>Fast WebGL &amp; Canvas rendering across desktop and mobile</li>
                     <li>Web Audio with 3D spatial sound</li>
@@ -167,6 +255,8 @@ import gallery from '../carousels/gallery.json'
                     <li>Camera system with effects (shake, fade, flash)</li>
                     <li>UI toolkit with drag-and-drop support</li>
                     <li>Tweens, transitions &amp; particle effects</li>
+                    <li>3D mesh rendering with OBJ/MTL model loading &amp; depth testing</li>
+                    <li>Custom shader effects for per-sprite WebGL rendering</li>
                     <li>State manager, asset loader &amp; plugin system</li>
                     <li>
                         Under <a
@@ -183,10 +273,7 @@ import gallery from '../carousels/gallery.json'
                     src="/img/icons/browser_icons.png"
                     alt="browser icons example"
                 />
-                <h2 id="compatible">
-                    <a href="/#compatible" class="anchor">Compatibility</a>
-                </h2>
-                <hr />
+                <h2 id="compatible">Compatibility</h2>
                 <p>Compatible with all major browsers and mobile devices</p>
                 <table class="table browsers">
                     <thead>
@@ -267,12 +354,7 @@ import gallery from '../carousels/gallery.json'
         </div>
 
         <div>
-            <h3 id="third-party">
-                <a href="/#third-party" class="anchor"
-                    >Third Party Tools Integration</a
-                >
-            </h3>
-            <hr />
+            <h2 id="third-party">Third Party Tools Integration</h2>
             melonJS provides native integration and support for the following 3rd
             party tools :
             <br />
@@ -347,7 +429,7 @@ import gallery from '../carousels/gallery.json'
                     </a>
                 </li>
                 <li>
-                    <a href="https://discord.gg/aur7JMk" target="_blank"
+                    <a href="https://discord.gg/aur7JMk" target="_blank" rel="noopener noreferrer"
                         ><Icon icon="discord" class="inline" />
                     </a>
                 </li>

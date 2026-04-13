@@ -1,5 +1,7 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
+title: "Part 2: Setting Up the Template — melonJS Platformer Tutorial"
+description: Download and set up the melonJS platformer example project. Get a working HTML5 game running locally in minutes.
 ---
 
 # Part 2: Setting Up the Template

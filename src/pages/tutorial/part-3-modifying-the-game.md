@@ -1,5 +1,7 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
+title: "Part 3: Modifying the Game — melonJS Platformer Tutorial"
+description: Learn how to customize your HTML5 platformer game by modifying art, levels, and code using melonJS, Krita, and Tiled.
 ---
 
 # Part 3: Modifying the game

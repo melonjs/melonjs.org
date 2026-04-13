@@ -2,20 +2,81 @@
 import Header from '../components/Header.astro'
 import '../styles/variables.css'
 import '../styles/global.css'
+
+const siteName = 'melonJS'
+const siteUrl = 'https://melonjs.org'
+const defaultDescription =
+    'melonJS is a free, open-source HTML5 game engine for building 2D games with JavaScript and TypeScript. Lightweight, fast, and dependency-free.'
+const defaultTitle =
+    'melonJS — A Modern & Lightweight HTML5 Game Engine'
+const ogImage = `${siteUrl}/img/banner.png`
+
 const {
-    description = 'melonJS is an open source HTML5 game engine',
-    title = 'melonJS',
+    description = defaultDescription,
+    title = defaultTitle,
+    image = ogImage,
 } = Astro.props
+
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href
+
+const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'melonJS',
+    description: defaultDescription,
+    url: siteUrl,
+    applicationCategory: 'Game Engine',
+    operatingSystem: 'Web Browser',
+    offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+    },
+    license: 'https://opensource.org/licenses/MIT',
+    author: {
+        '@type': 'Organization',
+        name: 'AltByte Pte Ltd',
+        url: 'https://www.altbyte.com',
+    },
+    programmingLanguage: ['JavaScript', 'TypeScript'],
+}
 ---
 
 <html lang="en">
     <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="HTML5 game engine, JavaScript game engine, TypeScript game engine, 2D game engine, WebGL game engine, melonJS, open source game engine, browser game engine, Tiled map editor, indie game development" />
+        <meta name="theme-color" content="#202020" />
+        <link rel="canonical" href={canonicalUrl} />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        <meta property="og:site_name" content={siteName} />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+
+        <!-- Favicon -->
         <link rel="icon" href="/img/favicon.svg" />
+        <link rel="apple-touch-icon" href="/img/banner.png" />
+
+        <!-- Preconnect to external origins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <!-- Structured Data -->
+        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     </head>
     <body>
         <Header />

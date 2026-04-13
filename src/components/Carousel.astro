@@ -3,25 +3,113 @@ import '../styles/carousel.css'
 const { entries } = Astro.props
 ---
 
-<div class="carousel" data-entries={JSON.stringify(entries)}>
-    <div class="inner" set:html={entries[0]} />
-    <img class="left" alt="left" src="/img/right-arrow.svg" />
-    <img class="right" alt="right" src="/img/right-arrow.svg" />
+<div class="showcase" data-entries={JSON.stringify(entries)}>
+    <div class="showcase-viewport">
+        <div class="showcase-slide active" set:html={entries[0]} />
+        <div class="showcase-slide" />
+    </div>
+
+    <button class="showcase-arrow showcase-prev" aria-label="Previous game">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M13 4L7 10L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+    <button class="showcase-arrow showcase-next" aria-label="Next game">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <div class="showcase-dots">
+        {entries.map((_: string, i: number) => (
+            <button
+                class={`showcase-dot ${i === 0 ? 'active' : ''}`}
+                data-index={i}
+                aria-label={`Go to slide ${i + 1}`}
+            />
+        ))}
+    </div>
 </div>
 
 <script>
-    const carousel = document.querySelector('.carousel')
-    const inner = carousel.querySelector('.inner')
-    const entries = JSON.parse(carousel.dataset.entries)
-    let position = 0
+    const showcase = document.querySelector('.showcase')
+    if (showcase) {
+        const entries = JSON.parse(showcase.dataset.entries)
+        const slides = showcase.querySelectorAll('.showcase-slide')
+        const dots = showcase.querySelectorAll('.showcase-dot')
+        let current = 0
+        let transitioning = false
+        let autoTimer = null
+        const INTERVAL = 6000
 
-    carousel.querySelector('.left').addEventListener('click', () => {
-        position = (position - 1 + entries.length) % entries.length
-        inner.innerHTML = entries[position]
-    })
+        function goTo(index) {
+            if (transitioning || index === current) return
+            transitioning = true
 
-    carousel.querySelector('.right').addEventListener('click', () => {
-        position = (position + 1) % entries.length
-        inner.innerHTML = entries[position]
-    })
+            const outSlide = slides[0].classList.contains('active') ? slides[0] : slides[1]
+            const inSlide = outSlide === slides[0] ? slides[1] : slides[0]
+
+            inSlide.innerHTML = entries[index]
+            inSlide.classList.add('next')
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    outSlide.classList.remove('active')
+                    outSlide.classList.add('out')
+                    inSlide.classList.remove('next')
+                    inSlide.classList.add('active')
+
+                    dots[current].classList.remove('active')
+                    dots[index].classList.remove('active')
+                    dots[index].classList.add('active')
+                    current = index
+
+                    setTimeout(() => {
+                        outSlide.classList.remove('out')
+                        outSlide.innerHTML = ''
+                        transitioning = false
+                    }, 600)
+                })
+            })
+        }
+
+        function next() {
+            goTo((current + 1) % entries.length)
+        }
+
+        function prev() {
+            goTo((current - 1 + entries.length) % entries.length)
+        }
+
+        function startAuto() {
+            stopAuto()
+            autoTimer = setInterval(next, INTERVAL)
+        }
+
+        function stopAuto() {
+            if (autoTimer) clearInterval(autoTimer)
+        }
+
+        showcase.querySelector('.showcase-next').addEventListener('click', () => {
+            next()
+            startAuto()
+        })
+
+        showcase.querySelector('.showcase-prev').addEventListener('click', () => {
+            prev()
+            startAuto()
+        })
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                goTo(i)
+                startAuto()
+            })
+        })
+
+        showcase.addEventListener('mouseenter', stopAuto)
+        showcase.addEventListener('mouseleave', startAuto)
+
+        startAuto()
+    }
 </script>

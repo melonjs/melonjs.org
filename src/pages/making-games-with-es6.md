@@ -1,5 +1,7 @@
 ---
 layout: ../layouts/MDLayout.astro
+title: Making Your Own HTML5 Game with melonJS & ES6 — melonJS
+description: Step-by-step guide to creating your own HTML5 game using the melonJS game engine with modern ES6 JavaScript and the boilerplate template.
 ---
 
 # Making your own game
