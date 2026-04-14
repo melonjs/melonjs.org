@@ -42,7 +42,12 @@
 
     & > a:first-child {
         padding-bottom: 1rem;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.3) 60%,
+            transparent 100%
+        );
         font-size: 1.3em;
         letter-spacing: -0.01em;
         transition: color 0.2s ease;
@@ -132,7 +137,10 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.25s ease, background 0.2s ease, transform 0.2s ease;
+    transition:
+        opacity 0.25s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
 
     &:hover {
         background: rgba(0, 0, 0, 0.6);
@@ -172,7 +180,9 @@
     background: rgba(255, 255, 255, 0.3);
     cursor: pointer;
     padding: 0;
-    transition: background 0.25s ease, transform 0.2s ease;
+    transition:
+        background 0.25s ease,
+        transform 0.2s ease;
 
     &:hover {
         background: rgba(255, 255, 255, 0.6);

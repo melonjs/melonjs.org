@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
-title: "Part 1: Prerequisites — melonJS Platformer Tutorial"
+title: 'Part 1: Prerequisites — melonJS Platformer Tutorial'
 description: Install the free tools you need to start building HTML5 games with melonJS — VS Code, Tiled map editor, Krita, and Node.js.
 ---
 

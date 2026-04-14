@@ -165,7 +165,9 @@ main {
         border-radius: 8px;
         font-size: 0.95em;
         font-weight: 600;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        transition:
+            transform 0.15s ease,
+            box-shadow 0.15s ease;
 
         &:hover {
             transform: translateY(-1px);
@@ -277,7 +279,12 @@ main {
     }
 
     & hr {
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            transparent
+        );
         height: 1px;
         border: none;
         margin-bottom: 1.5rem;
@@ -293,7 +300,9 @@ main {
         & a {
             display: inline-block;
             line-height: 0;
-            transition: transform 0.15s ease, opacity 0.15s ease;
+            transition:
+                transform 0.15s ease,
+                opacity 0.15s ease;
 
             &:hover {
                 transform: translateY(-1px);
@@ -323,7 +332,10 @@ main {
         border: 1px solid rgba(255, 255, 255, 0.07);
         border-radius: 12px;
         padding: 2rem 1.75rem;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            border-color 0.2s ease;
 
         &:hover {
             transform: translateY(-3px);
@@ -337,7 +349,11 @@ main {
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--dark-green), var(--light-green));
+            background: linear-gradient(
+                90deg,
+                var(--dark-green),
+                var(--light-green)
+            );
             opacity: 0.7;
         }
 
@@ -390,7 +406,8 @@ main {
         padding: 1.5rem 2rem;
         border-radius: 10px;
         overflow-x: auto;
-        font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+        font-family:
+            'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
         font-size: 0.9em;
         line-height: 1.75;
         margin: 1.25rem auto;
