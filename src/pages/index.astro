@@ -173,30 +173,59 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
 
         <div class="why-section">
             <h2 id="why">Why melonJS?</h2>
+            <p class="why-lead">
+                melonJS is designed so you can focus on making games, not on graphics plumbing.
+            </p>
             <div class="why-cards">
                 <div class="why-card">
                     <div class="why-card-accent"></div>
                     <h3>Canvas2D-Inspired API</h3>
                     <p>
-                        The rendering system follows familiar HTML5 Canvas patterns &mdash;
-                        <code>save</code>, <code>restore</code>, <code>translate</code>, <code>rotate</code>.
-                        If you've used the Canvas API, you already know melonJS.
+                        If you've used the HTML5 Canvas, you already know melonJS. The rendering API
+                        (<code>save</code>, <code>restore</code>, <code>translate</code>, <code>rotate</code>, <code>setColor</code>, <code>fillRect</code>, ...)
+                        follows the same familiar patterns &mdash; no render graphs, no shader pipelines, no instruction sets to learn.
                     </p>
                 </div>
                 <div class="why-card">
                     <div class="why-card-accent"></div>
                     <h3>True Renderer Abstraction</h3>
                     <p>
-                        Write your game once, run it on WebGL or Canvas2D.
-                        Automatic GPU fallback with zero code changes required.
+                        Write your game once, run it on WebGL or Canvas2D with zero code changes. The engine handles all
+                        GPU complexity behind a unified API, with automatic fallback when WebGL is not available.
+                        Designed to support future backends (WebGPU) without touching game code.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>Complete Engine, Minimal Footprint</h3>
+                    <p>
+                        Physics, tilemaps, audio, input, cameras, tweens, particles, UI &mdash; a full 2D game stack
+                        in a single tree-shakeable ES module. No dependency sprawl, no library stitching.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>Tiled as a First-Class Citizen</h3>
+                    <p>
+                        Deep <a href="https://www.mapeditor.org">Tiled</a> integration built into the core: orthogonal,
+                        isometric, hexagonal and staggered maps, animated tilesets, collision shapes, object properties,
+                        compressed formats &mdash; all parsed and rendered natively.
                     </p>
                 </div>
                 <div class="why-card">
                     <div class="why-card-accent"></div>
                     <h3>Batteries Included</h3>
                     <p>
-                        Physics, tilemaps, 3D mesh rendering, custom shaders, spatial audio,
-                        particles and UI &mdash; all in one package with no external dependencies.
+                        Get started in minutes with minimal setup. Sprites, animations, 3D mesh rendering,
+                        built-in &amp; custom shaders, spatial audio and particle effects &mdash; ready to use out of the box.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>Hackable by Design</h3>
+                    <p>
+                        ES6 classes throughout, a plugin system for engine extensions, and a clean architecture
+                        that's easy to extend without fighting the framework. Go as deep as you need.
                     </p>
                 </div>
             </div>
@@ -250,13 +279,13 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     <li>Web Audio with 3D spatial sound</li>
                     <li>Sprites, animations, tinting, masking &amp; 2D lighting</li>
                     <li>Built-in 2D physics &amp; collision detection</li>
-                    <li>Tiled map editor integration (orthogonal, isometric, hexagonal)</li>
+                    <li>Full <a href="https://www.mapeditor.org">Tiled</a> map editor integration &mdash; every feature supported (any map format, animated tilesets, custom properties, parallax layers)</li>
                     <li>Multi-input: mouse, touch, keyboard, gamepad &amp; accelerometer</li>
                     <li>Camera system with effects (shake, fade, flash)</li>
                     <li>UI toolkit with drag-and-drop support</li>
                     <li>Tweens, transitions &amp; particle effects</li>
                     <li>3D mesh rendering with OBJ/MTL model loading &amp; depth testing</li>
-                    <li>Custom shader effects for per-sprite WebGL rendering</li>
+                    <li>Built-in &amp; custom shader effects for per-sprite WebGL rendering</li>
                     <li>State manager, asset loader &amp; plugin system</li>
                     <li>
                         Under <a
@@ -369,7 +398,15 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     <a href="https://www.codeandweb.com/texturepacker">
                         <img
                             alt="TexturePacker"
-                            src="https://user-images.githubusercontent.com/4033090/136762472-bc55a638-c69b-4ff5-9d03-c684c8bea0ea.png"
+                            src="https://github.com/melonjs/melonJS/raw/master/media/icons/texturepacker.svg"
+                        />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.codeandweb.com/spriteilluminator">
+                        <img
+                            alt="SpriteIlluminator"
+                            src="https://github.com/melonjs/melonJS/raw/master/media/icons/spriteilluminator.svg"
                         />
                     </a>
                 </li>
@@ -385,7 +422,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     <a href="https://www.codeandweb.com/physicseditor">
                         <img
                             alt="Physics Editor"
-                            src="https://user-images.githubusercontent.com/4033090/136762890-b1010c7f-cb19-4d35-a3f1-f5048db07835.png"
+                            src="https://github.com/melonjs/melonJS/raw/master/media/icons/physicseditor.svg"
                         />
                     </a>
                 </li>

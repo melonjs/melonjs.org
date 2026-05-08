@@ -334,6 +334,17 @@ main {
     }
 
     & .why-section {
+        & h2 {
+            text-align: center;
+        }
+    }
+
+    & .why-lead {
+        font-size: 1.15em;
+        max-width: 60ch;
+        margin: 0 auto 2rem;
+        text-align: center;
+        opacity: 0.85;
     }
 
     & .why-cards {

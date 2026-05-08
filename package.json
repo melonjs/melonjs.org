@@ -30,14 +30,14 @@
     "build": "prettier --write ./src && rm -rf ./docs && astro build && mv ./dist ./docs"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.7.0",
-    "astro": "^5.18.0",
+    "@astrojs/sitemap": "^3.7.2",
+    "astro": "^6.3.1",
     "node-html-parser": "^7.1.0",
-    "prettier": "3.8.1",
+    "prettier": "3.8.3",
     "prettier-plugin-astro": "^0.14.1"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.13"
+    "@astrojs/mdx": "^5.0.4"
   },
   "packageManager": "npm@11.11.0"
 }
