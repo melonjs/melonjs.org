@@ -32,7 +32,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
 
 <BaseLayout
     title="melonJS — A Modern & Lightweight HTML5 Game Engine"
-    description="Build 2D games with melonJS, a free open-source HTML5 game engine. Fast WebGL rendering, Tiled map support, and zero dependencies under 100kb."
+    description="Build 2.5D games with melonJS, an open-source HTML5 engine. WebGL/Canvas, GPU tilemaps, 3D mesh, Light2d, Tiled, ~150 KB minzipped."
 >
     <style>
         main {
@@ -84,9 +84,12 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                 />
                 <h1>A modern &amp; lightweight HTML5 game engine</h1>
                 <p>
-                    melonJS is an open-source HTML5 game engine for building
-                    2D games with JavaScript and TypeScript. Lightweight,
-                    dependency-free, and under 100kb gzipped.
+                    melonJS is an open-source 2.5D game engine for indie
+                    developers &mdash; perspective and orthogonal cameras,
+                    GPU-accelerated tilemap rendering, 3D mesh support,
+                    Light2d, and polygon-accurate physics. Runs on WebGL or
+                    Canvas2D, tree-shakeable, and ~150&nbsp;KB minzipped of
+                    vanilla JS/TS.
                 </p>
                 <div class="badges">
                     <a href="https://www.npmjs.com/package/melonjs">
@@ -164,9 +167,9 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                 <h2>Standalone</h2>
                 <p>
                     Zero dependencies. Compatible with all major browsers
-                    and mobile devices. Under
-                    <a href="https://bundlephobia.com/result?p=melonjs@latest">100kb</a>
-                    gzipped.
+                    and mobile devices. ~150&nbsp;KB
+                    <a href="https://bundlephobia.com/result?p=melonjs@latest">minzipped</a>
+                    &mdash; tree-shakeable, so you only pay for what you use.
                 </p>
             </div>
         </div>
@@ -199,7 +202,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     <div class="why-card-accent"></div>
                     <h3>Complete Engine, Minimal Footprint</h3>
                     <p>
-                        Physics, tilemaps, audio, input, cameras, tweens, particles, UI &mdash; a full 2D game stack
+                        Physics, tilemaps, audio, input, cameras, tweens, particles, UI &mdash; a full game stack
                         in a single tree-shakeable ES module. No dependency sprawl, no library stitching.
                     </p>
                 </div>
@@ -275,22 +278,24 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             <div>
                 <h2 id="features">Features</h2>
                 <ul>
-                    <li>Fast WebGL &amp; Canvas rendering across desktop and mobile</li>
-                    <li>Web Audio with 3D spatial sound</li>
-                    <li>Sprites, animations, tinting, masking &amp; 2D lighting</li>
-                    <li>Built-in 2D physics &amp; collision detection</li>
-                    <li>Full <a href="https://www.mapeditor.org">Tiled</a> map editor integration &mdash; every feature supported (any map format, animated tilesets, custom properties, parallax layers)</li>
+                    <li>Fast WebGL &amp; Canvas rendering across desktop and mobile, with automatic fallback</li>
+                    <li><strong>GPU-accelerated tile rendering</strong> for orthogonal Tiled maps under WebGL 2 &mdash; one quad per layer, no per-tile loop</li>
+                    <li>Optional <strong>perspective camera</strong> (<code>Camera3d</code>) with frustum culling for 2.5D / projected scenes</li>
+                    <li><strong>3D mesh rendering</strong> with OBJ/MTL loading, multi-material support, and hardware depth testing</li>
+                    <li><strong><code>Light2d</code></strong> as a first-class renderable &mdash; multi-light, radial-gradient falloff, illumination-only mode, normal-map sprite shading</li>
+                    <li>Per-camera <strong>post-processing</strong> with stackable shader effects (Flash, Outline, Glow, CRT, Hologram, ColorMatrix) and custom <code>ShaderEffect</code> per-sprite fragment effects</li>
+                    <li>Physics: polygon SAT collision, QuadTree/Octree broad-phase (auto-swapped 2D&#8596;3D), 2D &amp; 3D raycasts, plus pluggable adapters (<a href="https://www.npmjs.com/package/@melonjs/matter-adapter">Matter</a> / <a href="https://www.npmjs.com/package/@melonjs/planck-adapter">Planck</a>)</li>
+                    <li>Full <a href="https://www.mapeditor.org">Tiled</a> map editor integration &mdash; every feature supported (any map format, animated tilesets, custom properties, parallax layers, native <code>.aseprite</code> tilesets)</li>
+                    <li>Web Audio with 3D spatial sound, stereo panning, and procedural audio primitives (oscillators, noise) for SFX without sample assets</li>
                     <li>Multi-input: mouse, touch, keyboard, gamepad &amp; accelerometer</li>
-                    <li>Camera system with effects (shake, fade, flash)</li>
-                    <li>UI toolkit with drag-and-drop support</li>
+                    <li>UI toolkit with drag-and-drop, hover/press buttons, and bitmap-font text</li>
                     <li>Tweens, transitions &amp; particle effects</li>
-                    <li>3D mesh rendering with OBJ/MTL model loading &amp; depth testing</li>
-                    <li>Built-in &amp; custom shader effects for per-sprite WebGL rendering</li>
+                    <li><a href="https://www.npmjs.com/package/@melonjs/spine-plugin">Spine 4.3</a> runtime integration via the official plugin</li>
                     <li>State manager, asset loader &amp; plugin system</li>
                     <li>
-                        Under <a
+                        ~150&nbsp;KB <a
                             href="https://bundlephobia.com/result?p=melonjs@latest"
-                        >100kb</a> gzipped &mdash; zero dependencies
+                        >minzipped</a> &mdash; tree-shakeable, zero dependencies
                     </li>
                 </ul>
             </div>
@@ -440,6 +445,11 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                             alt="Cordova"
                             src="https://user-images.githubusercontent.com/4033090/136763147-6d157ce6-6921-437e-bb8f-0287b86109da.png"
                         />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://capacitorjs.com">
+                        <img alt="Capacitor" src="https://github.com/melonjs/melonJS/raw/master/media/icons/capacitor.svg">
                     </a>
                 </li>
                 <li>
