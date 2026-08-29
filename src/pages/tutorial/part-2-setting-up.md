@@ -7,7 +7,7 @@ description: Download and set up the melonJS platformer example project. Get a w
 # Part 2: Setting Up the Template
 
 First, go to https://github.com/melonjs/examples and download the repository, by clicking on "Code" and then "Download ZIP" :
-![Download the example repository](/img/tutorial/part2-download-the-repository.png)
+![Download the example repository](../../assets/tutorial/part2-download-the-repository.png)
 
 Optionally you can also clone the repository if you are already familiar with Git, but won't cover that part in this tutorial.
 

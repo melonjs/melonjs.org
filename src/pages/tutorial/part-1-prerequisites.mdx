@@ -4,6 +4,11 @@ title: 'Part 1: Prerequisites — melonJS Platformer Tutorial'
 description: Install the free tools you need to start building HTML5 games with melonJS — VS Code, Tiled map editor, Krita, and Node.js.
 ---
 
+import { Image } from 'astro:assets'
+import tiledLogo from '../../assets/tutorial/tiled-logo-header.png'
+import vscodeLogo from '../../assets/tutorial/visualstudiocode-logo.png'
+import kritaLogo from '../../assets/tutorial/krita-logo.png'
+
 # Part 1: Prerequisites
 
 ## Software to Install
@@ -12,13 +17,19 @@ Before we continue you will need to install the following software. All of these
 
 <ul class="display">
     <li>
-        <a href="http://www.mapeditor.org/"><img alt="Tiled map editor logo" src="/img/tutorial/tiled-logo-header.png"/></a>
+        <a href="http://www.mapeditor.org/">
+            <Image alt="Tiled map editor logo" src={tiledLogo} />
+        </a>
     </li>
     <li>
-        <a href="https://code.visualstudio.com/"><img alt="Visual Studio Code logo" src="/img/tutorial/visualstudiocode-logo.png"/></a>
+        <a href="https://code.visualstudio.com/">
+            <Image alt="Visual Studio Code logo" src={vscodeLogo} />
+        </a>
     </li>
     <li>
-        <a href="https://krita.org/en/"><img alt="Krita logo" class="krita" src="/img/tutorial/krita-logo.png"/></a>
+        <a href="https://krita.org/en/">
+            <Image alt="Krita logo" class="krita" src={kritaLogo} />
+        </a>
     </li>
 </ul>
 
@@ -26,4 +37,6 @@ Before we continue you will need to install the following software. All of these
 
 You will need to [be familiar with how to use the terminal](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955), and know [how to use VSCode](https://code.visualstudio.com/docs/introvideos/basics) too, also a [basic understanding of JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) will be necessary.
 
-<a href="/tutorial/part-2-setting-up" class="next">Up Next: Setting Up the Template</a>
+<a href="/tutorial/part-2-setting-up" class="next">
+    {'Up Next: Setting Up the Template'}
+</a>

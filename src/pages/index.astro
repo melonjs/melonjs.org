@@ -5,6 +5,8 @@ import '../styles/index.css'
 import Icon from '../components/Icon.astro'
 import Carousel from '../components/Carousel.astro'
 import gallery from '../carousels/gallery.json'
+import { Image } from 'astro:assets'
+import browserIcons from '../assets/browser_icons.png'
 
 const scaffoldCode = `npm create melonjs@latest my-game
 cd my-game
@@ -312,10 +314,10 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             </div>
 
             <div>
-                <img
+                <Image
                     class="right no-mobile"
-                    width="150"
-                    src="/img/icons/browser_icons.png"
+                    width={150}
+                    src={browserIcons}
                     alt="browser icons example"
                 />
                 <h2 id="compatible">Compatibility</h2>
