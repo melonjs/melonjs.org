@@ -1,38 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    width="387.89975mm"
    height="289.18414mm"
    viewBox="0 0 387.89976 289.18415"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
-   sodipodi:docname="art-chart.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="0.5946522"
-     inkscape:cx="769.35728"
-     inkscape:cy="682.75204"
-     inkscape:window-width="1680"
-     inkscape:window-height="1050"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
+   xmlns="http://www.w3.org/2000/svg">
   <defs
      id="defs2">
     <rect
@@ -61,26 +33,21 @@
        id="rect16997-0-3" />
   </defs>
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
      id="layer1"
      transform="translate(76.542937,-0.71935)">
     <g
        id="g28462"
-       inkscape:label="venn"
        transform="translate(0,-35.150098)">
       <path
          id="path186-9-9"
          style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#474747;stroke-width:6.485;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-         d="m 172.59212,152.25243 a 48.498238,48.498238 0 0 1 -48.49824,48.49823 48.498238,48.498238 0 0 1 -48.498238,-48.49823 48.498238,48.498238 0 0 1 48.498238,-48.49824 48.498238,48.498238 0 0 1 48.49824,48.49824 z m -33.81527,1.3348 A 48.498238,48.498238 0 0 1 90.27861,202.08547 48.498238,48.498238 0 0 1 41.780373,153.58723 48.498238,48.498238 0 0 1 90.27861,105.089 a 48.498238,48.498238 0 0 1 48.49824,48.49823 z m 16.90764,-23.58171 a 48.498238,48.498238 0 0 1 -48.49824,48.49824 48.498238,48.498238 0 0 1 -48.498239,-48.49824 48.498238,48.498238 0 0 1 48.498239,-48.498234 48.498238,48.498238 0 0 1 48.49824,48.498234 z"
-         inkscape:label="path186-9-9" />
+         d="m 172.59212,152.25243 a 48.498238,48.498238 0 0 1 -48.49824,48.49823 48.498238,48.498238 0 0 1 -48.498238,-48.49823 48.498238,48.498238 0 0 1 48.498238,-48.49824 48.498238,48.498238 0 0 1 48.49824,48.49824 z m -33.81527,1.3348 A 48.498238,48.498238 0 0 1 90.27861,202.08547 48.498238,48.498238 0 0 1 41.780373,153.58723 48.498238,48.498238 0 0 1 90.27861,105.089 a 48.498238,48.498238 0 0 1 48.49824,48.49823 z m 16.90764,-23.58171 a 48.498238,48.498238 0 0 1 -48.49824,48.49824 48.498238,48.498238 0 0 1 -48.498239,-48.49824 48.498238,48.498238 0 0 1 48.498239,-48.498234 48.498238,48.498238 0 0 1 48.49824,48.498234 z" />
       <circle
          style="fill:#5cff78;fill-opacity:0.33;stroke-width:12.8854;stroke-linecap:round;stroke-linejoin:round"
          id="path186"
          cx="107.18625"
          cy="130.00552"
-         r="48.498238"
-         inkscape:label="path186" />
+         r="48.498238" />
       <circle
          style="fill:#ff5cb4;fill-opacity:0.33;stroke-width:12.8854;stroke-linecap:round;stroke-linejoin:round"
          id="path186-97"
@@ -124,7 +91,6 @@
     </g>
     <g
        id="g33365"
-       inkscape:label="labels"
        transform="translate(0,-35.150098)">
       <g
          aria-label="Free"
@@ -177,8 +143,7 @@
          aria-label="Pixel  Art"
          transform="rotate(18.651495)"
          id="text1741-8"
-         style="font-size:42.3333px;font-family:'Cormorant SC';-inkscape-font-specification:'Cormorant SC';display:inline;fill:#5cc2ff;fill-opacity:0.99723;stroke:#4d6f84;stroke-width:1.454;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-         inkscape:label="text1741-8">
+         style="font-size:42.3333px;font-family:'Cormorant SC';-inkscape-font-specification:'Cormorant SC';display:inline;fill:#5cc2ff;fill-opacity:0.99723;stroke:#4d6f84;stroke-width:1.454;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1">
         <path
            d="m 228.9228,79.156495 q 0,1.6256 0.3556,2.3876 0.4064,0.7112 1.4732,1.016 1.1176,0.3048 3.4544,0.3048 0.1524,0 0.1524,0.3048 0,0.3048 -0.1524,0.3048 -2.0828,0 -3.2512,-0.0508 l -4.4196,-0.0508 -3.6576,0.0508 q -0.9652,0.0508 -2.6416,0.0508 -0.1524,0 -0.1524,-0.3048 0,-0.3048 0.1524,-0.3048 1.7272,0 2.4892,-0.254 0.762,-0.254 1.016,-0.9652 0.3048,-0.7112 0.3048,-2.286 v -23.5204 q 0,-1.524 -0.3048,-2.2352 -0.254,-0.7112 -1.0668,-0.9652 -0.762,-0.3048 -2.4384,-0.3048 -0.1524,0 -0.1524,-0.3048 0,-0.3048 0.1524,-0.3048 l 2.6416,0.0508 q 2.2352,0.1016 3.6068,0.1016 1.1684,0 2.8448,-0.1524 0.6096,-0.0508 1.6256,-0.1016 1.0668,-0.0508 2.4892,-0.0508 5.0292,0 7.9248,2.1336 2.9464,2.1336 2.9464,6.5532 0,3.2004 -1.6764,5.4356 -1.6256,2.2352 -4.2164,3.3528 -2.54,1.1176 -5.2324,1.1176 -1.4224,0 -2.3876,-0.254 -0.1524,0 -0.1524,-0.254 0,-0.1524 0.0508,-0.3048 0.1016,-0.1524 0.2032,-0.1016 0.8128,0.2032 1.778,0.2032 2.6416,0 4.4704,-2.1844 1.8288,-2.1844 1.8288,-6.2484 0,-4.0132 -1.8796,-6.1976 -1.8796,-2.2352 -5.1816,-2.2352 -1.2192,0 -1.8796,0.254 -0.6096,0.254 -0.8636,0.9652 -0.254,0.6604 -0.254,2.1336 z"
            style="font-weight:600;font-size:50.8px;-inkscape-font-specification:'Cormorant SC Semi-Bold';stroke:#4d6f84;stroke-opacity:1"
@@ -214,13 +179,10 @@
       </g>
     </g>
     <g
-       id="g33355"
-       inkscape:label="key">
+       id="g33355">
       <path
          id="path8509-9-0-8"
          style="display:inline;fill:#c8b9e5;stroke:#583996;stroke-width:1.154;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.154, 2.308;stroke-opacity:1"
-         inkscape:transform-center-x="56.566034"
-         inkscape:transform-center-y="32.898933"
          d="m 134.23389,275.53864 a 4.0934291,4.0934291 0 0 1 -4.09343,4.09342 4.0934291,4.0934291 0 0 1 -4.09343,-4.09342 4.0934291,4.0934291 0 0 1 4.09343,-4.09343 4.0934291,4.0934291 0 0 1 4.09343,4.09343 z" />
       <path
          id="path8509-1-2"

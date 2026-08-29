@@ -6,5 +6,6 @@ import mdx from '@astrojs/mdx'
 export default defineConfig({
     site: 'https://melonjs.org',
     trailingSlash: 'always',
+    prefetch: true,
     integrations: [mdx(), sitemap()],
 })
