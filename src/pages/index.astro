@@ -19,6 +19,9 @@ const helloCode = `<span class="kw">import</span> { Application, Text } <span cl
     scale: <span class="str">"auto"</span>,
 });
 
+<span class="cmt">// initialize it (builds the renderer and appends the canvas)</span>
+<span class="kw">await</span> app.init();
+
 <span class="cmt">// add a text display object</span>
 app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>, <span class="num">281</span>, {
     font: <span class="str">"Arial"</span>,
@@ -32,7 +35,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
 
 <BaseLayout
     title="melonJS — A Modern & Lightweight HTML5 Game Engine"
-    description="Build 2.5D games with melonJS, an open-source HTML5 engine. WebGL/Canvas, GPU tilemaps, 3D mesh, Light2d, Tiled, ~150 KB minzipped."
+    description="Build 2.5D games with melonJS, an open-source HTML5 engine. WebGPU, WebGL 2 or Canvas2D, GPU tilemaps, 3D mesh &amp; glTF scenes, Tiled, ~150 KB minzipped."
 >
     <style>
         main {
@@ -86,10 +89,12 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                 <p>
                     melonJS is an open-source 2.5D game engine for indie
                     developers &mdash; perspective and orthogonal cameras,
-                    GPU-accelerated tilemap rendering, 3D mesh support,
-                    Light2d, and polygon-accurate physics. Runs on WebGL or
-                    Canvas2D, tree-shakeable, and ~150&nbsp;KB minzipped of
-                    vanilla JS/TS.
+                    GPU-accelerated tilemap rendering, 3D mesh &amp; glTF
+                    scenes, post-processing and custom shaders, and
+                    polygon-accurate physics. Runs on <strong>WebGPU</strong>,
+                    WebGL&nbsp;2 or Canvas2D with automatic fallback,
+                    tree-shakeable, and ~150&nbsp;KB minzipped of vanilla
+                    JS/TS.
                 </p>
                 <div class="badges">
                     <a href="https://www.npmjs.com/package/melonjs">
@@ -157,7 +162,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
         <div class="row three highlights">
             <div>
                 <h2>Fast</h2>
-                <p>Modern ES6 architecture. WebGL renderer with Canvas fallback. Web Audio with 3D spatial sound.</p>
+                <p>Modern ES6 architecture. WebGPU and WebGL&nbsp;2 renderers with Canvas fallback. Web Audio with 3D spatial sound.</p>
             </div>
             <div>
                 <h2>Free</h2>
@@ -191,11 +196,12 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                 </div>
                 <div class="why-card">
                     <div class="why-card-accent"></div>
-                    <h3>True Renderer Abstraction</h3>
+                    <h3>WebGPU, WebGL 2 or Canvas2D</h3>
                     <p>
-                        Write your game once, run it on WebGL or Canvas2D with zero code changes. The engine handles all
-                        GPU complexity behind a unified API, with automatic fallback when WebGL is not available.
-                        Designed to support future backends (WebGPU) without touching game code.
+                        Write your game once, run it on any backend with zero code changes. The default
+                        <code>AUTO</code> mode tries <strong>WebGPU</strong> first, falls back to WebGL&nbsp;2, and
+                        ultimately to Canvas &mdash; and the entire feature set renders identically on both GPU
+                        backends.
                     </p>
                 </div>
                 <div class="why-card">
@@ -208,19 +214,22 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                 </div>
                 <div class="why-card">
                     <div class="why-card-accent"></div>
-                    <h3>Tiled as a First-Class Citizen</h3>
+                    <h3>Scenes, Loaded in One Call</h3>
                     <p>
-                        Deep <a href="https://www.mapeditor.org">Tiled</a> integration built into the core: orthogonal,
-                        isometric, hexagonal and staggered maps, animated tilesets, collision shapes, object properties,
-                        compressed formats &mdash; all parsed and rendered natively.
+                        <code>level.load(name)</code> brings an authored scene straight into your world.
+                        <a href="https://www.mapeditor.org">Tiled</a> is a first-class citizen for 2D, and
+                        <strong>glTF / GLB</strong> is its equivalent for <strong>3D</strong>: author in Blender,
+                        export a <code>.glb</code>, and the whole scene &mdash; meshes, materials, cameras, lights
+                        and node animation &mdash; loads under a <code>Camera3d</code>.
                     </p>
                 </div>
                 <div class="why-card">
                     <div class="why-card-accent"></div>
                     <h3>Batteries Included</h3>
                     <p>
-                        Get started in minutes with minimal setup. Sprites, animations, 3D mesh rendering,
-                        built-in &amp; custom shaders, spatial audio and particle effects &mdash; ready to use out of the box.
+                        Get started in minutes with minimal setup. Sprites, animations, 3D meshes with dynamic
+                        lighting and ground shadows, built-in &amp; custom shaders, spatial audio and particle
+                        effects &mdash; ready to use out of the box.
                     </p>
                 </div>
                 <div class="why-card">
@@ -278,12 +287,14 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             <div>
                 <h2 id="features">Features</h2>
                 <ul>
-                    <li>Fast WebGL &amp; Canvas rendering across desktop and mobile, with automatic fallback</li>
-                    <li><strong>GPU-accelerated tile rendering</strong> for orthogonal Tiled maps under WebGL 2 &mdash; one quad per layer, no per-tile loop</li>
-                    <li>Optional <strong>perspective camera</strong> (<code>Camera3d</code>) with frustum culling for 2.5D / projected scenes</li>
+                    <li>Fast <strong>WebGPU</strong> &amp; <strong>WebGL&nbsp;2</strong> renderers across desktop and mobile, with automatic fallback to Canvas</li>
+                    <li><strong>GPU-accelerated tile rendering</strong> for orthogonal Tiled maps on both GPU backends &mdash; one quad per layer, no per-tile loop</li>
+                    <li>Optional <strong>perspective camera</strong> (<code>Camera3d</code>) with frustum culling for 2.5D / 3D-projected scenes</li>
                     <li><strong>3D mesh rendering</strong> with OBJ/MTL loading, multi-material support, and hardware depth testing</li>
+                    <li><strong>glTF / GLB 3D scenes</strong> loaded with a single <code>level.load()</code> &mdash; meshes, materials, cameras, lights and node animation, played through the same API as a 2D <code>Sprite</code></li>
+                    <li><strong>3D lighting</strong> (<code>Light3d</code> directional, point, spot &amp; ambient, up to 32 lights) with ground shadows on by default</li>
                     <li><strong><code>Light2d</code></strong> as a first-class renderable &mdash; multi-light, radial-gradient falloff, illumination-only mode, normal-map sprite shading</li>
-                    <li>Per-camera <strong>post-processing</strong> with stackable shader effects (Flash, Outline, Glow, CRT, Hologram, ColorMatrix) and custom <code>ShaderEffect</code> per-sprite fragment effects</li>
+                    <li>Per-camera <strong>post-processing</strong> with stackable shader effects (Flash, Outline, Glow, CRT, Hologram, ColorMatrix) and custom <code>ShaderEffect</code> per-sprite fragment effects (GLSL and/or WGSL)</li>
                     <li>Physics: polygon SAT collision, QuadTree/Octree broad-phase (auto-swapped 2D&#8596;3D), 2D &amp; 3D raycasts, plus pluggable adapters (<a href="https://www.npmjs.com/package/@melonjs/matter-adapter">Matter</a> / <a href="https://www.npmjs.com/package/@melonjs/planck-adapter">Planck</a>)</li>
                     <li>Full <a href="https://www.mapeditor.org">Tiled</a> map editor integration &mdash; every feature supported (any map format, animated tilesets, custom properties, parallax layers, native <code>.aseprite</code> tilesets)</li>
                     <li>Web Audio with 3D spatial sound, stereo panning, and procedural audio primitives (oscillators, noise) for SFX without sample assets</li>
