@@ -116,6 +116,16 @@ main {
         }
     }
 
+    & .stack {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    & .compat p + p {
+        margin-top: 1rem;
+    }
+
     & .right {
         float: right;
     }
@@ -247,43 +257,8 @@ main {
         }
     }
 
-    & .table {
-        text-align: center;
-        width: 100%;
-        max-width: 100%;
-
-        & thead th:first-child,
-        & tbody th:first-child {
-            text-align: left;
-        }
-    }
-
-    & .check {
-        color: var(--green);
-    }
-
     & .spotlight {
         position: relative;
-    }
-
-    & .browsers {
-        margin-top: 1.5rem;
-
-        & tbody tr {
-            &:not(:first-child) th,
-            &:not(:first-child) td {
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            & th {
-                color: var(--ocean);
-            }
-
-            & th,
-            & td {
-                padding: 0.6rem 0.5rem;
-            }
-        }
     }
 
     & .quick-start {

@@ -285,7 +285,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             <pre class="code-block"><code set:html={helloCode} /></pre>
         </div>
 
-        <div class="row two">
+        <div class="stack">
             <div>
                 <h2 id="features">Features</h2>
                 <ul>
@@ -313,83 +313,28 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                 </ul>
             </div>
 
-            <div>
+            <div class="compat">
                 <Image
                     class="right no-mobile"
                     width={150}
                     src={browserIcons}
-                    alt="browser icons example"
+                    alt="Chrome, Firefox and Safari logos"
                 />
                 <h2 id="compatible">Compatibility</h2>
-                <p>Compatible with all major browsers and mobile devices</p>
-                <table class="table browsers">
-                    <thead>
-                        <tr><th>Browser</th><th>Version</th><th>Status</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>
-                                <a href="https://www.google.com/chrome/"
-                                    >Chrome / Edge
-                                </a>
-                            </th>
-                            <td>80+</td>
-                            <td
-                                ><span class="check">&#10003;</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th
-                                ><a href="https://www.mozilla.com/">Firefox</a>
-                            </th>
-                            <td>80+</td>
-                            <td
-                                ><span class="check">&#10003;</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th
-                                ><a href="https://www.apple.com/safari/"
-                                    >Safari
-                                </a>
-                            </th>
-                            <td>14+</td>
-                            <td
-                                ><span class="check">&#10003;</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th><a href="https://www.opera.com/">Opera</a></th>
-                            <td>67+</td>
-                            <td
-                                ><span class="check">&#10003;</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th
-                                ><a
-                                    href="https://www.google.com/chrome/browser/mobile/"
-                                    >Chrome Mobile
-                                </a>
-                            </th>
-                            <td>80+</td>
-                            <td
-                                ><span class="check">&#10003;</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th
-                                ><a href="https://www.apple.com/safari/"
-                                    >iOS Safari
-                                </a>
-                            </th>
-                            <td>14+</td>
-                            <td
-                                ><span class="check">&#10003;</span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p>Compatible with all major browsers and mobile devices.</p>
+                <p>
+                    The published bundle targets <strong>ES2022</strong>. A
+                    browser that does not support it cannot parse the file at
+                    all: loading fails with a syntax error and a blank screen,
+                    rather than breaking later when some feature runs.
+                </p>
+                <p>
+                    To support older browsers, transpile melonJS together with
+                    your own code. See <a
+                        href="https://github.com/melonjs/melonJS#supporting-older-browsers"
+                        >Supporting older browsers</a
+                    > in the README.
+                </p>
             </div>
         </div>
 
