@@ -1,11 +1,16 @@
 ---
 import BaseLayout from './BaseLayout.astro'
 import '../styles/markdown.css'
-const { props } = Astro
-const passProps = { ...props?.content }
-delete passProps.astro
+
+// A Markdown/MDX page passes its frontmatter as `Astro.props.frontmatter`;
+// TutorialLayout nests inside this one and forwards title/description directly.
+const {
+    frontmatter,
+    title = frontmatter?.title,
+    description = frontmatter?.description,
+} = Astro.props
 ---
 
-<BaseLayout {...passProps}>
+<BaseLayout {title} {description}>
     <main class="md"><slot /></main>
 </BaseLayout>
