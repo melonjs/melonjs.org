@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
-title: 'Part 4: Going Beyond — melonJS Platformer Tutorial'
+title: 'Part 4: Going Beyond | melonJS Platformer Tutorial'
 description: Next steps after completing the melonJS platformer tutorial. Game design resources, advanced topics, and how to publish your HTML5 game.
 ---
 
