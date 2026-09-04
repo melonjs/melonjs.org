@@ -295,25 +295,65 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                 events, draw order set after <code>addChild</code>.
             </p>
             <p>Install them into whichever agent you use:</p>
-            <pre class="code-block wrap"><code>npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills</code></pre>
+            <div class="terminal">
+                <div class="terminal-bar">
+                    <span class="terminal-dots" aria-hidden="true"
+                        ><i></i><i></i><i></i></span
+                    >
+                    <span class="terminal-title">~/my-game</span>
+                </div>
+                <pre class="terminal-body"><code><span class="sh">$</span> npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills
+<span class="out">&#8226;  Found 23 skills</span>
+<span class="out">&#8226;  Installing all 23 skills</span>
+<span class="out">&#8226;  77 agents</span>
+<span class="out">&#8226;  Installing to: Claude Code</span>
+
+<span class="sh">$</span> claude
+<span class="ask">&gt;</span> Add a bouncing crate with SAT collision to my Tiled level.</code></pre>
+            </div>
             <p>
-                That writes each agent's own convention, so nothing is placed by
-                hand. Claude Code can take them as a plugin instead
-                (<code>/plugin marketplace add melonjs/melonJS</code>), and
-                anything following the <code>AGENTS.md</code> convention, Codex
-                and Cursor and Gemini CLI among them, reads <code
-                    >node_modules/melonjs/skills/AGENTS.md</code
-                > from your project root. The command above installs from
-                <code>master</code>; the npm package carries the copy matching
-                the version you depend on.
+                One command, no config. The skills land in
+                <code>.agents/skills/</code>, the shared location 77 agents read
+                from, and the installer symlinks them into whatever else your
+                editor expects, so nothing is placed by hand.
             </p>
+
+            <div class="ai-routes">
+                <div>
+                    <h3>Claude Code</h3>
+                    <p>
+                        Takes them as a plugin instead, registering the same
+                        guidance as 23 routed skills.
+                    </p>
+                    <pre class="code-block wrap"><code>/plugin marketplace add melonjs/melonJS</code></pre>
+                </div>
+                <div>
+                    <h3>Codex, Cursor, Gemini CLI</h3>
+                    <p>
+                        Anything following the <code>AGENTS.md</code> convention
+                        reads it from your project root. Copy the one that ships
+                        with the package, or paste its sections into yours.
+                    </p>
+                    <pre class="code-block wrap"><code>cp node_modules/melonjs/skills/AGENTS.md .</code></pre>
+                </div>
+                <div>
+                    <h3>Pinned to your release</h3>
+                    <p>
+                        The command above installs from <code>master</code>. The
+                        copy matching the version you depend on ships in the npm
+                        package, one directory per subsystem.
+                    </p>
+                    <pre class="code-block wrap"><code>node_modules/melonjs/skills/</code></pre>
+                </div>
+            </div>
+
             <p>
-                Then just describe what you want. The <code>melonjs</code> skill
-                routes to the guide that fits, out of physics, tilemaps,
-                sprites, 3D scenes, lighting, shaders, audio, input, UI and
-                performance:
+                Then just describe what you want, as above. The
+                <code>melonjs</code> skill routes to the guide that fits, out of
+                physics, tilemaps, sprites, 3D scenes, lighting, shaders, audio,
+                input, UI, performance and the rest, so your agent reads the one
+                or two that matter rather than everything.
             </p>
-            <pre class="code-block"><code>Add a bouncing crate with SAT collision to my Tiled level.</code></pre>
         </div>
 
         <div class="stack">

@@ -130,6 +130,112 @@ main {
         margin-top: 1rem;
     }
 
+    & .terminal {
+        max-width: 860px;
+        margin: 1.5rem 0;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--dark-gray);
+        box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+    }
+
+    & .terminal-bar {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding: 0.65rem 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    & .terminal-dots {
+        display: inline-flex;
+        gap: 0.4rem;
+
+        & i {
+            width: 0.7rem;
+            height: 0.7rem;
+            border-radius: 50%;
+            background: var(--red);
+        }
+
+        & i:nth-child(2) {
+            background: var(--cream);
+        }
+
+        & i:nth-child(3) {
+            background: var(--green);
+        }
+    }
+
+    & .terminal-title {
+        opacity: 0.6;
+        font-family:
+            'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+        font-size: 0.82rem;
+    }
+
+    & .terminal-body {
+        margin: 0;
+        padding: 1.35rem 1.25rem;
+        color: #d4d4d8;
+        white-space: pre-wrap;
+        overflow-wrap: normal;
+        overflow-x: auto;
+        font-family:
+            'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+        font-size: clamp(0.75rem, 1.7vw, 0.88rem);
+        line-height: 2;
+
+        & .sh {
+            color: var(--dark-green);
+            user-select: none;
+        }
+
+        & .ask {
+            color: var(--light-green);
+            user-select: none;
+        }
+
+        & .out {
+            opacity: 0.6;
+        }
+    }
+
+    & .ai-routes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        & > div {
+            padding-top: 1.25rem;
+            border-top: 2px solid rgba(107, 168, 50, 0.35);
+        }
+
+        & h3 {
+            font-size: 1em;
+            margin-bottom: 0.6rem;
+            color: var(--light-green);
+        }
+
+        & p {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        & .code-block {
+            margin: 1rem 0 0;
+            padding: 0.9rem 1rem;
+            font-size: 0.78rem;
+        }
+    }
+
     & .right {
         float: right;
     }
