@@ -265,6 +265,33 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
         </div>
 
         <div>
+            <h2 id="features">Features</h2>
+            <ul>
+                <li>Fast <strong>WebGPU</strong> &amp; <strong>WebGL&nbsp;2</strong> renderers across desktop and mobile, with automatic fallback to Canvas</li>
+                <li><strong>GPU-accelerated tile rendering</strong> for orthogonal Tiled maps on both GPU backends: one quad per layer, no per-tile loop</li>
+                <li>Optional <strong>perspective camera</strong> (<code>Camera3d</code>) with frustum culling for 2.5D / 3D-projected scenes</li>
+                <li><strong>3D mesh rendering</strong> with OBJ/MTL loading, multi-material support, and hardware depth testing</li>
+                <li><strong>glTF / GLB 3D scenes</strong> loaded with a single <code>level.load()</code>: meshes, materials, cameras, lights and node animation, played through the same API as a 2D <code>Sprite</code></li>
+                <li><strong>3D lighting</strong> (<code>Light3d</code> directional, point, spot &amp; ambient, up to 32 lights) with ground shadows on by default</li>
+                <li><strong><code>Light2d</code></strong> as a first-class renderable: multi-light, radial-gradient falloff, illumination-only mode, normal-map sprite shading</li>
+                <li>Per-camera <strong>post-processing</strong> with stackable shader effects (Flash, Outline, Glow, CRT, Hologram, ColorMatrix) and custom <code>ShaderEffect</code> per-sprite fragment effects (GLSL and/or WGSL)</li>
+                <li>Physics: polygon SAT collision, QuadTree/Octree broad-phase (auto-swapped 2D&#8596;3D), 2D &amp; 3D raycasts, plus pluggable adapters (<a href="https://www.npmjs.com/package/@melonjs/matter-adapter">Matter</a> / <a href="https://www.npmjs.com/package/@melonjs/planck-adapter">Planck</a>)</li>
+                <li>Full <a href="https://www.mapeditor.org">Tiled</a> map editor integration, with every feature supported (any map format, animated tilesets, custom properties, parallax layers, native <code>.aseprite</code> tilesets)</li>
+                <li>Web Audio with 3D spatial sound, stereo panning, and procedural audio primitives (oscillators, noise) for SFX without sample assets</li>
+                <li>Multi-input: mouse, touch, keyboard, gamepad &amp; accelerometer</li>
+                <li>UI toolkit with drag-and-drop, hover/press buttons, and bitmap-font text</li>
+                <li>Tweens, transitions &amp; particle effects</li>
+                <li><a href="https://www.npmjs.com/package/@melonjs/spine-plugin">Spine 4.3</a> runtime integration via the official plugin</li>
+                <li>State manager, asset loader &amp; plugin system</li>
+                <li>
+                    ~250&nbsp;KB <a
+                        href="https://bundlejs.com/?q=melonjs"
+                    >minzipped</a>, zero dependencies
+                </li>
+            </ul>
+        </div>
+
+        <div>
             <h2 id="try-it">Try it Live</h2>
             <p>Jump right into a melonJS game, playable in your browser.</p>
             <div class="demo-embed">
@@ -356,57 +383,28 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             </p>
         </div>
 
-        <div class="stack">
-            <div>
-                <h2 id="features">Features</h2>
-                <ul>
-                    <li>Fast <strong>WebGPU</strong> &amp; <strong>WebGL&nbsp;2</strong> renderers across desktop and mobile, with automatic fallback to Canvas</li>
-                    <li><strong>GPU-accelerated tile rendering</strong> for orthogonal Tiled maps on both GPU backends: one quad per layer, no per-tile loop</li>
-                    <li>Optional <strong>perspective camera</strong> (<code>Camera3d</code>) with frustum culling for 2.5D / 3D-projected scenes</li>
-                    <li><strong>3D mesh rendering</strong> with OBJ/MTL loading, multi-material support, and hardware depth testing</li>
-                    <li><strong>glTF / GLB 3D scenes</strong> loaded with a single <code>level.load()</code>: meshes, materials, cameras, lights and node animation, played through the same API as a 2D <code>Sprite</code></li>
-                    <li><strong>3D lighting</strong> (<code>Light3d</code> directional, point, spot &amp; ambient, up to 32 lights) with ground shadows on by default</li>
-                    <li><strong><code>Light2d</code></strong> as a first-class renderable: multi-light, radial-gradient falloff, illumination-only mode, normal-map sprite shading</li>
-                    <li>Per-camera <strong>post-processing</strong> with stackable shader effects (Flash, Outline, Glow, CRT, Hologram, ColorMatrix) and custom <code>ShaderEffect</code> per-sprite fragment effects (GLSL and/or WGSL)</li>
-                    <li>Physics: polygon SAT collision, QuadTree/Octree broad-phase (auto-swapped 2D&#8596;3D), 2D &amp; 3D raycasts, plus pluggable adapters (<a href="https://www.npmjs.com/package/@melonjs/matter-adapter">Matter</a> / <a href="https://www.npmjs.com/package/@melonjs/planck-adapter">Planck</a>)</li>
-                    <li>Full <a href="https://www.mapeditor.org">Tiled</a> map editor integration, with every feature supported (any map format, animated tilesets, custom properties, parallax layers, native <code>.aseprite</code> tilesets)</li>
-                    <li>Web Audio with 3D spatial sound, stereo panning, and procedural audio primitives (oscillators, noise) for SFX without sample assets</li>
-                    <li>Multi-input: mouse, touch, keyboard, gamepad &amp; accelerometer</li>
-                    <li>UI toolkit with drag-and-drop, hover/press buttons, and bitmap-font text</li>
-                    <li>Tweens, transitions &amp; particle effects</li>
-                    <li><a href="https://www.npmjs.com/package/@melonjs/spine-plugin">Spine 4.3</a> runtime integration via the official plugin</li>
-                    <li>State manager, asset loader &amp; plugin system</li>
-                    <li>
-                        ~250&nbsp;KB <a
-                            href="https://bundlejs.com/?q=melonjs"
-                        >minzipped</a>, zero dependencies
-                    </li>
-                </ul>
-            </div>
-
-            <div class="compat">
-                <Image
-                    class="right no-mobile"
-                    width={150}
-                    src={browserIcons}
-                    alt="Chrome, Firefox and Safari logos"
-                />
-                <h2 id="compatible">Compatibility</h2>
-                <p>Compatible with all major browsers and mobile devices.</p>
-                <p>
-                    The published bundle targets <strong>ES2022</strong>. A
-                    browser that does not support it cannot parse the file at
-                    all: loading fails with a syntax error and a blank screen,
-                    rather than breaking later when some feature runs.
-                </p>
-                <p>
-                    To support older browsers, transpile melonJS together with
-                    your own code. See <a
-                        href="https://github.com/melonjs/melonJS#supporting-older-browsers"
-                        >Supporting older browsers</a
-                    > in the README.
-                </p>
-            </div>
+        <div class="compat">
+            <Image
+                class="right no-mobile"
+                width={150}
+                src={browserIcons}
+                alt="Chrome, Firefox and Safari logos"
+            />
+            <h2 id="compatible">Compatibility</h2>
+            <p>Compatible with all major browsers and mobile devices.</p>
+            <p>
+                The published bundle targets <strong>ES2022</strong>. A
+                browser that does not support it cannot parse the file at
+                all: loading fails with a syntax error and a blank screen,
+                rather than breaking later when some feature runs.
+            </p>
+            <p>
+                To support older browsers, transpile melonJS together with
+                your own code. See <a
+                    href="https://github.com/melonjs/melonJS#supporting-older-browsers"
+                    >Supporting older browsers</a
+                > in the README.
+            </p>
         </div>
 
         <div>
