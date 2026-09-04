@@ -12,13 +12,13 @@ If you'd like to make your own game this is the guide for you.
 
 Open a terminal in the folder you'd like to clone the template project inside, then run the following command
 
-```
+```bash
 git clone https://github.com/melonjs/es6-boilerplate
 ```
 
 Then rename the template to whatever you'd like to name your project
 
-```
+```bash
 mv es6-boilerplate <project-name>
 ```
 

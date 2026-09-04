@@ -20,7 +20,7 @@ You copied `map1.tmx` into the project in Part 2. melonJS will not touch it
 until you list it, so open `src/manifest.ts` and add these lines to the array.
 Watch the comma: the last entry that is already there does not have one.
 
-```
+```ts
     },
 
     /* Level */
@@ -46,7 +46,7 @@ Miss one and melonJS tells you exactly which name it could not find.
 Open `src/scripts/stage/play.ts`. Delete what is inside `onResetEvent` and put
 this in its place:
 
-```
+```ts
 onResetEvent() {
     level.load("map1");
 }

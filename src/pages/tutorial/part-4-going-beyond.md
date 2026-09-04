@@ -29,7 +29,7 @@ melonJS ships 23 skills that teach a coding agent how the engine works. They
 also cover the quiet mistakes from the end of Part 3-3. One command installs
 them:
 
-```
+```bash
 npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills
 ```
 

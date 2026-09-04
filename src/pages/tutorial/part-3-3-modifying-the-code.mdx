@@ -21,7 +21,7 @@ character. You are going to fill it in, one step at a time.
 First, list the character's images in `src/manifest.ts`, next to the level
 entries you added in Part 3-2:
 
-```
+```ts
     { name: "texture", type: "json",  src: "/data/img/texture.json" },
     { name: "texture", type: "image", src: "/data/img/texture.png" }
 ```
@@ -32,7 +32,7 @@ character, and a `.json` saying where each frame sits inside it.
 Now build the sprite from six of those frames. Replace the constructor in
 `player.ts` with this:
 
-```
+```ts
 constructor(x, y, settings) {
     const atlas = new TextureAtlas(
         loader.getJSON("texture"),
@@ -58,7 +58,7 @@ Import `loader`, `Sprite` and `TextureAtlas` from `melonjs` at the top.
 A sprite is just a picture. A picture with a **body** is something gravity pulls
 down and walls stop. Add this at the end of the constructor:
 
-```
+```ts
 this.body = new Body(
     this,
     new Rect(0, 0, settings.width, settings.height),
@@ -81,7 +81,7 @@ it jumps. Remember where they are, you will want to change them.
 The camera is still looking at the corner of the level. One line, at the end of
 the constructor, fixes that:
 
-```
+```ts
 game.viewport.follow(this, game.viewport.AXIS.BOTH, 0.1);
 ```
 
@@ -98,7 +98,7 @@ The `0.1` is how lazily the camera catches up. Try `1` to see the difference.
 melonJS keeps the key and its meaning apart, so you can change the controls
 later without touching the rest of your game. Still in the constructor:
 
-```
+```ts
 input.bindKey(input.KEY.LEFT,  "left");
 input.bindKey(input.KEY.RIGHT, "right");
 input.bindKey(input.KEY.SPACE, "jump", true);
@@ -112,7 +112,7 @@ space would jump again on every single frame.
 `update()` runs about sixty times a second. That is your game loop, and it is
 where movement happens:
 
-```
+```ts
 update(dt) {
     if (input.isKeyPressed("left")) {
         this.body.force.x = -this.body.maxVel.x;

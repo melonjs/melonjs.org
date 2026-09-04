@@ -568,20 +568,22 @@ main {
             padding: 1.5rem 2rem;
         }
 
+        /* Same tokens the Markdown pages get from Shiki, so hand-written
+           snippets here and highlighted ones in the tutorial match. */
         & .kw {
-            color: var(--light-green);
+            color: var(--astro-code-token-keyword);
         }
 
         & .str {
-            color: var(--cream);
+            color: var(--astro-code-token-string);
         }
 
         & .num {
-            color: var(--jean);
+            color: var(--astro-code-token-constant);
         }
 
         & .cmt {
-            color: #6a6a6a;
+            color: var(--astro-code-token-comment);
             font-style: italic;
         }
     }

@@ -14,7 +14,7 @@ that start every game actually do.
 Open a terminal, go to wherever you keep your projects, and run these four
 commands one at a time:
 
-```
+```bash
 npm create melonjs@latest my-game
 cd my-game
 npm install
@@ -29,7 +29,7 @@ Before you open that address, move the data folder. The starter keeps your
 images and levels in `src/data`, but the development server does not serve them
 from there, so the game cannot find its font:
 
-```
+```bash
 mkdir public
 mv src/data public/data
 ```
@@ -48,7 +48,7 @@ time you save a file the browser reloads by itself.
 Open the `my-game` folder in VS Code. There are a lot of files, and you can
 ignore most of them. These are the ones that matter:
 
-```
+```plaintext
 public/
   data/
     img/          images go here      (empty for now)
@@ -68,7 +68,7 @@ Two of those folders are empty. Part 3 fills them.
 
 Open `src/index.ts` and find these lines near the top:
 
-```
+```ts
 const app = new Application(1218, 562, { parent: "screen", scale: "auto" });
 
 await app.init();
@@ -83,7 +83,7 @@ but nothing to draw with, and the errors you get later will not mention it.
 
 Further down, one more block is worth a look:
 
-```
+```ts
 loader.preload(DataManifest, () => {
     state.set(state.PLAY, new PlayScreen());
     state.change(state.PLAY, false);
@@ -99,7 +99,7 @@ cannot use it. That catches everybody once.
 You need a tileset and a map to build with. Rather than draw them now, copy them
 from the melonJS examples:
 
-```
+```bash
 git clone --depth 1 https://github.com/melonjs/melonJS
 cp -r melonJS/packages/examples/public/assets/platformer/img/* my-game/public/data/img/
 cp -r melonJS/packages/examples/public/assets/platformer/map/* my-game/public/data/map/

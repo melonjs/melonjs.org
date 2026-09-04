@@ -11,5 +11,11 @@ export default defineConfig({
     // inline elements and drops meaningful spaces (e.g. "with the <a>Tiled</a>
     // map editor"). Keep the HTML-aware compression Astro 6 used.
     compressHTML: true,
+    markdown: {
+        // Emit CSS custom properties instead of hard-coded token colours, so
+        // code blocks are highlighted with the melonJS palette and sit on the
+        // page's own surface. The variables live in src/styles/variables.css.
+        shikiConfig: { theme: 'css-variables' },
+    },
     integrations: [mdx(), sitemap()],
 })

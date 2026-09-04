@@ -21,4 +21,19 @@
     --section-pad-x: clamp(2rem, 8vw, 12rem);
     --section-pad-y: clamp(3.5rem, 7vw, 7rem);
     --measure: 1180px;
+
+    /* Syntax highlighting. Astro's Shiki 'css-variables' theme reads these,
+       so highlighted code uses the melonJS palette rather than a stock theme.
+       The background stays transparent so the surrounding surface shows. */
+    --astro-code-background: transparent;
+    --astro-code-foreground: #d4d4d8;
+    --astro-code-token-keyword: var(--light-green);
+    --astro-code-token-string: var(--cream);
+    --astro-code-token-string-expression: var(--cream);
+    --astro-code-token-constant: var(--jean);
+    --astro-code-token-function: var(--melon);
+    --astro-code-token-parameter: #d4d4d8;
+    --astro-code-token-punctuation: #8b918b;
+    --astro-code-token-comment: #808880;
+    --astro-code-token-link: var(--jean);
 }
