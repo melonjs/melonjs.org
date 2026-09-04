@@ -4,6 +4,7 @@ import '../styles/variables.css'
 import '../styles/index.css'
 import Icon from '../components/Icon.astro'
 import Carousel from '../components/Carousel.astro'
+import CopyPage from '../components/CopyPage.astro'
 import gallery from '../carousels/gallery.json'
 import { Image } from 'astro:assets'
 import browserIcons from '../assets/browser_icons.png'
@@ -283,6 +284,68 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             <pre class="code-block"><code set:html={scaffoldCode} /></pre>
             <p>Or use the API directly for a quick Hello World:</p>
             <pre class="code-block"><code set:html={helloCode} /></pre>
+        </div>
+
+        <div class="ai-section">
+            <div class="ai-head">
+                <h2 id="ai-assistants">Working with an AI assistant</h2>
+                <CopyPage />
+            </div>
+            <p class="ai-lead">
+                An assistant with nothing to read invents API names. These
+                three give it the real ones.
+            </p>
+            <div class="why-cards">
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>llms.txt</h3>
+                    <p>
+                        <a href="https://melonjs.github.io/melonJS/llms.txt"
+                            >llms.txt</a
+                        > indexes every exported class, function, interface and
+                        type with a one-line summary, a link to its page, and a
+                        marker on the deprecated ones. It is regenerated on
+                        every docs build, so it never drifts from the release.
+                        Hand an assistant that one URL instead of letting it
+                        guess.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>Skills</h3>
+                    <p>
+                        melonJS ships guidance files that teach an assistant the
+                        engine's conventions, and more usefully the mistakes
+                        that fail silently rather than erroring: a custom
+                        <code>draw()</code> that ignores <code>this.pos</code>,
+                        <code>isKinematic</code> blocking pointer events,
+                        <code>.z</code> set after <code>addChild</code>.
+                    </p>
+                    <pre class="code-block wrap"><code>npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills</code></pre>
+                    <p>
+                        That installs 23 skills in whatever layout your agent
+                        expects (<code>.claude/skills/</code>, <code
+                            >.agents/skills/</code
+                        >, <code>.windsurf/skills/</code> and around seventy
+                        others), so nothing is placed by hand. It installs from
+                        <code>master</code>; the copy matching a specific
+                        release ships inside the npm package at <code
+                            >node_modules/melonjs/skills/</code
+                        >.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3>Copy page</h3>
+                    <p>
+                        The <strong>Copy page</strong> control above takes this
+                        page as Markdown with its URL attached, ready to paste
+                        into an assistant that cannot browse the web. It can
+                        also open a new chat in ChatGPT or Claude with the URL
+                        already filled in.
+                    </p>
+                </div>
+            </div>
         </div>
 
         <div class="stack">

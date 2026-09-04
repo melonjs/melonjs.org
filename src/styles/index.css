@@ -126,6 +126,24 @@ main {
         margin-top: 1rem;
     }
 
+    & .ai-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+
+        & h2 {
+            margin-bottom: 0;
+        }
+    }
+
+    & .ai-lead {
+        max-width: 62ch;
+        margin: 1.25rem 0 2rem;
+        opacity: 0.85;
+    }
+
     & .right {
         float: right;
     }
@@ -453,5 +471,20 @@ main {
             color: #6a6a6a;
             font-style: italic;
         }
+    }
+
+    /* A code block inside a .why-card would otherwise inherit that card's
+       inline-code pill styling, nowrap included. */
+    & .code-block code {
+        white-space: inherit;
+        background: none;
+        padding: 0;
+        font-size: inherit;
+    }
+
+    & .code-block.wrap {
+        max-width: 100%;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
     }
 }
