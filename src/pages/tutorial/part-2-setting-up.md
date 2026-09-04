@@ -1,24 +1,101 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
-title: 'Part 2: Setting Up the Template | melonJS Platformer Tutorial'
-description: Download and set up the melonJS platformer example project. Get a working HTML5 game running locally in minutes.
+title: 'Part 2: Setting Up the Project | melonJS Platformer Tutorial'
+description: Scaffold a melonJS project with npm create melonjs, run it with Vite, and learn your way around the files it generates.
 ---
 
-# Part 2: Setting Up the Template
+# Part 2: Setting Up the Project
 
-First, go to https://github.com/melonjs/examples and download the repository, by clicking on "Code" and then "Download ZIP" :
-![Download the example repository](../../assets/tutorial/part2-download-the-repository.png)
-
-Optionally you can also clone the repository if you are already familiar with Git, but won't cover that part in this tutorial.
-
-For this tutorial we're going to be working on the platformer example. Inside the directory where you downloaded the repository, you can see there is the `platformer` directory.
-
-We've finished setting up, so from now on whenever you'd like to start coding your game you can navigate into the `platformer` folder in your terminal and run this command :
+melonJS gives you a starter project with one command. Open a terminal, go
+wherever you keep your projects, and run:
 
 ```
-python3 -m http.server
+npm create melonjs@latest my-game
+cd my-game
+npm install
+npm run dev
 ```
 
-This command is an example on [how to run a local testing web server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server) in the current directory the terminal is in. A website will be running inside your computer (at http://localhost:8000) so you can edit your game and try out your changes in your browser right away as you modify it !
+The last command starts a development server and prints an address, usually
+`http://localhost:5173`. Open it and you should see **Hello World!** on a grey
+background. Leave that terminal running: every time you save a file, the page
+reloads with your change.
 
-<a href="/tutorial/part-3-modifying-the-game" class="next">Up Next: Modifying the game</a>
+<!-- SCREENSHOT: the scaffolded project running in the browser, showing "Hello World!" -->
+
+That is a working melonJS game. The rest of the tutorial fills it in.
+
+## What the starter made
+
+Open the `my-game` folder in VS Code. Most of it is configuration you can
+ignore for now. These are the files you will touch:
+
+```
+my-game/
+  src/
+    index.ts                     the entry point: starts the game
+    manifest.ts                  the list of assets to load
+    data/
+      img/                       images go here
+      map/                       levels go here
+      fnt/                       the font the starter uses
+    scripts/
+      stage/
+        play.ts                  the screen your game runs on
+        title.ts                 the title screen
+      renderables/
+        player.ts                your character
+```
+
+The `data/img` and `data/map` folders are empty. Filling them is what Part 3 is
+about.
+
+## The entry point
+
+Open `src/index.ts`. You do not need to change anything yet, but two lines are
+worth understanding, because they explain how a melonJS game starts.
+
+```
+const app = new Application(1218, 562, { parent: "screen", scale: "auto" });
+
+await app.init();
+```
+
+The first line creates the game and its world. The second builds the renderer
+and puts the canvas on the page. `app.init()` is asynchronous so melonJS can ask
+the browser for a WebGPU device, and it is **mandatory**: without it you get a
+world with nothing to draw on, and the errors that follow will not mention the
+missing call.
+
+Further down, the starter preloads your assets and then switches to the play
+screen:
+
+```
+loader.preload(DataManifest, () => {
+    state.set(state.MENU, new TitleScreen());
+    state.set(state.PLAY, new PlayScreen());
+    pool.register("mainPlayer", PlayerEntity);
+    state.change(state.PLAY, false);
+});
+```
+
+Nothing loads by magic. An asset has to be listed in `manifest.ts` before you
+can use it, which is the first thing the next two parts do.
+
+## Getting the art and the level
+
+This tutorial uses the art and map from the melonJS platformer example, so you
+can spend your time on the game rather than on drawing tiles. Download the
+melonJS repository and copy them into your project:
+
+```
+git clone --depth 1 https://github.com/melonjs/melonJS
+cp -r melonJS/packages/examples/public/assets/platformer/img/* my-game/src/data/img/
+cp -r melonJS/packages/examples/public/assets/platformer/map/* my-game/src/data/map/
+```
+
+On Windows, copy the two folders in Explorer instead. You should now have
+`tileset.png`, `background.png`, `texture.png` and a few others in
+`src/data/img`, and `map1.tmx` with `tileset.tsx` in `src/data/map`.
+
+<a href="/tutorial/part-3-modifying-the-game" class="next">Up Next: Building the game</a>

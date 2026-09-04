@@ -1,19 +1,28 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
 title: 'Part 1: Prerequisites | melonJS Platformer Tutorial'
-description: 'Install the free tools you need to start building HTML5 games with melonJS: VS Code, Tiled map editor, Krita, and Node.js.'
+description: 'Install the free tools you need to start building HTML5 games with melonJS: Node.js, VS Code and the Tiled map editor.'
 ---
 
 import { Image } from 'astro:assets'
 import tiledLogo from '../../assets/tutorial/tiled-logo-header.png'
 import vscodeLogo from '../../assets/tutorial/visualstudiocode-logo.png'
-import kritaLogo from '../../assets/tutorial/krita-logo.png'
 
 # Part 1: Prerequisites
 
 ## Software to Install
 
-Before we continue you will need to install the following software. All of these projects are FOSS (free and open source) so consider donating :)
+You need three things before we start. All of them are free.
+
+**[Node.js](https://nodejs.org)** runs the tools that build your game. Install
+the LTS version. This also gives you `npm`, which the next part uses to create
+the project.
+
+**[Visual Studio Code](https://code.visualstudio.com/)** is where you will write
+code. Any editor works, but the screenshots in this tutorial use VS Code.
+
+**[Tiled](https://www.mapeditor.org/)** is the map editor. You draw your levels
+in it, and melonJS loads what it exports.
 
 <ul class="display">
     <li>
@@ -26,17 +35,29 @@ Before we continue you will need to install the following software. All of these
             <Image alt="Visual Studio Code logo" src={vscodeLogo} />
         </a>
     </li>
-    <li>
-        <a href="https://krita.org/en/">
-            <Image alt="Krita logo" class="krita" src={kritaLogo} />
-        </a>
-    </li>
 </ul>
+
+## Optional: a drawing tool
+
+The tutorial ships with art, so you do not need a drawing program to finish it.
+When you do want to draw your own, **[Aseprite](https://www.aseprite.org)** is
+the one to get: melonJS reads its `.aseprite` files directly, including the
+frame tags it uses to mark animations, so there is no export step between
+drawing a character and seeing it animate in your game. It costs around twenty
+dollars, or nothing if you compile it yourself.
+[LibreSprite](https://libresprite.github.io) is a free fork if you would rather
+not.
 
 ## Required Knowledge
 
-You will need to [be familiar with how to use the terminal](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955), and know [how to use VSCode](https://code.visualstudio.com/docs/introvideos/basics) too, also a [basic understanding of JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) will be necessary.
+You will need to
+[be familiar with how to use the terminal](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955),
+and know
+[how to use VSCode](https://code.visualstudio.com/docs/introvideos/basics) too,
+also a
+[basic understanding of JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+will be necessary.
 
 <a href="/tutorial/part-2-setting-up" class="next">
-    {'Up Next: Setting Up the Template'}
+    {'Up Next: Setting Up the Project'}
 </a>

@@ -1,43 +1,124 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
-title: 'Part 3-3: Modifying the Game Code | melonJS Platformer Tutorial'
-description: Edit JavaScript game code in VS Code to change gameplay mechanics in your melonJS HTML5 platformer. Modify entities, physics, and game logic.
+title: 'Part 3-3: The Code | melonJS Platformer Tutorial'
+description: Give your melonJS character a physics body, keyboard controls and a walk animation, and learn the three mistakes that fail silently.
 ---
 
-# Part 3-3: Modifying the code
+## Part 3-3: The code
 
-Now that we've got the platformer project up and running on our computer, we can now try changing it! First we need to [open](https://code.visualstudio.com/docs/editor/workspaces) the platformer project (at `/examples/platformer/`) inside VSCode to start making edits.
+Your level loads, but nothing moves in it. Open
+`src/scripts/renderables/player.ts`. The starter left you a `Sprite` with two
+empty methods, and this is where the game becomes yours.
 
-You should be able to see the files for the platformer example on the left side of your editor if you did this correctly:
+## Give the character a body
 
-<img
-    alt="VSCode Screenshot"
-    class="large"
-    src="/img/tutorial/VSCode-platformer-files.webp"
-    width={2048}
-    height={1530}
-/>
-
-These are the files used by the web server running on your computer. VS Code is a great tool to edit your code files (the program in the screenshot). You can also notice all of the code is organized in the `js` folder. We can open and close folders/directories by clicking the triangles next to them on the left side.
-
-For more resources on how to code in JavaScript [see here.](https://webslc.com/musings/learn-js/)
-
-Let's try giving the player speed hacks. Open this file in VSCode:
-`js/entities/player.js`
-Then, go to line 16
+A `Sprite` is just a picture. A picture with a `Body` is something gravity pulls
+on and walls stop. In the constructor, after `super(...)`:
 
 ```
+this.body = new Body(this);
+this.body.collisionType = collision.types.PLAYER_OBJECT;
+
+// how fast it can walk, and how high it can jump
 this.body.setMaxVelocity(3, 15);
+this.body.setFriction(0.4, 0);
+
+// keep updating even when off screen, so falling into a hole still works
+this.alwaysUpdate = true;
 ```
 
-Try messing around with the code and see what happens.
+Import `Body` and `collision` from `melonjs`. Reload and your character sits on
+the floor instead of hanging in the air.
+
+## Read the keyboard
+
+melonJS separates the key from what it means, so you can rebind later without
+touching game logic. Still in the constructor:
+
+```
+input.bindKey(input.KEY.LEFT, "left");
+input.bindKey(input.KEY.RIGHT, "right");
+input.bindKey(input.KEY.A, "left");
+input.bindKey(input.KEY.D, "right");
+input.bindKey(input.KEY.SPACE, "jump", true);
+```
+
+That last `true` means "only fire once per press", which is what you want for a
+jump: holding space should not launch you repeatedly.
+
+## Move on each frame
+
+`update()` runs once per frame. Push the body around based on what is held down:
+
+```
+update(dt) {
+    if (input.isKeyPressed("left")) {
+        this.body.force.x = -this.body.maxVel.x;
+        this.flipX(true);
+    } else if (input.isKeyPressed("right")) {
+        this.body.force.x = this.body.maxVel.x;
+        this.flipX(false);
+    } else {
+        this.body.force.x = 0;
+    }
+
+    if (input.isKeyPressed("jump") && !this.body.jumping && !this.body.falling) {
+        this.body.force.y = -this.body.maxVel.y;
+    }
+
+    return super.update(dt);
+}
+```
+
+Notice you set a **force**, not a position. You are asking the physics to move
+the character; it decides what happens when a wall is in the way. Setting
+`pos.x` directly would teleport it through the wall instead.
+
+Save. You can now run and jump around the level you drew.
+
+{/* SCREENSHOT: the character running through the level in the browser */}
+
+## Animate it
+
+The atlas from Part 3-1 has a walk cycle in it. Register the animations in the
+constructor and switch between them in `update()`:
+
+```
+this.addAnimation("stand", ["walk0001.png"]);
+this.addAnimation("walk", [
+    "walk0001.png", "walk0002.png", "walk0003.png", "walk0004.png",
+    "walk0005.png", "walk0006.png",
+]);
+this.setCurrentAnimation("stand");
+```
+
+Then, when the character starts moving, call
+`this.setCurrentAnimation("walk")`, and `"stand"` when it stops. Guard it with
+`isCurrentAnimation` so you are not restarting the cycle on every frame.
+
+## Three mistakes that do not raise an error
+
+These are the ones that cost beginners an afternoon, because the game keeps
+running and simply does the wrong thing.
+
+**`isKinematic` defaults to `true`.** A plain `Sprite` is excluded from the
+physics broad-phase and from pointer events until you set
+`this.isKinematic = false`. Attaching a `Body`, as you did above, sets it for
+you, which is why your character collides but a decorative sprite would not.
+
+**Draw order is an argument, not a property.** Use
+`app.world.addChild(thing, 10)`. There is no `renderable.z` to assign, and
+setting `depth` after adding does not re-sort anything.
+
+**A custom `draw()` must respect `this.pos`.** If you override `draw()` and
+paint at fixed coordinates, your sprite renders in the wrong place and no error
+is raised, because you drew exactly what you asked for.
 
 <details>
-    <summary>Click me if you give up</summary>
+    <summary>Try it: give yourself speed hacks</summary>
     {
-        ' Tadaa! By changing those values you now can make the character slow like a turtle or super fast like a cheater. The first value is the X speed, and the second value is the Y speed.'
+        ' Change setMaxVelocity(3, 15) to something absurd like (12, 20) and reload. The first value is the horizontal speed, the second is the jump strength. This is also how you find out that a very fast character can clip through thin walls, which is a real thing you will deal with when making games.'
     }
-    {/* TODO: PUT A GIF OF THE VALUES BEING EDITED THEN A PLAYER WITH SPEED HACKS */}
 </details>
 
 <a href="/tutorial/part-4-going-beyond" class="next">

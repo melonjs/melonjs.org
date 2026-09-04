@@ -1,49 +1,52 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
-title: 'Part 3-1: Modifying Game Art | melonJS Platformer Tutorial'
-description: Edit game sprites and textures for your HTML5 platformer using Krita. Learn how to modify and replace game art assets in melonJS.
+title: 'Part 3-1: The Art | melonJS Platformer Tutorial'
+description: Understand the tileset and sprite atlas a melonJS platformer uses, and how to draw your own with Aseprite.
 ---
 
-import Icon from '../../components/Icon.astro'
-import { Image } from 'astro:assets'
-import kritaLogo from '../../assets/tutorial/krita-logo.png'
+## Part 3-1: The art
 
-## Part 3-1: Modifying the art
+A platformer needs two kinds of image, and they work differently.
 
-VSCode is a code editor. This means it reads and writes text files (usually containing code but not always). This also means that it is not useful for editing images, which provide the art layer of your game. If you want to change how your game looks you'll need to edit your image files with an image editor like [Krita](https://krita.org/en/).
+A **tileset** is a grid of small square pictures: grass, dirt, a crate, a
+mushroom. The level you draw in Part 3-2 is made of references to squares in
+this grid, which is why a whole level file is tiny. Yours is
+`src/data/img/tileset.png`.
 
-<a href="https://krita.org/en/">
-    <Image class="krita" alt="Krita logo" src={kritaLogo} />
-</a>
+A **sprite atlas** is one image holding every frame of a character's animation,
+plus a `.json` file saying where each frame sits inside it. Yours is
+`texture.png` with `texture.json` next to it. The character's walk cycle is the
+frames named `walk0001.png` through `walk0011.png` inside that atlas, and Part
+3-3 plays them back.
 
-Other alternatives include Aseprite, Photoshop, GIMP, and more. Here's a basic chart of their features:
+Both are already in your project from Part 2, so you can go straight to
+[Part 3-2](/tutorial/part-3-2-modifying-the-level) and come back here when you
+want the game to look like yours.
 
-<Icon
-    icon="art-chart"
-    aria-label="venn diagram of art software"
-    class="medium"
-/>
+## Drawing your own
 
-Let's use Krita to change how the main character looks. Launch Krita, then in at the top click **File => Open**, then click open the following image:
+Open `src/data/img/tileset.png` in [Aseprite](https://www.aseprite.org). The
+important habit, whatever tool you use: **draw on a new layer** rather than on
+the original. You can hide it, erase it, or start over without having lost
+anything. Copying a change onto every frame of an animation is also far easier
+when the change is on its own layer.
 
-```
-/example/platformer/data/img/texture.png
-```
+{/* SCREENSHOT: a tileset open in Aseprite with a new layer added on top */}
 
-Next, create a new layer (see how to use layers [here](https://www.youtube.com/watch?v=g2ZoQobsSWE)), and now you can draw on top of the original image file without actually messing it up (making easy to erase or undo changes). You can see here I changed how the main character looked. The main character has a bunch of different frames for it's animation, but I only drew the changes once. Because I was drawing on a separate layer I was able to copy the changes (and not the original image) to each of the other frames without having to redraw it (though better animated sprites might go a long way to help it feel more alive)
+Save, and the page in your browser reloads with your art in it. There is no
+export step and no build to run: the development server from Part 2 is watching
+the file.
 
-![Modified texture image inside Krita](../../assets/tutorial/texture-in-krita.png)
+If you draw a new character rather than editing the existing one, keep the frame
+size the same as the frames in `texture.png`. Change the size and the atlas no
+longer describes the image, so the animation in Part 3-3 will play the wrong
+rectangles.
 
-_I gave him some pants, a crown, and some spiky green hair :)_
-
-![Custom skin running in my browser](../../assets/tutorial/new-skin-demo.png)
-
-_I can see the new skin for my character in my web browser, and as I walk around and I can see the new outfit doing the walking animation_
-
-## Footnote: General art concepts
-
-This tutorial does not cover the basics of art itself. [Click here for more information about how to make art.](/learn-about-art)
+One melonJS convenience worth knowing when you go further: it reads Aseprite's
+own `.aseprite` files directly, including the frame tags you use to name
+animations, so a saved file can go straight into `src/data/img` with no PNG and
+no atlas JSON to keep in sync.
 
 <a href="/tutorial/part-3-2-modifying-the-level" class="next">
-    {'Up Next: Modifying the level using Tiled'}
+    {'Up Next: The level'}
 </a>
