@@ -1,12 +1,18 @@
 main.md {
-    text-align: center;
     background-color: var(--dark-gray);
-    color: var(--white);
+    color: #e7e9e5;
     min-height: 100vh;
-    line-height: calc(2.5vmin + 2vmax);
-    padding: 5vmin 10vmin;
-    display: flex;
-    flex-direction: column;
+    padding: clamp(2.5rem, 6vw, 5rem)
+        max(var(--section-pad-x), calc((100% - var(--measure)) / 2));
+    font-size: clamp(1rem, 0.4vw + 0.95rem, 1.08rem);
+    line-height: 1.75;
+
+    /* Prose is held to a readable measure and set flush left. Wider things,
+       screenshots and code, are allowed to use the full column. */
+    & > * {
+        max-width: 72ch;
+        margin-inline: 0;
+    }
 
     & h1,
     & h2,
@@ -14,71 +20,195 @@ main.md {
     & h4,
     & h5,
     & h6 {
-        line-height: calc(2.5vmin + 4vmax);
-        margin: 5vmin auto 2vmin auto;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: var(--white);
+        margin: 2.5rem 0 1rem;
     }
 
     & h1 {
-        text-decoration: underline;
+        font-size: clamp(1.9rem, 4vw, 2.8rem);
+        margin-top: 0.5rem;
+        position: relative;
+        padding-top: 1.25rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3rem;
+            height: 3px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--dark-green), var(--melon));
+        }
     }
 
-    & > * {
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
+    & h2 {
+        font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+        margin-top: 3rem;
     }
 
-    & p:nth-of-type(1) {
-        margin-bottom: 5vmin;
-        text-align: center;
+    & h3 {
+        font-size: 1.2rem;
+        color: var(--light-green);
     }
 
-    & img:not(.inline) {
-        display: block;
-    }
-
-    & img {
-        margin: 2vmin auto;
-        width: 45vw;
-        min-width: 80vmin;
-    }
-
-    & .small {
-        width: calc(20vmin + 20vmax);
-        min-width: 0;
-    }
-
-    & .medium {
-        width: 65vw;
-        margin: 6vmin auto;
-    }
-
-    & .large {
-        min-width: 90vmin;
-        width: 80vw;
-        margin: 8vmin auto;
-    }
-
-    & pre {
-        padding: 3vmin;
-        margin: 4vmin auto;
-        border: 1vmin solid var(--dark-green);
-        max-width: calc(100% - 8vmin);
+    & p {
+        margin: 1rem 0;
     }
 
     & a {
-        color: var(--green);
+        color: var(--light-green);
     }
 
-    & a.next {
+    /* Screenshots: framed like the surfaces on the rest of the site, capped
+       so they cannot outgrow the column the way `width: 45vw` did. */
+    & img:not(.inline) {
         display: block;
-        margin: 5vmin auto;
-        border: 1vmin solid var(--green);
-        padding: 2vmin;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 2rem 0;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 14px;
+    }
+
+    & figure,
+    & p:has(> img:not(.inline)),
+    & .display,
+    & pre {
+        max-width: min(100%, 900px);
+    }
+
+    & .small {
+        max-width: 320px;
+    }
+
+    & .medium {
+        max-width: 560px;
+    }
+
+    & .large {
+        max-width: 900px;
+    }
+
+    & pre {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 12px;
+        padding: 1.25rem 1.4rem;
+        margin: 1.75rem 0;
+        overflow-x: auto;
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    & code {
+        font-size: 0.92em;
+    }
+
+    & :not(pre) > code {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 5px;
+        padding: 0.1em 0.4em;
+    }
+
+    & ul,
+    & ol {
+        margin: 1rem 0;
+        padding-left: 1.4rem;
     }
 
     & li {
-        list-style: none;
+        margin: 0.5rem 0;
+    }
+
+    & ul > li {
+        list-style: disc;
+    }
+
+    & blockquote {
+        border-left: 3px solid var(--dark-green);
+        padding: 0.25rem 0 0.25rem 1.25rem;
+        margin: 1.5rem 0;
+        opacity: 0.9;
+    }
+
+    & details {
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+
+        & summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--light-green);
+        }
+    }
+
+    /* The trail back to the tutorial index, above the title */
+    & .tutorial-home {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        opacity: 0.75;
+        text-decoration: none;
+
+        &::before {
+            content: '\2190';
+            margin-right: 0.4rem;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    /* Next-step control, matching the buttons on the homepage */
+    & a.next {
+        display: inline-block;
+        margin: 3rem 0 1rem;
+        padding: 0.8rem 1.4rem;
+        background-color: var(--dark-green);
+        border-radius: 10px;
+        color: var(--white);
+        font-weight: 600;
+        text-decoration: none;
+        transition:
+            transform 0.15s ease,
+            box-shadow 0.15s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        &::after {
+            content: '\2192';
+            margin-left: 0.5rem;
+        }
+    }
+
+    /* The tool logos in part 1 sit in a row rather than stacked full-width */
+    & .display {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+        align-items: center;
+        padding-left: 0;
+        margin: 2rem 0;
+
+        & li {
+            list-style: none;
+            margin: 0;
+        }
+
+        & img {
+            margin: 0;
+            border: 0;
+        }
     }
 
     /* Krita's wordmark is dark artwork on transparency, so it needs a light
@@ -88,7 +218,7 @@ main.md {
     & .krita {
         background: rgba(255, 255, 255, 0.92);
         border-radius: 14px;
-        padding: 1.5vmin 2.5vmin;
+        padding: 0.75rem 1rem;
         box-sizing: border-box;
     }
 

@@ -8,22 +8,30 @@ To run the website in development mode:
 
     npm run dev
 
-To publish a new version of the site (automatically formats code with Prettier):
+To publish a new version of the site:
 
     npm run build
     git add .
     git commit -m "Deploy my new feature!"
     git push
 
+`npm run build` formats `src/` with Prettier, then writes the static site to
+`docs/`, which is what GitHub Pages serves from the `gh-pages` branch. The build
+output is committed, so a deploy is whatever `docs/` contains at that commit.
+
 ## Directory Layout
 
 | Directory        | Purpose                                                        |
 | :--------------- | :------------------------------------------------------------- |
-| /public/         | Static assets (images, etc.)                                   |
+| /public/         | Files served as-is, at a stable URL (og:image, favicon)        |
+| /src/assets/     | Images run through `astro:assets`: optimised and hashed        |
 | /src/pages/      | Pages (file-based routing, supports `.md` and `.mdx`)          |
 | /src/components/ | Reusable Astro components (header, carousel, icons)            |
 | /src/layouts/    | Page layouts                                                   |
 | /src/styles/     | Global stylesheets (plain CSS with native nesting & variables) |
+| /src/svgs/       | SVGs inlined by `Icon.astro`                                   |
+| /src/carousels/  | Data for the Developer Spotlight carousel                      |
+| /docs/           | Build output, committed and published by GitHub Pages          |
 
 ***
 
