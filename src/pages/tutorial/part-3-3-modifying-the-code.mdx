@@ -1,63 +1,63 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
 title: 'Part 3-3: The Code | melonJS Platformer Tutorial'
-description: Give your melonJS character a physics body, keyboard controls and a walk animation, and learn the three mistakes that fail silently.
+description: Give your melonJS character a physics body and keyboard controls, and see how the update loop works.
 ---
 
 ## Part 3-3: The code
 
+**What you will learn:** how to make something move, using a body, the keyboard,
+and the update loop.
+
 Your level loads, but nothing moves in it. Open
-`src/scripts/renderables/player.ts`. The starter left you a `Sprite` with two
-empty methods, and this is where the game becomes yours.
+`src/scripts/renderables/player.ts`. The starter left you a character with two
+empty methods. You are going to fill them in.
 
-## Give the character a body
+## Step 1: give it a body
 
-A `Sprite` is just a picture. A picture with a `Body` is something gravity pulls
-on and walls stop. In the constructor, after `super(...)`:
+A sprite is just a picture. A picture with a **body** is something gravity pulls
+down and walls stop.
+
+Add this in the constructor, just after `super(...)`:
 
 ```
 this.body = new Body(this);
-this.body.collisionType = collision.types.PLAYER_OBJECT;
-
-// how fast it can walk, and how high it can jump
 this.body.setMaxVelocity(3, 15);
 this.body.setFriction(0.4, 0);
-
-// keep updating even when off screen, so falling into a hole still works
-this.alwaysUpdate = true;
 ```
 
-Import `Body` and `collision` from `melonjs`. Reload and your character sits on
-the floor instead of hanging in the air.
+Import `Body` from `melonjs` at the top of the file.
 
-## Read the keyboard
+`setMaxVelocity` takes two numbers: how fast the character walks, and how hard
+it jumps. Remember where they are, you will want to change them.
 
-melonJS separates the key from what it means, so you can rebind later without
-touching game logic. Still in the constructor:
+**You should see:** your character resting on the ground instead of floating.
+
+## Step 2: listen for keys
+
+melonJS keeps the key and its meaning apart, so you can change the controls
+later without touching the rest of your game. Still in the constructor:
 
 ```
-input.bindKey(input.KEY.LEFT, "left");
+input.bindKey(input.KEY.LEFT,  "left");
 input.bindKey(input.KEY.RIGHT, "right");
-input.bindKey(input.KEY.A, "left");
-input.bindKey(input.KEY.D, "right");
 input.bindKey(input.KEY.SPACE, "jump", true);
 ```
 
-That last `true` means "only fire once per press", which is what you want for a
-jump: holding space should not launch you repeatedly.
+The `true` at the end means "count this once per press". Without it, holding
+space would jump again on every single frame.
 
-## Move on each frame
+## Step 3: move on every frame
 
-`update()` runs once per frame. Push the body around based on what is held down:
+`update()` runs about sixty times a second. That is your game loop, and it is
+where movement happens:
 
 ```
 update(dt) {
     if (input.isKeyPressed("left")) {
         this.body.force.x = -this.body.maxVel.x;
-        this.flipX(true);
     } else if (input.isKeyPressed("right")) {
         this.body.force.x = this.body.maxVel.x;
-        this.flipX(false);
     } else {
         this.body.force.x = 0;
     }
@@ -70,56 +70,29 @@ update(dt) {
 }
 ```
 
-Notice you set a **force**, not a position. You are asking the physics to move
-the character; it decides what happens when a wall is in the way. Setting
-`pos.x` directly would teleport it through the wall instead.
+**You should see:** a character you can run and jump around the level with.
 
-Save. You can now run and jump around the level you drew.
+Notice you set a **force**, not a position. You push, and the physics decides
+what happens. If you set the position directly instead, your character would
+walk straight through walls, because nothing would be there to stop it.
 
-{/* SCREENSHOT: the character running through the level in the browser */}
+Go back and change `setMaxVelocity(3, 15)` to `(12, 20)`. Save, and try it. That
+is your game now.
 
-## Animate it
+## If something looks wrong
 
-The atlas from Part 3-1 has a walk cycle in it. Register the animations in the
-constructor and switch between them in `update()`:
+Three things go wrong quietly in melonJS. Nothing crashes, so they are hard to
+spot until you know them.
 
-```
-this.addAnimation("stand", ["walk0001.png"]);
-this.addAnimation("walk", [
-    "walk0001.png", "walk0002.png", "walk0003.png", "walk0004.png",
-    "walk0005.png", "walk0006.png",
-]);
-this.setCurrentAnimation("stand");
-```
+**Nothing collides.** Renderables ignore physics and clicks until they have a
+body. Adding a `Body`, like you did in step 1, fixes it.
 
-Then, when the character starts moving, call
-`this.setCurrentAnimation("walk")`, and `"stand"` when it stops. Guard it with
-`isCurrentAnimation` so you are not restarting the cycle on every frame.
+**Something is behind something else.** Draw order is set when you add a thing:
+`app.world.addChild(thing, 10)`. There is no `.z` you can set afterwards.
 
-## Three mistakes that do not raise an error
-
-These are the ones that cost beginners an afternoon, because the game keeps
-running and simply does the wrong thing.
-
-**`isKinematic` defaults to `true`.** A plain `Sprite` is excluded from the
-physics broad-phase and from pointer events until you set
-`this.isKinematic = false`. Attaching a `Body`, as you did above, sets it for
-you, which is why your character collides but a decorative sprite would not.
-
-**Draw order is an argument, not a property.** Use
-`app.world.addChild(thing, 10)`. There is no `renderable.z` to assign, and
-setting `depth` after adding does not re-sort anything.
-
-**A custom `draw()` must respect `this.pos`.** If you override `draw()` and
-paint at fixed coordinates, your sprite renders in the wrong place and no error
-is raised, because you drew exactly what you asked for.
-
-<details>
-    <summary>Try it: give yourself speed hacks</summary>
-    {
-        ' Change setMaxVelocity(3, 15) to something absurd like (12, 20) and reload. The first value is the horizontal speed, the second is the jump strength. This is also how you find out that a very fast character can clip through thin walls, which is a real thing you will deal with when making games.'
-    }
-</details>
+**A sprite draws in the wrong place.** If you write your own `draw()`, use
+`this.pos`. Painting at fixed coordinates puts the sprite where you said rather
+than where it is.
 
 <a href="/tutorial/part-4-going-beyond" class="next">
     {'Up Next: Going beyond this tutorial'}

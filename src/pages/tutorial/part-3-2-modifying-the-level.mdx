@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
 title: 'Part 3-2: The Level | melonJS Platformer Tutorial'
-description: 'Load a Tiled map into your melonJS game, then edit it: layers, collision, and exporting a level the engine can read.'
+description: 'Load a Tiled map into your melonJS game in one line, then edit it: layers, collision, and saving your changes.'
 ---
 
 import { Image } from 'astro:assets'
@@ -10,12 +10,15 @@ import mushroomSky from '../../assets/tutorial/mushroom-sky.png'
 
 ## Part 3-2: The level
 
-This is the part where the grey screen becomes a game.
+**What you will learn:** how to load a level, and how to change it.
 
-## Load the map
+This is the part where the grey screen turns into a game.
 
-Your project already has `map1.tmx` in `src/data/map` from Part 2. melonJS will
-not load it until you list it, so open `src/manifest.ts` and add three entries:
+## Step 1: list the files
+
+You copied `map1.tmx` into the project in Part 2. melonJS will not touch it
+until you list it, so open `src/manifest.ts` and add these three lines to the
+array:
 
 ```
 { name: "tileset", type: "image", src: "/src/data/img/tileset.png" },
@@ -23,13 +26,16 @@ not load it until you list it, so open `src/manifest.ts` and add three entries:
 { name: "map1",    type: "tmx",   src: "/src/data/map/map1.tmx" },
 ```
 
-Three entries for one level, because a level is three things: the picture of the
-tiles, the description of how that picture is cut into tiles, and the map that
-arranges them. The two `tileset` entries share a name on purpose; melonJS looks
-them up together.
+A level is three files, so it needs three lines:
 
-Now open `src/scripts/stage/play.ts` and replace the "Hello World" body of
-`onResetEvent` with one line:
+- the **image** of all the tiles
+- the **tileset** that says how to cut that image into squares
+- the **map** that says which square goes where
+
+## Step 2: load the level
+
+Open `src/scripts/stage/play.ts`. Delete what is inside `onResetEvent` and put
+this in its place:
 
 ```
 onResetEvent() {
@@ -37,40 +43,41 @@ onResetEvent() {
 }
 ```
 
-Import `level` from `melonjs` at the top of the file alongside `Stage`. Save,
-and your browser now shows the platformer level.
+Add `level` to the import from `melonjs` at the top of the file. Save.
+
+**You should see:** the platformer level in your browser, instead of
+`Hello World!`.
+
+One line loaded a whole level. That is the payoff for listing the files in
+step 1.
+
+## Step 3: change it
+
+Open `src/data/map/map1.tmx` in Tiled. The level is in the middle. On the right
+you have your layers at the top, and the tiles you paint with underneath.
 
 <Image alt="Tiled editor screenshot" class="large" src={tiledEditor} />
 
-## Edit it
-
-Open `src/data/map/map1.tmx` in Tiled. The middle is the level. On the right are
-the layers at the top, and the tiles you can paint with at the bottom.
-
-Layers are the thing to understand. A level is stacked: background art behind,
-the ground and platforms you stand on, decorations in front. Always check which
-layer is selected before you paint, or your mushrooms end up behind the hill
-instead of on it. The eye icon next to each layer hides it, which is the quickest
-way to see what belongs to what.
+**Layers are the thing to understand.** A level is stacked: sky at the back,
+ground in the middle, decoration in front. Check which layer is selected before
+you paint, or your mushrooms end up behind the hill instead of in front of it.
+The eye icon hides a layer, which is the fastest way to see what is on it.
 
 <Image alt="Putting mushrooms in the sky" class="large" src={mushroomSky} />
 
-The solid black lines in the level are collision shapes: the walls, floors and
-boxes your character cannot walk through. They live on their own layer, and
-melonJS turns them into physics when the level loads. If your character falls
-through the floor later, this layer is the first place to look.
+The black outlines are **collision**: the floors and walls your character cannot
+pass through. They sit on their own layer, and melonJS turns them into physics
+when the level loads. If your character falls through the floor later, look here
+first.
 
-When you are done, save with `File > Save`. The dev server reloads and your
-change is in the game.
+Paint a few tiles, then save with `File > Save`.
 
-_A note on formats: melonJS reads `.tmx` directly, so saving is enough. Tiled can
-also export to JSON via `File > Export As` if you prefer that, in which case
-change the manifest entry to point at the `.json` file._
+**You should see:** your change in the browser, straight away.
 
-You can learn much more about Tiled in
-[its own documentation](https://doc.mapeditor.org/en/stable/), and about
-[how collision shapes are defined](https://github.com/melonjs/melonJS/wiki/How-to-define-world-collision-shapes-in-Tiled)
-in the melonJS wiki.
+Tiled can do far more than this. Its
+[documentation](https://doc.mapeditor.org/en/stable/) is good, and the melonJS
+wiki explains
+[how collision shapes work](https://github.com/melonjs/melonJS/wiki/How-to-define-world-collision-shapes-in-Tiled).
 
 <a href="/tutorial/part-3-3-modifying-the-code" class="next">
     {'Up Next: The code'}

@@ -1,13 +1,18 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
 title: 'Part 2: Setting Up the Project | melonJS Platformer Tutorial'
-description: Scaffold a melonJS project with npm create melonjs, run it with Vite, and learn your way around the files it generates.
+description: Create a melonJS project with one command, run it in your browser, and learn what each file in it is for.
 ---
 
-# Part 2: Setting Up the Project
+# Part 2: Setting up
 
-melonJS gives you a starter project with one command. Open a terminal, go
-wherever you keep your projects, and run:
+**What you will learn:** how to create a melonJS project, and what the two lines
+that start every game actually do.
+
+## Create the project
+
+Open a terminal, go to wherever you keep your projects, and run these four
+commands one at a time:
 
 ```
 npm create melonjs@latest my-game
@@ -16,44 +21,36 @@ npm install
 npm run dev
 ```
 
-The last command starts a development server and prints an address, usually
-`http://localhost:5173`. Open it and you should see **Hello World!** on a grey
-background. Leave that terminal running: every time you save a file, the page
-reloads with your change.
+The last one prints an address, usually `http://localhost:5173`. Open it in your
+browser.
 
-<!-- SCREENSHOT: the scaffolded project running in the browser, showing "Hello World!" -->
+**You should see:** the words `Hello World!` on a grey background.
 
-That is a working melonJS game. The rest of the tutorial fills it in.
+That is a working melonJS game. Leave the terminal running. From now on, every
+time you save a file the browser reloads by itself.
 
-## What the starter made
+## Look around the project
 
-Open the `my-game` folder in VS Code. Most of it is configuration you can
-ignore for now. These are the files you will touch:
+Open the `my-game` folder in VS Code. There are a lot of files, and you can
+ignore most of them. These are the five that matter:
 
 ```
-my-game/
-  src/
-    index.ts                     the entry point: starts the game
-    manifest.ts                  the list of assets to load
-    data/
-      img/                       images go here
-      map/                       levels go here
-      fnt/                       the font the starter uses
-    scripts/
-      stage/
-        play.ts                  the screen your game runs on
-        title.ts                 the title screen
-      renderables/
-        player.ts                your character
+src/
+  index.ts        starts the game
+  manifest.ts     the list of files your game loads
+  data/
+    img/          images go here      (empty for now)
+    map/          levels go here      (empty for now)
+  scripts/
+    stage/play.ts     the screen your game runs on
+    renderables/player.ts   your character
 ```
 
-The `data/img` and `data/map` folders are empty. Filling them is what Part 3 is
-about.
+Two of those folders are empty. Part 3 fills them.
 
-## The entry point
+## The two lines that start a game
 
-Open `src/index.ts`. You do not need to change anything yet, but two lines are
-worth understanding, because they explain how a melonJS game starts.
+Open `src/index.ts` and find these lines near the top:
 
 ```
 const app = new Application(1218, 562, { parent: "screen", scale: "auto" });
@@ -61,32 +58,30 @@ const app = new Application(1218, 562, { parent: "screen", scale: "auto" });
 await app.init();
 ```
 
-The first line creates the game and its world. The second builds the renderer
-and puts the canvas on the page. `app.init()` is asynchronous so melonJS can ask
-the browser for a WebGPU device, and it is **mandatory**: without it you get a
-world with nothing to draw on, and the errors that follow will not mention the
-missing call.
+The first line creates your game. The second one builds the renderer and puts
+the canvas on the page.
 
-Further down, the starter preloads your assets and then switches to the play
-screen:
+**Do not skip `await app.init()`.** It is required, and it is easy to forget
+because nothing obviously breaks straight away. Without it your game has a world
+but nothing to draw with, and the errors you get later will not mention it.
+
+Further down, one more block is worth a look:
 
 ```
 loader.preload(DataManifest, () => {
-    state.set(state.MENU, new TitleScreen());
     state.set(state.PLAY, new PlayScreen());
-    pool.register("mainPlayer", PlayerEntity);
     state.change(state.PLAY, false);
 });
 ```
 
-Nothing loads by magic. An asset has to be listed in `manifest.ts` before you
-can use it, which is the first thing the next two parts do.
+This says: load everything in the manifest, then switch to the play screen.
+Nothing loads by itself in melonJS. If a file is not in `manifest.ts`, your game
+cannot use it. That catches everybody once.
 
-## Getting the art and the level
+## Get the art and the level
 
-This tutorial uses the art and map from the melonJS platformer example, so you
-can spend your time on the game rather than on drawing tiles. Download the
-melonJS repository and copy them into your project:
+You need a tileset and a map to build with. Rather than draw them now, copy them
+from the melonJS examples:
 
 ```
 git clone --depth 1 https://github.com/melonjs/melonJS
@@ -94,8 +89,9 @@ cp -r melonJS/packages/examples/public/assets/platformer/img/* my-game/src/data/
 cp -r melonJS/packages/examples/public/assets/platformer/map/* my-game/src/data/map/
 ```
 
-On Windows, copy the two folders in Explorer instead. You should now have
-`tileset.png`, `background.png`, `texture.png` and a few others in
-`src/data/img`, and `map1.tmx` with `tileset.tsx` in `src/data/map`.
+On Windows, copy the two folders in Explorer instead.
+
+**You should now have:** `tileset.png` and a few other images in `src/data/img`,
+and `map1.tmx` with `tileset.tsx` in `src/data/map`.
 
 <a href="/tutorial/part-3-modifying-the-game" class="next">Up Next: Building the game</a>
