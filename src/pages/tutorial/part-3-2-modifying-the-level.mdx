@@ -17,20 +17,29 @@ This is the part where the grey screen turns into a game.
 ## Step 1: list the files
 
 You copied `map1.tmx` into the project in Part 2. melonJS will not touch it
-until you list it, so open `src/manifest.ts` and add these three lines to the
-array:
+until you list it, so open `src/manifest.ts` and add these lines to the array.
+Watch the comma: the last entry that is already there does not have one.
 
 ```
-{ name: "tileset", type: "image", src: "/src/data/img/tileset.png" },
-{ name: "tileset", type: "tsx",   src: "/src/data/map/tileset.tsx" },
-{ name: "map1",    type: "tmx",   src: "/src/data/map/map1.tmx" },
+    },
+
+    /* Level */
+    { name: "tileset",    type: "image", src: "/data/img/tileset.png" },
+    { name: "background", type: "image", src: "/data/img/background.png" },
+    { name: "clouds",     type: "image", src: "/data/img/clouds.png" },
+    { name: "tileset",    type: "tsx",   src: "/data/map/tileset.tsx" },
+    { name: "map1",       type: "tmx",   src: "/data/map/map1.tmx" }
+];
 ```
 
-A level is three files, so it needs three lines:
+Five lines for one level, because a level is made of several files:
 
-- the **image** of all the tiles
-- the **tileset** that says how to cut that image into squares
-- the **map** that says which square goes where
+- the **tileset image**, the grid of squares the level is drawn with
+- the **background** and **clouds**, which scroll behind at their own speed
+- the **tileset** description, which says how to cut that image into squares
+- the **map** itself, which says which square goes where
+
+Miss one and melonJS tells you exactly which name it could not find.
 
 ## Step 2: load the level
 
@@ -43,13 +52,17 @@ onResetEvent() {
 }
 ```
 
-Add `level` to the import from `melonjs` at the top of the file. Save.
+Change the import at the top of the file to bring in `level` instead of
+`ColorLayer` and `BitmapText`. Save.
 
-**You should see:** the platformer level in your browser, instead of
-`Hello World!`.
+**You should see:** the level in your browser, instead of `Hello World!`.
 
 One line loaded a whole level. That is the payoff for listing the files in
 step 1.
+
+**You will also see an error** in the browser console, about a texture that is
+not found. That is expected. The map contains your character, and the starter
+does not know how to draw it yet. Part 3-3 is where you fix that.
 
 ## Step 3: change it
 

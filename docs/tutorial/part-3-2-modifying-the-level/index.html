@@ -31,28 +31,39 @@ Tutorial: Build a Platformer Game
 <p>This is the part where the grey screen turns into a game.</p>
 <h2 id="step-1-list-the-files">Step 1: list the files</h2>
 <p>You copied <code>map1.tmx</code> into the project in Part 2. melonJS will not touch it
-until you list it, so open <code>src/manifest.ts</code> and add these three lines to the
-array:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>{ name: &quot;tileset&quot;, type: &quot;image&quot;, src: &quot;/src/data/img/tileset.png&quot; },</span></span>
-<span class="line"><span>{ name: &quot;tileset&quot;, type: &quot;tsx&quot;,   src: &quot;/src/data/map/tileset.tsx&quot; },</span></span>
-<span class="line"><span>{ name: &quot;map1&quot;,    type: &quot;tmx&quot;,   src: &quot;/src/data/map/map1.tmx&quot; },</span></span></code></pre>
-<p>A level is three files, so it needs three lines:</p>
+until you list it, so open <code>src/manifest.ts</code> and add these lines to the array.
+Watch the comma: the last entry that is already there does not have one.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>    },</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /* Level */</span></span>
+<span class="line"><span>    { name: &quot;tileset&quot;,    type: &quot;image&quot;, src: &quot;/data/img/tileset.png&quot; },</span></span>
+<span class="line"><span>    { name: &quot;background&quot;, type: &quot;image&quot;, src: &quot;/data/img/background.png&quot; },</span></span>
+<span class="line"><span>    { name: &quot;clouds&quot;,     type: &quot;image&quot;, src: &quot;/data/img/clouds.png&quot; },</span></span>
+<span class="line"><span>    { name: &quot;tileset&quot;,    type: &quot;tsx&quot;,   src: &quot;/data/map/tileset.tsx&quot; },</span></span>
+<span class="line"><span>    { name: &quot;map1&quot;,       type: &quot;tmx&quot;,   src: &quot;/data/map/map1.tmx&quot; }</span></span>
+<span class="line"><span>];</span></span></code></pre>
+<p>Five lines for one level, because a level is made of several files:</p>
 <ul>
-<li>the <strong>image</strong> of all the tiles</li>
-<li>the <strong>tileset</strong> that says how to cut that image into squares</li>
-<li>the <strong>map</strong> that says which square goes where</li>
+<li>the <strong>tileset image</strong>, the grid of squares the level is drawn with</li>
+<li>the <strong>background</strong> and <strong>clouds</strong>, which scroll behind at their own speed</li>
+<li>the <strong>tileset</strong> description, which says how to cut that image into squares</li>
+<li>the <strong>map</strong> itself, which says which square goes where</li>
 </ul>
+<p>Miss one and melonJS tells you exactly which name it could not find.</p>
 <h2 id="step-2-load-the-level">Step 2: load the level</h2>
 <p>Open <code>src/scripts/stage/play.ts</code>. Delete what is inside <code>onResetEvent</code> and put
 this in its place:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="plaintext"><code><span class="line"><span>onResetEvent() {</span></span>
 <span class="line"><span>    level.load(&quot;map1&quot;);</span></span>
 <span class="line"><span>}</span></span></code></pre>
-<p>Add <code>level</code> to the import from <code>melonjs</code> at the top of the file. Save.</p>
-<p><strong>You should see:</strong> the platformer level in your browser, instead of
-<code>Hello World!</code>.</p>
+<p>Change the import at the top of the file to bring in <code>level</code> instead of
+<code>ColorLayer</code> and <code>BitmapText</code>. Save.</p>
+<p><strong>You should see:</strong> the level in your browser, instead of <code>Hello World!</code>.</p>
 <p>One line loaded a whole level. That is the payoff for listing the files in
 step 1.</p>
+<p><strong>You will also see an error</strong> in the browser console, about a texture that is
+not found. That is expected. The map contains your character, and the starter
+does not know how to draw it yet. Part 3-3 is where you fix that.</p>
 <h2 id="step-3-change-it">Step 3: change it</h2>
 <p>Open <code>src/data/map/map1.tmx</code> in Tiled. The level is in the middle. On the right
 you have your layers at the top, and the tiles you paint with underneath.</p>

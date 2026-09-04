@@ -1,39 +1,99 @@
 ---
 layout: ../../layouts/TutorialLayout.astro
 title: 'Part 3-3: The Code | melonJS Platformer Tutorial'
-description: Give your melonJS character a physics body and keyboard controls, and see how the update loop works.
+description: Give your melonJS character a sprite, a physics body and keyboard controls, and see how the update loop works.
 ---
+
+import { Image } from 'astro:assets'
+import gameCharacter from '../../assets/tutorial/game-character.png'
 
 ## Part 3-3: The code
 
-**What you will learn:** how to make something move, using a body, the keyboard,
-and the update loop.
+**What you will learn:** how to put a character on screen and make it move,
+using a body, the keyboard, and the update loop.
 
-Your level loads, but nothing moves in it. Open
-`src/scripts/renderables/player.ts`. The starter left you a character with two
-empty methods. You are going to fill them in.
+Your level loads, but the character is missing and the console is complaining.
+Open `src/scripts/renderables/player.ts`. The starter left you an empty
+character. You are going to fill it in, one step at a time.
 
-## Step 1: give it a body
+## Step 1: give it a picture
+
+First, list the character's images in `src/manifest.ts`, next to the level
+entries you added in Part 3-2:
+
+```
+    { name: "texture", type: "json",  src: "/data/img/texture.json" },
+    { name: "texture", type: "image", src: "/data/img/texture.png" }
+```
+
+Those two files are an **atlas**: one image holding every frame of the
+character, and a `.json` saying where each frame sits inside it.
+
+Now build the sprite from six of those frames. Replace the constructor in
+`player.ts` with this:
+
+```
+constructor(x, y, settings) {
+    const atlas = new TextureAtlas(
+        loader.getJSON("texture"),
+        loader.getImage("texture"),
+    );
+
+    super(x, y, {
+        ...atlas.getAnimationSettings([
+            "walk0001.png", "walk0002.png", "walk0003.png",
+            "walk0004.png", "walk0005.png", "walk0006.png",
+        ]),
+        anchorPoint: { x: 0, y: 0 },
+    });
+}
+```
+
+Import `loader`, `Sprite` and `TextureAtlas` from `melonjs` at the top.
+
+**You should see:** the character, falling straight through the floor.
+
+## Step 2: give it a body
 
 A sprite is just a picture. A picture with a **body** is something gravity pulls
-down and walls stop.
-
-Add this in the constructor, just after `super(...)`:
+down and walls stop. Add this at the end of the constructor:
 
 ```
-this.body = new Body(this);
+this.body = new Body(
+    this,
+    new Rect(0, 0, settings.width, settings.height),
+);
 this.body.setMaxVelocity(3, 15);
 this.body.setFriction(0.4, 0);
+this.alwaysUpdate = true;
 ```
 
-Import `Body` from `melonjs` at the top of the file.
+The rectangle is the shape that collides, and its size comes from the character
+you placed in Tiled. Import `Body` and `Rect` as well.
 
 `setMaxVelocity` takes two numbers: how fast the character walks, and how hard
 it jumps. Remember where they are, you will want to change them.
 
-**You should see:** your character resting on the ground instead of floating.
+**You should see:** the character standing on the ground.
 
-## Step 2: listen for keys
+## Step 3: point the camera at it
+
+The camera is still looking at the corner of the level. One line, at the end of
+the constructor, fixes that:
+
+```
+game.viewport.follow(this, game.viewport.AXIS.BOTH, 0.1);
+```
+
+The `0.1` is how lazily the camera catches up. Try `1` to see the difference.
+
+<Image
+    alt="The character standing in the level"
+    src={gameCharacter}
+    class="large"
+/>
+
+## Step 4: listen for keys
 
 melonJS keeps the key and its meaning apart, so you can change the controls
 later without touching the rest of your game. Still in the constructor:
@@ -47,7 +107,7 @@ input.bindKey(input.KEY.SPACE, "jump", true);
 The `true` at the end means "count this once per press". Without it, holding
 space would jump again on every single frame.
 
-## Step 3: move on every frame
+## Step 5: move on every frame
 
 `update()` runs about sixty times a second. That is your game loop, and it is
 where movement happens:
@@ -76,8 +136,8 @@ Notice you set a **force**, not a position. You push, and the physics decides
 what happens. If you set the position directly instead, your character would
 walk straight through walls, because nothing would be there to stop it.
 
-Go back and change `setMaxVelocity(3, 15)` to `(12, 20)`. Save, and try it. That
-is your game now.
+Now go back and change `setMaxVelocity(3, 15)` to `(12, 20)`. Save, and try it.
+That is your game.
 
 ## If something looks wrong
 
@@ -85,7 +145,7 @@ Three things go wrong quietly in melonJS. Nothing crashes, so they are hard to
 spot until you know them.
 
 **Nothing collides.** Renderables ignore physics and clicks until they have a
-body. Adding a `Body`, like you did in step 1, fixes it.
+body. Adding a `Body`, like you did in step 2, fixes it.
 
 **Something is behind something else.** Draw order is set when you add a thing:
 `app.world.addChild(thing, 10)`. There is no `.z` you can set afterwards.
