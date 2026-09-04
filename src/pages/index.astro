@@ -4,7 +4,6 @@ import '../styles/variables.css'
 import '../styles/index.css'
 import Icon from '../components/Icon.astro'
 import Carousel from '../components/Carousel.astro'
-import CopyPage from '../components/CopyPage.astro'
 import gallery from '../carousels/gallery.json'
 import { Image } from 'astro:assets'
 import browserIcons from '../assets/browser_icons.png'
@@ -287,65 +286,91 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
         </div>
 
         <div class="ai-section">
-            <div class="ai-head">
-                <h2 id="ai-assistants">Working with an AI assistant</h2>
-                <CopyPage />
-            </div>
+            <h2 id="ai-assistants">melonJS Skills</h2>
             <p class="ai-lead">
-                An assistant with nothing to read invents API names. These
-                three give it the real ones.
+                Teach your AI coding agent to build with melonJS 20. One
+                install, 23 skills covering the engine's conventions and the
+                mistakes that fail silently rather than erroring: a custom
+                <code>draw()</code> that ignores <code>this.pos</code>,
+                <code>isKinematic</code> blocking pointer events, draw order
+                set after <code>addChild</code>.
             </p>
+
+            <div class="terminal">
+                <div class="terminal-bar">
+                    <span class="terminal-dots" aria-hidden="true"
+                        ><i></i><i></i><i></i></span
+                    >
+                    <span class="terminal-title">melonjs skills quick start</span>
+                    <span class="terminal-step">install, prompt, build</span>
+                </div>
+                <pre class="terminal-body"><code><span class="cmt">$</span> npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills
+<span class="cmt">$</span> claude
+<span class="kw">&gt;</span> Build a platformer level from my Tiled map, with SAT collision on the crates.</code></pre>
+            </div>
+
+            <h3 class="ai-sub">Pick the path that fits your setup</h3>
+            <div class="install-main">
+                <div class="install-head">
+                    <h4>Universal</h4>
+                    <span class="pill">Recommended</span>
+                </div>
+                <p>
+                    One command, no config. It writes each agent's own
+                    convention (<code>.claude/skills/</code>, <code
+                        >.agents/skills/</code
+                    >, <code>.windsurf/skills/</code> and around seventy
+                    others), so nothing is placed by hand.
+                </p>
+                <pre class="code-block wrap"><code>npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills</code></pre>
+            </div>
             <div class="why-cards">
                 <div class="why-card">
                     <div class="why-card-accent"></div>
-                    <h3>llms.txt</h3>
+                    <h4>Claude Code</h4>
                     <p>
-                        <a href="https://melonjs.github.io/melonJS/llms.txt"
-                            >llms.txt</a
-                        > indexes every exported class, function, interface and
-                        type with a one-line summary, a link to its page, and a
-                        marker on the deprecated ones. It is regenerated on
-                        every docs build, so it never drifts from the release.
-                        Hand an assistant that one URL instead of letting it
-                        guess.
+                        Install the plugin from its slash-command prompt. It
+                        registers the same guidance as 23 routed skills.
                     </p>
+                    <pre class="code-block wrap"><code>/plugin marketplace add melonjs/melonJS</code></pre>
                 </div>
                 <div class="why-card">
                     <div class="why-card-accent"></div>
-                    <h3>Skills</h3>
+                    <h4>Codex, Cursor, Gemini CLI</h4>
                     <p>
-                        melonJS ships guidance files that teach an assistant the
-                        engine's conventions, and more usefully the mistakes
-                        that fail silently rather than erroring: a custom
-                        <code>draw()</code> that ignores <code>this.pos</code>,
-                        <code>isKinematic</code> blocking pointer events,
-                        <code>.z</code> set after <code>addChild</code>.
+                        Anything following the <code>AGENTS.md</code> convention
+                        reads it from your project root. Copy the one that ships
+                        with the package, or paste its sections into the
+                        <code>AGENTS.md</code> you already have.
                     </p>
-                    <pre class="code-block wrap"><code>npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills</code></pre>
-                    <p>
-                        That installs 23 skills in whatever layout your agent
-                        expects (<code>.claude/skills/</code>, <code
-                            >.agents/skills/</code
-                        >, <code>.windsurf/skills/</code> and around seventy
-                        others), so nothing is placed by hand. It installs from
-                        <code>master</code>; the copy matching a specific
-                        release ships inside the npm package at <code
-                            >node_modules/melonjs/skills/</code
-                        >.
-                    </p>
+                    <pre class="code-block wrap"><code>cp node_modules/melonjs/skills/AGENTS.md ./AGENTS.md</code></pre>
                 </div>
                 <div class="why-card">
                     <div class="why-card-accent"></div>
-                    <h3>Copy page</h3>
+                    <h4>Pinned to your release</h4>
                     <p>
-                        The <strong>Copy page</strong> control above takes this
-                        page as Markdown with its URL attached, ready to paste
-                        into an assistant that cannot browse the web. It can
-                        also open a new chat in ChatGPT or Claude with the URL
-                        already filled in.
+                        The universal command installs from <code>master</code>.
+                        The copy matching the version you actually depend on
+                        ships inside the npm package, one directory per
+                        subsystem.
                     </p>
+                    <pre class="code-block wrap"><code>node_modules/melonjs/skills/</code></pre>
                 </div>
             </div>
+
+            <h3 class="ai-sub">Prompt like you normally would</h3>
+            <p class="ai-lead">
+                Describe the task and your agent loads the guide that fits.
+                <code>melonjs</code> is the router: it reads the task, then
+                sends itself to the one or two skills that cover it, out of
+                physics, tilemaps, sprites, 3D scenes, lighting, shaders, audio,
+                input, UI, performance and the rest.
+            </p>
+            <pre class="code-block"><code><span class="cmt"># Ask naturally, the agent picks the skill up when it fits</span>
+Add a bouncing crate with SAT collision to my Tiled level.
+
+<span class="cmt"># Or name it, when you want to be direct</span>
+Use the melonjs skill and move this game from 15.x to 20.x.</code></pre>
         </div>
 
         <div class="stack">
