@@ -81,7 +81,18 @@ main.md {
         list-style: none;
     }
 
+    /* Krita's wordmark is dark artwork on transparency, so it needs a light
+       plate on the near-black canvas. Tiled's is light artwork and reads as
+       it is, and VS Code's ships its own white background: only round that
+       one off so the row matches. */
     & .krita {
-        filter: drop-shadow(-0.25vmin 0.25vmin 0.5vmin #ffffffc2);
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 14px;
+        padding: 1.5vmin 2.5vmin;
+        box-sizing: border-box;
+    }
+
+    & .display img[alt='Visual Studio Code logo'] {
+        border-radius: 14px;
     }
 }

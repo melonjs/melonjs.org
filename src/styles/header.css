@@ -3,8 +3,11 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--gray);
-    border-bottom: 0.5vmin solid var(--dark-gray);
+    /* the canvas is near-black, so the bar is an elevated surface rather
+       than a lighter grey, and the active tab goes lighter, not darker */
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
     & a {
         color: inherit;
@@ -31,7 +34,7 @@ header {
             &.active,
             &:hover {
                 color: white;
-                background-color: var(--dark-gray);
+                background-color: rgba(255, 255, 255, 0.07);
                 transition: none;
             }
 
