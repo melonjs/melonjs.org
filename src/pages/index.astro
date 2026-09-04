@@ -41,6 +41,8 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
 >
     <style>
         main {
+            background-color: var(--dark-gray);
+
             & h1,
             & h2,
             & h3,
@@ -49,31 +51,41 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             & h6 {
                 margin-bottom: 1.5rem;
             }
+
+            /* backgrounds stay full-bleed; only the content is held to a
+               readable measure */
             & > * {
-                padding: var(--section-pad-y) var(--section-pad-x);
-                &:nth-child(odd) {
+                padding: var(--section-pad-y)
+                    max(
+                        var(--section-pad-x),
+                        calc((100% - var(--measure)) / 2)
+                    );
+
+                /* sections still alternate, but as a tonal step rather than
+                   a stripe */
+                &:nth-child(even) {
                     background-color: var(--gray);
-                    color: var(--white);
-                    & h1,
-                    & h2,
-                    & h3,
-                    & h4,
-                    & h5,
-                    & h6,
-                    & a {
-                        color: var(--light-green);
-                    }
+                    border-block: 1px solid rgba(255, 255, 255, 0.05);
                 }
-                &:first-child {
-                    & h1,
-                    & h2,
-                    & h3,
-                    & h4,
-                    & h5,
-                    & h6,
-                    & a {
-                        color: var(--dark-green);
-                    }
+            }
+
+            & > *:not(.jumbotron) > h2 {
+                position: relative;
+                padding-top: 1rem;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 3rem;
+                    height: 3px;
+                    border-radius: 2px;
+                    background: linear-gradient(
+                        90deg,
+                        var(--dark-green),
+                        var(--melon)
+                    );
                 }
             }
         }

@@ -1,11 +1,13 @@
 :root {
     --mobile-width: 640px;
     --desktop-width: 1080px;
-    --dark-green: #6ba832;
+    --dark-green: #6ba831;
     --green: #82c743;
     --light-green: #8de48d;
     --deep-green: #57b302;
     --jean: #77a4a9;
+    --melon: #d1655b;
+    --green-ink: #457a1c;
     --ocean: #337ab7;
     --cream: #efad72;
     --dust: #b7a5a6;
@@ -14,8 +16,9 @@
     --red: #d9534f;
     --white: white;
     --black: black;
-    --gray: #404040;
-    --dark-gray: #202020;
+    --gray: #171a16;
+    --dark-gray: #0e100e;
     --section-pad-x: clamp(2rem, 8vw, 12rem);
-    --section-pad-y: clamp(3rem, 6vw, 6rem);
+    --section-pad-y: clamp(3.5rem, 7vw, 7rem);
+    --measure: 1180px;
 }

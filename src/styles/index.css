@@ -26,7 +26,19 @@ main {
     }
 
     & .jumbotron {
-        background-color: var(--dark-gray) !important;
+        background:
+            radial-gradient(
+                60% 55% at 50% 12%,
+                rgba(107, 168, 49, 0.16),
+                transparent 70%
+            ),
+            radial-gradient(
+                40% 40% at 78% 4%,
+                rgba(209, 101, 91, 0.1),
+                transparent 70%
+            ),
+            var(--dark-gray) !important;
+
         text-align: center;
         padding-top: clamp(3rem, 6vw, 5rem) !important;
         padding-bottom: clamp(3rem, 6vw, 5rem) !important;
@@ -74,6 +86,14 @@ main {
 
             & a {
                 margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                min-height: 104px;
+                padding: 1rem;
+                background: rgba(255, 255, 255, 0.92);
+                border-radius: 14px;
                 transition: transform 0.2s ease;
 
                 &:hover {
@@ -294,16 +314,23 @@ main {
     }
 
     & h2 {
-        font-size: clamp(1.3rem, 3vw, 2em);
+        font-size: clamp(1.5rem, 3.2vw, 2.3em);
+        letter-spacing: -0.02em;
+        color: var(--white);
+    }
+
+    & h3 {
+        color: var(--light-green);
     }
 
     & a.btn {
-        color: var(--black) !important;
+        color: var(--black);
         text-decoration: none;
         display: inline-block;
-        padding: 0.65rem 1.2rem;
-        margin: 0.5rem 0.3rem;
-        border-radius: 8px;
+        padding: 0.8rem 1.4rem;
+        margin: 0.4rem 0.25rem;
+        border: 1px solid transparent;
+        border-radius: 10px;
         font-size: 0.95em;
         font-weight: 600;
         transition:
@@ -315,37 +342,31 @@ main {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
+        &.danger {
+            background-color: var(--melon);
+            color: var(--white);
+        }
+
         &.success {
             background-color: var(--dark-green);
-            color: var(--black) !important;
-        }
-
-        &.primary {
-            background-color: var(--ocean);
-        }
-
-        &.danger {
-            background-color: var(--red);
-        }
-
-        &.discord {
-            background-color: #ccc;
-
-            & path {
-                fill: black;
-            }
+            color: var(--white);
         }
 
         &.primary,
-        &.danger {
-            color: white !important;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        &.default,
+        &.discord {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.22);
+            color: var(--white);
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-color: rgba(107, 168, 49, 0.6);
+            }
         }
 
-        &.default {
-            background-color: var(--white);
-            color: var(--black) !important;
-            text-shadow: none;
+        &.discord path {
+            fill: currentColor;
         }
     }
 
@@ -446,9 +467,9 @@ main {
         position: relative;
         overflow: hidden;
         text-align: left;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.035);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 14px;
         padding: 2rem 1.75rem;
         transition:
             transform 0.2s ease,

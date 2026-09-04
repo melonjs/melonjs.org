@@ -8,6 +8,8 @@ html {
 }
 
 body {
+    background-color: var(--dark-gray);
+    color: #e7e9e5;
     display: flex;
     flex-direction: column;
     font-family: 'Droid Sans', Tahoma, 'Lucida Grande', sans-serif;
@@ -16,7 +18,7 @@ body {
 }
 
 a {
-    color: var(--ocean);
+    color: var(--light-green);
 }
 
 img {
