@@ -286,91 +286,34 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
         </div>
 
         <div class="ai-section">
-            <h2 id="ai-assistants">melonJS Skills</h2>
-            <p class="ai-lead">
-                Teach your AI coding agent to build with melonJS 20. One
-                install, 23 skills covering the engine's conventions and the
-                mistakes that fail silently rather than erroring: a custom
-                <code>draw()</code> that ignores <code>this.pos</code>,
-                <code>isKinematic</code> blocking pointer events, draw order
-                set after <code>addChild</code>.
+            <h2 id="ai-skills">AI Skills</h2>
+            <p>
+                melonJS ships 23 skills that teach a coding agent the engine's
+                conventions, and the mistakes that fail silently rather than
+                erroring: a custom <code>draw()</code> that ignores
+                <code>this.pos</code>, <code>isKinematic</code> blocking pointer
+                events, draw order set after <code>addChild</code>.
             </p>
-
-            <div class="terminal">
-                <div class="terminal-bar">
-                    <span class="terminal-dots" aria-hidden="true"
-                        ><i></i><i></i><i></i></span
-                    >
-                    <span class="terminal-title">melonjs skills quick start</span>
-                    <span class="terminal-step">install, prompt, build</span>
-                </div>
-                <pre class="terminal-body"><code><span class="cmt">$</span> npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills
-<span class="cmt">$</span> claude
-<span class="kw">&gt;</span> Build a platformer level from my Tiled map, with SAT collision on the crates.</code></pre>
-            </div>
-
-            <h3 class="ai-sub">Pick the path that fits your setup</h3>
-            <div class="install-main">
-                <div class="install-head">
-                    <h4>Universal</h4>
-                    <span class="pill">Recommended</span>
-                </div>
-                <p>
-                    One command, no config. It writes each agent's own
-                    convention (<code>.claude/skills/</code>, <code
-                        >.agents/skills/</code
-                    >, <code>.windsurf/skills/</code> and around seventy
-                    others), so nothing is placed by hand.
-                </p>
-                <pre class="code-block wrap"><code>npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills</code></pre>
-            </div>
-            <div class="why-cards">
-                <div class="why-card">
-                    <div class="why-card-accent"></div>
-                    <h4>Claude Code</h4>
-                    <p>
-                        Install the plugin from its slash-command prompt. It
-                        registers the same guidance as 23 routed skills.
-                    </p>
-                    <pre class="code-block wrap"><code>/plugin marketplace add melonjs/melonJS</code></pre>
-                </div>
-                <div class="why-card">
-                    <div class="why-card-accent"></div>
-                    <h4>Codex, Cursor, Gemini CLI</h4>
-                    <p>
-                        Anything following the <code>AGENTS.md</code> convention
-                        reads it from your project root. Copy the one that ships
-                        with the package, or paste its sections into the
-                        <code>AGENTS.md</code> you already have.
-                    </p>
-                    <pre class="code-block wrap"><code>cp node_modules/melonjs/skills/AGENTS.md ./AGENTS.md</code></pre>
-                </div>
-                <div class="why-card">
-                    <div class="why-card-accent"></div>
-                    <h4>Pinned to your release</h4>
-                    <p>
-                        The universal command installs from <code>master</code>.
-                        The copy matching the version you actually depend on
-                        ships inside the npm package, one directory per
-                        subsystem.
-                    </p>
-                    <pre class="code-block wrap"><code>node_modules/melonjs/skills/</code></pre>
-                </div>
-            </div>
-
-            <h3 class="ai-sub">Prompt like you normally would</h3>
-            <p class="ai-lead">
-                Describe the task and your agent loads the guide that fits.
-                <code>melonjs</code> is the router: it reads the task, then
-                sends itself to the one or two skills that cover it, out of
-                physics, tilemaps, sprites, 3D scenes, lighting, shaders, audio,
-                input, UI, performance and the rest.
+            <p>Install them into whichever agent you use:</p>
+            <pre class="code-block wrap"><code>npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills</code></pre>
+            <p>
+                That writes each agent's own convention, so nothing is placed by
+                hand. Claude Code can take them as a plugin instead
+                (<code>/plugin marketplace add melonjs/melonJS</code>), and
+                anything following the <code>AGENTS.md</code> convention, Codex
+                and Cursor and Gemini CLI among them, reads <code
+                    >node_modules/melonjs/skills/AGENTS.md</code
+                > from your project root. The command above installs from
+                <code>master</code>; the npm package carries the copy matching
+                the version you depend on.
             </p>
-            <pre class="code-block"><code><span class="cmt"># Ask naturally, the agent picks the skill up when it fits</span>
-Add a bouncing crate with SAT collision to my Tiled level.
-
-<span class="cmt"># Or name it, when you want to be direct</span>
-Use the melonjs skill and move this game from 15.x to 20.x.</code></pre>
+            <p>
+                Then just describe what you want. The <code>melonjs</code> skill
+                routes to the guide that fits, out of physics, tilemaps,
+                sprites, 3D scenes, lighting, shaders, audio, input, UI and
+                performance:
+            </p>
+            <pre class="code-block"><code>Add a bouncing crate with SAT collision to my Tiled level.</code></pre>
         </div>
 
         <div class="stack">
