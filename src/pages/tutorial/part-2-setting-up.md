@@ -21,20 +21,8 @@ npm install
 npm run dev
 ```
 
-The last one prints an address, usually `http://localhost:5173`.
-
-## Make the assets load
-
-Before you open that address, move the data folder. The starter keeps your
-images and levels in `src/data`, but the development server does not serve them
-from there, so the game cannot find its font:
-
-```bash
-mkdir public
-mv src/data public/data
-```
-
-Now open `http://localhost:5173` in your browser.
+The last one prints an address, usually `http://localhost:5173`. Open it in
+your browser.
 
 **You should see:** the words `Hello World!` on a dark background.
 
@@ -49,12 +37,11 @@ Open the `my-game` folder in VS Code. There are a lot of files, and you can
 ignore most of them. These are the ones that matter:
 
 ```plaintext
-public/
+src/
   data/
     img/          images go here      (empty for now)
     map/          levels go here      (empty for now)
     fnt/          the font the starter uses
-src/
   index.ts        starts the game
   manifest.ts     the list of files your game loads
   scripts/
@@ -101,14 +88,14 @@ from the melonJS examples:
 
 ```bash
 git clone --depth 1 https://github.com/melonjs/melonJS
-cp -r melonJS/packages/examples/public/assets/platformer/img/* my-game/public/data/img/
-cp -r melonJS/packages/examples/public/assets/platformer/map/* my-game/public/data/map/
+cp -r melonJS/packages/examples/public/assets/platformer/img/* my-game/src/data/img/
+cp -r melonJS/packages/examples/public/assets/platformer/map/* my-game/src/data/map/
 ```
 
 On Windows, copy the two folders in Explorer instead.
 
 **You should now have:** `tileset.png`, `background.png`, `clouds.png`,
-`texture.png` and `texture.json` in `public/data/img`, and `map1.tmx` with
-`tileset.tsx` in `public/data/map`.
+`texture.png` and `texture.json` in `src/data/img`, and `map1.tmx` with
+`tileset.tsx` in `src/data/map`.
 
 <a href="/tutorial/part-3-modifying-the-game" class="next">Up Next: Building the game</a>

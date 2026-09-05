@@ -56,7 +56,9 @@ character, and a <code>.json</code> saying where each frame sits inside it.</p>
 <span class="line"><span style="color:var(--astro-code-foreground)">    });</span></span>
 <span class="line"><span style="color:var(--astro-code-foreground)">}</span></span></code></pre>
 <p>Import <code>loader</code>, <code>Sprite</code> and <code>TextureAtlas</code> from <code>melonjs</code> at the top.</p>
-<p><strong>You should see:</strong> the character, falling straight through the floor.</p>
+<p><strong>You should see:</strong> the level, at last. The camera is still pointed at the
+top-left corner of the map, so your character is off to the side somewhere. Two
+steps from now you will be looking straight at it.</p>
 <h2 id="step-2-give-it-a-body">Step 2: give it a body</h2>
 <p>A sprite is just a picture. A picture with a <strong>body</strong> is something gravity pulls
 down and walls stop. Add this at the end of the constructor:</p>
@@ -71,12 +73,15 @@ down and walls stop. Add this at the end of the constructor:</p>
 you placed in Tiled. Import <code>Body</code> and <code>Rect</code> as well.</p>
 <p><code>setMaxVelocity</code> takes two numbers: how fast the character walks, and how hard
 it jumps. Remember where they are, you will want to change them.</p>
-<p><strong>You should see:</strong> the character standing on the ground.</p>
+<p><strong>Nothing looks different yet</strong>, because the camera is still at the corner. The
+character is now something gravity pulls on and floors hold up, which the next
+step lets you actually see.</p>
 <h2 id="step-3-point-the-camera-at-it">Step 3: point the camera at it</h2>
 <p>The camera is still looking at the corner of the level. One line, at the end of
 the constructor, fixes that:</p>
 <pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground);overflow-x:auto" tabindex="0" data-language="ts"><code><span class="line"><span style="color:var(--astro-code-token-constant)">game</span><span style="color:var(--astro-code-token-function)">.</span><span style="color:var(--astro-code-token-constant)">viewport</span><span style="color:var(--astro-code-token-function)">.follow</span><span style="color:var(--astro-code-foreground)">(</span><span style="color:var(--astro-code-token-constant)">this</span><span style="color:var(--astro-code-token-punctuation)">,</span><span style="color:var(--astro-code-token-constant)"> game</span><span style="color:var(--astro-code-foreground)">.</span><span style="color:var(--astro-code-token-constant)">viewport</span><span style="color:var(--astro-code-foreground)">.</span><span style="color:var(--astro-code-token-constant)">AXIS</span><span style="color:var(--astro-code-foreground)">.</span><span style="color:var(--astro-code-token-constant)">BOTH</span><span style="color:var(--astro-code-token-punctuation)">,</span><span style="color:var(--astro-code-token-constant)"> 0.1</span><span style="color:var(--astro-code-foreground)">);</span></span></code></pre>
 <p>The <code>0.1</code> is how lazily the camera catches up. Try <code>1</code> to see the difference.</p>
+<p><strong>You should see:</strong> your character, standing on the grass.</p>
  <img src="/_astro/game-character.BpT8-Evo_Z1qSOiN.webp" alt="The character standing in the level" loading="lazy" decoding="async" width="1280" height="581" class="large">
 <h2 id="step-4-listen-for-keys">Step 4: listen for keys</h2>
 <p>melonJS keeps the key and its meaning apart, so you can change the controls

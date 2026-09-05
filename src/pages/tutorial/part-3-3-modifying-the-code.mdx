@@ -51,7 +51,9 @@ constructor(x, y, settings) {
 
 Import `loader`, `Sprite` and `TextureAtlas` from `melonjs` at the top.
 
-**You should see:** the character, falling straight through the floor.
+**You should see:** the level, at last. The camera is still pointed at the
+top-left corner of the map, so your character is off to the side somewhere. Two
+steps from now you will be looking straight at it.
 
 ## Step 2: give it a body
 
@@ -74,7 +76,9 @@ you placed in Tiled. Import `Body` and `Rect` as well.
 `setMaxVelocity` takes two numbers: how fast the character walks, and how hard
 it jumps. Remember where they are, you will want to change them.
 
-**You should see:** the character standing on the ground.
+**Nothing looks different yet**, because the camera is still at the corner. The
+character is now something gravity pulls on and floors hold up, which the next
+step lets you actually see.
 
 ## Step 3: point the camera at it
 
@@ -86,6 +90,8 @@ game.viewport.follow(this, game.viewport.AXIS.BOTH, 0.1);
 ```
 
 The `0.1` is how lazily the camera catches up. Try `1` to see the difference.
+
+**You should see:** your character, standing on the grass.
 
 <Image
     alt="The character standing in the level"

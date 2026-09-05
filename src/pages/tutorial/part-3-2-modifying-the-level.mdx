@@ -55,14 +55,14 @@ onResetEvent() {
 Change the import at the top of the file to bring in `level` instead of
 `ColorLayer` and `BitmapText`. Save.
 
-**You should see:** the level in your browser, instead of `Hello World!`.
+**You should see:** a black screen, and an error in the browser console about a
+texture that is not found.
 
-One line loaded a whole level. That is the payoff for listing the files in
-step 1.
-
-**You will also see an error** in the browser console, about a texture that is
-not found. That is expected. The map contains your character, and the starter
-does not know how to draw it yet. Part 3-3 is where you fix that.
+That is expected, and worth understanding before you move on. Your one line did
+load the whole level, which is the payoff for listing the files in step 1. But
+the map also places your character in it, and the starter does not know how to
+draw it yet, so loading stops on that error before anything reaches the screen.
+Part 3-3 fixes it, and the level appears along with it.
 
 ## Step 3: change it
 

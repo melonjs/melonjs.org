@@ -58,12 +58,13 @@ this in its place:</p>
 <span class="line"><span style="color:var(--astro-code-foreground)">}</span></span></code></pre>
 <p>Change the import at the top of the file to bring in <code>level</code> instead of
 <code>ColorLayer</code> and <code>BitmapText</code>. Save.</p>
-<p><strong>You should see:</strong> the level in your browser, instead of <code>Hello World!</code>.</p>
-<p>One line loaded a whole level. That is the payoff for listing the files in
-step 1.</p>
-<p><strong>You will also see an error</strong> in the browser console, about a texture that is
-not found. That is expected. The map contains your character, and the starter
-does not know how to draw it yet. Part 3-3 is where you fix that.</p>
+<p><strong>You should see:</strong> a black screen, and an error in the browser console about a
+texture that is not found.</p>
+<p>That is expected, and worth understanding before you move on. Your one line did
+load the whole level, which is the payoff for listing the files in step 1. But
+the map also places your character in it, and the starter does not know how to
+draw it yet, so loading stops on that error before anything reaches the screen.
+Part 3-3 fixes it, and the level appears along with it.</p>
 <h2 id="step-3-change-it">Step 3: change it</h2>
 <p>Open <code>src/data/map/map1.tmx</code> in Tiled. The level is in the middle. On the right
 you have your layers at the top, and the tiles you paint with underneath.</p>

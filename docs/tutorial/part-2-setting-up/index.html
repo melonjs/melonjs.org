@@ -36,14 +36,8 @@ commands one at a time:</p>
 <span class="line"><span style="color:var(--astro-code-token-function)">cd</span><span style="color:var(--astro-code-token-string)"> my-game</span></span>
 <span class="line"><span style="color:var(--astro-code-token-function)">npm</span><span style="color:var(--astro-code-token-string)"> install</span></span>
 <span class="line"><span style="color:var(--astro-code-token-function)">npm</span><span style="color:var(--astro-code-token-string)"> run</span><span style="color:var(--astro-code-token-string)"> dev</span></span></code></pre>
-<p>The last one prints an address, usually <code>http://localhost:5173</code>.</p>
-<h2 id="make-the-assets-load">Make the assets load</h2>
-<p>Before you open that address, move the data folder. The starter keeps your
-images and levels in <code>src/data</code>, but the development server does not serve them
-from there, so the game cannot find its font:</p>
-<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:var(--astro-code-token-function)">mkdir</span><span style="color:var(--astro-code-token-string)"> public</span></span>
-<span class="line"><span style="color:var(--astro-code-token-function)">mv</span><span style="color:var(--astro-code-token-string)"> src/data</span><span style="color:var(--astro-code-token-string)"> public/data</span></span></code></pre>
-<p>Now open <code>http://localhost:5173</code> in your browser.</p>
+<p>The last one prints an address, usually <code>http://localhost:5173</code>. Open it in
+your browser.</p>
 <p><strong>You should see:</strong> the words <code>Hello World!</code> on a dark background.</p>
 <p><img  src="/_astro/game-hello-world.gtJOcWpH_Z21mdB2.webp" alt="The scaffolded game running, showing Hello World" loading="lazy" decoding="async" width="1280" height="580"></p>
 <p>That is a working melonJS game. Leave the terminal running. From now on, every
@@ -51,12 +45,11 @@ time you save a file the browser reloads by itself.</p>
 <h2 id="look-around-the-project">Look around the project</h2>
 <p>Open the <code>my-game</code> folder in VS Code. There are a lot of files, and you can
 ignore most of them. These are the ones that matter:</p>
-<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>public/</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>src/</span></span>
 <span class="line"><span>  data/</span></span>
 <span class="line"><span>    img/          images go here      (empty for now)</span></span>
 <span class="line"><span>    map/          levels go here      (empty for now)</span></span>
 <span class="line"><span>    fnt/          the font the starter uses</span></span>
-<span class="line"><span>src/</span></span>
 <span class="line"><span>  index.ts        starts the game</span></span>
 <span class="line"><span>  manifest.ts     the list of files your game loads</span></span>
 <span class="line"><span>  scripts/</span></span>
@@ -85,11 +78,11 @@ cannot use it. That catches everybody once.</p>
 <p>You need a tileset and a map to build with. Rather than draw them now, copy them
 from the melonJS examples:</p>
 <pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:var(--astro-code-token-function)">git</span><span style="color:var(--astro-code-token-string)"> clone</span><span style="color:var(--astro-code-token-string)"> --depth</span><span style="color:var(--astro-code-token-constant)"> 1</span><span style="color:var(--astro-code-token-string)"> https://github.com/melonjs/melonJS</span></span>
-<span class="line"><span style="color:var(--astro-code-token-function)">cp</span><span style="color:var(--astro-code-token-string)"> -r</span><span style="color:var(--astro-code-token-string)"> melonJS/packages/examples/public/assets/platformer/img/*</span><span style="color:var(--astro-code-token-string)"> my-game/public/data/img/</span></span>
-<span class="line"><span style="color:var(--astro-code-token-function)">cp</span><span style="color:var(--astro-code-token-string)"> -r</span><span style="color:var(--astro-code-token-string)"> melonJS/packages/examples/public/assets/platformer/map/*</span><span style="color:var(--astro-code-token-string)"> my-game/public/data/map/</span></span></code></pre>
+<span class="line"><span style="color:var(--astro-code-token-function)">cp</span><span style="color:var(--astro-code-token-string)"> -r</span><span style="color:var(--astro-code-token-string)"> melonJS/packages/examples/public/assets/platformer/img/*</span><span style="color:var(--astro-code-token-string)"> my-game/src/data/img/</span></span>
+<span class="line"><span style="color:var(--astro-code-token-function)">cp</span><span style="color:var(--astro-code-token-string)"> -r</span><span style="color:var(--astro-code-token-string)"> melonJS/packages/examples/public/assets/platformer/map/*</span><span style="color:var(--astro-code-token-string)"> my-game/src/data/map/</span></span></code></pre>
 <p>On Windows, copy the two folders in Explorer instead.</p>
 <p><strong>You should now have:</strong> <code>tileset.png</code>, <code>background.png</code>, <code>clouds.png</code>,
-<code>texture.png</code> and <code>texture.json</code> in <code>public/data/img</code>, and <code>map1.tmx</code> with
-<code>tileset.tsx</code> in <code>public/data/map</code>.</p>
+<code>texture.png</code> and <code>texture.json</code> in <code>src/data/img</code>, and <code>map1.tmx</code> with
+<code>tileset.tsx</code> in <code>src/data/map</code>.</p>
 <p><a href="/tutorial/part-3-modifying-the-game" class="next">Up Next: Building the game</a></p>
  </main>  </body> </html>
