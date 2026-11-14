@@ -6,10 +6,10 @@ import '../styles/global.css'
 const siteName = 'melonJS'
 const siteUrl = 'https://melonjs.org'
 const defaultDescription =
-    'melonJS is a free, open-source HTML5 game engine for building 2D games with JavaScript and TypeScript. Fully featured, fast, and dependency-free.'
+    'melonJS is a free, open-source HTML5 game engine for building 2D & 3D games with JavaScript and TypeScript. Fully featured, fast, and dependency-free, since 2011.'
 const defaultTitle =
     'melonJS | A Modern & Fully Featured HTML5 Game Engine'
-const ogImage = `${siteUrl}/img/banner.png`
+const ogImage = `${siteUrl}/img/og-image.jpg`
 
 const {
     description = defaultDescription,
@@ -19,7 +19,7 @@ const {
 
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href
 
-const ogImageAlt = 'melonJS: a modern & fully featured HTML5 game engine'
+const ogImageAlt = 'melonJS: fast & light 2D & 3D games for the web, running on WebGPU, WebGL 2 or Canvas'
 
 const jsonLd = {
     '@context': 'https://schema.org',
@@ -68,8 +68,8 @@ const jsonLd = {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
-        <meta property="og:image:width" content="970" />
-        <meta property="og:image:height" content="297" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
         <meta property="og:image:alt" content={ogImageAlt} />
         <meta property="og:site_name" content={siteName} />
         <meta property="og:locale" content="en_US" />

@@ -7,6 +7,7 @@ import Carousel from '../components/Carousel.astro'
 import gallery from '../carousels/gallery.json'
 import { Image } from 'astro:assets'
 import browserIcons from '../assets/browser_icons.png'
+import hero from '../assets/hero.webp'
 
 const scaffoldCode = `npm create melonjs@latest my-game
 cd my-game
@@ -37,7 +38,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
 
 <BaseLayout
     title="melonJS | A Modern & Fully Featured HTML5 Game Engine"
-    description="Build 2.5D games with melonJS, an open-source HTML5 engine. WebGPU, WebGL 2 or Canvas2D, GPU tilemaps, 3D mesh &amp; glTF scenes, Tiled, ~250 KB minzipped."
+    description="melonJS is a free, open-source 2D &amp; 3D HTML5 game engine for indie developers, since 2011: WebGPU, WebGL 2 or Canvas, Tiled &amp; glTF scenes, physics, ~250 KB minzipped."
 >
     <style>
         main {
@@ -93,22 +94,27 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
     <main>
         <div class="jumbotron">
             <div class="container">
-                <Icon
-                    icon="logo"
-                    class="banner"
-                    alt="melonjs banner"
-                    width="80%"
+                <Image
+                    class="hero"
+                    src={hero}
+                    widths={[750, 1200, 1800, 2250]}
+                    sizes="(min-width: 1240px) 1180px, 100vw"
+                    alt="melonJS: fast & light 2D & 3D games for the web, running on WebGPU, WebGL 2 or Canvas. Author in Tiled and Blender, ship anywhere."
+                    loading="eager"
+                    fetchpriority="high"
                 />
                 <h1>A modern &amp; fully featured HTML5 game engine</h1>
                 <p>
-                    melonJS is an open-source 2.5D game engine for indie
-                    developers: perspective and orthogonal cameras,
-                    GPU-accelerated tilemap rendering, 3D mesh &amp; glTF
-                    scenes, post-processing and custom shaders, and
-                    polygon-accurate physics. Runs on <strong>WebGPU</strong>,
-                    WebGL&nbsp;2 or Canvas2D with automatic fallback. The
-                    whole engine is ~250&nbsp;KB minzipped of vanilla JS/TS,
-                    with no dependencies and no toolchain lock-in.
+                    melonJS is an open-source 2D &amp; 3D game engine made
+                    for indie developers, and one of the very first HTML5
+                    game engines: first released in 2011, it has grown with
+                    the web ever since. Perspective and orthogonal cameras,
+                    GPU-accelerated tilemaps, 3D meshes &amp; glTF scenes,
+                    post-processing and custom shaders, polygon-accurate
+                    physics. Runs on <strong>WebGPU</strong>, WebGL&nbsp;2 or
+                    Canvas2D with automatic fallback, in ~250&nbsp;KB
+                    minzipped of vanilla JS/TS, with no dependencies and no
+                    toolchain lock-in.
                 </p>
                 <div class="badges">
                     <a href="https://www.npmjs.com/package/melonjs">
@@ -129,9 +135,9 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                         <li>
                             <a
                                 class="btn danger"
-                                href="https://melonjs.github.io/melonJS/examples/#/platformer"
+                                href="https://melonjs.github.io/melonJS/examples/"
                                 role="button"
-                                ><Icon icon="film" inline />Demo
+                                ><Icon icon="film" inline />Examples
                             </a>
                         </li>
                         <li>
@@ -159,14 +165,6 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                                 href="https://melonjs.github.io/melonJS/"
                                 role="button"
                                 ><Icon icon="book-open" inline />Explore the API
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                class="btn primary"
-                                href="https://melonjs.github.io/melonJS/examples/"
-                                role="button"
-                                ><Icon icon="film" inline />Examples
                             </a>
                         </li>
                     </ul>
@@ -257,43 +255,27 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             </div>
         </div>
 
-        <div class="band">
-            <h2>Powerful Level Design</h2>
-            <p>
-                Design your levels visually with the
-                <a href="https://www.mapeditor.org">Tiled</a> map editor.
-                melonJS natively supports orthogonal, isometric, and hexagonal
-                maps with multiple layers, parallax scrolling, and more.
-            </p>
-            <br />
-            <img
-                src="/img/alex4-github.png"
-                alt="melonJS level design with Tiled map editor showing platformer game"
-                title="Fast and Powerful level design through Tiled"
-                width="85%"
-                height="85%"
-                class="computer"
-            />
-        </div>
 
         <div>
             <h2 id="features">Features</h2>
             <ul>
                 <li>Fast <strong>WebGPU</strong> &amp; <strong>WebGL&nbsp;2</strong> renderers across desktop and mobile, with automatic fallback to Canvas</li>
                 <li><strong>GPU-accelerated tile rendering</strong> for orthogonal Tiled maps on both GPU backends: one quad per layer, no per-tile loop</li>
-                <li>Optional <strong>perspective camera</strong> (<code>Camera3d</code>) with frustum culling for 2.5D / 3D-projected scenes</li>
-                <li><strong>3D mesh rendering</strong> with OBJ/MTL loading, multi-material support, and hardware depth testing</li>
-                <li><strong>glTF / GLB 3D scenes</strong> loaded with a single <code>level.load()</code>: meshes, materials, cameras, lights and node animation, played through the same API as a 2D <code>Sprite</code></li>
-                <li><strong>3D lighting</strong> (<code>Light3d</code> directional, point, spot &amp; ambient, up to 32 lights) with ground shadows on by default</li>
-                <li><strong><code>Light2d</code></strong> as a first-class renderable: multi-light, radial-gradient falloff, illumination-only mode, normal-map sprite shading</li>
-                <li>Per-camera <strong>post-processing</strong> with stackable shader effects (Flash, Outline, Glow, CRT, Hologram, ColorMatrix) and custom <code>ShaderEffect</code> per-sprite fragment effects (GLSL and/or WGSL)</li>
-                <li>Physics: polygon SAT collision, QuadTree/Octree broad-phase (auto-swapped 2D&#8596;3D), 2D &amp; 3D raycasts, plus pluggable adapters (<a href="https://www.npmjs.com/package/@melonjs/matter-adapter">Matter</a> / <a href="https://www.npmjs.com/package/@melonjs/planck-adapter">Planck</a>)</li>
-                <li>Full <a href="https://www.mapeditor.org">Tiled</a> map editor integration, with every feature supported (any map format, animated tilesets, custom properties, parallax layers, native <code>.aseprite</code> tilesets)</li>
-                <li>Web Audio with 3D spatial sound, stereo panning, and procedural audio primitives (oscillators, noise) for SFX without sample assets</li>
-                <li>Multi-input: mouse, touch, keyboard, gamepad &amp; accelerometer</li>
-                <li>UI toolkit with drag-and-drop, hover/press buttons, and bitmap-font text</li>
-                <li>Tweens, transitions &amp; particle effects</li>
+                <li>Optional <strong>perspective camera</strong> (<code>Camera3d</code>) with frustum culling and distance fog, and <code>Sprite3d</code> billboards for 2.5D characters and props</li>
+                <li><strong>3D meshes</strong> from OBJ/MTL or glTF, with normal maps, transparency, hardware depth testing and GPU instancing (<code>InstancedMesh</code>)</li>
+                <li><strong>glTF / GLB 3D scenes</strong>, authored in <a href="https://www.blender.org">Blender</a> or any glTF tool, loaded with a single <code>level.load()</code>: meshes, materials, cameras, lights and node animation, played through the same API as a 2D <code>Sprite</code></li>
+                <li><strong>Lighting in 2D and 3D</strong>: <code>Light2d</code> with normal-map sprite shading, and <code>Light3d</code> directional, point, spot &amp; ambient lights (up to 32), with ground shadows on by default</li>
+                <li><strong>Shader effects</strong> on sprites, cameras and meshes: Flash, Outline, Glow, Bloom, Dissolve, CRT, Hologram, Shine, Vignette, Squish, Sway and more, chained with <code>addPostEffect()</code>, plus your own <code>ShaderEffect</code> in GLSL and/or WGSL, and optional HDR rendering</li>
+                <li><strong>Physics</strong>: polygon SAT collision, QuadTree/Octree broad-phase, 2D &amp; 3D raycasts, sensors and bodies with several shapes, plus three official adapters (<a href="https://www.npmjs.com/package/@melonjs/matter-adapter">Matter</a>, <a href="https://www.npmjs.com/package/@melonjs/planck-adapter">Planck</a> and <a href="https://www.npmjs.com/package/@melonjs/rapier2d-adapter">Rapier</a>), switched while the game runs, with hinge, rope, weld and slider joints</li>
+                <li>Full <a href="https://www.mapeditor.org">Tiled</a> map editor integration, up to Tiled 1.12 (any map format and orientation, animated tilesets, custom properties, parallax layers, native <code>.aseprite</code> tilesets)</li>
+                <li>Web Audio with 3D spatial sound, stereo panning, audio sprites, and procedural audio primitives (oscillators, noise) for SFX without sample assets</li>
+                <li>Multi-input: mouse, touch, keyboard, gamepad &amp; accelerometer, and on-screen touch controls that play as a gamepad (<a href="https://www.npmjs.com/package/@melonjs/gamepad-plugin">gamepad plugin</a>)</li>
+                <li>UI toolkit: buttons, scrolling panels, checkboxes, sliders, progress bars and drag-and-drop, all navigable with the keyboard or a gamepad</li>
+                <li>System &amp; bitmap text with typewriter and per-glyph effects</li>
+                <li>Multiple cameras (split-screen, minimaps), camera follow, shake and fade, and screen transitions</li>
+                <li>Particles, trails, tweens and video sprites</li>
                 <li><a href="https://www.npmjs.com/package/@melonjs/spine-plugin">Spine 4.3</a> runtime integration via the official plugin</li>
+                <li>Saved progress in <code>localStorage</code>, or in a platform's cloud save</li>
                 <li>State manager, asset loader &amp; plugin system</li>
                 <li>
                     ~250&nbsp;KB <a
@@ -324,10 +306,67 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             <pre class="code-block"><code set:html={helloCode} /></pre>
         </div>
 
+        <div class="platforms-section">
+            <h2 id="platforms">Publish Anywhere</h2>
+            <p>
+                A melonJS game runs anywhere a browser does, and further: in
+                game portals, in native apps, and in runtimes with no web page
+                at all. The wiki has a guide for each, and melonJS hands
+                pausing, saving and sound over to the platform the same way on
+                every one of them.
+            </p>
+            <div class="why-cards platforms">
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3><span class="platform-icon"><img src="/img/platforms/web.svg" alt="" width="24" height="24" /></span><a href="https://github.com/melonjs/melonJS/wiki/Platforms">The web</a></h3>
+                    <p>Your own site, itch.io, or any host that serves a web page: a melonJS game is a web page.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3><span class="platform-icon"><img src="/img/platforms/youtube.svg" alt="" width="24" height="24" /></span><a href="https://github.com/melonjs/melonJS/wiki/YouTube-Playables">YouTube Playables</a></h3>
+                    <p>Games in the YouTube app and on youtube.com, with cloud saves.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3><span class="platform-icon app"><img src="/img/platforms/poki.png" alt="" width="40" height="40" /></span><a href="https://github.com/melonjs/melonJS/wiki/Poki">Poki</a></h3>
+                    <p>Hand-picked browser games on poki.com, on desktop and mobile.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3><span class="platform-icon app"><img src="/img/platforms/crazygames.png" alt="" width="40" height="40" /></span><a href="https://github.com/melonjs/melonJS/wiki/CrazyGames">CrazyGames</a></h3>
+                    <p>Browser games on crazygames.com and in the CrazyGames app.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3><span class="platform-icon"><img src="/img/platforms/facebook.svg" alt="" width="24" height="24" /></span><a href="https://github.com/melonjs/melonJS/wiki/Facebook-Instant-Games">Facebook Instant Games</a></h3>
+                    <p>Games in the Facebook app, on facebook.com/gaming and in Messenger.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3><span class="platform-icon"><img src="/img/platforms/wechat.svg" alt="" width="24" height="24" /></span><a href="https://github.com/melonjs/melonJS/wiki/WeChat-Mini-Games">WeChat Mini Games</a></h3>
+                    <p>Mini games inside the WeChat app.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3><span class="platform-icon"><img src="/img/platforms/capacitor.svg" alt="" width="24" height="24" /></span><a href="https://github.com/melonjs/melonJS/wiki/Capacitor">iOS &amp; Android</a></h3>
+                    <p>Native apps for the App Store and Google Play through Capacitor, with the official <a href="https://www.npmjs.com/package/@melonjs/capacitor-plugin">plugin</a>.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-accent"></div>
+                    <h3><span class="platform-icon"><img src="/img/platforms/nxjs.svg" alt="" width="24" height="24" /></span><a href="https://github.com/melonjs/melonJS/wiki/Nintendo-Switch">Nintendo Switch homebrew</a></h3>
+                    <p>Through nx.js, a runtime with no web page at all (experimental).</p>
+                </div>
+            </div>
+            <p>
+                See <a href="https://github.com/melonjs/melonJS/wiki/Platforms">Platforms</a> in the wiki to
+                get started.
+            </p>
+        </div>
+
         <div class="ai-section">
             <h2 id="ai-skills">AI Skills</h2>
             <p>
-                melonJS ships 23 skills that teach a coding agent the engine's
+                melonJS ships 25 skills that teach a coding agent the engine's
                 conventions, and the mistakes that fail silently rather than
                 erroring: a custom <code>draw()</code> that ignores
                 <code>this.pos</code>, <code>isKinematic</code> blocking pointer
@@ -342,8 +381,8 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     <span class="terminal-title">~/my-game</span>
                 </div>
                 <pre class="terminal-body"><code><span class="sh">$</span> npx skills add https://github.com/melonjs/melonJS/tree/master/packages/melonjs/skills
-<span class="out">&#8226;  Found 23 skills</span>
-<span class="out">&#8226;  Installing all 23 skills</span>
+<span class="out">&#8226;  Found 25 skills</span>
+<span class="out">&#8226;  Installing all 25 skills</span>
 <span class="out">&#8226;  77 agents</span>
 <span class="out">&#8226;  Installing to: Claude Code</span>
 
@@ -359,15 +398,15 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
 
             <div class="ai-routes">
                 <div>
-                    <h3>Claude Code</h3>
+                    <h3><span class="platform-icon"><img src="/img/agents/claude.svg" alt="" width="24" height="24" /></span>Claude Code</h3>
                     <p>
                         Takes them as a plugin instead, registering the same
-                        guidance as 23 routed skills.
+                        guidance as 25 routed skills.
                     </p>
                     <pre class="code-block wrap"><code>/plugin marketplace add melonjs/melonJS</code></pre>
                 </div>
                 <div>
-                    <h3>Codex, Cursor, Gemini CLI</h3>
+                    <h3><span class="icon-group"><span class="platform-icon"><img src="/img/agents/chatgpt.svg" alt="" width="24" height="24" /></span><span class="platform-icon"><img src="/img/agents/cursor.svg" alt="" width="24" height="24" /></span><span class="platform-icon"><img src="/img/agents/gemini.svg" alt="" width="24" height="24" /></span></span>Codex, Cursor, Gemini CLI</h3>
                     <p>
                         Anything following the <code>AGENTS.md</code> convention
                         reads it from your project root. Copy the one that ships
@@ -376,7 +415,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     <pre class="code-block wrap"><code>cp node_modules/melonjs/skills/AGENTS.md .</code></pre>
                 </div>
                 <div>
-                    <h3>Pinned to your release</h3>
+                    <h3><span class="platform-icon"><img src="/img/agents/npm.svg" alt="" width="24" height="24" /></span>Pinned to your release</h3>
                     <p>
                         The command above installs from <code>master</code>. The
                         copy matching the version you depend on ships in the npm
@@ -434,8 +473,13 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     <a href="https://www.mapeditor.org">
                         <img
                             alt="Tiled map editor"
-                            src="https://user-images.githubusercontent.com/4033090/136762999-5a7f377b-4136-4205-9fe0-83728c90cb9b.png"
+                            src="/img/icons/tiled.png"
                         />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.blender.org">
+                        <img alt="Blender" src="/img/icons/blender.png" />
                     </a>
                 </li>
                 <li>
