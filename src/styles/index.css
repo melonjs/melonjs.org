@@ -698,6 +698,47 @@ main {
         text-align: center;
     }
 
+    & .sponsor-logos {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+
+        & li {
+            width: auto;
+            margin: 0;
+        }
+
+        & a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 200px;
+            padding: 1.25rem 1.75rem;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: border-color 0.15s ease;
+
+            &:hover {
+                border-color: rgba(107, 168, 49, 0.6);
+            }
+        }
+
+        & img {
+            display: block;
+            height: 48px;
+            width: auto;
+        }
+    }
+
+    & .sponsor-buttons {
+        text-align: center;
+    }
+
     & footer .sponsor {
         margin-bottom: 1rem;
         opacity: 0.9;
