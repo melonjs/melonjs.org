@@ -59,7 +59,8 @@ h3 {
     }
 
     main .why-card:hover,
-    main .display li a:hover {
+    main .display li a:hover,
+    main .examples-grid a:hover {
         transform: none !important;
     }
 }

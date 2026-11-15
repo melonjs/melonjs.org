@@ -8,12 +8,58 @@ import gallery from '../carousels/gallery.json'
 import { Image } from 'astro:assets'
 import browserIcons from '../assets/browser_icons.png'
 import hero from '../assets/hero.webp'
-import demoPoster from '../assets/demo-platformer.png'
+import exPlatformer from '../assets/examples/platformer.webp'
+import exDungeon from '../assets/examples/isometric-dungeon.webp'
+import exRabbit from '../assets/examples/jungle-rabbit.webp'
+import exEarth from '../assets/examples/earth-defender.webp'
+import exAquarium from '../assets/examples/aquarium.webp'
+import exPool from '../assets/examples/pool-matter.webp'
 
-const scaffoldCode = `npm create melonjs@latest my-game
-cd my-game
-npm install
-npm run dev`
+// See It in Action: a few examples across 2D, 3D, shaders and physics
+const examples = [
+    {
+        path: 'platformer',
+        title: 'Platformer',
+        image: exPlatformer,
+        tags: ['2D', 'Tiled', 'Physics'],
+        text: 'A side-scroller with tile collisions, enemies, particles, shaders and a minimap.',
+    },
+    {
+        path: 'isometric-dungeon',
+        title: 'Isometric Dungeon',
+        image: exDungeon,
+        tags: ['2D', 'Tiled', 'Lighting'],
+        text: 'A big isometric dungeon: depth-sorted walls, flickering torches, chests and doors.',
+    },
+    {
+        path: 'jungle-rabbit',
+        title: 'Jungle Rabbit',
+        image: exRabbit,
+        tags: ['3D', 'Blender'],
+        text: 'A low-poly river runner, its props modelled in Blender and drawn with GPU instancing.',
+    },
+    {
+        path: 'earth-defender',
+        title: 'Earth Defender',
+        image: exEarth,
+        tags: ['3D', 'Shaders', 'HDR'],
+        text: 'Hold the dome, shoot the rocks: shield shaders, spatial audio and HDR bloom.',
+    },
+    {
+        path: 'aquarium',
+        title: 'Aquarium',
+        image: exAquarium,
+        tags: ['2D', 'Shaders'],
+        text: 'Fish rippled through the live scene by a screen-space refraction shader.',
+    },
+    {
+        path: 'pool-matter',
+        title: 'Pool',
+        image: exPool,
+        tags: ['Physics', 'Matter'],
+        text: 'Eight-ball pool on the Matter physics adapter: drag to aim, release to strike.',
+    },
+]
 
 const helloCode = `<span class="kw">import</span> { Application, Text } <span class="kw">from</span> <span class="str">"melonjs"</span>;
 
@@ -307,39 +353,64 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
         </div>
 
         <div>
-            <h2 id="try-it">Try It Live</h2>
-            <p>Jump right into a melonJS game, playable in your browser.</p>
-            <div class="demo-embed">
-                <!-- the game loads on the first click, not for everyone
-                     scrolling past; without JavaScript it opens the demo -->
+            <h2 id="see-it-in-action">See It in Action</h2>
+            <p>
+                Every example runs in your browser, with its source one click
+                away.
+            </p>
+            <ul class="examples-grid">
+                {
+                    examples.map((example) => (
+                        <li>
+                            <a
+                                href={`https://melonjs.github.io/melonJS/examples/#/${example.path}`}
+                            >
+                                <Image
+                                    src={example.image}
+                                    widths={[480, 960]}
+                                    sizes="(min-width: 1080px) 380px, (min-width: 768px) 50vw, 100vw"
+                                    alt=""
+                                />
+                                <span class="example-body">
+                                    <h3>{example.title}</h3>
+                                    <p>{example.text}</p>
+                                    <span class="example-tags">
+                                        {example.tags.map((tag) => (
+                                            <span>{tag}</span>
+                                        ))}
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+            <p class="examples-more">
                 <a
-                    class="demo-start"
-                    href="https://melonjs.github.io/melonJS/examples/#/platformer"
+                    class="btn default"
+                    href="https://melonjs.github.io/melonJS/examples/"
+                    role="button"
+                    ><Icon icon="film" inline />Browse All Examples</a
                 >
-                    <Image
-                        src={demoPoster}
-                        widths={[960, 1920]}
-                        sizes="(min-width: 1000px) 960px, 100vw"
-                        alt="The melonJS platformer demo"
-                    />
-                    <span class="demo-play"
-                        ><svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 12 12"
-                            aria-hidden="true"
-                            ><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"
-                            ></path></svg
-                        >Play the Demo</span
-                    >
-                </a>
-            </div>
+            </p>
         </div>
 
         <div>
             <h2 id="get-started">Get Started in Seconds</h2>
             <p>Scaffold a new project with a single command:</p>
-            <pre class="code-block"><code set:html={scaffoldCode} /></pre>
+            <div class="terminal" data-typing="40">
+                <div class="terminal-bar">
+                    <span class="terminal-dots" aria-hidden="true"
+                        ><i></i><i></i><i></i></span
+                    >
+                    <span class="terminal-title">~</span>
+                </div>
+                <pre class="terminal-body"><code><span class="sh">$</span> npm create melonjs@latest my-game
+<span class="out"><span class="ok">Done!</span> Created my-game.</span>
+<span class="sh">$</span> cd my-game
+<span class="sh">$</span> npm install
+<span class="sh">$</span> npm run dev</code></pre>
+            </div>
             <p>Or use the API directly for a quick Hello World:</p>
             <pre class="code-block"><code set:html={helloCode} /></pre>
         </div>
@@ -411,7 +482,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                 events, draw order set after <code>addChild</code>.
             </p>
             <p>Install them into whichever agent you use:</p>
-            <div class="terminal">
+            <div class="terminal" data-typing="18">
                 <div class="terminal-bar">
                     <span class="terminal-dots" aria-hidden="true"
                         ><i></i><i></i><i></i></span
@@ -605,6 +676,12 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     </a>
                 </li>
             </ul>
+            <p class="sponsor">
+                melonJS is free and open source.
+                <a href="https://github.com/sponsors/melonjs"
+                    >Sponsor its development</a
+                >
+            </p>
             <p>&#169; AltByte Pte Ltd</p>
             <p>
                 <a href="https://www.altbyte.com"
@@ -618,25 +695,13 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
         </footer>
     </main>
     <script>
-        // Try It Live: swap the poster for the game on the first click
-        const start = document.querySelector<HTMLAnchorElement>('.demo-start')
-        start?.addEventListener('click', (event) => {
-            event.preventDefault()
-            const frame = document.createElement('iframe')
-            frame.src = start.href
-            frame.title = 'melonJS platformer demo'
-            frame.allow = 'autoplay; fullscreen; gamepad'
-            frame.allowFullscreen = true
-            start.replaceWith(frame)
-            frame.focus()
-        })
+        const reduceMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches
 
         // section headings draw their bar, then the red dot, once, as they
         // come into view; nothing moves for reduced motion
-        if (
-            !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
-            'IntersectionObserver' in window
-        ) {
+        if (!reduceMotion && 'IntersectionObserver' in window) {
             const observer = new IntersectionObserver(
                 (entries) => {
                     for (const entry of entries) {
@@ -652,6 +717,77 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             document
                 .querySelectorAll('main > :not(.jumbotron) > h2')
                 .forEach((heading) => observer.observe(heading))
+        }
+
+        // terminals type their commands, once, as they come into view; the
+        // page holds the full text, so without JavaScript or with reduced
+        // motion they simply show it
+        const terminals = document.querySelectorAll<HTMLElement>(
+            '.terminal[data-typing]'
+        )
+        if (terminals.length && !reduceMotion && 'IntersectionObserver' in window) {
+            const sleep = (ms: number) =>
+                new Promise((resolve) => setTimeout(resolve, ms))
+            const decode = (html: string) => {
+                const area = document.createElement('textarea')
+                area.innerHTML = html
+                return area.value
+            }
+            // a typed line starts with its prompt: $ for the shell, > for the
+            // agent (Astro adds its own attributes to the span)
+            const typed = /^(<span class="(?:sh|ask)"[^>]*>[^<]*<\/span> )(.*)$/
+
+            const play = async (code: HTMLElement, lines: string[], speed: number) => {
+                const caret = document.createElement('span')
+                caret.className = 'caret'
+                for (let i = 0; i < lines.length; i++) {
+                    if (i > 0) code.append('\n')
+                    const line = document.createElement('span')
+                    code.append(line)
+                    const match = lines[i].match(typed)
+                    if (match) {
+                        line.innerHTML = match[1]
+                        const text = document.createTextNode('')
+                        line.append(text, caret)
+                        await sleep(300)
+                        for (const char of decode(match[2])) {
+                            text.data += char
+                            await sleep(speed)
+                        }
+                        await sleep(350)
+                    } else {
+                        line.innerHTML = lines[i]
+                        line.append(caret)
+                        if (lines[i]) await sleep(110)
+                    }
+                }
+            }
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    for (const entry of entries) {
+                        if (!entry.isIntersecting) continue
+                        observer.unobserve(entry.target)
+                        const terminal = entry.target as HTMLElement
+                        const code = terminal.querySelector('code')!
+                        play(
+                            code,
+                            JSON.parse(code.dataset.lines!),
+                            Number(terminal.dataset.typing)
+                        )
+                    }
+                },
+                { threshold: 0.5 }
+            )
+            terminals.forEach((terminal) => {
+                const pre = terminal.querySelector('pre')!
+                const code = terminal.querySelector('code')!
+                // keep the full height, so nothing below moves while it types
+                pre.style.minHeight = `${pre.offsetHeight}px`
+                code.dataset.lines = JSON.stringify(code.innerHTML.split('\n'))
+                code.textContent = ''
+                observer.observe(terminal)
+            })
         }
     </script>
 </BaseLayout>
