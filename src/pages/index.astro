@@ -8,6 +8,7 @@ import gallery from '../carousels/gallery.json'
 import { Image } from 'astro:assets'
 import browserIcons from '../assets/browser_icons.png'
 import hero from '../assets/hero.webp'
+import demoPoster from '../assets/demo-platformer.png'
 
 const scaffoldCode = `npm create melonjs@latest my-game
 cd my-game
@@ -74,6 +75,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                 position: relative;
                 padding-top: 1rem;
 
+                /* the brand's green bar, then its red dot */
                 &::before {
                     content: '';
                     position: absolute;
@@ -82,11 +84,18 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     width: 3rem;
                     height: 3px;
                     border-radius: 2px;
-                    background: linear-gradient(
-                        90deg,
-                        var(--dark-green),
-                        var(--melon)
-                    );
+                    background: var(--dark-green);
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: -1px;
+                    left: calc(3rem + 6px);
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background: var(--melon);
                 }
             }
         }
@@ -103,7 +112,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     loading="eager"
                     fetchpriority="high"
                 />
-                <h1>A modern &amp; fully featured HTML5 game engine</h1>
+                <h1 class="sr-only">A modern &amp; fully featured HTML5 game engine</h1>
                 <p>
                     melonJS is an open-source 2D &amp; 3D game engine made
                     for indie developers, and one of the very first HTML5
@@ -169,25 +178,6 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                         </li>
                     </ul>
                 </nav>
-            </div>
-        </div>
-        <div class="row three highlights">
-            <div>
-                <h2>Fast</h2>
-                <p>Modern ES6 architecture. WebGPU and WebGL&nbsp;2 renderers with Canvas fallback. Web Audio with 3D spatial sound.</p>
-            </div>
-            <div>
-                <h2>Free</h2>
-                <p>Released under the permissive MIT License. No cost. Forever.</p>
-            </div>
-            <div>
-                <h2>Standalone</h2>
-                <p>
-                    Zero dependencies. Compatible with all major browsers
-                    and mobile devices. ~250&nbsp;KB
-                    <a href="https://bundlejs.com/?q=melonjs">minzipped</a>,
-                    with no toolchain lock-in.
-                </p>
             </div>
         </div>
 
@@ -258,43 +248,91 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
 
         <div>
             <h2 id="features">Features</h2>
-            <ul>
-                <li>Fast <strong>WebGPU</strong> &amp; <strong>WebGL&nbsp;2</strong> renderers across desktop and mobile, with automatic fallback to Canvas</li>
-                <li><strong>GPU-accelerated tile rendering</strong> for orthogonal Tiled maps on both GPU backends: one quad per layer, no per-tile loop</li>
-                <li>Optional <strong>perspective camera</strong> (<code>Camera3d</code>) with frustum culling and distance fog, and <code>Sprite3d</code> billboards for 2.5D characters and props</li>
-                <li><strong>3D meshes</strong> from OBJ/MTL or glTF, with normal maps, transparency, hardware depth testing and GPU instancing (<code>InstancedMesh</code>)</li>
-                <li><strong>glTF / GLB 3D scenes</strong>, authored in <a href="https://www.blender.org">Blender</a> or any glTF tool, loaded with a single <code>level.load()</code>: meshes, materials, cameras, lights and node animation, played through the same API as a 2D <code>Sprite</code></li>
-                <li><strong>Lighting in 2D and 3D</strong>: <code>Light2d</code> with normal-map sprite shading, and <code>Light3d</code> directional, point, spot &amp; ambient lights (up to 32), with ground shadows on by default</li>
-                <li><strong>Shader effects</strong> on sprites, cameras and meshes: Flash, Outline, Glow, Bloom, Dissolve, CRT, Hologram, Shine, Vignette, Squish, Sway and more, chained with <code>addPostEffect()</code>, plus your own <code>ShaderEffect</code> in GLSL and/or WGSL, and optional HDR rendering</li>
-                <li><strong>Physics</strong>: polygon SAT collision, QuadTree/Octree broad-phase, 2D &amp; 3D raycasts, sensors and bodies with several shapes, plus three official adapters (<a href="https://www.npmjs.com/package/@melonjs/matter-adapter">Matter</a>, <a href="https://www.npmjs.com/package/@melonjs/planck-adapter">Planck</a> and <a href="https://www.npmjs.com/package/@melonjs/rapier2d-adapter">Rapier</a>), switched while the game runs, with hinge, rope, weld and slider joints</li>
-                <li>Full <a href="https://www.mapeditor.org">Tiled</a> map editor integration, up to Tiled 1.12 (any map format and orientation, animated tilesets, custom properties, parallax layers, native <code>.aseprite</code> tilesets)</li>
-                <li>Web Audio with 3D spatial sound, stereo panning, audio sprites, and procedural audio primitives (oscillators, noise) for SFX without sample assets</li>
-                <li>Multi-input: mouse, touch, keyboard, gamepad &amp; accelerometer, and on-screen touch controls that play as a gamepad (<a href="https://www.npmjs.com/package/@melonjs/gamepad-plugin">gamepad plugin</a>)</li>
-                <li>UI toolkit: buttons, scrolling panels, checkboxes, sliders, progress bars and drag-and-drop, all navigable with the keyboard or a gamepad</li>
-                <li>System &amp; bitmap text with typewriter and per-glyph effects</li>
-                <li>Multiple cameras (split-screen, minimaps), camera follow, shake and fade, and screen transitions</li>
-                <li>Particles, trails, tweens and video sprites</li>
-                <li><a href="https://www.npmjs.com/package/@melonjs/spine-plugin">Spine 4.3</a> runtime integration via the official plugin</li>
-                <li>Saved progress in <code>localStorage</code>, or in a platform's cloud save</li>
-                <li>State manager, asset loader &amp; plugin system</li>
-                <li>
-                    ~250&nbsp;KB <a
-                        href="https://bundlejs.com/?q=melonjs"
-                    >minzipped</a>, zero dependencies
-                </li>
-            </ul>
+            <div class="feature-groups">
+                <div>
+                    <h3>Rendering</h3>
+                    <ul>
+                        <li><strong>WebGPU</strong> &amp; <strong>WebGL&nbsp;2</strong> renderers across desktop and mobile, with automatic fallback to Canvas</li>
+                        <li><strong>GPU-accelerated tile rendering</strong> for orthogonal Tiled maps: one quad per layer, no per-tile loop</li>
+                        <li><strong>Shader effects</strong> on sprites, cameras and meshes: Flash, Outline, Glow, Bloom, Dissolve, CRT, Hologram, Shine, Vignette, Squish, Sway and more, chained with <code>addPostEffect()</code></li>
+                        <li>Your own <code>ShaderEffect</code> in GLSL and/or WGSL, and optional HDR rendering</li>
+                        <li>Particles, trails, tweens and video sprites</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>3D</h3>
+                    <ul>
+                        <li>Optional <strong>perspective camera</strong> (<code>Camera3d</code>) with frustum culling and distance fog</li>
+                        <li><code>Sprite3d</code> billboards for 2.5D characters and props</li>
+                        <li><strong>3D meshes</strong> from OBJ/MTL or glTF, with normal maps, transparency, depth testing and GPU instancing (<code>InstancedMesh</code>)</li>
+                        <li><strong>glTF / GLB scenes</strong>, authored in <a href="https://www.blender.org">Blender</a> or any glTF tool, loaded with a single <code>level.load()</code>: meshes, materials, cameras, lights and node animation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Lighting &amp; Cameras</h3>
+                    <ul>
+                        <li><code>Light2d</code> with normal-map sprite shading</li>
+                        <li><code>Light3d</code> directional, point, spot &amp; ambient lights (up to 32), with ground shadows on by default</li>
+                        <li>Multiple cameras (split-screen, minimaps), camera follow, shake and fade, and screen transitions</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Physics</h3>
+                    <ul>
+                        <li>Polygon SAT collision, QuadTree/Octree broad-phase, 2D &amp; 3D raycasts</li>
+                        <li>Sensors, and bodies with several shapes</li>
+                        <li>Three official adapters, <a href="https://www.npmjs.com/package/@melonjs/matter-adapter">Matter</a>, <a href="https://www.npmjs.com/package/@melonjs/planck-adapter">Planck</a> and <a href="https://www.npmjs.com/package/@melonjs/rapier2d-adapter">Rapier</a>, switched while the game runs, with hinge, rope, weld and slider joints</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Audio, Input &amp; UI</h3>
+                    <ul>
+                        <li>Web Audio with 3D spatial sound, stereo panning, audio sprites and procedural SFX</li>
+                        <li>Mouse, touch, keyboard, gamepad &amp; accelerometer, and on-screen touch controls that play as a gamepad (<a href="https://www.npmjs.com/package/@melonjs/gamepad-plugin">gamepad plugin</a>)</li>
+                        <li>UI toolkit: buttons, scrolling panels, checkboxes, sliders, progress bars and drag-and-drop, all navigable with the keyboard or a gamepad</li>
+                        <li>System &amp; bitmap text with typewriter and per-glyph effects</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Workflow</h3>
+                    <ul>
+                        <li>Full <a href="https://www.mapeditor.org">Tiled</a> integration, up to Tiled 1.12: any map format and orientation, animated tilesets, custom properties, parallax layers, native <code>.aseprite</code> tilesets</li>
+                        <li><a href="https://www.npmjs.com/package/@melonjs/spine-plugin">Spine 4.3</a> runtime integration via the official plugin</li>
+                        <li>Saved progress in <code>localStorage</code>, or in a platform's cloud save</li>
+                        <li>State manager, asset loader &amp; plugin system</li>
+                        <li>~250&nbsp;KB <a href="https://bundlejs.com/?q=melonjs">minzipped</a>, zero dependencies</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div>
-            <h2 id="try-it">Try it Live</h2>
+            <h2 id="try-it">Try It Live</h2>
             <p>Jump right into a melonJS game, playable in your browser.</p>
             <div class="demo-embed">
-                <iframe
-                    src="https://melonjs.github.io/melonJS/examples/#/platformer"
-                    title="melonJS platformer demo"
-                    loading="lazy"
-                    allowfullscreen
-                ></iframe>
+                <!-- the game loads on the first click, not for everyone
+                     scrolling past; without JavaScript it opens the demo -->
+                <a
+                    class="demo-start"
+                    href="https://melonjs.github.io/melonJS/examples/#/platformer"
+                >
+                    <Image
+                        src={demoPoster}
+                        widths={[960, 1920]}
+                        sizes="(min-width: 1000px) 960px, 100vw"
+                        alt="The melonJS platformer demo"
+                    />
+                    <span class="demo-play"
+                        ><svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 12 12"
+                            aria-hidden="true"
+                            ><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"
+                            ></path></svg
+                        >Play the Demo</span
+                    >
+                </a>
             </div>
         </div>
 
@@ -318,7 +356,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             <div class="why-cards platforms">
                 <div class="why-card">
                     <div class="why-card-accent"></div>
-                    <h3><span class="platform-icon"><img src="/img/platforms/web.svg" alt="" width="24" height="24" /></span><a href="https://github.com/melonjs/melonJS/wiki/Platforms">The web</a></h3>
+                    <h3><span class="platform-icon"><img src="/img/platforms/web.svg" alt="" width="24" height="24" /></span><a href="https://github.com/melonjs/melonJS/wiki/Platforms">The Web</a></h3>
                     <p>Your own site, itch.io, or any host that serves a web page: a melonJS game is a web page.</p>
                 </div>
                 <div class="why-card">
@@ -353,7 +391,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                 </div>
                 <div class="why-card">
                     <div class="why-card-accent"></div>
-                    <h3><span class="platform-icon"><img src="/img/platforms/nxjs.svg" alt="" width="24" height="24" /></span><a href="https://github.com/melonjs/melonJS/wiki/Nintendo-Switch">Nintendo Switch homebrew</a></h3>
+                    <h3><span class="platform-icon"><img src="/img/platforms/nxjs.svg" alt="" width="24" height="24" /></span><a href="https://github.com/melonjs/melonJS/wiki/Nintendo-Switch">Nintendo Switch Homebrew</a></h3>
                     <p>Through nx.js, a runtime with no web page at all (experimental).</p>
                 </div>
             </div>
@@ -415,7 +453,7 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
                     <pre class="code-block wrap"><code>cp node_modules/melonjs/skills/AGENTS.md .</code></pre>
                 </div>
                 <div>
-                    <h3><span class="platform-icon"><img src="/img/agents/npm.svg" alt="" width="24" height="24" /></span>Pinned to your release</h3>
+                    <h3><span class="platform-icon"><img src="/img/agents/npm.svg" alt="" width="24" height="24" /></span>Pinned to Your Release</h3>
                     <p>
                         The command above installs from <code>master</code>. The
                         copy matching the version you depend on ships in the npm
@@ -466,8 +504,8 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
         </div>
 
         <div>
-            <h2 id="third-party">Third Party Tools Integration</h2>
-            <p>melonJS provides native integration and support for the following 3rd party tools:</p>
+            <h2 id="third-party">Third-Party Tools</h2>
+            <p>melonJS works natively with these third-party tools:</p>
             <ul class="display">
                 <li>
                     <a href="https://www.mapeditor.org">
@@ -579,4 +617,41 @@ app.world.addChild(<span class="kw">new</span> Text(<span class="num">609</span>
             </p>
         </footer>
     </main>
+    <script>
+        // Try It Live: swap the poster for the game on the first click
+        const start = document.querySelector<HTMLAnchorElement>('.demo-start')
+        start?.addEventListener('click', (event) => {
+            event.preventDefault()
+            const frame = document.createElement('iframe')
+            frame.src = start.href
+            frame.title = 'melonJS platformer demo'
+            frame.allow = 'autoplay; fullscreen; gamepad'
+            frame.allowFullscreen = true
+            start.replaceWith(frame)
+            frame.focus()
+        })
+
+        // section headings draw their bar, then the red dot, once, as they
+        // come into view; nothing moves for reduced motion
+        if (
+            !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+            'IntersectionObserver' in window
+        ) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    for (const entry of entries) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('drawn')
+                            observer.unobserve(entry.target)
+                        }
+                    }
+                },
+                { rootMargin: '0px 0px -12% 0px' }
+            )
+            document.documentElement.classList.add('reveal')
+            document
+                .querySelectorAll('main > :not(.jumbotron) > h2')
+                .forEach((heading) => observer.observe(heading))
+        }
+    </script>
 </BaseLayout>

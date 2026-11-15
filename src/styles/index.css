@@ -26,18 +26,7 @@ main {
     }
 
     & .jumbotron {
-        background:
-            radial-gradient(
-                60% 55% at 50% 12%,
-                rgba(107, 168, 49, 0.16),
-                transparent 70%
-            ),
-            radial-gradient(
-                40% 40% at 78% 4%,
-                rgba(209, 101, 91, 0.1),
-                transparent 70%
-            ),
-            var(--dark-gray) !important;
+        background: var(--dark-gray) !important;
 
         text-align: center;
         padding-top: clamp(3rem, 6vw, 5rem) !important;
@@ -55,7 +44,6 @@ main {
             height: auto;
             margin: 0 auto 2.5rem;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         & h1 {
@@ -166,7 +154,7 @@ main {
         border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 12px;
         overflow: hidden;
-        background: var(--dark-gray);
+        background: var(--code-surface);
         box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
     }
 
@@ -452,18 +440,49 @@ main {
         }
     }
 
-    & .why-section {
-        & h2 {
-            text-align: center;
-        }
-    }
-
+    /* left-aligned like every other section, so its bar sits over the title */
     & .why-lead {
         font-size: 1.15em;
         max-width: 60ch;
-        margin: 0 auto 2rem;
-        text-align: center;
+        margin: 0 0 2rem;
         opacity: 0.85;
+    }
+
+    /* Features, grouped: three columns on a wide screen */
+    & .feature-groups {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem 2.5rem;
+        margin-top: 2rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 1080px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        & > div {
+            padding-top: 1.25rem;
+            border-top: 2px solid rgba(107, 168, 50, 0.35);
+        }
+
+        & h3 {
+            font-size: 1.05em;
+            color: var(--light-green);
+            margin-bottom: 0.9rem;
+        }
+
+        & ul {
+            padding-left: 1.1rem;
+        }
+
+        & li {
+            font-size: 0.95em;
+            line-height: 1.55;
+            margin-bottom: 0.55rem;
+        }
     }
 
     & .why-cards {
@@ -563,11 +582,7 @@ main {
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(
-                90deg,
-                var(--dark-green),
-                var(--light-green)
-            );
+            background: var(--dark-green);
             opacity: 0.7;
         }
 
@@ -611,6 +626,51 @@ main {
             border-radius: 6px;
         }
 
+        & .demo-start {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: white;
+            text-decoration: none;
+
+            & img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(0.7);
+                transition: filter 0.25s ease;
+            }
+
+            &:hover img {
+                filter: brightness(0.85);
+            }
+
+            & .demo-play {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                padding: 0.9rem 1.6rem;
+                border-radius: 999px;
+                background: var(--melon);
+                font-family: 'Comfortaa', 'Droid Sans', sans-serif;
+                font-weight: 700;
+                font-size: 1.2rem;
+                white-space: nowrap;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+                transition: transform 0.2s ease;
+            }
+
+            &:hover .demo-play {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+
         & iframe {
             border: none;
             width: 100%;
@@ -626,7 +686,7 @@ main {
     }
 
     & .code-block {
-        background: var(--dark-gray);
+        background: var(--code-surface);
         color: #d4d4d8;
         padding: 1.25rem 1.25rem;
         border-radius: 10px;
@@ -684,5 +744,28 @@ main {
     & .ai-section .code-block {
         margin-left: 0;
         max-width: 860px;
+    }
+}
+
+/* section headings: the bar draws from the left, then the red dot pops in
+   (the classes are set by the homepage's script, never for reduced motion) */
+html.reveal main > *:not(.jumbotron) > h2 {
+    &::before {
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    &::after {
+        transform: scale(0);
+        transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1) 0.4s;
+    }
+
+    &.drawn::before {
+        transform: scaleX(1);
+    }
+
+    &.drawn::after {
+        transform: scale(1);
     }
 }

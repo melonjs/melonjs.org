@@ -28,6 +28,10 @@ const { entries } = Astro.props
                 aria-label={`Go to slide ${i + 1}`}
             />
         ))}
+        <button class="showcase-pause" aria-label="Pause the slideshow">
+            <svg class="icon-pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1" width="3" height="10" rx="1" fill="currentColor"/><rect x="7" y="1" width="3" height="10" rx="1" fill="currentColor"/></svg>
+            <svg class="icon-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg>
+        </button>
     </div>
 </div>
 
@@ -41,6 +45,12 @@ const { entries } = Astro.props
         let transitioning = false
         let autoTimer = null
         const INTERVAL = 6000
+        const pauseButton = showcase.querySelector('.showcase-pause')
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+        // paused by the visitor or by their system; held while hovered or focused
+        let paused = reduceMotion.matches
+        let hovered = false
+        let focused = false
 
         function goTo(index) {
             if (transitioning || index === current) return
@@ -83,7 +93,18 @@ const { entries } = Astro.props
 
         function startAuto() {
             stopAuto()
+            if (paused || hovered || focused) return
             autoTimer = setInterval(next, INTERVAL)
+        }
+
+        function setPaused(value) {
+            paused = value
+            pauseButton.classList.toggle('paused', paused)
+            pauseButton.setAttribute(
+                'aria-label',
+                paused ? 'Play the slideshow' : 'Pause the slideshow'
+            )
+            startAuto()
         }
 
         function stopAuto() {
@@ -107,9 +128,27 @@ const { entries } = Astro.props
             })
         })
 
-        showcase.addEventListener('mouseenter', stopAuto)
-        showcase.addEventListener('mouseleave', startAuto)
+        pauseButton.addEventListener('click', () => setPaused(!paused))
+        reduceMotion.addEventListener('change', (e) => setPaused(e.matches))
 
-        startAuto()
+        showcase.addEventListener('mouseenter', () => {
+            hovered = true
+            stopAuto()
+        })
+        showcase.addEventListener('mouseleave', () => {
+            hovered = false
+            startAuto()
+        })
+        showcase.addEventListener('focusin', () => {
+            focused = true
+            stopAuto()
+        })
+        showcase.addEventListener('focusout', (e) => {
+            if (showcase.contains(e.relatedTarget)) return
+            focused = false
+            startAuto()
+        })
+
+        setPaused(paused)
     }
 </script>

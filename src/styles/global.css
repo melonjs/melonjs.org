@@ -4,7 +4,7 @@
 }
 
 html {
-    scroll-padding-top: calc(6.5vmin + 2em);
+    scroll-padding-top: 72px;
 }
 
 body {
@@ -19,6 +19,49 @@ body {
 
 a {
     color: var(--light-green);
+}
+
+/* the brand's typeface carries the headings; body text stays plain */
+h1,
+h2,
+h3 {
+    font-family: 'Comfortaa', 'Droid Sans', sans-serif;
+    font-weight: 700;
+}
+
+/* a keyboard focus ring that shows on the dark surfaces */
+:focus-visible {
+    outline: 2px solid var(--light-green);
+    outline-offset: 3px;
+}
+
+/* kept in the page for search engines and screen readers, not shown */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    main .why-card:hover,
+    main .display li a:hover {
+        transform: none !important;
+    }
 }
 
 img {

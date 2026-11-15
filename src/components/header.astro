@@ -6,16 +6,29 @@ const pathname = new URL(Astro.request.url).pathname
 ---
 
 <header>
-    <nav>
+    <nav aria-label="Main">
+        <a class="brand" href="/#top" aria-current={pathname === '/' ? 'page' : undefined}
+            ><Icon icon="favicon" class="brand-icon" /><span>melonJS</span></a
+        >
         <ul>
-            <li class={pathname === '/' ? 'active' : null}>
-                <a href="/#top"><Icon icon="favicon" inline />Home</a>
+            <li>
+                <a href="https://melonjs.github.io/melonJS/examples/">Examples</a>
             </li>
-            <li><a href="https://melonjs.github.io/melonJS">API</a></li>
-<li>
-                <a href="https://github.com/melonjs/melonJS"
-                    ><Icon icon="github" inline />GitHub
-                </a>
+            <li class={pathname.startsWith('/tutorial') ? 'active' : null}>
+                <a
+                    href="/tutorial"
+                    aria-current={pathname.startsWith('/tutorial') ? 'page' : undefined}
+                    >Tutorial</a
+                >
+            </li>
+            <li><a href="https://github.com/melonjs/melonJS/wiki">Wiki</a></li>
+            <li><a href="https://melonjs.github.io/melonJS/">API</a></li>
+            <li>
+                <a href="https://github.com/melonjs/melonJS" aria-label="GitHub"
+                    ><Icon icon="github" class="github-icon" /><span class="label"
+                        >GitHub</span
+                    ></a
+                >
             </li>
         </ul>
     </nav>

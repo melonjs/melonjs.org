@@ -16,8 +16,11 @@
     --red: #d9534f;
     --white: white;
     --black: black;
-    --gray: #171a16;
-    --dark-gray: #0e100e;
+    /* the brand's charcoal (#202020), as the README banner uses it */
+    --gray: #262626;
+    --dark-gray: #1f1f1f;
+    /* code and the terminal sit one step below the page */
+    --code-surface: #151515;
     --section-pad-x: clamp(2rem, 8vw, 12rem);
     --section-pad-y: clamp(3.5rem, 7vw, 7rem);
     --measure: 1180px;

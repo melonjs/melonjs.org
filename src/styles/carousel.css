@@ -169,28 +169,70 @@
     transform: translateX(-50%);
     z-index: 10;
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
 }
 
+/* a 24px target around an 8px dot */
 .showcase-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
     border: none;
-    background: rgba(255, 255, 255, 0.3);
+    background: none;
     cursor: pointer;
     padding: 0;
-    transition:
-        background 0.25s ease,
-        transform 0.2s ease;
 
-    &:hover {
+    &::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transition:
+            background 0.25s ease,
+            transform 0.2s ease;
+    }
+
+    &:hover::before {
         background: rgba(255, 255, 255, 0.6);
     }
 
-    &.active {
+    &.active::before {
         background: var(--light-green);
         transform: scale(1.25);
+    }
+}
+
+.showcase-pause {
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    margin-left: 0.25rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+        color: white;
+    }
+
+    & .icon-play {
+        display: none;
+    }
+
+    &.paused {
+        & .icon-play {
+            display: block;
+        }
+
+        & .icon-pause {
+            display: none;
+        }
     }
 }
 
